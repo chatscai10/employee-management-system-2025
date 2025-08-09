@@ -1,4 +1,7 @@
-# Railway 忽略檔案
+# Railway 忽略檔案 - 強制使用NIXPACKS
+Dockerfile*
+docker-compose*
+*.disabled
 .git/
 .github/
 node_modules/
@@ -11,6 +14,9 @@ node_modules/
 tests/
 docs/
 .claude-reports/
+*.backup
+force-full-deployment.js
+railway-fix-restart-loop.js
+railway-direct-deploy.js
 problem-solving-flight-report.js
 github-deploy.sh
-railway-direct-deploy.js
