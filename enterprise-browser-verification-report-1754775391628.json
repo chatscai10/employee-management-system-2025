@@ -1,0 +1,477 @@
+{
+  "basicFunctionality": {
+    "websiteLoading": {
+      "success": true,
+      "loadTime": 1675,
+      "title": "",
+      "hasErrors": false,
+      "errorMessages": [],
+      "status": "excellent"
+    },
+    "pageStructure": {
+      "success": true,
+      "keyElements": {
+        "header": false,
+        "loginForm": false,
+        "footer": false,
+        "mainContent": false
+      },
+      "semanticTags": {
+        "header": false,
+        "nav": false,
+        "main": false,
+        "section": false,
+        "article": false,
+        "aside": false,
+        "footer": false
+      },
+      "metaTags": {
+        "hasViewport": false,
+        "viewportContent": null,
+        "hasCharset": true,
+        "hasDescription": false
+      },
+      "status": "passed"
+    },
+    "responsiveness": {
+      "success": true,
+      "results": {
+        "mobile": {
+          "viewport": {
+            "name": "mobile",
+            "width": 375,
+            "height": 667
+          },
+          "elements": {
+            "form": null,
+            "buttons": null,
+            "inputs": null
+          },
+          "status": "passed"
+        },
+        "tablet": {
+          "viewport": {
+            "name": "tablet",
+            "width": 768,
+            "height": 1024
+          },
+          "elements": {
+            "form": null,
+            "buttons": null,
+            "inputs": null
+          },
+          "status": "passed"
+        },
+        "desktop": {
+          "viewport": {
+            "name": "desktop",
+            "width": 1920,
+            "height": 1080
+          },
+          "elements": {
+            "form": null,
+            "buttons": null,
+            "inputs": null
+          },
+          "status": "passed"
+        }
+      },
+      "status": "passed"
+    },
+    "navigation": {
+      "success": true,
+      "links": [],
+      "buttons": [],
+      "linkCount": 0,
+      "buttonCount": 0,
+      "status": "passed"
+    }
+  },
+  "coreBusinessLogic": {
+    "authenticationSystem": {
+      "success": true,
+      "results": {
+        "admin": {
+          "username": "admin",
+          "loginAttempted": true,
+          "loginSuccessful": false,
+          "error": "找不到登入表單元素",
+          "status": "failed"
+        },
+        "manager": {
+          "username": "manager",
+          "loginAttempted": true,
+          "loginSuccessful": false,
+          "error": "找不到登入表單元素",
+          "status": "failed"
+        },
+        "employee": {
+          "username": "testuser",
+          "loginAttempted": true,
+          "loginSuccessful": false,
+          "error": "找不到登入表單元素",
+          "status": "failed"
+        }
+      },
+      "status": "completed"
+    },
+    "employeeManagement": {
+      "success": false,
+      "error": "無法登入管理員帳號",
+      "status": "failed"
+    },
+    "attendanceSystem": {
+      "success": true,
+      "tests": {
+        "clockIn": {
+          "success": true,
+          "hasClockInFunction": false,
+          "status": "warning"
+        },
+        "clockOut": {
+          "success": true,
+          "hasClockOutFunction": false,
+          "status": "warning"
+        },
+        "viewAttendanceRecords": {
+          "success": true,
+          "hasAttendanceRecords": false,
+          "status": "warning"
+        },
+        "gpsValidation": {
+          "success": true,
+          "hasGpsValidation": false,
+          "status": "warning"
+        }
+      },
+      "status": "completed"
+    },
+    "payrollCalculation": {
+      "success": true,
+      "tests": {
+        "salaryCalculation": {
+          "success": true,
+          "hasSalaryCalculation": false,
+          "status": "warning"
+        },
+        "bonusCalculation": {
+          "success": true,
+          "hasBonusCalculation": false,
+          "status": "warning"
+        },
+        "deductionHandling": {
+          "success": true,
+          "hasDeductionHandling": false,
+          "status": "warning"
+        }
+      },
+      "status": "completed"
+    },
+    "leaveManagement": {
+      "success": true,
+      "tests": {
+        "requestLeave": {
+          "success": true,
+          "hasLeaveRequest": false,
+          "status": "warning"
+        },
+        "approveLeave": {
+          "success": true,
+          "hasLeaveApproval": false,
+          "status": "warning"
+        },
+        "viewLeaveHistory": {
+          "success": true,
+          "hasLeaveHistory": false,
+          "status": "warning"
+        }
+      },
+      "status": "completed"
+    }
+  },
+  "securityAndPerformance": {
+    "apiSecurity": {
+      "success": true,
+      "endpoints": {
+        "/api/auth/login": {
+          "statusCode": 404,
+          "hasAuthProtection": false,
+          "headers": {
+            "content-length": "153",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sat, 09 Aug 2025 21:36:06 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "0pN4iTfYRWq3E1WwDcO5xA"
+          },
+          "status": "warning"
+        },
+        "/api/employees": {
+          "statusCode": 404,
+          "hasAuthProtection": false,
+          "headers": {
+            "content-length": "152",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sat, 09 Aug 2025 21:36:06 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "Dxf2UnUNTruGo2_QDcO5xA"
+          },
+          "status": "warning"
+        },
+        "/api/attendance": {
+          "statusCode": 404,
+          "hasAuthProtection": false,
+          "headers": {
+            "content-length": "153",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sat, 09 Aug 2025 21:36:06 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "z8rs_-b3RLimbdRsDcO5xA"
+          },
+          "status": "warning"
+        },
+        "/api/revenue": {
+          "statusCode": 404,
+          "hasAuthProtection": false,
+          "headers": {
+            "content-length": "150",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sat, 09 Aug 2025 21:36:06 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "I2WVDT8JRjq5K9mqDcO5xA"
+          },
+          "status": "warning"
+        },
+        "/api/admin": {
+          "statusCode": 404,
+          "hasAuthProtection": false,
+          "headers": {
+            "content-length": "148",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sat, 09 Aug 2025 21:36:06 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "k4VU4r2mQvyWbiJ2DcO5xA"
+          },
+          "status": "warning"
+        }
+      },
+      "status": "completed"
+    },
+    "databaseConnectivity": {
+      "success": true,
+      "database": {
+        "endpoint": "/health",
+        "status": "connected",
+        "responseTime": "unknown",
+        "data": {
+          "status": "healthy",
+          "timestamp": "2025-08-09T21:36:06.894Z",
+          "uptime": 3512.841497736,
+          "memory": {
+            "rss": 57708544,
+            "heapTotal": 9551872,
+            "heapUsed": 8564576,
+            "external": 1092674,
+            "arrayBuffers": 57546
+          },
+          "environment": "production",
+          "port": "3000",
+          "host": "0.0.0.0"
+        }
+      },
+      "status": "passed"
+    },
+    "loadingSpeed": {
+      "success": true,
+      "pages": {
+        "homepage": {
+          "url": "https://employee-management-system-production-4361.up.railway.app",
+          "totalLoadTime": 1111,
+          "metrics": {
+            "domContentLoaded": 105,
+            "domComplete": 106,
+            "loadComplete": 106
+          },
+          "status": "excellent"
+        },
+        "login": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+          "totalLoadTime": 2115,
+          "metrics": {
+            "domContentLoaded": 111,
+            "domComplete": 111,
+            "loadComplete": 111
+          },
+          "status": "excellent"
+        },
+        "attendance": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/attendance.html",
+          "totalLoadTime": 2005,
+          "metrics": {
+            "domContentLoaded": 100,
+            "domComplete": 100,
+            "loadComplete": 100
+          },
+          "status": "excellent"
+        },
+        "admin": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+          "totalLoadTime": 1032,
+          "metrics": {
+            "domContentLoaded": 92,
+            "domComplete": 93,
+            "loadComplete": 93
+          },
+          "status": "excellent"
+        }
+      },
+      "status": "completed"
+    },
+    "memoryUsage": {
+      "success": true,
+      "memory": {
+        "jsHeapUsedSize": 5.94,
+        "jsHeapTotalSize": 6.75,
+        "usedJSHeapSize": 88,
+        "domNodes": 235,
+        "eventListeners": 0
+      },
+      "status": "excellent"
+    },
+    "sqlInjectionPrevention": {
+      "success": true,
+      "testResults": {},
+      "status": "completed"
+    },
+    "xssProtection": {
+      "success": true,
+      "testResults": {},
+      "status": "completed"
+    }
+  },
+  "userExperience": {
+    "formValidation": {
+      "success": false,
+      "error": "No element found for selector: button[type=\"submit\"], input[type=\"submit\"], .login-btn, #loginBtn",
+      "status": "failed"
+    },
+    "errorHandling": {
+      "success": true,
+      "tests": {
+        "page404": {
+          "title": "Error",
+          "hasErrorPage": false,
+          "status": "warning"
+        },
+        "invalidApiRequest": {
+          "statusCode": 404,
+          "hasErrorResponse": true,
+          "status": "passed"
+        }
+      },
+      "status": "completed"
+    },
+    "navigationFlow": {
+      "success": true,
+      "tests": {
+        "home": {
+          "url": "https://employee-management-system-production-4361.up.railway.app",
+          "accessible": true,
+          "loadTime": 1109,
+          "status": "passed"
+        },
+        "login": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+          "accessible": true,
+          "loadTime": 649,
+          "status": "passed"
+        },
+        "attendance": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/attendance.html",
+          "accessible": true,
+          "loadTime": 2112,
+          "status": "passed"
+        },
+        "admin": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+          "accessible": true,
+          "loadTime": 1356,
+          "status": "passed"
+        }
+      },
+      "status": "completed"
+    },
+    "mobileCompatibility": {
+      "success": true,
+      "devices": {
+        "iPhone 12": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "touchFriendly": {
+            "buttonsTouchFriendly": 0,
+            "linksTouchFriendly": 0
+          },
+          "status": "needs_improvement"
+        },
+        "Samsung Galaxy S21": {
+          "viewport": {
+            "width": 384,
+            "height": 854
+          },
+          "touchFriendly": {
+            "buttonsTouchFriendly": 0,
+            "linksTouchFriendly": 0
+          },
+          "status": "needs_improvement"
+        },
+        "iPad": {
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "touchFriendly": {
+            "buttonsTouchFriendly": 0,
+            "linksTouchFriendly": 0
+          },
+          "status": "needs_improvement"
+        }
+      },
+      "status": "completed"
+    },
+    "accessibility": {
+      "success": false,
+      "error": "Cannot read properties of undefined (reading 'length')",
+      "status": "failed"
+    }
+  },
+  "summary": {
+    "totalTests": 20,
+    "passed": 17,
+    "failed": 3,
+    "warnings": 0,
+    "startTime": "2025-08-09T21:35:52.671Z",
+    "endTime": "2025-08-09T21:36:31.628Z",
+    "duration": "39 秒"
+  }
+}

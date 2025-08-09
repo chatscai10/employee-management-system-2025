@@ -1,0 +1,166 @@
+{
+  "siteStructureAnalysis": {
+    "homepage": {
+      "title": "",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "hasContent": true,
+      "contentLength": 151,
+      "forms": [],
+      "buttons": [],
+      "links": [],
+      "isSPA": false
+    }
+  },
+  "realRoutesDiscovered": {
+    "/": {
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "status": "working",
+      "analysis": {
+        "title": "",
+        "url": "https://employee-management-system-production-4361.up.railway.app/",
+        "hasContent": true,
+        "contentLength": 151,
+        "forms": [],
+        "buttons": [],
+        "links": [],
+        "isSPA": false
+      },
+      "statusCode": 200
+    }
+  },
+  "enhancedBusinessLogic": {
+    "formTesting": {}
+  },
+  "deepSecurityAnalysis": {
+    "httpsValidation": {
+      "isHttps": true,
+      "httpRedirectsToHttps": true,
+      "status": "passed"
+    },
+    "headerSecurity": {
+      "headers": {},
+      "hasSecurityHeaders": false,
+      "criticalHeadersMissing": true,
+      "status": "warning",
+      "recommendations": [
+        "建議添加 X-Frame-Options 標頭以防止點擊劫持攻擊",
+        "建議添加 X-Content-Type-Options: nosniff 標頭",
+        "建議添加 X-XSS-Protection 標頭",
+        "建議添加 Strict-Transport-Security 標頭強制使用 HTTPS",
+        "建議實施 Content Security Policy (CSP) 以防止 XSS 攻擊"
+      ]
+    },
+    "inputValidation": {
+      "tests": {},
+      "status": "passed"
+    },
+    "sessionSecurity": {
+      "cookies": [],
+      "hasSecureCookies": false,
+      "status": "warning",
+      "recommendations": [
+        "建議設定 Cookie 的 Secure 和 HttpOnly 屬性"
+      ]
+    },
+    "apiSecurity": {
+      "endpoints": {
+        "/api/auth/login": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/auth/login",
+          "unauthorizedStatus": 404,
+          "hasAuthProtection": false,
+          "status": "warning"
+        },
+        "/api/users": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/users",
+          "unauthorizedStatus": 404,
+          "hasAuthProtection": false,
+          "status": "warning"
+        },
+        "/api/employees": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/employees",
+          "unauthorizedStatus": 404,
+          "hasAuthProtection": false,
+          "status": "warning"
+        },
+        "/api/attendance": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance",
+          "unauthorizedStatus": 404,
+          "hasAuthProtection": false,
+          "status": "warning"
+        },
+        "/api/revenue": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/revenue",
+          "unauthorizedStatus": 404,
+          "hasAuthProtection": false,
+          "status": "warning"
+        },
+        "/api/admin": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/admin",
+          "unauthorizedStatus": 404,
+          "hasAuthProtection": false,
+          "status": "warning"
+        },
+        "/api/config": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/config",
+          "unauthorizedStatus": 404,
+          "hasAuthProtection": false,
+          "status": "warning"
+        },
+        "/api/backup": {
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/backup",
+          "unauthorizedStatus": 404,
+          "hasAuthProtection": false,
+          "status": "warning"
+        }
+      },
+      "status": "warning"
+    }
+  },
+  "intelligentRecommendations": {
+    "critical": [],
+    "high": [
+      {
+        "category": "Route Coverage",
+        "issue": "發現的可用路由較少",
+        "recommendation": "建議檢查路由配置，確保所有功能頁面都可正確訪問",
+        "impact": "high"
+      },
+      {
+        "category": "Security Headers",
+        "issue": "缺少重要的安全標頭",
+        "recommendation": [
+          "建議添加 X-Frame-Options 標頭以防止點擊劫持攻擊",
+          "建議添加 X-Content-Type-Options: nosniff 標頭",
+          "建議添加 X-XSS-Protection 標頭",
+          "建議添加 Strict-Transport-Security 標頭強制使用 HTTPS",
+          "建議實施 Content Security Policy (CSP) 以防止 XSS 攻擊"
+        ],
+        "impact": "high"
+      }
+    ],
+    "medium": [],
+    "low": [],
+    "enhancements": [
+      {
+        "category": "User Experience",
+        "suggestion": "建議添加載入指示器提升用戶體驗",
+        "implementation": "在表單提交和頁面載入時顯示載入動畫"
+      },
+      {
+        "category": "Monitoring",
+        "suggestion": "建議實施錯誤監控和日誌記錄",
+        "implementation": "集成錯誤追蹤工具如 Sentry 或實施自定義日誌系統"
+      }
+    ]
+  },
+  "summary": {
+    "totalTests": 0,
+    "passed": 0,
+    "failed": 0,
+    "warnings": 2,
+    "critical": 0,
+    "startTime": "2025-08-09T21:39:35.516Z",
+    "endTime": "2025-08-09T21:40:06.349Z",
+    "duration": "31 秒"
+  }
+}
