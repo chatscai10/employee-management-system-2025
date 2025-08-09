@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1f2937">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>管理員後台 - 企業員工管理系統</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            min-height: 100vh;
+            color: #f9fafb;
+        }
+        
+        .header {
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header h1 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #f9fafb;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: #d1d5db;
+        }
+        
+        .logout-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .logout-btn:hover {
+            background: #dc2626;
+        }
+        
+        .container {
+            padding: 6rem 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(31, 41, 55, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #d1d5db;
+            font-size: 0.875rem;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar {
+            background: rgba(31, 41, 55, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+            height: fit-content;
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #d1d5db;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+        }
+        
+        .content-area {
+            background: rgba(31, 41, 55, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        .section h2 {
+            margin-bottom: 1.5rem;
+            color: #f9fafb;
+            font-size: 1.5rem;
+        }
+        
+        .employee-table {
+            width: 100%;
+            background: rgba(17, 24, 39, 0.5);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .employee-table th,
+        .employee-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(75, 85, 99, 0.2);
+        }
+        
+        .employee-table th {
+            background: rgba(17, 24, 39, 0.8);
+            color: #d1d5db;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .employee-table td {
+            color: #f9fafb;
+            font-size: 0.875rem;
+        }
+        
+        .employee-table tr:hover {
+            background: rgba(75, 85, 99, 0.1);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .status-active {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+        
+        .status-pending {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+        }
+        
+        .status-inactive {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn {
+            padding: 0.375rem 0.75rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+        
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #059669;
+        }
+        
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+        
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #9ca3af;
+        }
+        
+        .error-message {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #ef4444;
+        }
+        
+        .success-message {
+            background: rgba(16, 185, 129, 0.2);
+            color: #86efac;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #10b981;
+        }
+        
+        .filter-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .filter-bar select,
+        .filter-bar input {
+            padding: 0.5rem;
+            border: 1px solid rgba(75, 85, 99, 0.5);
+            border-radius: 0.375rem;
+            background: rgba(17, 24, 39, 0.5);
+            color: #f9fafb;
+            font-size: 0.875rem;
+        }
+        
+        .filter-bar select:focus,
+        .filter-bar input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .pagination button {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid rgba(75, 85, 99, 0.5);
+            background: rgba(31, 41, 55, 0.8);
+            color: #d1d5db;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+        
+        .pagination button:hover:not(:disabled) {
+            background: rgba(75, 85, 99, 0.5);
+        }
+        
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .pagination .current-page {
+            background: #3b82f6;
+            border-color: #3b82f6;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .sidebar {
+                order: 2;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .employee-table {
+                font-size: 0.75rem;
+            }
+            
+            .employee-table th,
+            .employee-table td {
+                padding: 0.5rem;
+            }
+            
+            .filter-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>👑 管理員後台</h1>
+            <div class="user-info">
+                <span id="admin-name">載入中...</span>
+                <button class="logout-btn" onclick="logout()">登出</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="message-area"></div>
+        
+        <!-- 統計卡片 -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="total-employees">-</div>
+                <div class="stat-label">總員工數</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="active-employees">-</div>
+                <div class="stat-label">在職員工</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="pending-employees">-</div>
+                <div class="stat-label">待審核</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="total-stores">-</div>
+                <div class="stat-label">分店數</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- 左側導航 -->
+            <div class="sidebar">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" data-section="employee-management">
+                            👥 員工管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="store-management">
+                            🏪 分店管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="system-settings">
+                            ⚙️ 系統設定
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 右側內容區域 -->
+            <div class="content-area">
+                <!-- 員工管理 -->
+                <div id="employee-management" class="section active">
+                    <h2>員工管理</h2>
+                    
+                    <div class="filter-bar">
+                        <select id="status-filter">
+                            <option value="">所有狀態</option>
+                            <option value="在職">在職</option>
+                            <option value="審核中">審核中</option>
+                            <option value="離職">離職</option>
+                        </select>
+                        
+                        <select id="store-filter">
+                            <option value="">所有分店</option>
+                        </select>
+                        
+                        <select id="position-filter">
+                            <option value="">所有職位</option>
+                            <option value="系統管理員">系統管理員</option>
+                            <option value="店長">店長</option>
+                            <option value="組長">組長</option>
+                            <option value="正職員工">正職員工</option>
+                            <option value="兼職人員">兼職人員</option>
+                            <option value="實習生">實習生</option>
+                        </select>
+                        
+                        <button class="btn btn-primary" onclick="applyFilters()">
+                            🔍 篩選
+                        </button>
+                        
+                        <button class="btn btn-secondary" onclick="resetFilters()">
+                            🔄 重置
+                        </button>
+                    </div>
+                    
+                    <div id="employee-table-container">
+                        <div class="loading">載入員工資料中...</div>
+                    </div>
+                </div>
+
+                <!-- 分店管理 -->
+                <div id="store-management" class="section">
+                    <h2>分店管理</h2>
+                    <div id="store-content">
+                        <div class="loading">載入分店資料中...</div>
+                    </div>
+                </div>
+
+                <!-- 系統設定 -->
+                <div id="system-settings" class="section">
+                    <h2>系統設定</h2>
+                    <div>系統設定功能開發中...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = null;
+        let employees = [];
+        let stores = [];
+        let stats = {};
+        let currentPage = 1;
+        let currentFilters = {
+            status: '',
+            storeId: '',
+            position: ''
+        };
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', async function() {
+            await checkAuth();
+            await loadStats();
+            await loadStores();
+            await loadEmployees();
+            initEventListeners();
+        });
+
+        // 檢查登入狀態
+        async function checkAuth() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '/login';
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/auth/verify', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Token verification failed');
+                }
+
+                const result = await response.json();
+                currentUser = result.data.user;
+                
+                document.getElementById('admin-name').textContent = currentUser.name;
+                
+                // 檢查是否為管理員
+                if (!currentUser.position.includes('管理') && !currentUser.position.includes('店長')) {
+                    showMessage('權限不足，需要管理員權限', 'error');
+                    setTimeout(() => {
+                        window.location.href = '/employee';
+                    }, 2000);
+                }
+            } catch (error) {
+                console.error('Auth check failed:', error);
+                localStorage.removeItem('token');
+                window.location.href = '/login';
+            }
+        }
+
+        // 載入統計數據
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/admin/stats');
+                if (!response.ok) throw new Error('Failed to load stats');
+                
+                const result = await response.json();
+                stats = result.data;
+                
+                document.getElementById('total-employees').textContent = stats.totalEmployees;
+                document.getElementById('active-employees').textContent = stats.activeEmployees;
+                document.getElementById('pending-employees').textContent = stats.pendingEmployees;
+                document.getElementById('total-stores').textContent = stats.totalStores;
+            } catch (error) {
+                console.error('Load stats failed:', error);
+                showMessage('載入統計數據失敗', 'error');
+            }
+        }
+
+        // 載入分店列表
+        async function loadStores() {
+            try {
+                const response = await fetch('/api/admin/stores');
+                if (!response.ok) throw new Error('Failed to load stores');
+                
+                const result = await response.json();
+                stores = result.data;
+                
+                // 更新分店篩選選項
+                const storeFilter = document.getElementById('store-filter');
+                storeFilter.innerHTML = '<option value="">所有分店</option>';
+                stores.forEach(store => {
+                    storeFilter.innerHTML += `<option value="${store.id}">${store.name}</option>`;
+                });
+            } catch (error) {
+                console.error('Load stores failed:', error);
+                showMessage('載入分店資料失敗', 'error');
+            }
+        }
+
+        // 載入員工列表
+        async function loadEmployees() {
+            try {
+                showLoading('employee-table-container');
+                
+                const params = new URLSearchParams({
+                    page: currentPage,
+                    limit: 20,
+                    ...currentFilters
+                });
+                
+                const response = await fetch(`/api/admin/employees?${params}`);
+                if (!response.ok) throw new Error('Failed to load employees');
+                
+                const result = await response.json();
+                employees = result.data.employees;
+                
+                renderEmployeeTable(employees, result.data.pagination);
+            } catch (error) {
+                console.error('Load employees failed:', error);
+                showMessage('載入員工資料失敗', 'error');
+            }
+        }
+
+        // 渲染員工表格
+        function renderEmployeeTable(employeeList, pagination) {
+            const container = document.getElementById('employee-table-container');
+            
+            let html = `
+                <table class="employee-table">
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>身分證</th>
+                            <th>職位</th>
+                            <th>分店</th>
+                            <th>狀態</th>
+                            <th>聯絡電話</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            employeeList.forEach(emp => {
+                const statusClass = emp.status === '在職' ? 'status-active' : 
+                                  emp.status === '審核中' ? 'status-pending' : 'status-inactive';
+                
+                html += `
+                    <tr>
+                        <td>${emp.name}</td>
+                        <td>${emp.idNumber}</td>
+                        <td>${emp.position}</td>
+                        <td>${emp.Store ? emp.Store.name : '-'}</td>
+                        <td><span class="status-badge ${statusClass}">${emp.status}</span></td>
+                        <td>${emp.phone}</td>
+                        <td>
+                            <div class="action-buttons">
+                                ${emp.status === '審核中' ? `
+                                    <button class="btn btn-success" onclick="approveEmployee(${emp.id})">
+                                        ✓ 核准
+                                    </button>
+                                    <button class="btn btn-danger" onclick="rejectEmployee(${emp.id})">
+                                        ✗ 拒絕
+                                    </button>
+                                ` : ''}
+                                <button class="btn btn-primary" onclick="viewEmployee(${emp.id})">
+                                    📋 查看
+                                </button>
+                                ${emp.status !== '離職' ? `
+                                    <button class="btn btn-secondary" onclick="editEmployee(${emp.id})">
+                                        ✏️ 編輯
+                                    </button>
+                                ` : ''}
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            html += `
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button onclick="changePage(${pagination.current - 1})" 
+                            ${pagination.current <= 1 ? 'disabled' : ''}>
+                        ← 上一頁
+                    </button>
+                    <span>第 ${pagination.current} 頁，共 ${pagination.total} 頁</span>
+                    <button onclick="changePage(${pagination.current + 1})" 
+                            ${pagination.current >= pagination.total ? 'disabled' : ''}>
+                        下一頁 →
+                    </button>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+        }
+
+        // 核准員工
+        async function approveEmployee(employeeId) {
+            if (!confirm('確定要核准這位員工嗎？')) return;
+            
+            try {
+                const response = await fetch(`/api/admin/employees/${employeeId}/approve`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ approved: true })
+                });
+                
+                if (!response.ok) throw new Error('Failed to approve employee');
+                
+                showMessage('員工核准成功', 'success');
+                await loadStats();
+                await loadEmployees();
+            } catch (error) {
+                console.error('Approve employee failed:', error);
+                showMessage('員工核准失敗', 'error');
+            }
+        }
+
+        // 拒絕員工
+        async function rejectEmployee(employeeId) {
+            if (!confirm('確定要拒絕這位員工的申請嗎？此操作無法復原。')) return;
+            
+            try {
+                const response = await fetch(`/api/admin/employees/${employeeId}/approve`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ approved: false })
+                });
+                
+                if (!response.ok) throw new Error('Failed to reject employee');
+                
+                showMessage('已拒絕員工申請', 'success');
+                await loadStats();
+                await loadEmployees();
+            } catch (error) {
+                console.error('Reject employee failed:', error);
+                showMessage('拒絕員工申請失敗', 'error');
+            }
+        }
+
+        // 查看員工詳情
+        function viewEmployee(employeeId) {
+            const employee = employees.find(emp => emp.id === employeeId);
+            if (!employee) return;
+            
+            alert(`員工詳情：\n姓名：${employee.name}\n身分證：${employee.idNumber}\n生日：${employee.birthday}\n性別：${employee.gender}\n電話：${employee.phone}\n地址：${employee.address}\n緊急聯絡人：${employee.emergencyContact} (${employee.relationship})\n緊急聯絡電話：${employee.emergencyPhone}\n到職日：${employee.startDate}\n職位：${employee.position}\n狀態：${employee.status}`);
+        }
+
+        // 編輯員工（簡單版本）
+        function editEmployee(employeeId) {
+            const employee = employees.find(emp => emp.id === employeeId);
+            if (!employee) return;
+            
+            const newPosition = prompt('請輸入新職位：', employee.position);
+            if (newPosition && newPosition !== employee.position) {
+                updateEmployee(employeeId, { position: newPosition });
+            }
+        }
+
+        // 更新員工資料
+        async function updateEmployee(employeeId, updateData) {
+            try {
+                const response = await fetch(`/api/admin/employees/${employeeId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updateData)
+                });
+                
+                if (!response.ok) throw new Error('Failed to update employee');
+                
+                showMessage('員工資料更新成功', 'success');
+                await loadEmployees();
+            } catch (error) {
+                console.error('Update employee failed:', error);
+                showMessage('員工資料更新失敗', 'error');
+            }
+        }
+
+        // 應用篩選
+        function applyFilters() {
+            currentFilters = {
+                status: document.getElementById('status-filter').value,
+                storeId: document.getElementById('store-filter').value,
+                position: document.getElementById('position-filter').value
+            };
+            currentPage = 1;
+            loadEmployees();
+        }
+
+        // 重置篩選
+        function resetFilters() {
+            document.getElementById('status-filter').value = '';
+            document.getElementById('store-filter').value = '';
+            document.getElementById('position-filter').value = '';
+            currentFilters = { status: '', storeId: '', position: '' };
+            currentPage = 1;
+            loadEmployees();
+        }
+
+        // 換頁
+        function changePage(page) {
+            if (page < 1) return;
+            currentPage = page;
+            loadEmployees();
+        }
+
+        // 初始化事件監聽器
+        function initEventListeners() {
+            // 導航切換
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 移除所有active類
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                    
+                    // 添加active類
+                    this.classList.add('active');
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+        }
+
+        // 顯示載入狀態
+        function showLoading(containerId) {
+            document.getElementById(containerId).innerHTML = '<div class="loading">載入中...</div>';
+        }
+
+        // 顯示訊息
+        function showMessage(message, type = 'success') {
+            const messageArea = document.getElementById('message-area');
+            const className = type === 'success' ? 'success-message' : 'error-message';
+            
+            messageArea.innerHTML = `<div class="${className}">${message}</div>`;
+            
+            setTimeout(() => {
+                messageArea.innerHTML = '';
+            }, 3000);
+        }
+
+        // 登出
+        function logout() {
+            if (confirm('確定要登出嗎？')) {
+                localStorage.removeItem('token');
+                window.location.href = '/login';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: employee-management-system
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    buildCommand: docker build -t employee-management .
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: JWT_SECRET
+        generateValue: true
+        
+  - type: redis
+    name: employee-redis
+    plan: starter
+    maxMemoryPolicy: allkeys-lru
+    
+databases:
+  - name: employee-database
+    databaseName: employee_management
+    user: employee_user

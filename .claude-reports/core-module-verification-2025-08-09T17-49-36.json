@@ -1,0 +1,158 @@
+{
+  "timestamp": "2025-08-09T17:49:36.223Z",
+  "verificationResults": [
+    {
+      "type": "success",
+      "message": "服務模組正常: server/services/alertService.js"
+    },
+    {
+      "type": "success",
+      "message": "服務模組正常: server/services/monitoringService.js"
+    },
+    {
+      "type": "error",
+      "message": "服務模組問題: server/services/backupService.js - async 函數缺少錯誤處理"
+    },
+    {
+      "type": "error",
+      "message": "服務模組問題: server/services/healthService.js - async 函數缺少錯誤處理"
+    },
+    {
+      "type": "error",
+      "message": "服務模組問題: server/services/cleanupService.js - async 函數缺少錯誤處理"
+    },
+    {
+      "type": "success",
+      "message": "服務模組正常: server/services/notificationService.js"
+    },
+    {
+      "type": "success",
+      "message": "服務模組正常: server/services/websocketHandler.js"
+    },
+    {
+      "type": "success",
+      "message": "中間件正常: server/middleware/auth.js"
+    },
+    {
+      "type": "success",
+      "message": "中間件正常: server/middleware/auth/production.js"
+    },
+    {
+      "type": "success",
+      "message": "中間件正常: server/middleware/errorHandler.js"
+    },
+    {
+      "type": "success",
+      "message": "中間件正常: server/middleware/monitoring.js"
+    },
+    {
+      "type": "success",
+      "message": "中間件正常: server/middleware/security/index.js"
+    },
+    {
+      "type": "success",
+      "message": "中間件正常: server/middleware/security/inputSecurity.js"
+    },
+    {
+      "type": "success",
+      "message": "中間件正常: server/middleware/security/authSecurity.js"
+    },
+    {
+      "type": "success",
+      "message": "中間件正常: server/middleware/performance/optimization.js"
+    },
+    {
+      "type": "success",
+      "message": "路由正常: server/routes/api/auth.js"
+    },
+    {
+      "type": "success",
+      "message": "路由正常: server/routes/api/auth-production.js"
+    },
+    {
+      "type": "success",
+      "message": "路由正常: server/routes/api/attendance.js"
+    },
+    {
+      "type": "success",
+      "message": "路由正常: server/routes/api/revenue.js"
+    },
+    {
+      "type": "success",
+      "message": "路由正常: server/routes/api/admin.js"
+    },
+    {
+      "type": "warning",
+      "message": "路由問題: server/routes/api/monitoring.js - 缺少日誌記錄"
+    },
+    {
+      "type": "warning",
+      "message": "路由問題: server/routes/api/alerts.js - 缺少日誌記錄"
+    },
+    {
+      "type": "success",
+      "message": "模型正常: server/models/index.js"
+    },
+    {
+      "type": "warning",
+      "message": "模型問題: server/models/Employee.js - 缺少日誌記錄"
+    },
+    {
+      "type": "warning",
+      "message": "模型問題: server/models/AttendanceRecord.js - 缺少日誌記錄"
+    },
+    {
+      "type": "warning",
+      "message": "模型問題: server/models/RevenueRecord.js - 缺少日誌記錄"
+    },
+    {
+      "type": "warning",
+      "message": "模型問題: server/models/Schedule.js - 缺少 module.exports, 缺少日誌記錄"
+    },
+    {
+      "type": "warning",
+      "message": "模型問題: server/models/Store.js - 缺少日誌記錄"
+    },
+    {
+      "type": "success",
+      "message": "配置檔案正常: package.json"
+    },
+    {
+      "type": "success",
+      "message": "配置檔案正常: ecosystem.config.js"
+    },
+    {
+      "type": "success",
+      "message": "配置檔案正常: docker-compose.yml"
+    },
+    {
+      "type": "success",
+      "message": "配置檔案正常: .env.production"
+    },
+    {
+      "type": "success",
+      "message": "配置檔案正常: nginx.conf"
+    }
+  ],
+  "codeQualityIssues": [
+    "server/services/backupService.js: 缺少錯誤處理",
+    "server/services/healthService.js: 缺少錯誤處理",
+    "server/services/cleanupService.js: 缺少錯誤處理",
+    "server/routes/api/monitoring.js: 缺少日誌記錄",
+    "server/routes/api/alerts.js: 缺少日誌記錄",
+    "server/models/Employee.js: 缺少日誌記錄",
+    "server/models/AttendanceRecord.js: 缺少日誌記錄",
+    "server/models/RevenueRecord.js: 缺少日誌記錄",
+    "server/models/Schedule.js: 缺少日誌記錄",
+    "server/models/Store.js: 缺少日誌記錄"
+  ],
+  "performanceWarnings": [],
+  "securityConcerns": [],
+  "summary": {
+    "totalVerifications": 33,
+    "successCount": 23,
+    "warningCount": 7,
+    "errorCount": 3,
+    "qualityScore": 80
+  }
+}

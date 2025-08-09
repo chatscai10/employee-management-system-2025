@@ -1,0 +1,391 @@
+{
+  "businessFlows": [
+    {
+      "name": "員工註冊與認證流程",
+      "description": "員工註冊、身份驗證、權限分配",
+      "endpoints": [
+        "/api/auth/register",
+        "/api/auth/login",
+        "/api/auth/verify"
+      ],
+      "requiredSteps": [
+        "資料驗證",
+        "身份檢查",
+        "Token生成",
+        "權限設定"
+      ],
+      "status": "partial",
+      "completeness": "50.0"
+    },
+    {
+      "name": "GPS考勤打卡流程",
+      "description": "GPS定位驗證、距離計算、考勤記錄",
+      "endpoints": [
+        "/api/attendance/clock",
+        "/api/attendance/records"
+      ],
+      "requiredSteps": [
+        "位置驗證",
+        "距離計算",
+        "時間檢查",
+        "資料存儲"
+      ],
+      "status": "partial",
+      "completeness": "50.0"
+    },
+    {
+      "name": "營收管理流程",
+      "description": "營收記錄、照片上傳、統計分析",
+      "endpoints": [
+        "/api/revenue/add",
+        "/api/revenue/records",
+        "/api/revenue/summary"
+      ],
+      "requiredSteps": [
+        "資料輸入",
+        "照片處理",
+        "計算統計",
+        "報表生成"
+      ],
+      "status": "partial",
+      "completeness": "50.0"
+    },
+    {
+      "name": "分店管理流程",
+      "description": "分店設定、人員管理、地理圍欄",
+      "endpoints": [
+        "/api/admin/stores",
+        "/api/stores/:id",
+        "/api/stores/:id/employees"
+      ],
+      "requiredSteps": [
+        "分店創建",
+        "地址設定",
+        "人員分配",
+        "權限管理"
+      ],
+      "status": "partial",
+      "completeness": "66.7"
+    },
+    {
+      "name": "排班管理流程",
+      "description": "員工排班、假期管理、班表生成",
+      "endpoints": [
+        "/api/schedule",
+        "/api/schedule/generate"
+      ],
+      "requiredSteps": [
+        "時間規劃",
+        "人力分配",
+        "假期處理",
+        "衝突檢查"
+      ],
+      "status": "partial",
+      "completeness": "50.0"
+    }
+  ],
+  "boundaryConditions": [
+    {
+      "category": "輸入驗證",
+      "conditions": [
+        "空字符串或null值處理",
+        "超長字符串處理",
+        "特殊字符處理",
+        "數字範圍驗證",
+        "日期格式驗證"
+      ],
+      "implemented": 4
+    },
+    {
+      "category": "GPS定位",
+      "conditions": [
+        "GPS信號不可用時處理",
+        "超出地理圍欄範圍",
+        "定位精度不足處理",
+        "網路中斷時的本地存儲",
+        "時區差異處理"
+      ],
+      "implemented": 3
+    },
+    {
+      "category": "檔案處理",
+      "conditions": [
+        "檔案大小限制",
+        "檔案格式驗證",
+        "磁碟空間不足處理",
+        "檔案上傳中斷處理",
+        "惡意檔案檢測"
+      ],
+      "implemented": 1
+    },
+    {
+      "category": "資料庫操作",
+      "conditions": [
+        "連接逾時處理",
+        "事務回滾機制",
+        "資料衝突處理",
+        "外鍵約束違反",
+        "查詢結果為空處理"
+      ],
+      "implemented": 3
+    },
+    {
+      "category": "用戶權限",
+      "conditions": [
+        "無權限存取處理",
+        "Token過期處理",
+        "會話超時處理",
+        "重複登入處理",
+        "密碼錯誤次數限制"
+      ],
+      "implemented": 3
+    }
+  ],
+  "errorHandling": [
+    {
+      "name": "HTTP錯誤狀態碼",
+      "description": "正確使用HTTP狀態碼回應錯誤",
+      "keywords": [
+        "400",
+        "401",
+        "403",
+        "404",
+        "500",
+        "status"
+      ],
+      "implemented": true
+    },
+    {
+      "name": "錯誤訊息標準化",
+      "description": "統一的錯誤訊息格式和結構",
+      "keywords": [
+        "error",
+        "message",
+        "code",
+        "details"
+      ],
+      "implemented": true
+    },
+    {
+      "name": "Try-Catch包裝",
+      "description": "適當的異常捕獲和處理",
+      "keywords": [
+        "try",
+        "catch",
+        "throw",
+        "finally"
+      ],
+      "implemented": true
+    },
+    {
+      "name": "日誌記錄",
+      "description": "錯誤的詳細日誌記錄",
+      "keywords": [
+        "logger",
+        "log",
+        "error",
+        "debug"
+      ],
+      "implemented": true
+    },
+    {
+      "name": "用戶友好錯誤",
+      "description": "向用戶顯示友好的錯誤訊息",
+      "keywords": [
+        "user",
+        "friendly",
+        "message",
+        "alert"
+      ],
+      "implemented": true
+    }
+  ],
+  "validationRules": [
+    {
+      "name": "員工資料驗證",
+      "fields": [
+        "姓名",
+        "身份證號",
+        "生日",
+        "電話",
+        "地址"
+      ],
+      "implemented": 4
+    },
+    {
+      "name": "考勤資料驗證",
+      "fields": [
+        "GPS座標",
+        "時間戳",
+        "距離計算",
+        "打卡類型"
+      ],
+      "implemented": 4
+    },
+    {
+      "name": "營收資料驗證",
+      "fields": [
+        "金額範圍",
+        "日期格式",
+        "照片格式",
+        "備註長度"
+      ],
+      "implemented": 3
+    },
+    {
+      "name": "分店資料驗證",
+      "fields": [
+        "分店名稱",
+        "地址",
+        "座標",
+        "營業時間"
+      ],
+      "implemented": 3
+    }
+  ],
+  "securityChecks": [
+    {
+      "name": "SQL注入防護",
+      "description": "參數化查詢和輸入清理",
+      "keywords": [
+        "parameterized",
+        "prepared",
+        "sanitize",
+        "escape"
+      ],
+      "severity": "critical",
+      "implemented": false
+    },
+    {
+      "name": "XSS防護",
+      "description": "跨站腳本攻擊防護",
+      "keywords": [
+        "xss",
+        "escape",
+        "sanitize",
+        "csp"
+      ],
+      "severity": "high",
+      "implemented": false
+    },
+    {
+      "name": "CSRF防護",
+      "description": "跨站請求偽造防護",
+      "keywords": [
+        "csrf",
+        "token",
+        "verify",
+        "header"
+      ],
+      "severity": "high",
+      "implemented": true
+    },
+    {
+      "name": "身份驗證",
+      "description": "JWT Token驗證機制",
+      "keywords": [
+        "jwt",
+        "token",
+        "authenticate",
+        "verify"
+      ],
+      "severity": "critical",
+      "implemented": true
+    },
+    {
+      "name": "權限控制",
+      "description": "角色和權限檢查",
+      "keywords": [
+        "permission",
+        "role",
+        "authorize",
+        "access"
+      ],
+      "severity": "high",
+      "implemented": false
+    },
+    {
+      "name": "密碼安全",
+      "description": "密碼加密和強度檢查",
+      "keywords": [
+        "hash",
+        "bcrypt",
+        "salt",
+        "strong"
+      ],
+      "severity": "critical",
+      "implemented": false
+    }
+  ],
+  "performanceIssues": [
+    {
+      "name": "資料庫查詢優化",
+      "description": "索引使用和查詢效率",
+      "keywords": [
+        "index",
+        "optimize",
+        "query",
+        "performance"
+      ],
+      "implemented": false
+    },
+    {
+      "name": "緩存機制",
+      "description": "數據緩存和減少重複查詢",
+      "keywords": [
+        "cache",
+        "redis",
+        "memory",
+        "store"
+      ],
+      "implemented": false
+    },
+    {
+      "name": "分頁處理",
+      "description": "大量數據的分頁載入",
+      "keywords": [
+        "limit",
+        "offset",
+        "page",
+        "pagination"
+      ],
+      "implemented": true
+    },
+    {
+      "name": "檔案處理優化",
+      "description": "圖片壓縮和檔案管理",
+      "keywords": [
+        "compress",
+        "resize",
+        "optimize",
+        "size"
+      ],
+      "implemented": false
+    },
+    {
+      "name": "連接池管理",
+      "description": "資料庫連接池配置",
+      "keywords": [
+        "pool",
+        "connection",
+        "max",
+        "min"
+      ],
+      "implemented": true
+    }
+  ],
+  "inconsistencies": [
+    {
+      "category": "錯誤處理一致性",
+      "issue": "發現 34 種不同的錯誤處理模式，建議統一化"
+    }
+  ],
+  "recommendations": [
+    "🔧 [高優先級] 完善未完整實現的業務流程",
+    "🚨 [緊急] 修復關鍵安全漏洞",
+    "⚡ [高優先級] 改善邊界條件處理",
+    "🧩 [中優先級] 修復邏輯一致性問題",
+    "📚 [低優先級] 建立業務邏輯文檔和測試用例",
+    "🔄 [低優先級] 實施持續集成和自動化測試"
+  ]
+}

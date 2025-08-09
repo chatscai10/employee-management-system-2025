@@ -1,0 +1,33 @@
+name: 🌊 DigitalOcean 部署
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: ☁️ 檢出代碼
+      uses: actions/checkout@v4
+
+    - name: 🐳 構建和推送到 DOCR
+      uses: digitalocean/action-doctl@v2
+      with:
+        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+    
+    - name: 🚀 部署到 App Platform
+      uses: digitalocean/app_action@v1.1.5
+      with:
+        app_name: employee-management-system
+        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+        images: '[
+          {
+            "name": "web",
+            "image": {
+              "registry_type": "DOCR", 
+              "repository": "${{ secrets.REGISTRY_NAME }}/employee-management-system",
+              "tag": "latest"
+            }
+          }
+        ]'

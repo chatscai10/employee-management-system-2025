@@ -11,6 +11,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 const rateLimit = require('express-rate-limit');
+const jwt = require('jsonwebtoken');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
 
@@ -32,6 +33,9 @@ const scheduleRoutes = require('./routes/api/schedule');
 const promotionRoutes = require('./routes/api/promotion');
 const maintenanceRoutes = require('./routes/api/maintenance');
 const adminRoutes = require('./routes/api/admin');
+const monitoringRoutes = require('./routes/api/monitoring');
+const alertsRoutes = require('./routes/api/alerts');
+const employeesRoutes = require('./routes/api/employees');
 
 // 載入服務
 const notificationService = require('./services/notificationService');
@@ -71,7 +75,8 @@ class EmployeeManagementServer {
             contentSecurityPolicy: {
                 directives: {
                     defaultSrc: ["'self'"],
-                    scriptSrc: ["'self'", "'unsafe-inline'"],
+                    scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-hashes'"],
+                    scriptSrcAttr: ["'unsafe-inline'"],
                     styleSrc: ["'self'", "'unsafe-inline'"],
                     imgSrc: ["'self'", "data:", "https:"],
                     connectSrc: ["'self'", "wss:", "https:"]
@@ -197,6 +202,9 @@ class EmployeeManagementServer {
         this.app.use('/api/promotion', promotionRoutes);
         this.app.use('/api/maintenance', maintenanceRoutes);
         this.app.use('/api/admin', adminRoutes);
+        this.app.use('/api/monitoring', monitoringRoutes);
+        this.app.use('/api/alerts', alertsRoutes);
+        this.app.use('/api/employees', employeesRoutes);
 
         // 主頁面路由 (重定向到登入頁面)
         this.app.get('/', (req, res) => {
@@ -206,6 +214,11 @@ class EmployeeManagementServer {
         // 登入頁面路由
         this.app.get('/login', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'login.html'));
+        });
+
+        // 註冊頁面路由
+        this.app.get('/register', (req, res) => {
+            res.sendFile(path.join(__dirname, '..', 'public', 'register.html'));
         });
 
         // 員工頁面路由
@@ -506,10 +519,13 @@ class EmployeeManagementServer {
 // 建立伺服器實例
 const server = new EmployeeManagementServer();
 
-// 啟動伺服器
-server.start().catch(error => {
-    console.error('❌ 伺服器啟動失敗:', error);
-    process.exit(1);
-});
+// 如果直接執行此檔案則啟動伺服器
+if (require.main === module) {
+    server.start().catch(error => {
+        console.error('❌ 伺服器啟動失敗:', error);
+        process.exit(1);
+    });
+}
 
-module.exports = server;
+// 導出 Express app 供測試使用
+module.exports = server.app;

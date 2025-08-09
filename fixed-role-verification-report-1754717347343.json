@@ -1,0 +1,102 @@
+{
+  "testSummary": {
+    "totalRoles": 6,
+    "successfulRoles": 0,
+    "totalScenarios": 6,
+    "successfulScenarios": 0,
+    "totalDuration": 80299,
+    "timestamp": "2025-08-09T05:30:28.088Z"
+  },
+  "roleResults": [
+    {
+      "role": "系統管理員",
+      "startTime": "2025-08-09T05:29:08.179Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "overallSuccess": false,
+      "screenshots": []
+    },
+    {
+      "role": "部門經理",
+      "startTime": "2025-08-09T05:29:21.329Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "overallSuccess": false,
+      "screenshots": []
+    },
+    {
+      "role": "正職員工",
+      "startTime": "2025-08-09T05:29:34.454Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "overallSuccess": false,
+      "screenshots": []
+    },
+    {
+      "role": "兼職人員",
+      "startTime": "2025-08-09T05:29:47.586Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "overallSuccess": false,
+      "screenshots": []
+    },
+    {
+      "role": "實習生",
+      "startTime": "2025-08-09T05:30:02.158Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "overallSuccess": false,
+      "screenshots": []
+    },
+    {
+      "role": "訪客",
+      "startTime": "2025-08-09T05:30:15.298Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "overallSuccess": false,
+      "screenshots": []
+    }
+  ],
+  "screenshots": [],
+  "systemInfo": {
+    "baseUrl": "http://localhost:3000",
+    "browserConfig": "Puppeteer Chrome",
+    "testEngine": "Fixed Comprehensive Role Verification Engine"
+  }
+}

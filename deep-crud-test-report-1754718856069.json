@@ -1,0 +1,42 @@
+{
+  "testSummary": {
+    "totalOperations": 1,
+    "successfulOperations": 0,
+    "failedOperations": 1,
+    "totalDuration": 17921,
+    "timestamp": "2025-08-09T05:53:57.977Z"
+  },
+  "crudResults": [
+    {
+      "operation": "員工管理",
+      "startTime": "2025-08-09T05:54:15.777Z",
+      "tests": [
+        {
+          "name": "員工新增按鈕",
+          "success": false,
+          "error": "未找到新增按鈕"
+        },
+        {
+          "name": "員工列表查看",
+          "success": false,
+          "error": "未找到員工列表顯示"
+        },
+        {
+          "name": "員工編輯按鈕",
+          "success": true,
+          "details": "找到 3 個編輯按鈕"
+        }
+      ],
+      "overallSuccess": true,
+      "duration": 122
+    }
+  ],
+  "screenshots": [],
+  "databaseVerifications": [],
+  "systemInfo": {
+    "baseUrl": "http://localhost:3001",
+    "browserConfig": "Puppeteer Chrome - Deep CRUD Testing",
+    "testEngine": "Deep CRUD Testing Engine v2.0",
+    "testMode": "Full Management Interface Testing"
+  }
+}

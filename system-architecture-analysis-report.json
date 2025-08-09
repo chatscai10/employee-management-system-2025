@@ -1,0 +1,230 @@
+{
+  "architecture": {
+    "frontend": {
+      "status": "needs-improvement",
+      "completeness": 92,
+      "issues": [
+        "缺少員工工作台: employee-dashboard.html"
+      ]
+    },
+    "backend": {
+      "status": "needs-improvement",
+      "completeness": 90,
+      "issues": [
+        "缺少數據模型: Employee.js, Store.js, Attendance.js, Revenue.js"
+      ]
+    },
+    "database": {
+      "status": "needs-improvement",
+      "completeness": 30,
+      "issues": [
+        "資料庫檔案不存在",
+        "缺少資料庫遷移管理",
+        "缺少種子數據管理"
+      ]
+    },
+    "infrastructure": {
+      "status": "needs-improvement",
+      "completeness": 85,
+      "issues": [
+        "缺少 Docker 配置",
+        "缺少備份腳本"
+      ]
+    }
+  },
+  "missingFeatures": [
+    {
+      "category": "authentication",
+      "missing": [
+        "session",
+        "password"
+      ],
+      "completeness": "60.0"
+    },
+    {
+      "category": "authorization",
+      "missing": [
+        "rbac",
+        "acl"
+      ],
+      "completeness": "50.0"
+    },
+    {
+      "category": "employee",
+      "missing": [
+        "crud",
+        "approval"
+      ],
+      "completeness": "50.0"
+    },
+    {
+      "category": "attendance",
+      "missing": [
+        "checkout"
+      ],
+      "completeness": "75.0"
+    },
+    {
+      "category": "revenue",
+      "missing": [
+        "recording",
+        "calculation",
+        "reports"
+      ],
+      "completeness": "25.0"
+    },
+    {
+      "category": "reporting",
+      "missing": [
+        "analytics",
+        "dashboard",
+        "charts"
+      ],
+      "completeness": "25.0"
+    },
+    {
+      "category": "notification",
+      "missing": [
+        "sms",
+        "push"
+      ],
+      "completeness": "50.0"
+    },
+    {
+      "category": "audit",
+      "missing": [
+        "compliance"
+      ],
+      "completeness": "75.0"
+    },
+    {
+      "category": "backup",
+      "missing": [
+        "recovery"
+      ],
+      "completeness": "75.0"
+    },
+    {
+      "category": "monitoring",
+      "missing": [
+        "performance",
+        "alerts",
+        "metrics"
+      ],
+      "completeness": "25.0"
+    },
+    {
+      "category": "security",
+      "missing": [
+        "csrf",
+        "xss"
+      ],
+      "completeness": "50.0"
+    },
+    {
+      "category": "deployment",
+      "missing": [
+        "docker",
+        "nginx",
+        "environment"
+      ],
+      "completeness": "25.0"
+    },
+    {
+      "category": "testing",
+      "missing": [
+        "unit",
+        "integration",
+        "performance"
+      ],
+      "completeness": "25.0"
+    },
+    {
+      "category": "documentation",
+      "missing": [
+        "technical"
+      ],
+      "completeness": "75.0"
+    }
+  ],
+  "businessLogicGaps": [
+    {
+      "process": "employeeLifecycle",
+      "missing": [
+        "onboarding"
+      ],
+      "completeness": "75.0"
+    },
+    {
+      "process": "payrollIntegration",
+      "missing": [
+        "deductions"
+      ],
+      "completeness": "75.0"
+    },
+    {
+      "process": "storeOperations",
+      "missing": [
+        "setup",
+        "reporting",
+        "analytics"
+      ],
+      "completeness": "25.0"
+    },
+    {
+      "process": "systemAdministration",
+      "missing": [
+        "configuration",
+        "monitoring"
+      ],
+      "completeness": "50.0"
+    }
+  ],
+  "technicalDebt": [
+    {
+      "type": "Code Duplication",
+      "severity": "medium",
+      "description": "部分API路由存在相似的錯誤處理邏輯",
+      "impact": "維護成本增加，一致性難保證",
+      "recommendation": "抽取共用的錯誤處理中介軟體"
+    },
+    {
+      "type": "Hard-coded Values",
+      "severity": "high",
+      "description": "業務規則硬編碼在多處（獎金計算比例等）",
+      "impact": "業務規則變更時需修改多處代碼",
+      "recommendation": "建立配置管理系統，將業務規則外部化"
+    },
+    {
+      "type": "Test Coverage",
+      "severity": "high",
+      "description": "缺乏自動化測試套件",
+      "impact": "重構風險高，難以保證代碼品質",
+      "recommendation": "建立完整的單元測試和整合測試"
+    },
+    {
+      "type": "Documentation",
+      "severity": "medium",
+      "description": "API文檔不完整，缺少業務流程說明",
+      "impact": "新開發者學習成本高，維護困難",
+      "recommendation": "補充API文檔和業務流程文檔"
+    },
+    {
+      "type": "Security",
+      "severity": "critical",
+      "description": "存在多個安全問題（上次掃描發現28個）",
+      "impact": "系統存在安全風險，可能被攻擊",
+      "recommendation": "優先修復所有安全問題，建立安全開發規範"
+    }
+  ],
+  "recommendations": [
+    "🔒 [緊急] 修復所有安全問題，實施安全開發規範",
+    "🧪 [高優先級] 建立完整的自動化測試套件",
+    "⚙️ [高優先級] 實施配置管理，外部化業務規則",
+    "📦 [中優先級] 完善基礎設施配置 (Docker, PM2, 備份)",
+    "📚 [中優先級] 補充完整的API和業務流程文檔",
+    "🔧 [中優先級] 重構重複代碼，提取共用中介軟體",
+    "🎯 [低優先級] 實現缺失的次要功能模組",
+    "📊 [低優先級] 完善監控和分析功能"
+  ]
+}

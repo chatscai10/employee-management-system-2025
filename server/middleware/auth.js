@@ -42,18 +42,17 @@ function authMiddleware(req, res, next) {
 
         // 將用戶資訊附加到請求物件
         req.user = {
-            id: decoded.userId,
+            id: decoded.id,
             name: decoded.name,
-            role: decoded.role,
-            storeId: decoded.storeId,
-            positionId: decoded.positionId
+            position: decoded.position,
+            storeId: decoded.storeId
         };
 
         // 記錄認證成功
         logger.debug('✅ 認證成功', {
-            userId: decoded.userId,
+            userId: decoded.id,
             name: decoded.name,
-            role: decoded.role,
+            position: decoded.position,
             ip: req.ip,
             userAgent: req.get('User-Agent')
         });
@@ -213,5 +212,6 @@ module.exports = {
     requireManager,
     requireOwnerOrAdmin,
     optionalAuth,
-    requireApiKey
+    requireApiKey,
+    adminMiddleware: requireAdmin  // 別名供管理員路由使用
 };

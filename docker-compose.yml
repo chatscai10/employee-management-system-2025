@@ -1,0 +1,108 @@
+# 🐳 Employee Management System - Docker Compose 配置
+
+version: '3.8'
+
+services:
+  # 主應用服務
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: employee_management_app
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env.production
+    volumes:
+      - ./uploads:/app/uploads:rw
+      - ./logs:/app/logs:rw
+      - ./database:/app/database:rw
+    depends_on:
+      - redis
+    networks:
+      - employee_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Redis 快取服務
+  redis:
+    image: redis:7-alpine
+    container_name: employee_management_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-defaultpassword123}
+    volumes:
+      - redis_data:/data
+    networks:
+      - employee_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # Nginx 反向代理
+  nginx:
+    image: nginx:alpine
+    container_name: employee_management_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - ./public:/var/www/html:ro
+    depends_on:
+      - app
+    networks:
+      - employee_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # 日誌聚合服務 (可選)
+  logrotate:
+    image: alpine:latest
+    container_name: employee_management_logrotate
+    restart: unless-stopped
+    volumes:
+      - ./logs:/var/log/app:rw
+    command: >
+      sh -c "
+        while true; do
+          find /var/log/app -name '*.log' -size +100M -exec gzip {} \;
+          find /var/log/app -name '*.gz' -mtime +30 -delete
+          sleep 86400
+        done
+      "
+    networks:
+      - employee_network
+
+# 網路配置
+networks:
+  employee_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+# 數據卷配置
+volumes:
+  redis_data:
+    driver: local
+  app_uploads:
+    driver: local
+  app_logs:
+    driver: local

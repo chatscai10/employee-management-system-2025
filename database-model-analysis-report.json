@@ -1,0 +1,1223 @@
+{
+  "tableStructure": [
+    {
+      "name": "Store",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": true
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "minPeople",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": "2",
+          "primaryKey": false
+        },
+        {
+          "name": "openTime",
+          "type": "VARCHAR(255)",
+          "notNull": false,
+          "defaultValue": "'1500-0200'",
+          "primaryKey": false
+        },
+        {
+          "name": "latitude",
+          "type": "DECIMAL(10,8)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "longitude",
+          "type": "DECIMAL(11,8)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "radius",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": "100",
+          "primaryKey": false
+        },
+        {
+          "name": "address",
+          "type": "TEXT",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        }
+      ],
+      "primaryKeys": [
+        "id"
+      ],
+      "notNullColumns": [
+        "name",
+        "latitude",
+        "longitude",
+        "address",
+        "createdAt",
+        "updatedAt"
+      ],
+      "foreignKeys": []
+    },
+    {
+      "name": "Revenue",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": true
+        },
+        {
+          "name": "employeeId",
+          "type": "INTEGER",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "storeId",
+          "type": "INTEGER",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "date",
+          "type": "DATE",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "bonusType",
+          "type": "TEXT",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "orderCount",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "income",
+          "type": "JSON",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "expense",
+          "type": "JSON",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "totalIncome",
+          "type": "DECIMAL(10,2)",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "totalExpense",
+          "type": "DECIMAL(10,2)",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "netIncome",
+          "type": "DECIMAL(10,2)",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "bonusAmount",
+          "type": "DECIMAL(10,2)",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "photos",
+          "type": "JSON",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": "'正常'",
+          "primaryKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        }
+      ],
+      "primaryKeys": [
+        "id"
+      ],
+      "notNullColumns": [
+        "employeeId",
+        "storeId",
+        "date",
+        "bonusType",
+        "createdAt",
+        "updatedAt"
+      ],
+      "foreignKeys": [
+        {
+          "from": "storeId",
+          "table": "Store",
+          "to": "id"
+        },
+        {
+          "from": "employeeId",
+          "table": "Employee",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "name": "Schedule",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": true
+        },
+        {
+          "name": "employeeId",
+          "type": "INTEGER",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "month",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "offDays",
+          "type": "JSON",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "totalOffDays",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "weekendOffDays",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": "'已提交'",
+          "primaryKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        }
+      ],
+      "primaryKeys": [
+        "id"
+      ],
+      "notNullColumns": [
+        "employeeId",
+        "month",
+        "createdAt",
+        "updatedAt"
+      ],
+      "foreignKeys": [
+        {
+          "from": "employeeId",
+          "table": "Employee",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "name": "PromotionVote",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": true
+        },
+        {
+          "name": "candidateId",
+          "type": "INTEGER",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "currentPosition",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "targetPosition",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "startDate",
+          "type": "DATETIME",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "endDate",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "totalVoters",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "agreeVotes",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "disagreeVotes",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "requiredRatio",
+          "type": "DECIMAL(3,2)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": "'進行中'",
+          "primaryKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        }
+      ],
+      "primaryKeys": [
+        "id"
+      ],
+      "notNullColumns": [
+        "candidateId",
+        "currentPosition",
+        "targetPosition",
+        "endDate",
+        "requiredRatio",
+        "createdAt",
+        "updatedAt"
+      ],
+      "foreignKeys": [
+        {
+          "from": "candidateId",
+          "table": "Employee",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "name": "Maintenance",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": true
+        },
+        {
+          "name": "employeeId",
+          "type": "INTEGER",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "storeId",
+          "type": "INTEGER",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "equipment",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "category",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "urgency",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": "'中'",
+          "primaryKey": false
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "photos",
+          "type": "JSON",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": "'待處理'",
+          "primaryKey": false
+        },
+        {
+          "name": "completedAt",
+          "type": "DATETIME",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        }
+      ],
+      "primaryKeys": [
+        "id"
+      ],
+      "notNullColumns": [
+        "employeeId",
+        "storeId",
+        "equipment",
+        "category",
+        "description",
+        "createdAt",
+        "updatedAt"
+      ],
+      "foreignKeys": [
+        {
+          "from": "storeId",
+          "table": "Store",
+          "to": "id"
+        },
+        {
+          "from": "employeeId",
+          "table": "Employee",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "name": "SystemConfig",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": true
+        },
+        {
+          "name": "configKey",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "configValue",
+          "type": "JSON",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        }
+      ],
+      "primaryKeys": [
+        "id"
+      ],
+      "notNullColumns": [
+        "configKey",
+        "configValue",
+        "createdAt",
+        "updatedAt"
+      ],
+      "foreignKeys": []
+    },
+    {
+      "name": "Employee",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": true
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "idNumber",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "birthday",
+          "type": "DATE",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "gender",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "hasLicense",
+          "type": "TINYINT(1)",
+          "notNull": false,
+          "defaultValue": "0",
+          "primaryKey": false
+        },
+        {
+          "name": "phone",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "address",
+          "type": "TEXT",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "emergencyContact",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "relationship",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "emergencyPhone",
+          "type": "VARCHAR(255)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "startDate",
+          "type": "DATE",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "storeId",
+          "type": "INTEGER",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "position",
+          "type": "VARCHAR(255)",
+          "notNull": false,
+          "defaultValue": "'實習生'",
+          "primaryKey": false
+        },
+        {
+          "name": "lineUserId",
+          "type": "VARCHAR(255)",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": "'審核中'",
+          "primaryKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        }
+      ],
+      "primaryKeys": [
+        "id"
+      ],
+      "notNullColumns": [
+        "name",
+        "idNumber",
+        "birthday",
+        "gender",
+        "phone",
+        "address",
+        "emergencyContact",
+        "relationship",
+        "emergencyPhone",
+        "startDate",
+        "storeId",
+        "createdAt",
+        "updatedAt"
+      ],
+      "foreignKeys": [
+        {
+          "from": "storeId",
+          "table": "Store",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "name": "Attendance",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": true
+        },
+        {
+          "name": "employeeId",
+          "type": "INTEGER",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "storeId",
+          "type": "INTEGER",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "clockTime",
+          "type": "DATETIME",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "clockType",
+          "type": "TEXT",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "latitude",
+          "type": "DECIMAL(10,8)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "longitude",
+          "type": "DECIMAL(11,8)",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "distance",
+          "type": "INTEGER",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "deviceFingerprint",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": "'正常'",
+          "primaryKey": false
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "createdAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "DATETIME",
+          "notNull": true,
+          "defaultValue": null,
+          "primaryKey": false
+        }
+      ],
+      "primaryKeys": [
+        "id"
+      ],
+      "notNullColumns": [
+        "employeeId",
+        "storeId",
+        "clockType",
+        "latitude",
+        "longitude",
+        "createdAt",
+        "updatedAt"
+      ],
+      "foreignKeys": [
+        {
+          "from": "storeId",
+          "table": "Store",
+          "to": "id"
+        },
+        {
+          "from": "employeeId",
+          "table": "Employee",
+          "to": "id"
+        }
+      ]
+    },
+    {
+      "name": "sqlite_sequence",
+      "columns": [
+        {
+          "name": "name",
+          "type": "",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        },
+        {
+          "name": "seq",
+          "type": "",
+          "notNull": false,
+          "defaultValue": null,
+          "primaryKey": false
+        }
+      ],
+      "primaryKeys": [],
+      "notNullColumns": [],
+      "foreignKeys": []
+    }
+  ],
+  "relationships": [],
+  "constraints": {
+    "primaryKeys": [
+      {
+        "table": "Store",
+        "columns": [
+          "id"
+        ]
+      },
+      {
+        "table": "Revenue",
+        "columns": [
+          "id"
+        ]
+      },
+      {
+        "table": "Schedule",
+        "columns": [
+          "id"
+        ]
+      },
+      {
+        "table": "PromotionVote",
+        "columns": [
+          "id"
+        ]
+      },
+      {
+        "table": "Maintenance",
+        "columns": [
+          "id"
+        ]
+      },
+      {
+        "table": "SystemConfig",
+        "columns": [
+          "id"
+        ]
+      },
+      {
+        "table": "Employee",
+        "columns": [
+          "id"
+        ]
+      },
+      {
+        "table": "Attendance",
+        "columns": [
+          "id"
+        ]
+      }
+    ],
+    "foreignKeys": [
+      {
+        "table": "Store",
+        "from": "storeId",
+        "to": "id"
+      },
+      {
+        "table": "Employee",
+        "from": "employeeId",
+        "to": "id"
+      },
+      {
+        "table": "Employee",
+        "from": "employeeId",
+        "to": "id"
+      },
+      {
+        "table": "Employee",
+        "from": "candidateId",
+        "to": "id"
+      },
+      {
+        "table": "Store",
+        "from": "storeId",
+        "to": "id"
+      },
+      {
+        "table": "Employee",
+        "from": "employeeId",
+        "to": "id"
+      },
+      {
+        "table": "Store",
+        "from": "storeId",
+        "to": "id"
+      },
+      {
+        "table": "Store",
+        "from": "storeId",
+        "to": "id"
+      },
+      {
+        "table": "Employee",
+        "from": "employeeId",
+        "to": "id"
+      }
+    ],
+    "uniqueConstraints": [],
+    "notNullConstraints": [
+      {
+        "table": "Store",
+        "columns": [
+          "name",
+          "latitude",
+          "longitude",
+          "address",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      {
+        "table": "Revenue",
+        "columns": [
+          "employeeId",
+          "storeId",
+          "date",
+          "bonusType",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      {
+        "table": "Schedule",
+        "columns": [
+          "employeeId",
+          "month",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      {
+        "table": "PromotionVote",
+        "columns": [
+          "candidateId",
+          "currentPosition",
+          "targetPosition",
+          "endDate",
+          "requiredRatio",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      {
+        "table": "Maintenance",
+        "columns": [
+          "employeeId",
+          "storeId",
+          "equipment",
+          "category",
+          "description",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      {
+        "table": "SystemConfig",
+        "columns": [
+          "configKey",
+          "configValue",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      {
+        "table": "Employee",
+        "columns": [
+          "name",
+          "idNumber",
+          "birthday",
+          "gender",
+          "phone",
+          "address",
+          "emergencyContact",
+          "relationship",
+          "emergencyPhone",
+          "startDate",
+          "storeId",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      {
+        "table": "Attendance",
+        "columns": [
+          "employeeId",
+          "storeId",
+          "clockType",
+          "latitude",
+          "longitude",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      {
+        "table": "sqlite_sequence",
+        "columns": []
+      }
+    ],
+    "checkConstraints": []
+  },
+  "dataIntegrity": [
+    {
+      "table": "Store",
+      "recordCount": 4,
+      "status": "ok"
+    },
+    {
+      "table": "Revenue",
+      "recordCount": 0,
+      "status": "ok"
+    },
+    {
+      "table": "Schedule",
+      "recordCount": 0,
+      "status": "ok"
+    },
+    {
+      "table": "PromotionVote",
+      "recordCount": 0,
+      "status": "ok"
+    },
+    {
+      "table": "Maintenance",
+      "recordCount": 0,
+      "status": "ok"
+    },
+    {
+      "table": "SystemConfig",
+      "recordCount": 3,
+      "status": "ok"
+    },
+    {
+      "table": "sqlite_sequence",
+      "recordCount": 4,
+      "status": "ok"
+    },
+    {
+      "table": "Employee",
+      "recordCount": 10,
+      "status": "ok"
+    },
+    {
+      "table": "Attendance",
+      "recordCount": 3,
+      "status": "ok"
+    }
+  ],
+  "modelFiles": [],
+  "missingRelations": [
+    {
+      "from": "Employee",
+      "to": "Store",
+      "type": "belongsTo"
+    },
+    {
+      "from": "Store",
+      "to": "Employee",
+      "type": "hasMany"
+    },
+    {
+      "from": "Employee",
+      "to": "AttendanceRecord",
+      "type": "hasMany"
+    },
+    {
+      "from": "AttendanceRecord",
+      "to": "Employee",
+      "type": "belongsTo"
+    },
+    {
+      "from": "Employee",
+      "to": "RevenueRecord",
+      "type": "hasMany"
+    },
+    {
+      "from": "RevenueRecord",
+      "to": "Employee",
+      "type": "belongsTo"
+    },
+    {
+      "from": "Store",
+      "to": "AttendanceRecord",
+      "type": "hasMany"
+    },
+    {
+      "from": "AttendanceRecord",
+      "to": "Store",
+      "type": "belongsTo"
+    },
+    {
+      "from": "Store",
+      "to": "RevenueRecord",
+      "type": "hasMany"
+    },
+    {
+      "from": "RevenueRecord",
+      "to": "Store",
+      "type": "belongsTo"
+    }
+  ],
+  "recommendations": [
+    "🔗 [高優先級] 補充缺失的模型關聯關係",
+    "🔑 [高優先級] 為所有表添加主鍵",
+    "📊 [中優先級] 添加索引提高查詢效能",
+    "🔍 [中優先級] 實施資料驗證規則",
+    "📚 [中優先級] 完善模型文檔和註釋",
+    "🧪 [低優先級] 建立資料庫測試套件",
+    "⚡ [低優先級] 優化資料庫查詢效能"
+  ]
+}

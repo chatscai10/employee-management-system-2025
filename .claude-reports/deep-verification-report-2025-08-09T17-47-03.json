@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-08-09T17:47:04.598Z",
+  "systemStatus": "ANALYZED",
+  "issues": [],
+  "fixes": [
+    "設置權限 600 for .env.production",
+    "設置權限 600 for .env.development",
+    "設置權限 600 for .env.staging",
+    "設置執行權限 for backup-system.sh",
+    "設置執行權限 for backup.sh",
+    "設置執行權限 for deploy.sh",
+    "設置執行權限 for disaster-recovery.sh",
+    "設置執行權限 for health-check.sh",
+    "設置執行權限 for monitoring-setup.sh",
+    "設置執行權限 for production-deploy.sh",
+    "設置執行權限 for restore.sh",
+    "設置執行權限 for ssl-setup.sh"
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "totalFixes": 12,
+    "overallHealth": "HEALTHY"
+  }
+}

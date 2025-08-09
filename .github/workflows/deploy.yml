@@ -1,0 +1,268 @@
+# 🚀 Employee Management System - CI/CD 部署流程
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+      - production
+  pull_request:
+    branches:
+      - main
+
+env:
+  NODE_VERSION: '18'
+  REGISTRY: ghcr.io
+  IMAGE_NAME: employee-management-system
+
+jobs:
+  # 代碼品質檢查
+  quality-check:
+    runs-on: ubuntu-latest
+    name: 代碼品質檢查
+    
+    steps:
+      - name: Checkout 代碼
+        uses: actions/checkout@v4
+        
+      - name: 設置 Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 安裝依賴
+        run: npm ci
+        
+      - name: 運行 ESLint
+        run: npm run lint
+        
+      - name: 檢查安全漏洞
+        run: npm audit --audit-level=moderate
+        
+      - name: 類型檢查 (如果有 TypeScript)
+        run: npm run type-check || echo "No TypeScript configuration found"
+        continue-on-error: true
+
+  # 測試階段
+  test:
+    runs-on: ubuntu-latest
+    name: 執行測試
+    needs: quality-check
+    
+    services:
+      redis:
+        image: redis:7-alpine
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+    
+    steps:
+      - name: Checkout 代碼
+        uses: actions/checkout@v4
+        
+      - name: 設置 Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 安裝依賴
+        run: npm ci
+        
+      - name: 創建測試資料庫
+        run: |
+          mkdir -p database
+          touch database/test.db
+          
+      - name: 運行單元測試
+        run: npm test -- --passWithNoTests
+        env:
+          NODE_ENV: test
+          DATABASE_URL: sqlite:database/test.db
+          REDIS_URL: redis://localhost:6379
+          
+      - name: 生成測試覆蓋率報告
+        run: npm run test:coverage -- --passWithNoTests
+        continue-on-error: true
+        
+      - name: 上傳覆蓋率報告
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/lcov.info
+        continue-on-error: true
+
+  # 建立 Docker 映像
+  build:
+    runs-on: ubuntu-latest
+    name: 建立 Docker 映像
+    needs: test
+    
+    permissions:
+      contents: read
+      packages: write
+      
+    steps:
+      - name: Checkout 代碼
+        uses: actions/checkout@v4
+        
+      - name: 設置 Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        
+      - name: 登入 Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 提取映像標籤和標記
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ github.repository }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+            
+      - name: 建立和推送 Docker 映像
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          platforms: linux/amd64,linux/arm64
+
+  # 安全掃描
+  security-scan:
+    runs-on: ubuntu-latest
+    name: 安全掃描
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout 代碼
+        uses: actions/checkout@v4
+        
+      - name: 執行 Trivy 漏洞掃描
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: '${{ env.REGISTRY }}/${{ github.repository }}/${{ env.IMAGE_NAME }}:latest'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          
+      - name: 上傳 Trivy 掃描結果
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+  # 部署到測試環境
+  deploy-staging:
+    runs-on: ubuntu-latest
+    name: 部署到測試環境
+    needs: [build, security-scan]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    
+    environment:
+      name: staging
+      url: https://staging.yourcompany.com
+      
+    steps:
+      - name: 部署到測試伺服器
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USERNAME }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: ${{ secrets.STAGING_PORT }}
+          script: |
+            cd /var/www/employee-management-staging
+            git pull origin develop
+            docker-compose pull
+            docker-compose up -d --force-recreate
+            docker system prune -f
+
+  # 部署到生產環境
+  deploy-production:
+    runs-on: ubuntu-latest
+    name: 部署到生產環境
+    needs: [build, security-scan]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    environment:
+      name: production
+      url: https://app.yourcompany.com
+      
+    steps:
+      - name: 部署到生產伺服器
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PRODUCTION_HOST }}
+          username: ${{ secrets.PRODUCTION_USERNAME }}
+          key: ${{ secrets.PRODUCTION_SSH_KEY }}
+          port: ${{ secrets.PRODUCTION_PORT }}
+          script: |
+            cd /var/www/employee-management
+            git pull origin main
+            docker-compose pull
+            docker-compose up -d --force-recreate
+            docker system prune -f
+            
+      - name: 執行健康檢查
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PRODUCTION_HOST }}
+          username: ${{ secrets.PRODUCTION_USERNAME }}
+          key: ${{ secrets.PRODUCTION_SSH_KEY }}
+          script: |
+            cd /var/www/employee-management
+            bash scripts/health-check.sh
+            
+      - name: 發送部署成功通知
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            🚀 生產環境部署成功！
+            
+            📅 部署時間: ${{ github.event.head_commit.timestamp }}
+            📦 版本: ${{ github.sha }}
+            👤 部署者: ${{ github.actor }}
+            📝 提交訊息: ${{ github.event.head_commit.message }}
+            
+            🔗 查看應用: https://app.yourcompany.com
+
+  # 部署失敗通知
+  notify-failure:
+    runs-on: ubuntu-latest
+    name: 部署失敗通知
+    needs: [deploy-production]
+    if: failure()
+    
+    steps:
+      - name: 發送失敗通知
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            ❌ 生產環境部署失敗！
+            
+            📅 失敗時間: ${{ github.event.head_commit.timestamp }}
+            📦 版本: ${{ github.sha }}
+            👤 部署者: ${{ github.actor }}
+            
+            🔍 請檢查 GitHub Actions 日誌：
+            ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

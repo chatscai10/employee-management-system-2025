@@ -1,0 +1,65 @@
+# 🚧 開發環境 Docker Compose 配置
+version: '3.8'
+
+services:
+  # 開發應用服務
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      args:
+        - NODE_ENV=development
+    container_name: employee_management_app_dev
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      - "9229:9229"  # Node.js 調試端口
+    environment:
+      - NODE_ENV=development
+      - DEBUG=*
+    env_file:
+      - .env.development
+    volumes:
+      - .:/app:rw
+      - /app/node_modules
+      - ./uploads:/app/uploads:rw
+      - ./logs:/app/logs:rw
+      - ./database:/app/database:rw
+    networks:
+      - employee_dev_network
+    command: npm run dev
+
+  # 開發資料庫 (SQLite 文件掛載)
+  db-dev:
+    image: alpine:latest
+    container_name: employee_management_db_dev
+    volumes:
+      - ./database:/database:rw
+    command: tail -f /dev/null
+    networks:
+      - employee_dev_network
+
+  # Redis 開發環境
+  redis-dev:
+    image: redis:7-alpine
+    container_name: employee_management_redis_dev
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    networks:
+      - employee_dev_network
+
+  # 郵件測試服務
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: employee_management_mailhog
+    ports:
+      - "1025:1025"  # SMTP
+      - "8025:8025"  # Web UI
+    networks:
+      - employee_dev_network
+
+# 開發網路配置
+networks:
+  employee_dev_network:
+    driver: bridge

@@ -1,0 +1,1340 @@
+{
+  "discoveredEndpoints": [
+    {
+      "method": "GET",
+      "path": "/api/admin/employees",
+      "description": "/",
+      "file": "admin.js",
+      "line": 22
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/employees/:id",
+      "description": "/",
+      "file": "admin.js",
+      "line": 65
+    },
+    {
+      "method": "PUT",
+      "path": "/api/admin/employees/:id",
+      "description": "/",
+      "file": "admin.js",
+      "line": 92
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/admin/employees/:id",
+      "description": "/",
+      "file": "admin.js",
+      "line": 136
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/employees/:id/approve",
+      "description": "/",
+      "file": "admin.js",
+      "line": 162
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/stores",
+      "description": "/",
+      "file": "admin.js",
+      "line": 208
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/stats",
+      "description": "/",
+      "file": "admin.js",
+      "line": 230
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/test",
+      "description": "未提供描述",
+      "file": "admin.js",
+      "line": 270
+    },
+    {
+      "method": "GET",
+      "path": "/api/attendance/store-info",
+      "description": "/",
+      "file": "attendance.js",
+      "line": 89
+    },
+    {
+      "method": "POST",
+      "path": "/api/attendance/clock",
+      "description": "/",
+      "file": "attendance.js",
+      "line": 122
+    },
+    {
+      "method": "GET",
+      "path": "/api/attendance/records",
+      "description": "/",
+      "file": "attendance.js",
+      "line": 257
+    },
+    {
+      "method": "GET",
+      "path": "/api/attendance/today-status",
+      "description": "/",
+      "file": "attendance.js",
+      "line": 307
+    },
+    {
+      "method": "GET",
+      "path": "/api/attendance/admin/records",
+      "description": "/",
+      "file": "attendance.js",
+      "line": 347
+    },
+    {
+      "method": "GET",
+      "path": "/api/attendance/test",
+      "description": "測試路由",
+      "file": "attendance.js",
+      "line": 399
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "description": "/",
+      "file": "auth.js",
+      "line": 27
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/register",
+      "description": "/",
+      "file": "auth.js",
+      "line": 89
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/verify",
+      "description": "/",
+      "file": "auth.js",
+      "line": 158
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/profile",
+      "description": "/",
+      "file": "auth.js",
+      "line": 199
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/test",
+      "description": "測試路由",
+      "file": "auth.js",
+      "line": 238
+    },
+    {
+      "method": "GET",
+      "path": "/api/maintenance/test",
+      "description": "未提供描述",
+      "file": "maintenance.js",
+      "line": 4
+    },
+    {
+      "method": "GET",
+      "path": "/api/orders/test",
+      "description": "未提供描述",
+      "file": "orders.js",
+      "line": 4
+    },
+    {
+      "method": "GET",
+      "path": "/api/promotion/test",
+      "description": "未提供描述",
+      "file": "promotion.js",
+      "line": 4
+    },
+    {
+      "method": "GET",
+      "path": "/api/revenue/config",
+      "description": "/",
+      "file": "revenue.js",
+      "line": 25
+    },
+    {
+      "method": "POST",
+      "path": "/api/revenue/add",
+      "description": "/",
+      "file": "revenue.js",
+      "line": 57
+    },
+    {
+      "method": "GET",
+      "path": "/api/revenue/records",
+      "description": "/",
+      "file": "revenue.js",
+      "line": 134
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/revenue/records/:id/cancel",
+      "description": "/",
+      "file": "revenue.js",
+      "line": 192
+    },
+    {
+      "method": "GET",
+      "path": "/api/revenue/test",
+      "description": "未提供描述",
+      "file": "revenue.js",
+      "line": 221
+    },
+    {
+      "method": "GET",
+      "path": "/api/schedule/test",
+      "description": "未提供描述",
+      "file": "schedule.js",
+      "line": 4
+    }
+  ],
+  "missingEndpoints": [
+    {
+      "category": "authentication",
+      "missing": [
+        {
+          "method": "POST",
+          "path": "/api/auth/logout",
+          "description": "用戶登出"
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/verify",
+          "description": "Token驗證"
+        },
+        {
+          "method": "POST",
+          "path": "/api/auth/refresh",
+          "description": "Token刷新"
+        },
+        {
+          "method": "POST",
+          "path": "/api/auth/forgot-password",
+          "description": "忘記密碼"
+        },
+        {
+          "method": "POST",
+          "path": "/api/auth/reset-password",
+          "description": "重置密碼"
+        }
+      ],
+      "completeness": "28.6"
+    },
+    {
+      "category": "employee",
+      "missing": [
+        {
+          "method": "GET",
+          "path": "/api/employees",
+          "description": "獲取員工列表"
+        },
+        {
+          "method": "GET",
+          "path": "/api/employees/:id",
+          "description": "獲取員工詳情"
+        },
+        {
+          "method": "POST",
+          "path": "/api/employees",
+          "description": "創建員工"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/employees/:id",
+          "description": "更新員工"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/employees/:id",
+          "description": "刪除員工"
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/employees/:id/status",
+          "description": "更新員工狀態"
+        },
+        {
+          "method": "GET",
+          "path": "/api/employees/:id/profile",
+          "description": "獲取員工檔案"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/employees/:id/profile",
+          "description": "更新員工檔案"
+        }
+      ],
+      "completeness": "0.0"
+    },
+    {
+      "category": "attendance",
+      "missing": [
+        {
+          "method": "GET",
+          "path": "/api/attendance/records/:id",
+          "description": "獲取考勤詳情"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/attendance/records/:id",
+          "description": "更新考勤記錄"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/attendance/records/:id",
+          "description": "刪除考勤記錄"
+        },
+        {
+          "method": "GET",
+          "path": "/api/attendance/summary",
+          "description": "考勤統計"
+        },
+        {
+          "method": "POST",
+          "path": "/api/attendance/correction",
+          "description": "考勤修正申請"
+        }
+      ],
+      "completeness": "37.5"
+    },
+    {
+      "category": "revenue",
+      "missing": [
+        {
+          "method": "GET",
+          "path": "/api/revenue/records/:id",
+          "description": "獲取營收詳情"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/revenue/records/:id",
+          "description": "更新營收記錄"
+        },
+        {
+          "method": "GET",
+          "path": "/api/revenue/summary",
+          "description": "營收統計"
+        },
+        {
+          "method": "GET",
+          "path": "/api/revenue/reports",
+          "description": "營收報表"
+        }
+      ],
+      "completeness": "50.0"
+    },
+    {
+      "category": "admin",
+      "missing": [
+        {
+          "method": "POST",
+          "path": "/api/admin/stores",
+          "description": "創建分店"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/stores/:id",
+          "description": "更新分店"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/admin/stores/:id",
+          "description": "刪除分店"
+        }
+      ],
+      "completeness": "66.7"
+    },
+    {
+      "category": "stores",
+      "missing": [
+        {
+          "method": "GET",
+          "path": "/api/stores",
+          "description": "獲取分店列表"
+        },
+        {
+          "method": "GET",
+          "path": "/api/stores/:id",
+          "description": "獲取分店詳情"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/stores/:id/settings",
+          "description": "更新分店設定"
+        },
+        {
+          "method": "GET",
+          "path": "/api/stores/:id/employees",
+          "description": "獲取分店員工"
+        },
+        {
+          "method": "GET",
+          "path": "/api/stores/:id/statistics",
+          "description": "獲取分店統計"
+        }
+      ],
+      "completeness": "0.0"
+    },
+    {
+      "category": "reports",
+      "missing": [
+        {
+          "method": "GET",
+          "path": "/api/reports/attendance",
+          "description": "考勤報表"
+        },
+        {
+          "method": "GET",
+          "path": "/api/reports/revenue",
+          "description": "營收報表"
+        },
+        {
+          "method": "GET",
+          "path": "/api/reports/employee",
+          "description": "員工報表"
+        },
+        {
+          "method": "GET",
+          "path": "/api/reports/dashboard",
+          "description": "儀表板數據"
+        },
+        {
+          "method": "POST",
+          "path": "/api/reports/export",
+          "description": "報表匯出"
+        }
+      ],
+      "completeness": "0.0"
+    },
+    {
+      "category": "system",
+      "missing": [
+        {
+          "method": "GET",
+          "path": "/health",
+          "description": "健康檢查"
+        },
+        {
+          "method": "GET",
+          "path": "/api/system/status",
+          "description": "系統狀態"
+        },
+        {
+          "method": "GET",
+          "path": "/api/system/config",
+          "description": "系統配置"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/system/config",
+          "description": "更新系統配置"
+        },
+        {
+          "method": "POST",
+          "path": "/api/system/backup",
+          "description": "系統備份"
+        },
+        {
+          "method": "GET",
+          "path": "/api/system/logs",
+          "description": "系統日誌"
+        }
+      ],
+      "completeness": "0.0"
+    },
+    {
+      "category": "notifications",
+      "missing": [
+        {
+          "method": "GET",
+          "path": "/api/notifications",
+          "description": "獲取通知列表"
+        },
+        {
+          "method": "POST",
+          "path": "/api/notifications",
+          "description": "發送通知"
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/notifications/:id/read",
+          "description": "標記已讀"
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/notifications/:id",
+          "description": "刪除通知"
+        },
+        {
+          "method": "GET",
+          "path": "/api/notifications/settings",
+          "description": "通知設定"
+        },
+        {
+          "method": "PUT",
+          "path": "/api/notifications/settings",
+          "description": "更新通知設定"
+        }
+      ],
+      "completeness": "0.0"
+    }
+  ],
+  "businessLogicGaps": [
+    {
+      "area": "員工生命週期管理",
+      "gaps": [
+        "缺少員工個人檔案管理API",
+        "缺少密碼重置功能",
+        "缺少員工績效評估API"
+      ]
+    },
+    {
+      "area": "考勤管理",
+      "gaps": [
+        "缺少考勤統計匯總API",
+        "缺少考勤修正申請API"
+      ]
+    },
+    {
+      "area": "營收管理",
+      "gaps": [
+        "缺少營收統計API",
+        "缺少營收報表生成API",
+        "缺少營收預測分析API"
+      ]
+    },
+    {
+      "area": "報表分析",
+      "gaps": [
+        "缺少完整的報表系統",
+        "缺少儀表板數據API",
+        "缺少數據分析API"
+      ]
+    }
+  ],
+  "apiDocumentation": {
+    "title": "企業員工管理系統 API 文檔",
+    "version": "1.0.0",
+    "baseUrl": "http://localhost:3000",
+    "categories": {
+      "管理員功能": [
+        {
+          "method": "GET",
+          "path": "/api/admin/employees",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/employees/:id",
+          "description": "/",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "string",
+              "required": true,
+              "description": "id 識別碼"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "/api/admin/employees/:id",
+          "description": "/",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "string",
+              "required": true,
+              "description": "id 識別碼"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            },
+            "400": {
+              "description": "請求參數錯誤",
+              "example": {
+                "success": false,
+                "error": "參數驗證失敗",
+                "message": "請檢查請求參數"
+              }
+            }
+          }
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/admin/employees/:id",
+          "description": "/",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "string",
+              "required": true,
+              "description": "id 識別碼"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            },
+            "400": {
+              "description": "請求參數錯誤",
+              "example": {
+                "success": false,
+                "error": "參數驗證失敗",
+                "message": "請檢查請求參數"
+              }
+            }
+          }
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/admin/employees/:id/approve",
+          "description": "/",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "string",
+              "required": true,
+              "description": "id 識別碼"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            },
+            "400": {
+              "description": "請求參數錯誤",
+              "example": {
+                "success": false,
+                "error": "參數驗證失敗",
+                "message": "請檢查請求參數"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stores",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/stats",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/admin/test",
+          "description": "未提供描述",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/attendance/admin/records",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        }
+      ],
+      "考勤管理": [
+        {
+          "method": "GET",
+          "path": "/api/attendance/store-info",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/api/attendance/clock",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            },
+            "400": {
+              "description": "請求參數錯誤",
+              "example": {
+                "success": false,
+                "error": "參數驗證失敗",
+                "message": "請檢查請求參數"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/attendance/records",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/attendance/today-status",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/attendance/test",
+          "description": "測試路由",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        }
+      ],
+      "認證管理": [
+        {
+          "method": "POST",
+          "path": "/api/auth/login",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            },
+            "400": {
+              "description": "請求參數錯誤",
+              "example": {
+                "success": false,
+                "error": "參數驗證失敗",
+                "message": "請檢查請求參數"
+              }
+            }
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/api/auth/register",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            },
+            "400": {
+              "description": "請求參數錯誤",
+              "example": {
+                "success": false,
+                "error": "參數驗證失敗",
+                "message": "請檢查請求參數"
+              }
+            }
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/api/auth/verify",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            },
+            "400": {
+              "description": "請求參數錯誤",
+              "example": {
+                "success": false,
+                "error": "參數驗證失敗",
+                "message": "請檢查請求參數"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/profile",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/test",
+          "description": "測試路由",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        }
+      ],
+      "其他": [
+        {
+          "method": "GET",
+          "path": "/api/maintenance/test",
+          "description": "未提供描述",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/orders/test",
+          "description": "未提供描述",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/promotion/test",
+          "description": "未提供描述",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/schedule/test",
+          "description": "未提供描述",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        }
+      ],
+      "營收管理": [
+        {
+          "method": "GET",
+          "path": "/api/revenue/config",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/api/revenue/add",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            },
+            "400": {
+              "description": "請求參數錯誤",
+              "example": {
+                "success": false,
+                "error": "參數驗證失敗",
+                "message": "請檢查請求參數"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/revenue/records",
+          "description": "/",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/revenue/records/:id/cancel",
+          "description": "/",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "string",
+              "required": true,
+              "description": "id 識別碼"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            },
+            "400": {
+              "description": "請求參數錯誤",
+              "example": {
+                "success": false,
+                "error": "參數驗證失敗",
+                "message": "請檢查請求參數"
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/revenue/test",
+          "description": "未提供描述",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "請求成功",
+              "example": {
+                "success": true,
+                "data": {},
+                "message": "操作成功"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "testResults": [
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/admin/employees",
+        "description": "/",
+        "file": "admin.js",
+        "line": 22
+      },
+      "success": true,
+      "statusCode": 404,
+      "responseTime": 15,
+      "response": "{\"success\":false,\"error\":\"API 端點不存在\",\"code\":\"ENDPOINT_NOT_FOUND\",\"timestamp\":\"2025-08-09T13:27:24.330Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/admin/stores",
+        "description": "/",
+        "file": "admin.js",
+        "line": 208
+      },
+      "success": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "response": "{\"success\":false,\"error\":\"API 端點不存在\",\"code\":\"ENDPOINT_NOT_FOUND\",\"timestamp\":\"2025-08-09T13:27:24.542Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/admin/stats",
+        "description": "/",
+        "file": "admin.js",
+        "line": 230
+      },
+      "success": true,
+      "statusCode": 404,
+      "responseTime": 2,
+      "response": "{\"success\":false,\"error\":\"API 端點不存在\",\"code\":\"ENDPOINT_NOT_FOUND\",\"timestamp\":\"2025-08-09T13:27:24.744Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/admin/test",
+        "description": "未提供描述",
+        "file": "admin.js",
+        "line": 270
+      },
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 2,
+      "response": "{\"success\":true,\"message\":\"管理員路由測試成功\",\"timestamp\":\"2025-08-09T13:27:24.961Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/attendance/store-info",
+        "description": "/",
+        "file": "attendance.js",
+        "line": 89
+      },
+      "success": true,
+      "statusCode": 404,
+      "responseTime": 2,
+      "response": "{\"success\":false,\"error\":\"API 端點不存在\",\"code\":\"ENDPOINT_NOT_FOUND\",\"timestamp\":\"2025-08-09T13:27:25.164Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/attendance/records",
+        "description": "/",
+        "file": "attendance.js",
+        "line": 257
+      },
+      "success": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "response": "{\"success\":false,\"error\":\"API 端點不存在\",\"code\":\"ENDPOINT_NOT_FOUND\",\"timestamp\":\"2025-08-09T13:27:25.370Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/attendance/today-status",
+        "description": "/",
+        "file": "attendance.js",
+        "line": 307
+      },
+      "success": true,
+      "statusCode": 404,
+      "responseTime": 2,
+      "response": "{\"success\":false,\"error\":\"API 端點不存在\",\"code\":\"ENDPOINT_NOT_FOUND\",\"timestamp\":\"2025-08-09T13:27:25.574Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/attendance/admin/records",
+        "description": "/",
+        "file": "attendance.js",
+        "line": 347
+      },
+      "success": true,
+      "statusCode": 404,
+      "responseTime": 2,
+      "response": "{\"success\":false,\"error\":\"API 端點不存在\",\"code\":\"ENDPOINT_NOT_FOUND\",\"timestamp\":\"2025-08-09T13:27:25.778Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/attendance/test",
+        "description": "測試路由",
+        "file": "attendance.js",
+        "line": 399
+      },
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 2,
+      "response": "{\"success\":true,\"message\":\"打卡路由測試成功\",\"user\":null,\"timestamp\":\"2025-08-09T13:27:25.980Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/auth/profile",
+        "description": "/",
+        "file": "auth.js",
+        "line": 199
+      },
+      "success": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "response": "{\"success\":false,\"error\":\"API 端點不存在\",\"code\":\"ENDPOINT_NOT_FOUND\",\"timestamp\":\"2025-08-09T13:27:26.185Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/auth/test",
+        "description": "測試路由",
+        "file": "auth.js",
+        "line": 238
+      },
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 1,
+      "response": "{\"success\":true,\"message\":\"認證路由測試成功\",\"timestamp\":\"2025-08-09T13:27:26.388Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/maintenance/test",
+        "description": "未提供描述",
+        "file": "maintenance.js",
+        "line": 4
+      },
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 1,
+      "response": "{\"success\":true,\"message\":\"維修路由測試成功\",\"timestamp\":\"2025-08-09T13:27:26.590Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/orders/test",
+        "description": "未提供描述",
+        "file": "orders.js",
+        "line": 4
+      },
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 1,
+      "response": "{\"success\":true,\"message\":\"叫貨路由測試成功\",\"timestamp\":\"2025-08-09T13:27:26.795Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/promotion/test",
+        "description": "未提供描述",
+        "file": "promotion.js",
+        "line": 4
+      },
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 2,
+      "response": "{\"success\":true,\"message\":\"升遷路由測試成功\",\"timestamp\":\"2025-08-09T13:27:27.000Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/revenue/config",
+        "description": "/",
+        "file": "revenue.js",
+        "line": 25
+      },
+      "success": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "response": "{\"success\":false,\"error\":\"API 端點不存在\",\"code\":\"ENDPOINT_NOT_FOUND\",\"timestamp\":\"2025-08-09T13:27:27.203Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/revenue/records",
+        "description": "/",
+        "file": "revenue.js",
+        "line": 134
+      },
+      "success": true,
+      "statusCode": 404,
+      "responseTime": 2,
+      "response": "{\"success\":false,\"error\":\"API 端點不存在\",\"code\":\"ENDPOINT_NOT_FOUND\",\"timestamp\":\"2025-08-09T13:27:27.407Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/revenue/test",
+        "description": "未提供描述",
+        "file": "revenue.js",
+        "line": 221
+      },
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 1,
+      "response": "{\"success\":true,\"message\":\"營收路由測試成功\",\"timestamp\":\"2025-08-09T13:27:27.612Z\"}"
+    },
+    {
+      "endpoint": {
+        "method": "GET",
+        "path": "/api/schedule/test",
+        "description": "未提供描述",
+        "file": "schedule.js",
+        "line": 4
+      },
+      "success": true,
+      "statusCode": 200,
+      "responseTime": 1,
+      "response": "{\"success\":true,\"message\":\"排班路由測試成功\",\"timestamp\":\"2025-08-09T13:27:27.814Z\"}"
+    }
+  ],
+  "recommendations": [
+    "🔧 [高優先級] 實現缺失的核心API端點",
+    "📋 [高優先級] 補充業務邏輯功能缺口",
+    "📚 [中優先級] 完善API文檔和規範",
+    "🛡️ [中優先級] 添加API認證和授權",
+    "⚡ [低優先級] 實施API版本管理",
+    "📊 [低優先級] 添加API使用統計和監控"
+  ]
+}

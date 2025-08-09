@@ -1,0 +1,129 @@
+{
+  "testSummary": {
+    "totalRoles": 6,
+    "successfulRoles": 0,
+    "totalScenarios": 6,
+    "successfulScenarios": 0,
+    "totalDuration": 86997,
+    "timestamp": "2025-08-09T05:41:01.320Z"
+  },
+  "roleResults": [
+    {
+      "role": "張管理員",
+      "roleId": "admin",
+      "startTime": "2025-08-09T05:41:01.611Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "permissions": [],
+      "overallSuccess": false,
+      "screenshots": [],
+      "duration": 12842
+    },
+    {
+      "role": "王經理",
+      "roleId": "manager",
+      "startTime": "2025-08-09T05:41:16.474Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "permissions": [],
+      "overallSuccess": false,
+      "screenshots": [],
+      "duration": 12323
+    },
+    {
+      "role": "李員工",
+      "roleId": "employee",
+      "startTime": "2025-08-09T05:41:30.819Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "permissions": [],
+      "overallSuccess": false,
+      "screenshots": [],
+      "duration": 12336
+    },
+    {
+      "role": "陳兼職",
+      "roleId": "parttime",
+      "startTime": "2025-08-09T05:41:45.172Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "permissions": [],
+      "overallSuccess": false,
+      "screenshots": [],
+      "duration": 12328
+    },
+    {
+      "role": "林實習",
+      "roleId": "trainee",
+      "startTime": "2025-08-09T05:41:59.525Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "permissions": [],
+      "overallSuccess": false,
+      "screenshots": [],
+      "duration": 12330
+    },
+    {
+      "role": "訪客用戶",
+      "roleId": "guest",
+      "startTime": "2025-08-09T05:42:13.879Z",
+      "scenarios": [
+        {
+          "name": "登入驗證",
+          "success": false,
+          "error": "登入失敗",
+          "duration": 0
+        }
+      ],
+      "permissions": [],
+      "overallSuccess": false,
+      "screenshots": [],
+      "duration": 12415
+    }
+  ],
+  "screenshots": [
+    "login-form-filled-admin.png",
+    "login-form-filled-manager.png",
+    "login-form-filled-employee.png",
+    "login-form-filled-parttime.png",
+    "login-form-filled-trainee.png",
+    "login-form-filled-guest.png"
+  ],
+  "systemInfo": {
+    "baseUrl": "http://localhost:3001",
+    "browserConfig": "Puppeteer Chrome",
+    "testEngine": "Ultimate Role Verification Engine",
+    "cspFixed": true,
+    "loginFixed": true
+  }
+}

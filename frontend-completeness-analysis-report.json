@@ -1,0 +1,271 @@
+{
+  "pageAnalysis": [
+    {
+      "fileName": "admin.html",
+      "fileSize": 27,
+      "title": "管理員後台 - 企業員工管理系統",
+      "elementCompleteness": 40,
+      "featureCompleteness": 100,
+      "responsive": true,
+      "accessibility": 38,
+      "issues": [
+        "缺少必要元素: aside, nav, main",
+        "無障礙設計不足"
+      ],
+      "missingElements": [
+        "aside",
+        "nav",
+        "main"
+      ],
+      "missingFeatures": []
+    },
+    {
+      "fileName": "index.html",
+      "fileSize": 4,
+      "title": "企業員工管理系統",
+      "elementCompleteness": 0,
+      "featureCompleteness": 33,
+      "responsive": false,
+      "accessibility": 38,
+      "issues": [
+        "缺少必要元素: header, nav, main, footer",
+        "缺少功能特性: navigation, branding",
+        "缺少響應式設計支援",
+        "無障礙設計不足"
+      ],
+      "missingElements": [
+        "header",
+        "nav",
+        "main",
+        "footer"
+      ],
+      "missingFeatures": [
+        "navigation",
+        "branding"
+      ]
+    },
+    {
+      "fileName": "login-clean.html",
+      "fileSize": 17,
+      "title": "員工登入系統",
+      "elementCompleteness": 0,
+      "featureCompleteness": 0,
+      "responsive": false,
+      "accessibility": 0,
+      "issues": [
+        "頁面不在預期清單中，可能為額外頁面"
+      ],
+      "missingElements": [],
+      "missingFeatures": []
+    },
+    {
+      "fileName": "login.html",
+      "fileSize": 16,
+      "title": "員工登入系統",
+      "elementCompleteness": 75,
+      "featureCompleteness": 50,
+      "responsive": true,
+      "accessibility": 50,
+      "issues": [
+        "缺少必要元素: input[type=\"password\"]",
+        "缺少功能特性: remember-me, forgot-password",
+        "無障礙設計不足"
+      ],
+      "missingElements": [
+        "input[type=\"password\"]"
+      ],
+      "missingFeatures": [
+        "remember-me",
+        "forgot-password"
+      ]
+    },
+    {
+      "fileName": "register.html",
+      "fileSize": 16,
+      "title": "員工註冊系統",
+      "elementCompleteness": 100,
+      "featureCompleteness": 25,
+      "responsive": true,
+      "accessibility": 50,
+      "issues": [
+        "缺少功能特性: step-wizard, file-upload, terms-agreement",
+        "無障礙設計不足"
+      ],
+      "missingElements": [],
+      "missingFeatures": [
+        "step-wizard",
+        "file-upload",
+        "terms-agreement"
+      ]
+    }
+  ],
+  "userExperience": {
+    "navigation": {
+      "score": 75,
+      "details": {
+        "breadcrumb": false,
+        "menu": true,
+        "back-button": true,
+        "search": true
+      }
+    },
+    "forms": {
+      "score": 75,
+      "details": {
+        "validation": true,
+        "error-messages": true,
+        "loading-states": true,
+        "auto-save": false
+      }
+    },
+    "feedback": {
+      "score": 100,
+      "details": {
+        "success-messages": true,
+        "error-handling": true,
+        "loading-indicators": true,
+        "confirmation": true
+      }
+    },
+    "accessibility": {
+      "score": 25,
+      "details": {
+        "alt-text": false,
+        "labels": true,
+        "keyboard-nav": false,
+        "color-contrast": false
+      }
+    },
+    "mobile": {
+      "score": 75,
+      "details": {
+        "responsive": true,
+        "touch-friendly": true,
+        "viewport": true,
+        "orientation": false
+      }
+    },
+    "performance": {
+      "score": 0,
+      "details": {
+        "loading-speed": false,
+        "image-optimization": false,
+        "caching": false,
+        "minification": false
+      }
+    }
+  },
+  "functionalGaps": [
+    {
+      "category": "核心功能",
+      "gaps": [
+        "缺少專門的考勤管理頁面",
+        "缺少營收管理頁面",
+        "缺少報表統計頁面",
+        "缺少個人資料管理頁面"
+      ]
+    },
+    {
+      "category": "技術實現",
+      "gaps": [
+        "頁面性能需要優化",
+        "無障礙設計實現不足"
+      ]
+    }
+  ],
+  "designConsistency": {
+    "colorScheme": {
+      "consistent": false,
+      "score": 0,
+      "colorCount": 50,
+      "issues": [
+        "使用過多顏色，建議建立顏色系統"
+      ]
+    },
+    "typography": {
+      "consistent": true,
+      "score": 130,
+      "fontCount": 1,
+      "issues": []
+    },
+    "layout": {
+      "consistent": true,
+      "score": 100,
+      "layoutTypes": [
+        "grid",
+        "flexbox"
+      ],
+      "issues": []
+    },
+    "components": {
+      "consistent": true,
+      "score": 100,
+      "components": {
+        "buttons": 16,
+        "forms": 5,
+        "tables": 1,
+        "cards": 4
+      },
+      "issues": []
+    },
+    "branding": {
+      "consistent": true,
+      "score": 100,
+      "elements": {
+        "logo": true,
+        "title": true,
+        "colors": true,
+        "fonts": true
+      },
+      "issues": []
+    }
+  },
+  "accessibilityIssues": [],
+  "recommendations": [
+    "🔧 [高優先級] 創建缺失的核心頁面",
+    "🎯 [高優先級] 改善用戶體驗設計",
+    "🎨 [中優先級] 統一設計風格和組件",
+    "🔍 [中優先級] 補充缺失的功能模組",
+    "📚 [中優先級] 建立前端組件庫和設計系統",
+    "⚡ [低優先級] 優化頁面載入性能",
+    "📱 [低優先級] 增強移動端用戶體驗"
+  ],
+  "missingPages": [
+    {
+      "fileName": "employee-dashboard.html",
+      "title": "員工工作台",
+      "description": "員工個人工作台",
+      "priority": "high"
+    },
+    {
+      "fileName": "attendance.html",
+      "title": "考勤管理頁面",
+      "description": "考勤打卡和記錄管理",
+      "priority": "high"
+    },
+    {
+      "fileName": "revenue.html",
+      "title": "營收管理頁面",
+      "description": "營收記錄和統計分析",
+      "priority": "medium"
+    },
+    {
+      "fileName": "profile.html",
+      "title": "個人資料頁面",
+      "description": "個人資料管理",
+      "priority": "medium"
+    },
+    {
+      "fileName": "reports.html",
+      "title": "報表頁面",
+      "description": "各類報表和統計分析",
+      "priority": "medium"
+    },
+    {
+      "fileName": "404.html",
+      "title": "錯誤頁面",
+      "description": "404錯誤頁面",
+      "priority": "low"
+    }
+  ]
+}

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>員工工作台 - 企業員工管理系統</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #f9fafb;
+        }
+        
+        .header {
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header h1 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .logout-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+        }
+        
+        .container {
+            padding: 6rem 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            background: rgba(31, 41, 55, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .card h2 {
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .action-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+        
+        .action-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+        
+        .attendance-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(17, 24, 39, 0.5);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ef4444;
+        }
+        
+        .status-indicator.active {
+            background: #10b981;
+        }
+        
+        .recent-records {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .record-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem;
+            background: rgba(17, 24, 39, 0.5);
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .record-date {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>👤 員工工作台</h1>
+            <div class="user-info">
+                <span id="employee-name">載入中...</span>
+                <span id="employee-position"></span>
+                <button class="logout-btn" onclick="logout()">登出</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="message-area"></div>
+        
+        <div class="dashboard-grid">
+            <!-- 快速操作 -->
+            <div class="card">
+                <h2>🚀 快速操作</h2>
+                <div class="quick-actions">
+                    <a href="#" class="action-btn" onclick="showClockInModal()">
+                        <span>⏰</span>
+                        <span>上下班打卡</span>
+                    </a>
+                    <a href="#" class="action-btn" onclick="showRevenueModal()">
+                        <span>💰</span>
+                        <span>營收登記</span>
+                    </a>
+                    <a href="#" class="action-btn" onclick="showScheduleModal()">
+                        <span>📅</span>
+                        <span>查看排班</span>
+                    </a>
+                    <a href="#" class="action-btn" onclick="showProfileModal()">
+                        <span>👤</span>
+                        <span>個人資料</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 考勤狀態 -->
+            <div class="card">
+                <h2>📍 今日考勤狀態</h2>
+                <div class="attendance-status">
+                    <div>
+                        <div>工作狀態</div>
+                        <div id="work-status">未打卡</div>
+                    </div>
+                    <div class="status-indicator" id="status-indicator"></div>
+                </div>
+                <div id="attendance-info">
+                    <div>上班時間: <span id="clock-in-time">--:--</span></div>
+                    <div>下班時間: <span id="clock-out-time">--:--</span></div>
+                    <div>工作時長: <span id="work-duration">0小時0分鐘</span></div>
+                </div>
+            </div>
+
+            <!-- 最近記錄 -->
+            <div class="card">
+                <h2>📊 最近考勤記錄</h2>
+                <div class="recent-records" id="recent-records">
+                    <div class="record-item">
+                        <div>載入中...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 個人統計 -->
+            <div class="card">
+                <h2>📈 個人統計</h2>
+                <div id="personal-stats">
+                    <div style="margin-bottom: 0.5rem;">本月出勤: <span id="monthly-attendance">-- 天</span></div>
+                    <div style="margin-bottom: 0.5rem;">本月營收: <span id="monthly-revenue">$ --</span></div>
+                    <div style="margin-bottom: 0.5rem;">本月獎金: <span id="monthly-bonus">$ --</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 打卡模態窗口 -->
+    <div id="clockInModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: #1f2937; padding: 2rem; border-radius: 1rem; max-width: 400px; width: 90%;">
+            <h3 style="margin-bottom: 1rem;">⏰ 上下班打卡</h3>
+            <div style="margin-bottom: 1rem;">
+                <label>打卡類型:</label>
+                <select id="clockType" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; border-radius: 0.25rem; background: #374151; color: white; border: 1px solid #4b5563;">
+                    <option value="上班">上班</option>
+                    <option value="下班">下班</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label>備註:</label>
+                <input type="text" id="clockNotes" placeholder="可選" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; border-radius: 0.25rem; background: #374151; color: white; border: 1px solid #4b5563;">
+            </div>
+            <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                <button onclick="closeModal('clockInModal')" style="background: #6b7280; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.25rem; cursor: pointer;">取消</button>
+                <button onclick="submitClockIn()" style="background: #3b82f6; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.25rem; cursor: pointer;">確認打卡</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = null;
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', async function() {
+            await checkAuth();
+            await loadUserData();
+            await loadAttendanceStatus();
+            await loadRecentRecords();
+            await loadPersonalStats();
+        });
+
+        // 檢查登入狀態
+        async function checkAuth() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '/login';
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/auth/verify', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!response.ok) throw new Error('Token verification failed');
+
+                const result = await response.json();
+                currentUser = result.data.user;
+                
+                document.getElementById('employee-name').textContent = currentUser.name;
+                document.getElementById('employee-position').textContent = currentUser.position;
+            } catch (error) {
+                console.error('Auth check failed:', error);
+                localStorage.removeItem('token');
+                window.location.href = '/login';
+            }
+        }
+
+        // 載入用戶數據
+        async function loadUserData() {
+            try {
+                // 這裡可以載入更多用戶相關數據
+                console.log('用戶數據載入完成');
+            } catch (error) {
+                console.error('載入用戶數據失敗:', error);
+            }
+        }
+
+        // 載入考勤狀態
+        async function loadAttendanceStatus() {
+            try {
+                const today = new Date().toISOString().split('T')[0];
+                const response = await fetch(`/api/attendance/records?date=${today}`, {
+                    headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    const todayRecords = result.data.records || [];
+                    
+                    if (todayRecords.length > 0) {
+                        const clockIn = todayRecords.find(r => r.clockType === '上班');
+                        const clockOut = todayRecords.find(r => r.clockType === '下班');
+                        
+                        if (clockIn) {
+                            document.getElementById('clock-in-time').textContent = 
+                                new Date(clockIn.clockTime).toLocaleTimeString('zh-TW');
+                        }
+                        
+                        if (clockOut) {
+                            document.getElementById('clock-out-time').textContent = 
+                                new Date(clockOut.clockTime).toLocaleTimeString('zh-TW');
+                            document.getElementById('work-status').textContent = '已下班';
+                        } else if (clockIn) {
+                            document.getElementById('work-status').textContent = '工作中';
+                            document.getElementById('status-indicator').classList.add('active');
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('載入考勤狀態失敗:', error);
+            }
+        }
+
+        // 載入最近記錄
+        async function loadRecentRecords() {
+            try {
+                const response = await fetch('/api/attendance/records?limit=5', {
+                    headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    const records = result.data.records || [];
+                    
+                    const container = document.getElementById('recent-records');
+                    if (records.length === 0) {
+                        container.innerHTML = '<div class="record-item"><div>暫無考勤記錄</div></div>';
+                        return;
+                    }
+                    
+                    container.innerHTML = records.map(record => `
+                        <div class="record-item">
+                            <div>
+                                <div>${record.clockType} - ${record.status}</div>
+                                <div class="record-date">${new Date(record.clockTime).toLocaleString('zh-TW')}</div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('載入最近記錄失敗:', error);
+            }
+        }
+
+        // 載入個人統計
+        async function loadPersonalStats() {
+            try {
+                // 模擬統計數據
+                document.getElementById('monthly-attendance').textContent = '22 天';
+                document.getElementById('monthly-revenue').textContent = '$ 45,000';
+                document.getElementById('monthly-bonus').textContent = '$ 8,500';
+            } catch (error) {
+                console.error('載入個人統計失敗:', error);
+            }
+        }
+
+        // 顯示打卡模態窗口
+        function showClockInModal() {
+            document.getElementById('clockInModal').style.display = 'flex';
+        }
+
+        // 關閉模態窗口
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // 提交打卡
+        async function submitClockIn() {
+            const clockType = document.getElementById('clockType').value;
+            const notes = document.getElementById('clockNotes').value;
+
+            if (!navigator.geolocation) {
+                showMessage('您的瀏覽器不支援地理定位', 'error');
+                return;
+            }
+
+            try {
+                navigator.geolocation.getCurrentPosition(async (position) => {
+                    const { latitude, longitude } = position.coords;
+
+                    const response = await fetch('/api/attendance/clock', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        },
+                        body: JSON.stringify({
+                            latitude,
+                            longitude,
+                            clockType,
+                            notes
+                        })
+                    });
+
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        showMessage(`${clockType}打卡成功！`, 'success');
+                        closeModal('clockInModal');
+                        await loadAttendanceStatus();
+                        await loadRecentRecords();
+                    } else {
+                        showMessage(result.message || '打卡失敗', 'error');
+                    }
+                }, (error) => {
+                    showMessage('無法獲取位置信息，請檢查定位設置', 'error');
+                });
+            } catch (error) {
+                console.error('打卡失敗:', error);
+                showMessage('打卡失敗，請稍後重試', 'error');
+            }
+        }
+
+        // 其他功能模態窗口
+        function showRevenueModal() {
+            showMessage('營收登記功能開發中...', 'info');
+        }
+
+        function showScheduleModal() {
+            showMessage('排班功能開發中...', 'info');
+        }
+
+        function showProfileModal() {
+            showMessage('個人資料功能開發中...', 'info');
+        }
+
+        // 顯示訊息
+        function showMessage(message, type = 'success') {
+            const messageArea = document.getElementById('message-area');
+            const className = type === 'success' ? 'success-message' : 
+                             type === 'error' ? 'error-message' : 'info-message';
+            
+            messageArea.innerHTML = `<div class="${className}" style="padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; ${
+                type === 'success' ? 'background: rgba(16, 185, 129, 0.2); color: #86efac;' :
+                type === 'error' ? 'background: rgba(239, 68, 68, 0.2); color: #fca5a5;' :
+                'background: rgba(59, 130, 246, 0.2); color: #93c5fd;'
+            }">${message}</div>`;
+            
+            setTimeout(() => {
+                messageArea.innerHTML = '';
+            }, 3000);
+        }
+
+        // 登出
+        function logout() {
+            if (confirm('確定要登出嗎？')) {
+                localStorage.removeItem('token');
+                window.location.href = '/login';
+            }
+        }
+    </script>
+</body>
+</html>

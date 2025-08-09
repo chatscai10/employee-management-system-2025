@@ -5,4 +5,24 @@ router.get('/test', (req, res) => {
     res.json({ success: true, message: '排班路由測試成功', timestamp: new Date().toISOString() });
 });
 
+
+// 排班管理端點
+router.get('/schedule', async (req, res) => {
+    try {
+        const result = await getScheduleController(req, res);
+        res.json({
+            success: true,
+            data: result,
+            message: '操作成功'
+        });
+    } catch (error) {
+        console.error('排班管理端點錯誤:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message,
+            message: '服務器內部錯誤'
+        });
+    }
+});
+
 module.exports = router;

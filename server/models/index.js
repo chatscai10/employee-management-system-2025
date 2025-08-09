@@ -46,17 +46,20 @@ const initModels = async () => {
         // 員工表
         models.Employee = sequelize.define('Employee', {
             id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+            employeeId: { type: DataTypes.STRING, allowNull: true, unique: true },
             name: { type: DataTypes.STRING, allowNull: false },
-            idNumber: { type: DataTypes.STRING, unique: true, allowNull: false },
-            birthday: { type: DataTypes.DATEONLY, allowNull: false },
-            gender: { type: DataTypes.STRING, allowNull: false },
+            email: { type: DataTypes.STRING, allowNull: true, unique: true },
+            password: { type: DataTypes.STRING, allowNull: true },
+            idNumber: { type: DataTypes.STRING, unique: true, allowNull: true },
+            birthday: { type: DataTypes.DATEONLY, allowNull: true },
+            gender: { type: DataTypes.STRING, allowNull: true },
             hasLicense: { type: DataTypes.BOOLEAN, defaultValue: false },
-            phone: { type: DataTypes.STRING, allowNull: false },
-            address: { type: DataTypes.TEXT, allowNull: false },
-            emergencyContact: { type: DataTypes.STRING, allowNull: false },
-            relationship: { type: DataTypes.STRING, allowNull: false },
-            emergencyPhone: { type: DataTypes.STRING, allowNull: false },
-            startDate: { type: DataTypes.DATEONLY, allowNull: false },
+            phone: { type: DataTypes.STRING, allowNull: true },
+            address: { type: DataTypes.TEXT, allowNull: true },
+            emergencyContact: { type: DataTypes.STRING, allowNull: true },
+            relationship: { type: DataTypes.STRING, allowNull: true },
+            emergencyPhone: { type: DataTypes.STRING, allowNull: true },
+            startDate: { type: DataTypes.DATEONLY, allowNull: true, defaultValue: DataTypes.NOW },
             storeId: { type: DataTypes.INTEGER, allowNull: false },
             position: { type: DataTypes.STRING, defaultValue: '實習生' },
             lineUserId: { type: DataTypes.STRING },
@@ -191,9 +194,10 @@ const initModels = async () => {
         models.Maintenance.belongsTo(models.Employee, { foreignKey: 'employeeId' });
         models.Maintenance.belongsTo(models.Store, { foreignKey: 'storeId' });
 
-        // 同步數據庫
-        await sequelize.sync({ force: false });
-        logger.info('✅ 數據庫表同步完成');
+        // 同步數據庫 (測試環境強制重建)
+        const forceSync = process.env.NODE_ENV === 'test' || process.env.FORCE_DB_SYNC === 'true';
+        await sequelize.sync({ force: forceSync });
+        logger.info(`✅ 數據庫表同步完成 (force: ${forceSync})`);
     }
     
     return models;
@@ -238,6 +242,34 @@ const initSeedData = async () => {
                 }
             ]);
             logger.info('✅ 預設分店資料建立完成');
+        }
+
+        // 檢查是否已有員工數據（用於測試）
+        const employeeCount = await models.Employee.count();
+        if (employeeCount === 0) {
+            const bcrypt = require('bcryptjs');
+            const hashedPassword = await bcrypt.hash('password123', 10);
+            
+            await models.Employee.create({
+                employeeId: 'EMP001',
+                name: '測試員工',
+                email: 'test@example.com',
+                password: hashedPassword,
+                idNumber: 'A123456789',
+                birthday: '1990-01-01',
+                gender: '男',
+                hasLicense: false,
+                phone: '0912345678',
+                address: '台北市信義區',
+                emergencyContact: '緊急聯絡人',
+                relationship: '父母',
+                emergencyPhone: '0987654321',
+                startDate: '2024-01-01',
+                storeId: 1,
+                position: '員工',
+                status: '在職'
+            });
+            logger.info('✅ 測試員工資料建立完成');
         }
 
         // 初始化系統配置

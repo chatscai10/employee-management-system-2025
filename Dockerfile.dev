@@ -1,0 +1,39 @@
+# 🚧 Development Dockerfile with hot reload
+FROM node:18-alpine
+
+# 安裝開發工具
+RUN apk add --no-cache \
+    sqlite \
+    curl \
+    git \
+    vim \
+    && rm -rf /var/cache/apk/*
+
+# 設置工作目錄
+WORKDIR /app
+
+# 安裝全局開發依賴
+RUN npm install -g nodemon pm2
+
+# 複製 package 文件
+COPY package*.json ./
+
+# 安裝所有依賴（包括開發依賴）
+RUN npm install
+
+# 創建開發用戶
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodeuser -u 1001
+
+# 創建目錄
+RUN mkdir -p logs uploads database && \
+    chown -R nodeuser:nodejs /app
+
+# 切換用戶
+USER nodeuser
+
+# 暴露端口
+EXPOSE 3000 9229
+
+# 開發模式啟動
+CMD ["npm", "run", "dev"]
