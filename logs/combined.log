@@ -1253,3 +1253,246 @@
 {"level":"info","message":"📊 健康檢查: http://localhost:3001/health","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
 {"level":"info","message":"🌐 環境: development","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
 {"level":"info","message":"📱 應用名稱: 企業員工管理系統","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"🚀 伺服器啟動成功!","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"📍 HTTP: http://localhost:3001","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"🔌 WebSocket: ws://localhost:3001","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"📊 健康檢查: http://localhost:3001/health","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"🌐 環境: development","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"level":"info","message":"📱 應用名稱: 企業員工管理系統","service":"employee-management","timestamp":"2025-08-09 04:59:39","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:45","version":"1.0.0"}
+{"duration":3,"ip":"::1","level":"info","message":"📤 GET /health - 200 (3ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:45","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:59:46","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":3,"ip":"::1","level":"info","message":"📤 GET / - 302 (3ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 04:59:46","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /login","service":"employee-management","timestamp":"2025-08-09 04:59:46","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":5,"ip":"::1","level":"info","message":"📤 GET /login - 200 (5ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:46","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /favicon.ico","service":"employee-management","timestamp":"2025-08-09 04:59:46","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":3,"ip":"::1","level":"info","message":"📤 GET / - 200 (3ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:46","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:59:49","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 302 (1ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 04:59:49","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:49","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:49","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/auth/test","service":"employee-management","timestamp":"2025-08-09 04:59:50","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:50","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/attendance/test","service":"employee-management","timestamp":"2025-08-09 04:59:50","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:50","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/revenue/test","service":"employee-management","timestamp":"2025-08-09 04:59:51","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:51","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/orders/test","service":"employee-management","timestamp":"2025-08-09 04:59:51","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:51","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/schedule/test","service":"employee-management","timestamp":"2025-08-09 04:59:52","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:52","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/promotion/test","service":"employee-management","timestamp":"2025-08-09 04:59:52","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:52","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/maintenance/test","service":"employee-management","timestamp":"2025-08-09 04:59:53","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/admin/test","service":"employee-management","timestamp":"2025-08-09 04:59:53","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 302 (1ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 302 (1ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 302 (1ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 302 (1ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 302 (0ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:59:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /login","service":"employee-management","timestamp":"2025-08-09 05:00:43","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":4,"ip":"::1","level":"info","message":"📤 GET /login - 200 (4ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:00:43","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /favicon.ico","service":"employee-management","timestamp":"2025-08-09 05:00:43","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 304 (1ms)","service":"employee-management","statusCode":304,"timestamp":"2025-08-09 05:00:43","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:14","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:14","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 05:13:14","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 302 (0ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 05:13:14","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /login","service":"employee-management","timestamp":"2025-08-09 05:13:14","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /login - 304 (1ms)","service":"employee-management","statusCode":304,"timestamp":"2025-08-09 05:13:14","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /favicon.ico","service":"employee-management","timestamp":"2025-08-09 05:13:14","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 304 (0ms)","service":"employee-management","statusCode":304,"timestamp":"2025-08-09 05:13:14","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 05:13:17","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 302 (1ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 05:13:17","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:18","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:18","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/auth/test","service":"employee-management","timestamp":"2025-08-09 05:13:18","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:18","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/attendance/test","service":"employee-management","timestamp":"2025-08-09 05:13:19","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:19","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/revenue/test","service":"employee-management","timestamp":"2025-08-09 05:13:19","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:19","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/orders/test","service":"employee-management","timestamp":"2025-08-09 05:13:20","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:20","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/schedule/test","service":"employee-management","timestamp":"2025-08-09 05:13:20","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:20","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/promotion/test","service":"employee-management","timestamp":"2025-08-09 05:13:21","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:21","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/maintenance/test","service":"employee-management","timestamp":"2025-08-09 05:13:21","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:21","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/admin/test","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 302 (0ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 302 (0ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 302 (0ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 302 (1ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 302 (0ms)","service":"employee-management","statusCode":302,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 05:13:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":29,"ip":"::1","level":"info","message":"📤 GET / - 200 (29ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /login.html","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /css/style.css","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /js/main.js","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/health","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 404 (1ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /nonexistent-page","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/users","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/employees","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/attendance","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/schedule","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/revenue","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/maintenance","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 404 (1ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/invalid-endpoint","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 404 (1ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"body":{"email":"test@example.com","password":"testpassword"},"ip":"::1","level":"info","message":"📥 POST /api/auth/login","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 POST / - 404 (1ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"body":{"email":"newtest@example.com","name":"Test User","password":"newpassword","role":"employee"},"ip":"::1","level":"info","message":"📥 POST /api/auth/register","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 POST / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/admin/users","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 404 (1ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/users","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 404 (1ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:53:53","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:53:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /login.html","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /css/style.css","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /js/main.js","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/health","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /nonexistent-page","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/users","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/employees","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 404 (1ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/attendance","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/schedule","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/revenue","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/maintenance","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/invalid-endpoint","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 404 (1ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"body":{"email":"test@example.com","password":"testpassword"},"ip":"::1","level":"info","message":"📥 POST /api/auth/login","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 POST / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"body":{"email":"newtest@example.com","name":"Test User","password":"newpassword","role":"employee"},"ip":"::1","level":"info","message":"📥 POST /api/auth/register","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 POST / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/admin/users","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/users","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 404 (0ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 11:54:02","userAgent":"IntelligentBrowserVerificationEngine/2.0","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 11:54:02","version":"1.0.0"}

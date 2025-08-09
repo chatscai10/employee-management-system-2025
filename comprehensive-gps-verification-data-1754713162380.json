@@ -1,0 +1,226 @@
+{
+  "timestamp": "2025-08-09T04:19:12.037Z",
+  "serverStatus": {
+    "isRunning": false,
+    "error": "Request failed with status code 404"
+  },
+  "apiRoutes": {},
+  "gpsIntegration": {
+    "scriptsLoaded": [],
+    "elementsFound": []
+  },
+  "telegramNotification": {
+    "botStatus": {
+      "connected": true,
+      "botName": "chatscai10_bot",
+      "firstName": "不早機器人"
+    },
+    "testMessage": {
+      "sent": true,
+      "messageId": 2536,
+      "timestamp": "2025-08-09T04:19:19.668Z"
+    }
+  },
+  "frontendUX": {
+    "error": "ENOENT: no such file or directory, open 'D:\\0809\\screenshots\\homepage-1754713160720.png'"
+  },
+  "deviceFingerprint": {
+    "generated": true,
+    "hash": "-6ee756e3",
+    "components": [
+      "userAgent",
+      "screen",
+      "timezone",
+      "language",
+      "platform",
+      "hardwareConcurrency",
+      "deviceMemory",
+      "canvas"
+    ],
+    "uniqueness": 115,
+    "apiTest": {
+      "status": 404,
+      "response": {
+        "success": false,
+        "error": "API 端點不存在",
+        "code": "ENDPOINT_NOT_FOUND",
+        "timestamp": "2025-08-09T04:19:21.228Z"
+      }
+    }
+  },
+  "geofencing": {
+    "tests": [
+      {
+        "location": {
+          "lat": 25.033,
+          "lng": 121.5654,
+          "name": "台北101",
+          "inGeofence": true
+        },
+        "distance": 0,
+        "inGeofence": true,
+        "allowedArea": {
+          "center": {
+            "lat": 25.033,
+            "lng": 121.5654
+          },
+          "radius": 100
+        },
+        "apiResponse": {
+          "status": 404,
+          "data": {
+            "success": false,
+            "error": "API 端點不存在",
+            "code": "ENDPOINT_NOT_FOUND",
+            "timestamp": "2025-08-09T04:19:21.233Z"
+          }
+        }
+      },
+      {
+        "location": {
+          "lat": 25.0478,
+          "lng": 121.5173,
+          "name": "中山區",
+          "inGeofence": false
+        },
+        "distance": 5108,
+        "inGeofence": false,
+        "allowedArea": {
+          "center": {
+            "lat": 25.033,
+            "lng": 121.5654
+          },
+          "radius": 100
+        },
+        "apiResponse": {
+          "status": 404,
+          "data": {
+            "success": false,
+            "error": "API 端點不存在",
+            "code": "ENDPOINT_NOT_FOUND",
+            "timestamp": "2025-08-09T04:19:21.236Z"
+          }
+        }
+      },
+      {
+        "location": {
+          "lat": 24.1477,
+          "lng": 120.6736,
+          "name": "台中",
+          "inGeofence": false
+        },
+        "distance": 133476,
+        "inGeofence": false,
+        "allowedArea": {
+          "center": {
+            "lat": 25.033,
+            "lng": 121.5654
+          },
+          "radius": 100
+        },
+        "apiResponse": {
+          "status": 404,
+          "data": {
+            "success": false,
+            "error": "API 端點不存在",
+            "code": "ENDPOINT_NOT_FOUND",
+            "timestamp": "2025-08-09T04:19:21.239Z"
+          }
+        }
+      }
+    ],
+    "accuracy": {
+      "accuracy": 100,
+      "correctPredictions": 3,
+      "totalTests": 3
+    }
+  },
+  "endToEnd": {
+    "steps": [
+      {
+        "name": "導航到登入頁面",
+        "success": true,
+        "duration": 1129,
+        "result": "企業員工管理系統"
+      },
+      {
+        "name": "設置GPS位置",
+        "success": true,
+        "duration": 1,
+        "result": "台北101位置設定"
+      },
+      {
+        "name": "測試登入流程",
+        "success": false,
+        "duration": 6,
+        "error": "找不到登入表單"
+      },
+      {
+        "name": "測試GPS打卡功能",
+        "success": true,
+        "duration": 1,
+        "result": "GPS打卡按鈕未找到"
+      },
+      {
+        "name": "檢查GPS狀態顯示",
+        "success": true,
+        "duration": 0,
+        "result": "找到1個GPS狀態元素"
+      },
+      {
+        "name": "測試錯誤處理",
+        "success": false,
+        "duration": 1,
+        "error": "this.page.waitForTimeout is not a function"
+      }
+    ],
+    "totalTime": 1138,
+    "success": false
+  },
+  "performance": {
+    "pageLoad": {
+      "domContentLoaded": 0.09999996423721313,
+      "loadComplete": 0,
+      "firstPaint": 24,
+      "firstContentfulPaint": 24,
+      "totalLoadTime": 8.700000047683716
+    },
+    "resources": {
+      "totalResources": 2,
+      "scripts": 0,
+      "images": 0,
+      "stylesheets": 0,
+      "avgLoadTime": 2.4999999701976776
+    },
+    "memory": {},
+    "performanceGrade": {
+      "score": 100,
+      "grade": "A"
+    }
+  },
+  "issues": [
+    {
+      "type": "SERVER_CONNECTION_ERROR",
+      "message": "Request failed with status code 404",
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "FRONTEND_UX_ERROR",
+      "message": "ENOENT: no such file or directory, open 'D:\\0809\\screenshots\\homepage-1754713160720.png'",
+      "severity": "MEDIUM"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "伺服器",
+      "suggestion": "檢查伺服器是否正常運行，確認埠口3001是否開啟"
+    },
+    {
+      "priority": "INFO",
+      "category": "整體",
+      "suggestion": "系統運行優秀，建議定期維護和監控"
+    }
+  ],
+  "overallScore": null
+}
