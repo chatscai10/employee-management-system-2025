@@ -55,8 +55,8 @@ class EmployeeManagementServer {
             }
         });
         
-        this.port = process.env.PORT || 3000;
-        this.host = process.env.HOST || 'localhost';
+        this.port = process.env.PORT || process.env.RAILWAY_TCP_PROXY_PORT || 3000;
+        this.host = '0.0.0.0'; // Railway需要監聽所有interface
         
         this.initializeMiddleware();
         this.initializeRoutes();

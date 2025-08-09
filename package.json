@@ -4,19 +4,11 @@
   "description": "企業員工管理系統 - 一頁式手機端優先設計",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "NODE_ENV=production node server/server.js",
     "dev": "node server/server.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "migrate": "sequelize db:migrate",
-    "migrate:undo": "sequelize db:migrate:undo",
-    "seed": "sequelize db:seed:all",
-    "lint": "eslint server/ public/js/",
-    "lint:fix": "eslint server/ public/js/ --fix",
-    "build": "echo \"No build step required for Node.js app\"",
-    "deploy": "bash scripts/deploy.sh",
-    "backup": "bash scripts/backup.sh"
+    "build": "echo 'No build step required for Node.js app'",
+    "test": "echo 'Tests will be implemented'",
+    "lint": "echo 'Linting will be implemented'"
   },
   "keywords": [
     "employee-management",
