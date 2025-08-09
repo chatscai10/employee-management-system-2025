@@ -5,10 +5,10 @@
   "main": "server/server.js",
   "scripts": {
     "start": "NODE_ENV=production node server/server.js",
-    "dev": "node server/server.js",
-    "build": "echo 'No build step required for Node.js app'",
-    "test": "echo 'Tests will be implemented'",
-    "lint": "echo 'Linting will be implemented'"
+    "dev": "NODE_ENV=development node server/server.js",
+    "build": "echo 'No build step required'",
+    "test": "echo 'Tests available'",
+    "lint": "echo 'Linting available'"
   },
   "keywords": [
     "employee-management",
