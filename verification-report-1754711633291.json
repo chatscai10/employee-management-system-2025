@@ -1,0 +1,771 @@
+{
+  "timestamp": "2025-08-09T03:53:53.182Z",
+  "systemInfo": {
+    "nodeVersion": "v20.19.2",
+    "platform": "win32",
+    "arch": "x64",
+    "memory": {
+      "rss": "48 MB",
+      "heapTotal": "5 MB",
+      "heapUsed": "5 MB",
+      "external": "2 MB"
+    },
+    "database": {
+      "exists": true,
+      "size": "60 KB",
+      "path": "D:\\0809\\database\\employee_management.db"
+    },
+    "server": {
+      "status": "Running",
+      "port": 3000,
+      "url": "http://localhost:3000"
+    }
+  },
+  "tests": [
+    {
+      "name": "主頁面",
+      "path": "/",
+      "method": "GET",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "responseTime": 46,
+      "success": true,
+      "timestamp": "2025-08-09T03:53:53.261Z",
+      "details": {
+        "statusMessage": "OK",
+        "contentLength": 4486,
+        "hasBody": true,
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "accept-ranges",
+          "cache-control",
+          "last-modified",
+          "etag",
+          "content-type",
+          "content-length",
+          "date",
+          "connection",
+          "keep-alive"
+        ],
+        "error": null,
+        "responseType": "HTML",
+        "responseData": {
+          "title": "企業員工管理系統",
+          "hasForm": false,
+          "hasScript": true,
+          "hasCSS": true
+        }
+      }
+    },
+    {
+      "name": "登入頁面",
+      "path": "/login.html",
+      "method": "GET",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "responseTime": 2,
+      "success": true,
+      "timestamp": "2025-08-09T03:53:53.263Z",
+      "details": {
+        "statusMessage": "OK",
+        "contentLength": 4486,
+        "hasBody": true,
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "accept-ranges",
+          "cache-control",
+          "last-modified",
+          "etag",
+          "content-type",
+          "content-length",
+          "date",
+          "connection",
+          "keep-alive"
+        ],
+        "error": null,
+        "responseType": "HTML",
+        "responseData": {
+          "title": "企業員工管理系統",
+          "hasForm": false,
+          "hasScript": true,
+          "hasCSS": true
+        }
+      }
+    },
+    {
+      "name": "CSS樣式表",
+      "path": "/css/style.css",
+      "method": "GET",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "responseTime": 1,
+      "success": true,
+      "timestamp": "2025-08-09T03:53:53.264Z",
+      "details": {
+        "statusMessage": "OK",
+        "contentLength": 4486,
+        "hasBody": true,
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "accept-ranges",
+          "cache-control",
+          "last-modified",
+          "etag",
+          "content-type",
+          "content-length",
+          "date",
+          "connection",
+          "keep-alive"
+        ],
+        "error": null,
+        "responseType": "HTML",
+        "responseData": {
+          "title": "企業員工管理系統",
+          "hasForm": false,
+          "hasScript": true,
+          "hasCSS": true
+        }
+      }
+    },
+    {
+      "name": "JavaScript腳本",
+      "path": "/js/main.js",
+      "method": "GET",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "responseTime": 2,
+      "success": true,
+      "timestamp": "2025-08-09T03:53:53.266Z",
+      "details": {
+        "statusMessage": "OK",
+        "contentLength": 4486,
+        "hasBody": true,
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "accept-ranges",
+          "cache-control",
+          "last-modified",
+          "etag",
+          "content-type",
+          "content-length",
+          "date",
+          "connection",
+          "keep-alive"
+        ],
+        "error": null,
+        "responseType": "HTML",
+        "responseData": {
+          "title": "企業員工管理系統",
+          "hasForm": false,
+          "hasScript": true,
+          "hasCSS": true
+        }
+      }
+    },
+    {
+      "name": "API健康檢查",
+      "path": "/api/health",
+      "method": "GET",
+      "expectedStatus": 200,
+      "actualStatus": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.267Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "hasBody": true,
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "ratelimit-policy",
+          "ratelimit-limit",
+          "ratelimit-remaining",
+          "ratelimit-reset",
+          "content-type",
+          "content-length",
+          "etag",
+          "date",
+          "connection",
+          "keep-alive"
+        ],
+        "error": null,
+        "failureReason": "Expected 200, got 404",
+        "responseType": "JSON",
+        "responseData": [
+          "success",
+          "error",
+          "code",
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "name": "不存在頁面 (404測試)",
+      "path": "/nonexistent-page",
+      "method": "GET",
+      "expectedStatus": 404,
+      "actualStatus": 200,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.268Z",
+      "details": {
+        "statusMessage": "OK",
+        "contentLength": 4486,
+        "hasBody": true,
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "accept-ranges",
+          "cache-control",
+          "last-modified",
+          "etag",
+          "content-type",
+          "content-length",
+          "date",
+          "connection",
+          "keep-alive"
+        ],
+        "error": null,
+        "failureReason": "Expected 404, got 200",
+        "responseType": "HTML",
+        "responseData": {
+          "title": "企業員工管理系統",
+          "hasForm": false,
+          "hasScript": true,
+          "hasCSS": true
+        }
+      }
+    },
+    {
+      "name": "API根路徑",
+      "path": "/api",
+      "method": "GET",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "responseTime": 1,
+      "success": true,
+      "timestamp": "2025-08-09T03:53:53.270Z",
+      "details": {
+        "statusMessage": "OK",
+        "contentLength": 4486,
+        "error": null
+      }
+    },
+    {
+      "name": "獲取用戶列表",
+      "path": "/api/users",
+      "method": "GET",
+      "expectedStatus": [
+        200,
+        401
+      ],
+      "actualStatus": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.271Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "error": null
+      }
+    },
+    {
+      "name": "員工API",
+      "path": "/api/employees",
+      "method": "GET",
+      "expectedStatus": [
+        200,
+        401
+      ],
+      "actualStatus": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.272Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "error": null
+      }
+    },
+    {
+      "name": "出勤API",
+      "path": "/api/attendance",
+      "method": "GET",
+      "expectedStatus": [
+        200,
+        401
+      ],
+      "actualStatus": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.273Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "error": null
+      }
+    },
+    {
+      "name": "排程API",
+      "path": "/api/schedule",
+      "method": "GET",
+      "expectedStatus": [
+        200,
+        401
+      ],
+      "actualStatus": 404,
+      "responseTime": 0,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.274Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "error": null
+      }
+    },
+    {
+      "name": "營收API",
+      "path": "/api/revenue",
+      "method": "GET",
+      "expectedStatus": [
+        200,
+        401
+      ],
+      "actualStatus": 404,
+      "responseTime": 0,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.274Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "error": null
+      }
+    },
+    {
+      "name": "維修API",
+      "path": "/api/maintenance",
+      "method": "GET",
+      "expectedStatus": [
+        200,
+        401
+      ],
+      "actualStatus": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.275Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "error": null
+      }
+    },
+    {
+      "name": "無效API端點",
+      "path": "/api/invalid-endpoint",
+      "method": "GET",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "responseTime": 1,
+      "success": true,
+      "timestamp": "2025-08-09T03:53:53.276Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "error": null
+      }
+    },
+    {
+      "name": "登入API (無效憑證)",
+      "path": "/api/auth/login",
+      "method": "POST",
+      "expectedStatus": [
+        400,
+        401,
+        422
+      ],
+      "actualStatus": 404,
+      "responseTime": 2,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.278Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "hasBody": true,
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "ratelimit-policy",
+          "ratelimit-limit",
+          "ratelimit-remaining",
+          "ratelimit-reset",
+          "x-ratelimit-limit",
+          "x-ratelimit-remaining",
+          "date",
+          "x-ratelimit-reset",
+          "content-type",
+          "content-length",
+          "etag",
+          "connection",
+          "keep-alive"
+        ],
+        "error": null,
+        "failureReason": "Expected 400,401,422, got 404",
+        "responseType": "JSON",
+        "responseData": [
+          "success",
+          "error",
+          "code",
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "name": "註冊API",
+      "path": "/api/auth/register",
+      "method": "POST",
+      "expectedStatus": [
+        200,
+        201,
+        400,
+        409
+      ],
+      "actualStatus": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.280Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "hasBody": true,
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "ratelimit-policy",
+          "ratelimit-limit",
+          "ratelimit-remaining",
+          "ratelimit-reset",
+          "content-type",
+          "content-length",
+          "etag",
+          "date",
+          "connection",
+          "keep-alive"
+        ],
+        "error": null,
+        "failureReason": "Expected 200,201,400,409, got 404",
+        "responseType": "JSON",
+        "responseData": [
+          "success",
+          "error",
+          "code",
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "name": "未授權管理員訪問",
+      "path": "/api/admin/users",
+      "method": "GET",
+      "expectedStatus": [
+        401,
+        403
+      ],
+      "actualStatus": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-09T03:53:53.281Z",
+      "details": {
+        "statusMessage": "Not Found",
+        "contentLength": 104,
+        "hasBody": true,
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "ratelimit-policy",
+          "ratelimit-limit",
+          "ratelimit-remaining",
+          "ratelimit-reset",
+          "content-type",
+          "content-length",
+          "etag",
+          "date",
+          "connection",
+          "keep-alive"
+        ],
+        "error": null,
+        "failureReason": "Expected 401,403, got 404",
+        "responseType": "JSON",
+        "responseData": [
+          "success",
+          "error",
+          "code",
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "name": "數據庫連接性檢查",
+      "success": true,
+      "details": {
+        "size": 61440,
+        "readable": true,
+        "lastModified": "2025-08-08T20:49:47.071Z"
+      }
+    },
+    {
+      "name": "HTTP頭安全檢查",
+      "path": "/",
+      "success": true,
+      "details": {
+        "securityScore": 40,
+        "maxScore": 40,
+        "findings": [],
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "accept-ranges",
+          "cache-control",
+          "last-modified",
+          "etag",
+          "content-type",
+          "content-length",
+          "date",
+          "connection",
+          "keep-alive"
+        ]
+      }
+    },
+    {
+      "name": "CORS策略檢查",
+      "path": "/api",
+      "success": true,
+      "details": {
+        "securityScore": 40,
+        "maxScore": 40,
+        "findings": [],
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "ratelimit-policy",
+          "ratelimit-limit",
+          "ratelimit-remaining",
+          "ratelimit-reset",
+          "accept-ranges",
+          "cache-control",
+          "last-modified",
+          "etag",
+          "content-type",
+          "content-length",
+          "date",
+          "connection",
+          "keep-alive"
+        ]
+      }
+    },
+    {
+      "name": "SQL注入防護 (基礎)",
+      "path": "/api/users?id=1' OR '1'='1",
+      "success": true,
+      "details": {
+        "securityScore": 40,
+        "maxScore": 40,
+        "findings": [],
+        "headers": [
+          "content-security-policy",
+          "cross-origin-opener-policy",
+          "cross-origin-resource-policy",
+          "origin-agent-cluster",
+          "referrer-policy",
+          "strict-transport-security",
+          "x-content-type-options",
+          "x-dns-prefetch-control",
+          "x-download-options",
+          "x-frame-options",
+          "x-permitted-cross-domain-policies",
+          "x-xss-protection",
+          "access-control-allow-origin",
+          "vary",
+          "access-control-allow-credentials",
+          "ratelimit-policy",
+          "ratelimit-limit",
+          "ratelimit-remaining",
+          "ratelimit-reset",
+          "content-type",
+          "content-length",
+          "etag",
+          "date",
+          "connection",
+          "keep-alive"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total": 21,
+    "passed": 10,
+    "failed": 11,
+    "warnings": 0,
+    "successRate": 48,
+    "avgResponseTime": 1
+  },
+  "performance": {
+    "iterations": 5,
+    "responseTimeMs": {
+      "average": 1,
+      "minimum": 1,
+      "maximum": 1,
+      "variance": 0
+    },
+    "rating": "優秀"
+  },
+  "recommendations": [],
+  "error": "Cannot read properties of undefined (reading 'startsWith')"
+}

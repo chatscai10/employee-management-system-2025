@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>員工登入系統</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .container { 
+            background: white; 
+            padding: 2rem; 
+            border-radius: 1rem; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            max-width: 400px; 
+            width: 100%; 
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .logo h1 {
+            color: #1f2937;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo p {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            background: #f3f4f6;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 0.75rem;
+            text-align: center;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .tab.active {
+            background: white;
+            color: #3b82f6;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tab:not(.active) {
+            color: #6b7280;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        .required {
+            color: #ef4444;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            ring: 2px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 0.875rem;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background: #2563eb;
+        }
+        
+        .btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .alert {
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .alert-success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .alert-error {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+        
+        .form-section {
+            display: none;
+        }
+        
+        .form-section.active {
+            display: block;
+        }
+        
+        .row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .col {
+            flex: 1;
+        }
+        
+        @media (max-width: 640px) {
+            .row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>🏢 員工管理系統</h1>
+            <p>歡迎使用企業員工管理系統</p>
+        </div>
+        
+        <!-- 切換標籤 -->
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('login')">登入</div>
+            <div class="tab" onclick="switchTab('register')">註冊</div>
+        </div>
+        
+        <!-- 訊息顯示區 -->
+        <div id="message"></div>
+        
+        <!-- 登入表單 -->
+        <div id="login-form" class="form-section active">
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-name">姓名 <span class="required">*</span></label>
+                    <input type="text" id="login-name" name="name" required placeholder="請輸入您的姓名">
+                </div>
+                
+                <div class="form-group">
+                    <label for="login-id">身分證號碼 <span class="required">*</span></label>
+                    <input type="text" id="login-id" name="idNumber" required placeholder="請輸入身分證號碼" maxlength="10">
+                </div>
+                
+                <button type="submit" class="btn" id="login-btn">
+                    <span id="login-text">登入</span>
+                    <span id="login-loading" class="loading" style="display: none;"></span>
+                </button>
+            </form>
+        </div>
+        
+        <!-- 註冊表單 -->
+        <div id="register-form" class="form-section">
+            <form onsubmit="handleRegister(event)">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="reg-name">姓名 <span class="required">*</span></label>
+                            <input type="text" id="reg-name" name="name" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="reg-id">身分證號碼 <span class="required">*</span></label>
+                            <input type="text" id="reg-id" name="idNumber" required maxlength="10">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="reg-birthday">出生日期 <span class="required">*</span></label>
+                            <input type="date" id="reg-birthday" name="birthday" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="reg-gender">性別 <span class="required">*</span></label>
+                            <select id="reg-gender" name="gender" required>
+                                <option value="">請選擇</option>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-license">持有駕照</label>
+                    <select id="reg-license" name="hasLicense">
+                        <option value="false">無</option>
+                        <option value="true">有</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-phone">聯絡電話 <span class="required">*</span></label>
+                    <input type="tel" id="reg-phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-address">聯絡地址 <span class="required">*</span></label>
+                    <input type="text" id="reg-address" name="address" required>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="reg-emergency">緊急聯絡人 <span class="required">*</span></label>
+                            <input type="text" id="reg-emergency" name="emergencyContact" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="reg-relationship">關係 <span class="required">*</span></label>
+                            <select id="reg-relationship" name="relationship" required>
+                                <option value="">請選擇</option>
+                                <option value="父親">父親</option>
+                                <option value="母親">母親</option>
+                                <option value="配偶">配偶</option>
+                                <option value="兄弟">兄弟</option>
+                                <option value="姊妹">姊妹</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="reg-emergency-phone">緊急聯絡電話 <span class="required">*</span></label>
+                            <input type="tel" id="reg-emergency-phone" name="emergencyPhone" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="reg-start">到職日 <span class="required">*</span></label>
+                            <input type="date" id="reg-start" name="startDate" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn" id="register-btn">
+                    <span id="register-text">註冊</span>
+                    <span id="register-loading" class="loading" style="display: none;"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 切換標籤
+        function switchTab(tab) {
+            // 更新標籤樣式
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // 切換表單
+            document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+            document.getElementById(tab + '-form').classList.add('active');
+            
+            // 清空訊息
+            document.getElementById('message').innerHTML = '';
+        }
+
+        // 顯示訊息
+        function showMessage(message, type = 'error') {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        }
+
+        // 設置按鈕載入狀態
+        function setButtonLoading(btnId, textId, loadingId, loading) {
+            const btn = document.getElementById(btnId);
+            const text = document.getElementById(textId);
+            const loadingSpinner = document.getElementById(loadingId);
+            
+            if (loading) {
+                btn.disabled = true;
+                text.style.display = 'none';
+                loadingSpinner.style.display = 'inline-block';
+            } else {
+                btn.disabled = false;
+                text.style.display = 'inline';
+                loadingSpinner.style.display = 'none';
+            }
+        }
+
+        // 處理登入
+        async function handleLogin(event) {
+            event.preventDefault();
+            setButtonLoading('login-btn', 'login-text', 'login-loading', true);
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // 保存Token
+                    localStorage.setItem('token', result.data.token);
+                    localStorage.setItem('user', JSON.stringify(result.data.user));
+                    
+                    showMessage('登入成功！正在跳轉...', 'success');
+                    
+                    // 根據職位跳轉
+                    setTimeout(() => {
+                        if (result.data.user.position === '管理員') {
+                            window.location.href = '/admin';
+                        } else {
+                            window.location.href = '/employee';
+                        }
+                    }, 1500);
+                } else {
+                    showMessage(result.message);
+                }
+            } catch (error) {
+                showMessage('登入失敗，請檢查網路連接');
+            } finally {
+                setButtonLoading('login-btn', 'login-text', 'login-loading', false);
+            }
+        }
+
+        // 處理註冊
+        async function handleRegister(event) {
+            event.preventDefault();
+            setButtonLoading('register-btn', 'register-text', 'register-loading', true);
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // 轉換布林值
+            data.hasLicense = data.hasLicense === 'true';
+            
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showMessage('註冊成功！請等待管理員審核', 'success');
+                    event.target.reset();
+                    setTimeout(() => switchTab('login'), 2000);
+                } else {
+                    showMessage(result.message);
+                }
+            } catch (error) {
+                showMessage('註冊失敗，請檢查網路連接');
+            } finally {
+                setButtonLoading('register-btn', 'register-text', 'register-loading', false);
+            }
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 檢查是否已登入
+            const token = localStorage.getItem('token');
+            if (token) {
+                // 驗證Token
+                fetch('/api/auth/verify', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        const user = result.data.user;
+                        if (user.position === '管理員') {
+                            window.location.href = '/admin';
+                        } else {
+                            window.location.href = '/employee';
+                        }
+                    }
+                });
+            }
+            
+            // 設置預設日期
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('reg-start').value = today;
+        });
+    </script>
+</body>
+</html>

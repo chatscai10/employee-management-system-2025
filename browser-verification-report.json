@@ -1,0 +1,251 @@
+{
+  "startTime": "2025-08-08T21:13:14.443Z",
+  "tests": [
+    {
+      "name": "伺服器健康檢查",
+      "status": "passed",
+      "details": {
+        "statusCode": 200,
+        "uptime": 815.379905,
+        "memory": {
+          "rss": 70909952,
+          "heapTotal": 21307392,
+          "heapUsed": 19128888,
+          "external": 2339288,
+          "arrayBuffers": 58135
+        }
+      },
+      "timestamp": "2025-08-08T21:13:14.463Z"
+    },
+    {
+      "name": "瀏覽器啟動",
+      "status": "passed",
+      "details": {
+        "command": "start chrome",
+        "url": "http://localhost:3001"
+      },
+      "timestamp": "2025-08-08T21:13:14.516Z"
+    },
+    {
+      "name": "主頁載入測試",
+      "status": "failed",
+      "details": {
+        "statusCode": 302,
+        "duration": 1,
+        "responseSize": 28,
+        "error": "回應內容不包含預期文字: 企業員工管理系統"
+      },
+      "timestamp": "2025-08-08T21:13:17.519Z"
+    },
+    {
+      "name": "健康檢查API測試",
+      "status": "passed",
+      "details": {
+        "statusCode": 200,
+        "duration": 1,
+        "responseSize": 287,
+        "jsonValid": true,
+        "response": {
+          "success": true,
+          "message": "系統運行正常",
+          "timestamp": "2025-08-08T21:13:18.022Z",
+          "data": {
+            "status": "healthy",
+            "timestamp": "2025-08-08T21:13:18.022Z",
+            "uptime": 818.9411906,
+            "memory": {
+              "rss": 71569408,
+              "heapTotal": 21307392,
+              "heapUsed": 19649344,
+              "external": 2339288,
+              "arrayBuffers": 58135
+            },
+            "version": "1.0.0"
+          }
+        }
+      },
+      "timestamp": "2025-08-08T21:13:18.022Z"
+    },
+    {
+      "name": "認證路由測試",
+      "status": "passed",
+      "details": {
+        "statusCode": 200,
+        "duration": 2,
+        "responseSize": 76,
+        "jsonValid": true,
+        "response": {
+          "success": true,
+          "message": "認證路由測試成功",
+          "timestamp": "2025-08-08T21:13:18.526Z"
+        }
+      },
+      "timestamp": "2025-08-08T21:13:18.526Z"
+    },
+    {
+      "name": "打卡路由測試",
+      "status": "passed",
+      "details": {
+        "statusCode": 200,
+        "duration": 2,
+        "responseSize": 88,
+        "jsonValid": true,
+        "response": {
+          "success": true,
+          "message": "打卡路由測試成功",
+          "user": null,
+          "timestamp": "2025-08-08T21:13:19.030Z"
+        }
+      },
+      "timestamp": "2025-08-08T21:13:19.030Z"
+    },
+    {
+      "name": "營收路由測試",
+      "status": "passed",
+      "details": {
+        "statusCode": 200,
+        "duration": 2,
+        "responseSize": 76,
+        "jsonValid": true,
+        "response": {
+          "success": true,
+          "message": "營收路由測試成功",
+          "timestamp": "2025-08-08T21:13:19.535Z"
+        }
+      },
+      "timestamp": "2025-08-08T21:13:19.535Z"
+    },
+    {
+      "name": "叫貨路由測試",
+      "status": "passed",
+      "details": {
+        "statusCode": 200,
+        "duration": 2,
+        "responseSize": 76,
+        "jsonValid": true,
+        "response": {
+          "success": true,
+          "message": "叫貨路由測試成功",
+          "timestamp": "2025-08-08T21:13:20.052Z"
+        }
+      },
+      "timestamp": "2025-08-08T21:13:20.052Z"
+    },
+    {
+      "name": "排班路由測試",
+      "status": "passed",
+      "details": {
+        "statusCode": 200,
+        "duration": 2,
+        "responseSize": 76,
+        "jsonValid": true,
+        "response": {
+          "success": true,
+          "message": "排班路由測試成功",
+          "timestamp": "2025-08-08T21:13:20.569Z"
+        }
+      },
+      "timestamp": "2025-08-08T21:13:20.569Z"
+    },
+    {
+      "name": "升遷路由測試",
+      "status": "passed",
+      "details": {
+        "statusCode": 200,
+        "duration": 2,
+        "responseSize": 76,
+        "jsonValid": true,
+        "response": {
+          "success": true,
+          "message": "升遷路由測試成功",
+          "timestamp": "2025-08-08T21:13:21.074Z"
+        }
+      },
+      "timestamp": "2025-08-08T21:13:21.073Z"
+    },
+    {
+      "name": "維修路由測試",
+      "status": "passed",
+      "details": {
+        "statusCode": 200,
+        "duration": 2,
+        "responseSize": 76,
+        "jsonValid": true,
+        "response": {
+          "success": true,
+          "message": "維修路由測試成功",
+          "timestamp": "2025-08-08T21:13:21.577Z"
+        }
+      },
+      "timestamp": "2025-08-08T21:13:21.577Z"
+    },
+    {
+      "name": "管理員路由測試",
+      "status": "passed",
+      "details": {
+        "statusCode": 200,
+        "duration": 2,
+        "responseSize": 77,
+        "jsonValid": true,
+        "response": {
+          "success": true,
+          "message": "管理員路由測試成功",
+          "timestamp": "2025-08-08T21:13:22.092Z"
+        }
+      },
+      "timestamp": "2025-08-08T21:13:22.092Z"
+    },
+    {
+      "name": "主頁載入速度測試 - 效能",
+      "status": "passed",
+      "details": {
+        "iterations": 5,
+        "averageTime": 1.2,
+        "minTime": 1,
+        "maxTime": 2,
+        "grade": "excellent",
+        "allTimes": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "timestamp": "2025-08-08T21:13:22.600Z"
+    },
+    {
+      "name": "API回應速度測試 - 效能",
+      "status": "passed",
+      "details": {
+        "iterations": 10,
+        "averageTime": 0.9,
+        "minTime": 0,
+        "maxTime": 1,
+        "grade": "excellent",
+        "allTimes": [
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "timestamp": "2025-08-08T21:13:22.609Z"
+    }
+  ],
+  "summary": {
+    "total": 14,
+    "passed": 13,
+    "failed": 1,
+    "warnings": 0,
+    "successRate": 92.9
+  },
+  "endTime": "2025-08-08T21:13:22.609Z",
+  "duration": 8166
+}

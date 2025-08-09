@@ -1,0 +1,1255 @@
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:28:16","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:28:19","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:28:19","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:28:19","version":"1.0.0"}
+{"level":"info","message":"🚀 伺服器啟動成功!","service":"employee-management","timestamp":"2025-08-09 04:28:19","version":"1.0.0"}
+{"level":"info","message":"📍 HTTP: http://localhost:3000","service":"employee-management","timestamp":"2025-08-09 04:28:19","version":"1.0.0"}
+{"level":"info","message":"🔌 WebSocket: ws://localhost:3000","service":"employee-management","timestamp":"2025-08-09 04:28:19","version":"1.0.0"}
+{"level":"info","message":"📊 健康檢查: http://localhost:3000/health","service":"employee-management","timestamp":"2025-08-09 04:28:19","version":"1.0.0"}
+{"level":"info","message":"🌐 環境: development","service":"employee-management","timestamp":"2025-08-09 04:28:19","version":"1.0.0"}
+{"level":"info","message":"📱 應用名稱: 企業員工管理系統","service":"employee-management","timestamp":"2025-08-09 04:28:19","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"🚀 伺服器啟動成功!","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"📍 HTTP: http://localhost:3000","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"🔌 WebSocket: ws://localhost:3000","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"📊 健康檢查: http://localhost:3000/health","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"🌐 環境: development","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"level":"info","message":"📱 應用名稱: 企業員工管理系統","service":"employee-management","timestamp":"2025-08-09 04:28:46","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:28:51","userAgent":"curl/8.14.1","version":"1.0.0"}
+{"duration":4,"ip":"::1","level":"info","message":"📤 GET /health - 200 (4ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:28:51","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:32:40","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:48","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:48","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:32:48","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":9,"ip":"::1","level":"info","message":"📤 GET / - 200 (9ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:48","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:48","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:48","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /favicon.ico","service":"employee-management","timestamp":"2025-08-09 04:32:48","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":2,"ip":"::1","level":"info","message":"📤 GET / - 200 (2ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:48","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:32:51","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:51","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:51","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:51","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/auth/test","service":"employee-management","timestamp":"2025-08-09 04:32:52","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:52","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/attendance/test","service":"employee-management","timestamp":"2025-08-09 04:32:52","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:52","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/revenue/test","service":"employee-management","timestamp":"2025-08-09 04:32:53","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/orders/test","service":"employee-management","timestamp":"2025-08-09 04:32:53","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:53","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/schedule/test","service":"employee-management","timestamp":"2025-08-09 04:32:54","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/promotion/test","service":"employee-management","timestamp":"2025-08-09 04:32:54","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:54","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/maintenance/test","service":"employee-management","timestamp":"2025-08-09 04:32:55","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:55","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/admin/test","service":"employee-management","timestamp":"2025-08-09 04:32:55","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:55","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":2,"ip":"::1","level":"info","message":"📤 GET / - 200 (2ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:32:56","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:37:10","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:37:13","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:37:13","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:37:13","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:37:13\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:37:13","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:37:18\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:37:18","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:37:22\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:37:22","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:37:27\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:37:27","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:37:31\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:37:31","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:37:36\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:37:36","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:37:40","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:37:41","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:37:41","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:37:41","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:37:41\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:37:41","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:37:45\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:37:45","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:37:50\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:37:50","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:37:54\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:37:54","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:01\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:01","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:06\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:06","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:07","userAgent":"curl/8.14.1","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:07","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:10\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:10","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:39:11","userAgent":"curl/8.14.1","version":"1.0.0"}
+{"duration":2,"ip":"::1","level":"info","message":"📤 GET / - 200 (2ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:11","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:15\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:15","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:16","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:16","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:39:16","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 304 (1ms)","service":"employee-management","statusCode":304,"timestamp":"2025-08-09 04:39:16","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:16","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:16","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /favicon.ico","service":"employee-management","timestamp":"2025-08-09 04:39:17","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 304 (1ms)","service":"employee-management","statusCode":304,"timestamp":"2025-08-09 04:39:17","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"duration":2,"ip":"::1","level":"info","message":"📤 GET / - 200 (2ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:19","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:20","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:20","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:20","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:20\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:20","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:20","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:20","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/auth/test","service":"employee-management","timestamp":"2025-08-09 04:39:20","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:20","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/attendance/test","service":"employee-management","timestamp":"2025-08-09 04:39:21","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:21","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/revenue/test","service":"employee-management","timestamp":"2025-08-09 04:39:21","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:21","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/orders/test","service":"employee-management","timestamp":"2025-08-09 04:39:22","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:22","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/schedule/test","service":"employee-management","timestamp":"2025-08-09 04:39:23","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:23","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/promotion/test","service":"employee-management","timestamp":"2025-08-09 04:39:23","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:23","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/maintenance/test","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/admin/test","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /test - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:24\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:24","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET / - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /health - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:25","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:29\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:29","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:33\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:33","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:38\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:38","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:42","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:43","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:43","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:43","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:43\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:43","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:49\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:49","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:39:53","userAgent":"curl/8.14.1","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:53","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:54","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:54","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:54","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:54\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:54","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:39:58\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:39:58","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:40:03\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:40:03","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:40:07\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:40:07","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:40:12\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:40:12","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:40:16","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:40:17","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:40:17","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:40:17","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:40:17\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:40:17","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:40:21\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:40:21","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:40:26\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:40:26","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"🗄️ 檢查資料庫連接...","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"✅ 資料庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:40:30\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:40:30","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /.well-known/appspecific/com.chrome.devtools.json","service":"employee-management","timestamp":"2025-08-09 04:42:20","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","version":"1.0.0"}
+{"duration":2,"ip":"::1","level":"info","message":"📤 GET / - 200 (2ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:42:20","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:49:46","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:49:47","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:49:47","version":"1.0.0"}
+{"level":"info","message":"✅ 預設分店資料建立完成","service":"employee-management","timestamp":"2025-08-09 04:49:47","version":"1.0.0"}
+{"level":"info","message":"✅ 系統配置建立完成","service":"employee-management","timestamp":"2025-08-09 04:49:47","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:49:47","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:49:47","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:49:47","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:49:47\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:49:47","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /health","service":"employee-management","timestamp":"2025-08-09 04:49:50","userAgent":"curl/8.14.1","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET /health - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:49:50","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:49:51\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:49:51","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:49:56\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:49:56","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:50:00\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:50:00","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:50:05\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:50:05","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:50:10\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:50:10","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:50:14\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:50:14","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:50:19\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:50:19","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:50:23","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:50:23\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:50:24","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:50:28\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:50:28","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:52:10","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:54:27","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:54:33\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:54:33","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:54:38\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /","service":"employee-management","timestamp":"2025-08-09 04:54:38","userAgent":"curl/8.14.1","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:54:38","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:54:43\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:54:43","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /login","service":"employee-management","timestamp":"2025-08-09 04:54:45","userAgent":"curl/8.14.1","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 GET / - 200 (1ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:54:45","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:54:47\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:54:47","version":"1.0.0"}
+{"body":{"address":"測試地址","birthday":"1990-01-01","emergencyContact":"測試家屬","emergencyPhone":"0987654321","gender":"男","idNumber":"A123456789","name":"測試員工","phone":"0912345678","relationship":"父親","startDate":"2025-08-09"},"ip":"::1","level":"info","message":"📥 POST /api/auth/register","service":"employee-management","timestamp":"2025-08-09 04:54:51","userAgent":"curl/8.14.1","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 POST / - 404 (1ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 04:54:51","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:54:52\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:54:52","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:54:57\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"ip":"::1","level":"info","message":"📥 GET /api/auth/test","service":"employee-management","timestamp":"2025-08-09 04:54:57","userAgent":"curl/8.14.1","version":"1.0.0"}
+{"duration":0,"ip":"::1","level":"info","message":"📤 GET /test - 200 (0ms)","service":"employee-management","statusCode":200,"timestamp":"2025-08-09 04:54:57","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:55:01\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:55:01","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:55:06\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:55:06","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:55:10","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:55:10\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:55:11","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:55:15\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:55:15","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:56:10\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:56:10","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:56:14","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:56:14\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:56:15","version":"1.0.0"}
+{"body":{"address":"測試地址","birthday":"1990-01-01","emergencyContact":"測試家屬","emergencyPhone":"0987654321","gender":"男","idNumber":"A123456789","name":"測試員工","phone":"0912345678","relationship":"父親","startDate":"2025-08-09"},"ip":"::1","level":"info","message":"📥 POST /api/auth/register","service":"employee-management","timestamp":"2025-08-09 04:56:15","userAgent":"curl/8.14.1","version":"1.0.0"}
+{"duration":1,"ip":"::1","level":"info","message":"📤 POST / - 404 (1ms)","service":"employee-management","statusCode":404,"timestamp":"2025-08-09 04:56:15","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:19","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:56:24\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:56:24","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:56:28\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:56:28","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:56:33\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:56:33","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:56:38\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:56:38","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:56:42\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:56:42","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:56:47\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:56:47","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:56:51","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:56:52","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:56:52","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:52","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:56:52","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:56:52","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:56:52","version":"1.0.0"}
+{"level":"info","message":"📢 系統通知: 🚀 系統啟動通知 - 企業員工管理系統已成功啟動\n時間: 2025/8/9 上午4:56:52\n環境: production","service":"employee-management","timestamp":"2025-08-09 04:56:52","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:58:52","version":"1.0.0"}
+{"level":"info","message":"🔧 初始化中間件...","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ 中間件初始化完成","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"🛣️ 初始化路由...","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ 路由初始化完成","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"🔌 初始化 WebSocket...","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 已連接到通知服務","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 處理器初始化完成","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ WebSocket 初始化完成","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"❌ 初始化錯誤處理...","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ 錯誤處理初始化完成","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"🗄️ 初始化數據庫...","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫連接成功","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ 數據庫表同步完成","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ 數據模型初始化成功","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ 種子數據初始化成功","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"⏰ 啟動定時任務...","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"✅ 定時任務啟動完成","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"🚀 伺服器啟動成功!","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"📍 HTTP: http://localhost:3001","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"🔌 WebSocket: ws://localhost:3001","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"📊 健康檢查: http://localhost:3001/health","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"🌐 環境: development","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}
+{"level":"info","message":"📱 應用名稱: 企業員工管理系統","service":"employee-management","timestamp":"2025-08-09 04:59:22","version":"1.0.0"}

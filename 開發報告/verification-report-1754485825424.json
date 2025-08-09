@@ -1,0 +1,250 @@
+{
+  "timestamp": "2025-08-06T13:10:25.410Z",
+  "reportVersion": "1.0",
+  "categories": {
+    "completeness": {
+      "score": 100,
+      "items": [
+        {
+          "name": "01-系統架構對比分析報告.md - 版本對比分析",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "01-系統架構對比分析報告.md - 功能模組對比",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "01-系統架構對比分析報告.md - 資料庫結構對比",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "01-系統架構對比分析報告.md - 整合建議",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "02-完整功能規格說明書.md - 身份認證系統",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "02-完整功能規格說明書.md - 打卡系統",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "02-完整功能規格說明書.md - 營收管理系統",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "02-完整功能規格說明書.md - 庫存叫貨系統",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "02-完整功能規格說明書.md - 排班管理系統",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "03-資料庫設計與實現指南.md - 資料表設計",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "03-資料庫設計與實現指南.md - 關聯關係",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "03-資料庫設計與實現指南.md - 索引優化",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "03-資料庫設計與實現指南.md - 資料遷移",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "04-API介面完整文檔.md - 認證相關 API",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "04-API介面完整文檔.md - 員工管理 API",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "04-API介面完整文檔.md - 考勤打卡 API",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "04-API介面完整文檔.md - 營收管理 API",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "05-系統整合與部署指南.md - 開發環境設置",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "05-系統整合與部署指南.md - 系統整合步驟",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "05-系統整合與部署指南.md - 部署流程詳解",
+          "status": "passed",
+          "message": "章節存在且完整"
+        },
+        {
+          "name": "05-系統整合與部署指南.md - 測試驗證方案",
+          "status": "passed",
+          "message": "章節存在且完整"
+        }
+      ]
+    },
+    "consistency": {
+      "score": 0,
+      "items": [
+        {
+          "name": "Telegram Bot Token一致性",
+          "status": "warning",
+          "message": "一致性不足 (期望5次，實際1次)"
+        },
+        {
+          "name": "API端點數量一致性",
+          "status": "warning",
+          "message": "一致性不足 (期望2次，實際0次)"
+        },
+        {
+          "name": "資料表數量一致性",
+          "status": "warning",
+          "message": "一致性不足 (期望3次，實際2次)"
+        },
+        {
+          "name": "系統版本一致性",
+          "status": "warning",
+          "message": "一致性不足 (期望4次，實際1次)"
+        }
+      ]
+    },
+    "feasibility": {
+      "score": 75,
+      "items": [
+        {
+          "name": "GPS打卡實現",
+          "status": "warning",
+          "message": "技術方案需要補充細節"
+        },
+        {
+          "name": "JWT認證實現",
+          "status": "passed",
+          "message": "技術方案可行且詳細"
+        },
+        {
+          "name": "資料庫遷移方案",
+          "status": "passed",
+          "message": "技術方案可行且詳細"
+        },
+        {
+          "name": "Docker容器化",
+          "status": "passed",
+          "message": "技術方案可行且詳細"
+        },
+        {
+          "name": "效能優化策略",
+          "status": "passed",
+          "message": "技術方案可行且詳細"
+        }
+      ]
+    },
+    "quality": {
+      "score": 75,
+      "items": [
+        {
+          "name": "程式碼範例完整性",
+          "status": "passed",
+          "message": "品質優良 (112個實例)"
+        },
+        {
+          "name": "圖表和視覺化",
+          "status": "passed",
+          "message": "品質優良 (128個實例)"
+        },
+        {
+          "name": "章節結構清晰度",
+          "status": "passed",
+          "message": "品質優良 (226個實例)"
+        },
+        {
+          "name": "使用案例說明",
+          "status": "warning",
+          "message": "可以改進 (15個實例，建議30個)"
+        }
+      ]
+    },
+    "coverage": {
+      "score": 100,
+      "items": [
+        {
+          "name": "前端開發",
+          "status": "passed",
+          "message": "覆蓋完整 (100%)"
+        },
+        {
+          "name": "後端開發",
+          "status": "passed",
+          "message": "覆蓋完整 (100%)"
+        },
+        {
+          "name": "資料庫設計",
+          "status": "passed",
+          "message": "覆蓋完整 (100%)"
+        },
+        {
+          "name": "安全機制",
+          "status": "passed",
+          "message": "覆蓋完整 (100%)"
+        },
+        {
+          "name": "測試策略",
+          "status": "passed",
+          "message": "覆蓋完整 (100%)"
+        },
+        {
+          "name": "部署流程",
+          "status": "passed",
+          "message": "覆蓋完整 (100%)"
+        },
+        {
+          "name": "監控維護",
+          "status": "passed",
+          "message": "覆蓋完整 (75%)"
+        },
+        {
+          "name": "效能優化",
+          "status": "passed",
+          "message": "覆蓋完整 (100%)"
+        }
+      ]
+    }
+  },
+  "overallScore": 70,
+  "strengths": [],
+  "improvements": [
+    "補充更多技術實現細節"
+  ],
+  "recommendations": [
+    "建議根據驗證結果補充缺失的部分",
+    "可以考慮增加更多實際案例和最佳實踐"
+  ]
+}

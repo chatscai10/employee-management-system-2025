@@ -1,0 +1,660 @@
+2025-08-09T04:37:13: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:37:13:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:37:13:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:37:13:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:37:13:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:37:13:   code: 'EADDRINUSE',
+2025-08-09T04:37:13:   errno: -4091,
+2025-08-09T04:37:13:   syscall: 'listen',
+2025-08-09T04:37:13:   address: '::1',
+2025-08-09T04:37:13:   port: 3000
+2025-08-09T04:37:13: }
+2025-08-09T04:37:18: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:37:18:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:37:18:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:37:18:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:37:18:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:37:18:   code: 'EADDRINUSE',
+2025-08-09T04:37:18:   errno: -4091,
+2025-08-09T04:37:18:   syscall: 'listen',
+2025-08-09T04:37:18:   address: '::1',
+2025-08-09T04:37:18:   port: 3000
+2025-08-09T04:37:18: }
+2025-08-09T04:37:22: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:37:22:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:37:22:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:37:22:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:37:22:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:37:22:   code: 'EADDRINUSE',
+2025-08-09T04:37:22:   errno: -4091,
+2025-08-09T04:37:22:   syscall: 'listen',
+2025-08-09T04:37:22:   address: '::1',
+2025-08-09T04:37:22:   port: 3000
+2025-08-09T04:37:22: }
+2025-08-09T04:37:27: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:37:27:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:37:27:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:37:27:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:37:27:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:37:27:   code: 'EADDRINUSE',
+2025-08-09T04:37:27:   errno: -4091,
+2025-08-09T04:37:27:   syscall: 'listen',
+2025-08-09T04:37:27:   address: '::1',
+2025-08-09T04:37:27:   port: 3000
+2025-08-09T04:37:27: }
+2025-08-09T04:37:31: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:37:31:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:37:31:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:37:31:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:37:31:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:37:31:   code: 'EADDRINUSE',
+2025-08-09T04:37:31:   errno: -4091,
+2025-08-09T04:37:31:   syscall: 'listen',
+2025-08-09T04:37:31:   address: '::1',
+2025-08-09T04:37:31:   port: 3000
+2025-08-09T04:37:31: }
+2025-08-09T04:37:36: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:37:36:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:37:36:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:37:36:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:37:36:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:37:36:   code: 'EADDRINUSE',
+2025-08-09T04:37:36:   errno: -4091,
+2025-08-09T04:37:36:   syscall: 'listen',
+2025-08-09T04:37:36:   address: '::1',
+2025-08-09T04:37:36:   port: 3000
+2025-08-09T04:37:36: }
+2025-08-09T04:37:41: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:37:41:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:37:41:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:37:41:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:37:41:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:37:41:   code: 'EADDRINUSE',
+2025-08-09T04:37:41:   errno: -4091,
+2025-08-09T04:37:41:   syscall: 'listen',
+2025-08-09T04:37:41:   address: '::1',
+2025-08-09T04:37:41:   port: 3000
+2025-08-09T04:37:41: }
+2025-08-09T04:37:45: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:37:45:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:37:45:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:37:45:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:37:45:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:37:45:   code: 'EADDRINUSE',
+2025-08-09T04:37:45:   errno: -4091,
+2025-08-09T04:37:45:   syscall: 'listen',
+2025-08-09T04:37:45:   address: '::1',
+2025-08-09T04:37:45:   port: 3000
+2025-08-09T04:37:45: }
+2025-08-09T04:37:50: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:37:50:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:37:50:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:37:50:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:37:50:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:37:50:   code: 'EADDRINUSE',
+2025-08-09T04:37:50:   errno: -4091,
+2025-08-09T04:37:50:   syscall: 'listen',
+2025-08-09T04:37:50:   address: '::1',
+2025-08-09T04:37:50:   port: 3000
+2025-08-09T04:37:50: }
+2025-08-09T04:37:54: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:37:54:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:37:54:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:37:54:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:37:54:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:37:54:   code: 'EADDRINUSE',
+2025-08-09T04:37:54:   errno: -4091,
+2025-08-09T04:37:54:   syscall: 'listen',
+2025-08-09T04:37:54:   address: '::1',
+2025-08-09T04:37:54:   port: 3000
+2025-08-09T04:37:54: }
+2025-08-09T04:39:01: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:01:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:01:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:01:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:01:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:01:   code: 'EADDRINUSE',
+2025-08-09T04:39:01:   errno: -4091,
+2025-08-09T04:39:01:   syscall: 'listen',
+2025-08-09T04:39:01:   address: '::1',
+2025-08-09T04:39:01:   port: 3000
+2025-08-09T04:39:01: }
+2025-08-09T04:39:06: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:06:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:06:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:06:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:06:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:06:   code: 'EADDRINUSE',
+2025-08-09T04:39:06:   errno: -4091,
+2025-08-09T04:39:06:   syscall: 'listen',
+2025-08-09T04:39:06:   address: '::1',
+2025-08-09T04:39:06:   port: 3000
+2025-08-09T04:39:06: }
+2025-08-09T04:39:10: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:10:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:10:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:10:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:10:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:10:   code: 'EADDRINUSE',
+2025-08-09T04:39:10:   errno: -4091,
+2025-08-09T04:39:10:   syscall: 'listen',
+2025-08-09T04:39:10:   address: '::1',
+2025-08-09T04:39:10:   port: 3000
+2025-08-09T04:39:10: }
+2025-08-09T04:39:15: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:15:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:15:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:15:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:15:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:15:   code: 'EADDRINUSE',
+2025-08-09T04:39:15:   errno: -4091,
+2025-08-09T04:39:15:   syscall: 'listen',
+2025-08-09T04:39:15:   address: '::1',
+2025-08-09T04:39:15:   port: 3000
+2025-08-09T04:39:15: }
+2025-08-09T04:39:20: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:20:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:20:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:20:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:20:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:20:   code: 'EADDRINUSE',
+2025-08-09T04:39:20:   errno: -4091,
+2025-08-09T04:39:20:   syscall: 'listen',
+2025-08-09T04:39:20:   address: '::1',
+2025-08-09T04:39:20:   port: 3000
+2025-08-09T04:39:20: }
+2025-08-09T04:39:24: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:24:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:24:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:24:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:24:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:24:   code: 'EADDRINUSE',
+2025-08-09T04:39:24:   errno: -4091,
+2025-08-09T04:39:24:   syscall: 'listen',
+2025-08-09T04:39:24:   address: '::1',
+2025-08-09T04:39:24:   port: 3000
+2025-08-09T04:39:24: }
+2025-08-09T04:39:29: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:29:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:29:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:29:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:29:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:29:   code: 'EADDRINUSE',
+2025-08-09T04:39:29:   errno: -4091,
+2025-08-09T04:39:29:   syscall: 'listen',
+2025-08-09T04:39:29:   address: '::1',
+2025-08-09T04:39:29:   port: 3000
+2025-08-09T04:39:29: }
+2025-08-09T04:39:33: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:33:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:33:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:33:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:33:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:33:   code: 'EADDRINUSE',
+2025-08-09T04:39:33:   errno: -4091,
+2025-08-09T04:39:33:   syscall: 'listen',
+2025-08-09T04:39:33:   address: '::1',
+2025-08-09T04:39:33:   port: 3000
+2025-08-09T04:39:33: }
+2025-08-09T04:39:38: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:38:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:38:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:38:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:38:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:38:   code: 'EADDRINUSE',
+2025-08-09T04:39:38:   errno: -4091,
+2025-08-09T04:39:38:   syscall: 'listen',
+2025-08-09T04:39:38:   address: '::1',
+2025-08-09T04:39:38:   port: 3000
+2025-08-09T04:39:38: }
+2025-08-09T04:39:43: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:43:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:43:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:43:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:43:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:43:   code: 'EADDRINUSE',
+2025-08-09T04:39:43:   errno: -4091,
+2025-08-09T04:39:43:   syscall: 'listen',
+2025-08-09T04:39:43:   address: '::1',
+2025-08-09T04:39:43:   port: 3000
+2025-08-09T04:39:43: }
+2025-08-09T04:39:49: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:49:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:49:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:49:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:49:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:49:   code: 'EADDRINUSE',
+2025-08-09T04:39:49:   errno: -4091,
+2025-08-09T04:39:49:   syscall: 'listen',
+2025-08-09T04:39:49:   address: '::1',
+2025-08-09T04:39:49:   port: 3000
+2025-08-09T04:39:49: }
+2025-08-09T04:39:54: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:54:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:54:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:54:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:54:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:54:   code: 'EADDRINUSE',
+2025-08-09T04:39:54:   errno: -4091,
+2025-08-09T04:39:54:   syscall: 'listen',
+2025-08-09T04:39:54:   address: '::1',
+2025-08-09T04:39:54:   port: 3000
+2025-08-09T04:39:54: }
+2025-08-09T04:39:58: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:39:58:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:39:58:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:39:58:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:39:58:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:39:58:   code: 'EADDRINUSE',
+2025-08-09T04:39:58:   errno: -4091,
+2025-08-09T04:39:58:   syscall: 'listen',
+2025-08-09T04:39:58:   address: '::1',
+2025-08-09T04:39:58:   port: 3000
+2025-08-09T04:39:58: }
+2025-08-09T04:40:03: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:40:03:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:40:03:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:40:03:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:40:03:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:40:03:   code: 'EADDRINUSE',
+2025-08-09T04:40:03:   errno: -4091,
+2025-08-09T04:40:03:   syscall: 'listen',
+2025-08-09T04:40:03:   address: '::1',
+2025-08-09T04:40:03:   port: 3000
+2025-08-09T04:40:03: }
+2025-08-09T04:40:07: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:40:07:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:40:07:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:40:07:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:40:07:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:40:07:   code: 'EADDRINUSE',
+2025-08-09T04:40:07:   errno: -4091,
+2025-08-09T04:40:07:   syscall: 'listen',
+2025-08-09T04:40:07:   address: '::1',
+2025-08-09T04:40:07:   port: 3000
+2025-08-09T04:40:07: }
+2025-08-09T04:40:12: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:40:12:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:40:12:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:40:12:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:40:12:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:40:12:   code: 'EADDRINUSE',
+2025-08-09T04:40:12:   errno: -4091,
+2025-08-09T04:40:12:   syscall: 'listen',
+2025-08-09T04:40:12:   address: '::1',
+2025-08-09T04:40:12:   port: 3000
+2025-08-09T04:40:12: }
+2025-08-09T04:40:17: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:40:17:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:40:17:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:40:17:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:40:17:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:40:17:   code: 'EADDRINUSE',
+2025-08-09T04:40:17:   errno: -4091,
+2025-08-09T04:40:17:   syscall: 'listen',
+2025-08-09T04:40:17:   address: '::1',
+2025-08-09T04:40:17:   port: 3000
+2025-08-09T04:40:17: }
+2025-08-09T04:40:21: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:40:21:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:40:21:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:40:21:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:40:21:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:40:21:   code: 'EADDRINUSE',
+2025-08-09T04:40:21:   errno: -4091,
+2025-08-09T04:40:21:   syscall: 'listen',
+2025-08-09T04:40:21:   address: '::1',
+2025-08-09T04:40:21:   port: 3000
+2025-08-09T04:40:21: }
+2025-08-09T04:40:26: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:40:26:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:40:26:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:40:26:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:40:26:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:40:26:   code: 'EADDRINUSE',
+2025-08-09T04:40:26:   errno: -4091,
+2025-08-09T04:40:26:   syscall: 'listen',
+2025-08-09T04:40:26:   address: '::1',
+2025-08-09T04:40:26:   port: 3000
+2025-08-09T04:40:26: }
+2025-08-09T04:40:30: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:40:30:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:40:30:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:40:30:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:40:30:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:40:30:   code: 'EADDRINUSE',
+2025-08-09T04:40:30:   errno: -4091,
+2025-08-09T04:40:30:   syscall: 'listen',
+2025-08-09T04:40:30:   address: '::1',
+2025-08-09T04:40:30:   port: 3000
+2025-08-09T04:40:30: }
+2025-08-09T04:49:47: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:49:47:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:49:47:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:49:47:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:49:47:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:49:47:   code: 'EADDRINUSE',
+2025-08-09T04:49:47:   errno: -4091,
+2025-08-09T04:49:47:   syscall: 'listen',
+2025-08-09T04:49:47:   address: '::1',
+2025-08-09T04:49:47:   port: 3000
+2025-08-09T04:49:47: }
+2025-08-09T04:49:51: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:49:51:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:49:51:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:49:51:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:49:51:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:49:51:   code: 'EADDRINUSE',
+2025-08-09T04:49:51:   errno: -4091,
+2025-08-09T04:49:51:   syscall: 'listen',
+2025-08-09T04:49:51:   address: '::1',
+2025-08-09T04:49:51:   port: 3000
+2025-08-09T04:49:51: }
+2025-08-09T04:49:56: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:49:56:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:49:56:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:49:56:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:49:56:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:49:56:   code: 'EADDRINUSE',
+2025-08-09T04:49:56:   errno: -4091,
+2025-08-09T04:49:56:   syscall: 'listen',
+2025-08-09T04:49:56:   address: '::1',
+2025-08-09T04:49:56:   port: 3000
+2025-08-09T04:49:56: }
+2025-08-09T04:50:00: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:50:00:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:50:00:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:50:00:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:50:00:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:50:00:   code: 'EADDRINUSE',
+2025-08-09T04:50:00:   errno: -4091,
+2025-08-09T04:50:00:   syscall: 'listen',
+2025-08-09T04:50:00:   address: '::1',
+2025-08-09T04:50:00:   port: 3000
+2025-08-09T04:50:00: }
+2025-08-09T04:50:05: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:50:05:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:50:05:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:50:05:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:50:05:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:50:05:   code: 'EADDRINUSE',
+2025-08-09T04:50:05:   errno: -4091,
+2025-08-09T04:50:05:   syscall: 'listen',
+2025-08-09T04:50:05:   address: '::1',
+2025-08-09T04:50:05:   port: 3000
+2025-08-09T04:50:05: }
+2025-08-09T04:50:10: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:50:10:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:50:10:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:50:10:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:50:10:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:50:10:   code: 'EADDRINUSE',
+2025-08-09T04:50:10:   errno: -4091,
+2025-08-09T04:50:10:   syscall: 'listen',
+2025-08-09T04:50:10:   address: '::1',
+2025-08-09T04:50:10:   port: 3000
+2025-08-09T04:50:10: }
+2025-08-09T04:50:14: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:50:14:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:50:14:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:50:14:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:50:14:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:50:14:   code: 'EADDRINUSE',
+2025-08-09T04:50:14:   errno: -4091,
+2025-08-09T04:50:14:   syscall: 'listen',
+2025-08-09T04:50:14:   address: '::1',
+2025-08-09T04:50:14:   port: 3000
+2025-08-09T04:50:14: }
+2025-08-09T04:50:19: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:50:19:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:50:19:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:50:19:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:50:19:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:50:19:   code: 'EADDRINUSE',
+2025-08-09T04:50:19:   errno: -4091,
+2025-08-09T04:50:19:   syscall: 'listen',
+2025-08-09T04:50:19:   address: '::1',
+2025-08-09T04:50:19:   port: 3000
+2025-08-09T04:50:19: }
+2025-08-09T04:50:24: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:50:24:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:50:24:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:50:24:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:50:24:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:50:24:   code: 'EADDRINUSE',
+2025-08-09T04:50:24:   errno: -4091,
+2025-08-09T04:50:24:   syscall: 'listen',
+2025-08-09T04:50:24:   address: '::1',
+2025-08-09T04:50:24:   port: 3000
+2025-08-09T04:50:24: }
+2025-08-09T04:50:28: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:50:28:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:50:28:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:50:28:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:50:28:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:50:28:   code: 'EADDRINUSE',
+2025-08-09T04:50:28:   errno: -4091,
+2025-08-09T04:50:28:   syscall: 'listen',
+2025-08-09T04:50:28:   address: '::1',
+2025-08-09T04:50:28:   port: 3000
+2025-08-09T04:50:28: }
+2025-08-09T04:54:33: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:54:33:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:54:33:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:54:33:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:54:33:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:54:33:   code: 'EADDRINUSE',
+2025-08-09T04:54:33:   errno: -4091,
+2025-08-09T04:54:33:   syscall: 'listen',
+2025-08-09T04:54:33:   address: '::1',
+2025-08-09T04:54:33:   port: 3000
+2025-08-09T04:54:33: }
+2025-08-09T04:54:38: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:54:38:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:54:38:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:54:38:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:54:38:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:54:38:   code: 'EADDRINUSE',
+2025-08-09T04:54:38:   errno: -4091,
+2025-08-09T04:54:38:   syscall: 'listen',
+2025-08-09T04:54:38:   address: '::1',
+2025-08-09T04:54:38:   port: 3000
+2025-08-09T04:54:38: }
+2025-08-09T04:54:43: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:54:43:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:54:43:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:54:43:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:54:43:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:54:43:   code: 'EADDRINUSE',
+2025-08-09T04:54:43:   errno: -4091,
+2025-08-09T04:54:43:   syscall: 'listen',
+2025-08-09T04:54:43:   address: '::1',
+2025-08-09T04:54:43:   port: 3000
+2025-08-09T04:54:43: }
+2025-08-09T04:54:47: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:54:47:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:54:47:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:54:47:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:54:47:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:54:47:   code: 'EADDRINUSE',
+2025-08-09T04:54:47:   errno: -4091,
+2025-08-09T04:54:47:   syscall: 'listen',
+2025-08-09T04:54:47:   address: '::1',
+2025-08-09T04:54:47:   port: 3000
+2025-08-09T04:54:47: }
+2025-08-09T04:54:52: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:54:52:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:54:52:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:54:52:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:54:52:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:54:52:   code: 'EADDRINUSE',
+2025-08-09T04:54:52:   errno: -4091,
+2025-08-09T04:54:52:   syscall: 'listen',
+2025-08-09T04:54:52:   address: '::1',
+2025-08-09T04:54:52:   port: 3000
+2025-08-09T04:54:52: }
+2025-08-09T04:54:57: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:54:57:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:54:57:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:54:57:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:54:57:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:54:57:   code: 'EADDRINUSE',
+2025-08-09T04:54:57:   errno: -4091,
+2025-08-09T04:54:57:   syscall: 'listen',
+2025-08-09T04:54:57:   address: '::1',
+2025-08-09T04:54:57:   port: 3000
+2025-08-09T04:54:57: }
+2025-08-09T04:55:01: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:55:01:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:55:01:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:55:01:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:55:01:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:55:01:   code: 'EADDRINUSE',
+2025-08-09T04:55:01:   errno: -4091,
+2025-08-09T04:55:01:   syscall: 'listen',
+2025-08-09T04:55:01:   address: '::1',
+2025-08-09T04:55:01:   port: 3000
+2025-08-09T04:55:01: }
+2025-08-09T04:55:06: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:55:06:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:55:06:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:55:06:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:55:06:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:55:06:   code: 'EADDRINUSE',
+2025-08-09T04:55:06:   errno: -4091,
+2025-08-09T04:55:06:   syscall: 'listen',
+2025-08-09T04:55:06:   address: '::1',
+2025-08-09T04:55:06:   port: 3000
+2025-08-09T04:55:06: }
+2025-08-09T04:55:11: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:55:11:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:55:11:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:55:11:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:55:11:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:55:11:   code: 'EADDRINUSE',
+2025-08-09T04:55:11:   errno: -4091,
+2025-08-09T04:55:11:   syscall: 'listen',
+2025-08-09T04:55:11:   address: '::1',
+2025-08-09T04:55:11:   port: 3000
+2025-08-09T04:55:11: }
+2025-08-09T04:55:15: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:55:15:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:55:15:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:55:15:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:55:15:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:55:15:   code: 'EADDRINUSE',
+2025-08-09T04:55:15:   errno: -4091,
+2025-08-09T04:55:15:   syscall: 'listen',
+2025-08-09T04:55:15:   address: '::1',
+2025-08-09T04:55:15:   port: 3000
+2025-08-09T04:55:15: }
+2025-08-09T04:56:10: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:56:10:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:56:10:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:56:10:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:56:10:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:56:10:   code: 'EADDRINUSE',
+2025-08-09T04:56:10:   errno: -4091,
+2025-08-09T04:56:10:   syscall: 'listen',
+2025-08-09T04:56:10:   address: '::1',
+2025-08-09T04:56:10:   port: 3000
+2025-08-09T04:56:10: }
+2025-08-09T04:56:15: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:56:15:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:56:15:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:56:15:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:56:15:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:56:15:   code: 'EADDRINUSE',
+2025-08-09T04:56:15:   errno: -4091,
+2025-08-09T04:56:15:   syscall: 'listen',
+2025-08-09T04:56:15:   address: '::1',
+2025-08-09T04:56:15:   port: 3000
+2025-08-09T04:56:15: }
+2025-08-09T04:56:19: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:56:19:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:56:19:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:56:19:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:56:19:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:56:19:   code: 'EADDRINUSE',
+2025-08-09T04:56:19:   errno: -4091,
+2025-08-09T04:56:19:   syscall: 'listen',
+2025-08-09T04:56:19:   address: '::1',
+2025-08-09T04:56:19:   port: 3000
+2025-08-09T04:56:19: }
+2025-08-09T04:56:24: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:56:24:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:56:24:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:56:24:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:56:24:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:56:24:   code: 'EADDRINUSE',
+2025-08-09T04:56:24:   errno: -4091,
+2025-08-09T04:56:24:   syscall: 'listen',
+2025-08-09T04:56:24:   address: '::1',
+2025-08-09T04:56:24:   port: 3000
+2025-08-09T04:56:24: }
+2025-08-09T04:56:28: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:56:28:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:56:28:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:56:28:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:56:28:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:56:28:   code: 'EADDRINUSE',
+2025-08-09T04:56:28:   errno: -4091,
+2025-08-09T04:56:28:   syscall: 'listen',
+2025-08-09T04:56:28:   address: '::1',
+2025-08-09T04:56:28:   port: 3000
+2025-08-09T04:56:28: }
+2025-08-09T04:56:33: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:56:33:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:56:33:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:56:33:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:56:33:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:56:33:   code: 'EADDRINUSE',
+2025-08-09T04:56:33:   errno: -4091,
+2025-08-09T04:56:33:   syscall: 'listen',
+2025-08-09T04:56:33:   address: '::1',
+2025-08-09T04:56:33:   port: 3000
+2025-08-09T04:56:33: }
+2025-08-09T04:56:38: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:56:38:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:56:38:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:56:38:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:56:38:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:56:38:   code: 'EADDRINUSE',
+2025-08-09T04:56:38:   errno: -4091,
+2025-08-09T04:56:38:   syscall: 'listen',
+2025-08-09T04:56:38:   address: '::1',
+2025-08-09T04:56:38:   port: 3000
+2025-08-09T04:56:38: }
+2025-08-09T04:56:42: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:56:42:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:56:42:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:56:42:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:56:42:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:56:42:   code: 'EADDRINUSE',
+2025-08-09T04:56:42:   errno: -4091,
+2025-08-09T04:56:42:   syscall: 'listen',
+2025-08-09T04:56:42:   address: '::1',
+2025-08-09T04:56:42:   port: 3000
+2025-08-09T04:56:42: }
+2025-08-09T04:56:47: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:56:47:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:56:47:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:56:47:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:56:47:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:56:47:   code: 'EADDRINUSE',
+2025-08-09T04:56:47:   errno: -4091,
+2025-08-09T04:56:47:   syscall: 'listen',
+2025-08-09T04:56:47:   address: '::1',
+2025-08-09T04:56:47:   port: 3000
+2025-08-09T04:56:47: }
+2025-08-09T04:56:52: Error: listen EADDRINUSE: address already in use ::1:3000
+2025-08-09T04:56:52:     at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+2025-08-09T04:56:52:     at listenInCluster (node:net:1965:12)
+2025-08-09T04:56:52:     at GetAddrInfoReqWrap.doListen [as callback] (node:net:2139:7)
+2025-08-09T04:56:52:     at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8) {
+2025-08-09T04:56:52:   code: 'EADDRINUSE',
+2025-08-09T04:56:52:   errno: -4091,
+2025-08-09T04:56:52:   syscall: 'listen',
+2025-08-09T04:56:52:   address: '::1',
+2025-08-09T04:56:52:   port: 3000
+2025-08-09T04:56:52: }

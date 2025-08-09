@@ -1,0 +1,60 @@
+2025-08-09T04:37:09: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-09T04:37:17: [dotenv@17.2.1] injecting env (10) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-09T04:37:22: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-09T04:37:27: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-08-09T04:37:31: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-09T04:37:36: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-09T04:37:40: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-09T04:37:45: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-09T04:37:49: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-08-09T04:37:54: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2025-08-09T04:39:01: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-09T04:39:06: [dotenv@17.2.1] injecting env (10) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-09T04:39:10: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-08-09T04:39:15: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-09T04:39:19: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-09T04:39:24: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:39:29: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-09T04:39:33: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:39:38: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-08-09T04:39:42: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-08-09T04:39:49: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:39:53: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-09T04:39:58: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:40:02: [dotenv@17.2.1] injecting env (10) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-09T04:40:07: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:40:12: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-09T04:40:16: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-09T04:40:21: [dotenv@17.2.1] injecting env (10) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-09T04:40:25: [dotenv@17.2.1] injecting env (10) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+2025-08-09T04:40:30: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-09T04:49:46: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:49:51: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-09T04:49:56: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-09T04:50:00: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-09T04:50:05: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:50:09: [dotenv@17.2.1] injecting env (10) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-09T04:50:14: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-09T04:50:19: [dotenv@17.2.1] injecting env (10) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-09T04:50:23: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-09T04:50:28: [dotenv@17.2.1] injecting env (10) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+2025-08-09T04:54:33: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2025-08-09T04:54:38: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-08-09T04:54:42: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-09T04:54:47: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-09T04:54:52: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-09T04:54:56: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:55:01: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:55:06: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:55:10: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-09T04:55:15: [dotenv@17.2.1] injecting env (10) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-09T04:56:10: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-09T04:56:14: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-09T04:56:19: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-09T04:56:23: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-08-09T04:56:28: [dotenv@17.2.1] injecting env (10) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+2025-08-09T04:56:33: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-09T04:56:37: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-09T04:56:42: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-09T04:56:47: [dotenv@17.2.1] injecting env (10) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2025-08-09T04:56:51: [dotenv@17.2.1] injecting env (10) from .env -- tip: ⚙️  override existing env vars with { override: true }
