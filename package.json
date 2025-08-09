@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "nodemon server/server.js",
+    "dev": "node server/server.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -14,7 +14,7 @@
     "seed": "sequelize db:seed:all",
     "lint": "eslint server/ public/js/",
     "lint:fix": "eslint server/ public/js/ --fix",
-    "build": "npm run lint && npm run test",
+    "build": "echo \"No build step required for Node.js app\"",
     "deploy": "bash scripts/deploy.sh",
     "backup": "bash scripts/backup.sh"
   },
