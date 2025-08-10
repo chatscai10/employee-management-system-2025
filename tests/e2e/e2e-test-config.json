@@ -1,0 +1,224 @@
+{
+  "testConfig": {
+    "environment": "production",
+    "baseURL": "https://employee-management-production-4c97.up.railway.app",
+    "fallbackURL": "http://localhost:3000",
+    "timeout": 30000,
+    "retries": 2,
+    "parallel": false,
+    "headless": false,
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "waitForNetworkIdle": 2000,
+    "screenshotOnFailure": true,
+    "recordVideo": false
+  },
+  
+  "paths": {
+    "screenshots": "./tests/e2e/screenshots",
+    "reports": "./tests/e2e/reports", 
+    "videos": "./tests/e2e/videos",
+    "testData": "./tests/e2e/test-data"
+  },
+
+  "testUsers": {
+    "admin": {
+      "email": "admin@company.com",
+      "password": "admin123",
+      "role": "administrator"
+    },
+    "employee": {
+      "email": "test@employee.com", 
+      "password": "password123",
+      "role": "employee"
+    },
+    "manager": {
+      "email": "manager@company.com",
+      "password": "manager123", 
+      "role": "manager"
+    }
+  },
+
+  "criticalPaths": {
+    "visitor": [
+      "/",
+      "/login",
+      "/register",
+      "/forgot-password"
+    ],
+    "employee": [
+      "/dashboard",
+      "/profile", 
+      "/attendance",
+      "/leave",
+      "/payroll"
+    ],
+    "admin": [
+      "/admin/dashboard",
+      "/admin/employees",
+      "/admin/reports",
+      "/admin/settings",
+      "/admin/users"
+    ]
+  },
+
+  "criticalAPIs": [
+    {
+      "endpoint": "/api/health",
+      "method": "GET",
+      "critical": true,
+      "description": "系統健康檢查"
+    },
+    {
+      "endpoint": "/api/auth/login",
+      "method": "POST", 
+      "critical": true,
+      "description": "用戶登入"
+    },
+    {
+      "endpoint": "/api/auth/register",
+      "method": "POST",
+      "critical": false,
+      "description": "用戶註冊"
+    },
+    {
+      "endpoint": "/api/employees",
+      "method": "GET",
+      "critical": true,
+      "description": "員工列表"
+    },
+    {
+      "endpoint": "/api/employees",
+      "method": "POST",
+      "critical": true,
+      "description": "創建員工"
+    },
+    {
+      "endpoint": "/api/attendance/checkin",
+      "method": "POST",
+      "critical": true,
+      "description": "出勤打卡"
+    },
+    {
+      "endpoint": "/api/attendance/checkout",
+      "method": "POST",
+      "critical": true,
+      "description": "下班打卡"
+    },
+    {
+      "endpoint": "/api/leave/request",
+      "method": "POST",
+      "critical": false,
+      "description": "請假申請"
+    },
+    {
+      "endpoint": "/api/payroll/calculate",
+      "method": "POST",
+      "critical": true,
+      "description": "薪資計算"
+    },
+    {
+      "endpoint": "/api/reports/monthly",
+      "method": "GET",
+      "critical": false,
+      "description": "月度報表"
+    }
+  ],
+
+  "performanceThresholds": {
+    "pageLoadTime": 5000,
+    "apiResponseTime": 2000,
+    "memoryUsage": 100,
+    "cpuUsage": 80
+  },
+
+  "securityChecks": {
+    "xssPayloads": [
+      "<script>alert('XSS')</script>",
+      "javascript:alert('XSS')",
+      "<img src=x onerror=alert('XSS')>"
+    ],
+    "sqlInjectionPayloads": [
+      "'; DROP TABLE users; --",
+      "' OR '1'='1' --",
+      "admin' --"
+    ],
+    "csrfTokenRequired": true,
+    "httpsOnly": true
+  },
+
+  "businessRules": {
+    "workingHours": {
+      "start": "09:00",
+      "end": "18:00"
+    },
+    "lunchBreak": {
+      "start": "12:00", 
+      "end": "13:00"
+    },
+    "overtimeRate": 1.5,
+    "maxLeaveRequests": 10,
+    "probationPeriod": 90
+  },
+
+  "reportSettings": {
+    "generateHTML": true,
+    "generateJSON": true,
+    "generatePDF": false,
+    "includeScreenshots": true,
+    "detailLevel": "comprehensive",
+    "emailReport": false
+  },
+
+  "notifications": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc",
+      "chatId": "-1002658082392",
+      "sendOnStart": true,
+      "sendOnComplete": true,
+      "sendOnFailure": true
+    },
+    "email": {
+      "enabled": false,
+      "recipients": []
+    }
+  },
+
+  "integrationTests": {
+    "database": {
+      "testConnection": true,
+      "testCRUD": true,
+      "testTransactions": true,
+      "testConcurrency": true
+    },
+    "webSocket": {
+      "testConnection": true,
+      "testMessaging": true,
+      "testReconnection": true
+    },
+    "fileUpload": {
+      "testImageUpload": true,
+      "testDocumentUpload": false,
+      "maxFileSize": "5MB",
+      "allowedTypes": ["image/jpeg", "image/png", "application/pdf"]
+    }
+  },
+
+  "loadTesting": {
+    "concurrentUsers": 10,
+    "requestsPerSecond": 5,
+    "testDuration": 60,
+    "rampUpTime": 10
+  },
+
+  "monitoring": {
+    "healthCheckInterval": 30,
+    "performanceMetrics": true,
+    "errorTracking": true,
+    "logLevel": "info"
+  }
+}

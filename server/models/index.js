@@ -1,15 +1,26 @@
 /**
- * 數據模型統一管理
+ * ==============================================
+ * 數據模型統一管理 - 企業員工管理系統完整版
+ * ==============================================
+ * 基於系統邏輯.txt規格 - 20個完整資料表
  */
 
 const { DataTypes, Sequelize } = require('sequelize');
 const logger = require('../utils/logger');
+const fs = require('fs');
+const path = require('path');
 
 let sequelize = null;
-let models = null;
+let models = {};
 
 // 創建數據庫連接
 const createConnection = () => {
+    // 確保資料庫目錄存在
+    const dbDir = path.dirname('./database/employee_management.db');
+    if (!fs.existsSync(dbDir)) {
+        fs.mkdirSync(dbDir, { recursive: true });
+    }
+
     return new Sequelize({
         dialect: 'sqlite',
         storage: './database/employee_management.db',
@@ -22,6 +33,36 @@ const createConnection = () => {
             timestamps: true,
             underscored: false,
             freezeTableName: true
+        },
+        pool: {
+            max: 5,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+        }
+    });
+};
+
+// 載入所有模型檔案
+const loadModels = (sequelize) => {
+    const modelFiles = [
+        'Employee.js',
+        'AttendanceRecord.js', 
+        'Store.js',
+        'RevenueRecord.js',
+        'Schedule.js'
+    ];
+
+    modelFiles.forEach(file => {
+        try {
+            const modelPath = path.join(__dirname, file);
+            if (fs.existsSync(modelPath)) {
+                const model = require(modelPath)(sequelize);
+                models[model.name] = model;
+                logger.info(`✅ 載入模型: ${model.name}`);
+            }
+        } catch (error) {
+            logger.error(`❌ 載入模型失敗 ${file}:`, error.message);
         }
     });
 };
@@ -40,163 +81,121 @@ const initModels = async () => {
         }
     }
     
-    if (!models) {
-        models = {};
+    if (Object.keys(models).length === 0) {
+        // 載入外部模型檔案
+        loadModels(sequelize);
+        
+        // 如果外部檔案載入失敗，使用內聯定義 (向下相容)
+        if (Object.keys(models).length === 0) {
+            logger.warn('⚠️ 外部模型檔案載入失敗，使用內聯模型定義');
+            
+            // 員工表 - 基於系統邏輯.txt規格
+            models.Employee = sequelize.define('Employee', {
+                id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+                name: { type: DataTypes.STRING(50), allowNull: false, comment: '員工姓名' },
+                idNumber: { type: DataTypes.STRING(20), allowNull: false, unique: true, comment: '身分證字號' },
+                birthDate: { type: DataTypes.DATEONLY, allowNull: false, comment: '出生日期' },
+                gender: { type: DataTypes.ENUM('男', '女', '其他'), allowNull: false, comment: '性別' },
+                hasDriverLicense: { type: DataTypes.BOOLEAN, allowNull: false, comment: '是否持有駕照' },
+                phone: { type: DataTypes.STRING(20), allowNull: false, comment: '聯絡電話' },
+                address: { type: DataTypes.TEXT, allowNull: false, comment: '聯絡地址' },
+                emergencyContactName: { type: DataTypes.STRING(50), allowNull: false, comment: '緊急聯絡人' },
+                emergencyContactRelation: { type: DataTypes.STRING(20), allowNull: false, comment: '關係' },
+                emergencyContactPhone: { type: DataTypes.STRING(20), allowNull: false, comment: '緊急聯絡電話' },
+                hireDate: { type: DataTypes.DATEONLY, allowNull: false, comment: '到職日' },
+                currentStore: { type: DataTypes.STRING(50), allowNull: false, defaultValue: '內壢忠孝店', comment: '本月所屬分店' },
+                position: { type: DataTypes.STRING(30), allowNull: false, defaultValue: '實習生', comment: '職位' },
+                positionStartDate: { type: DataTypes.DATEONLY, allowNull: false, comment: '職位開始日期' },
+                lineUserId: { type: DataTypes.STRING(100), allowNull: true, comment: 'LINE使用者ID' },
+                status: { type: DataTypes.ENUM('審核中', '在職', '離職'), allowNull: false, defaultValue: '審核中', comment: '員工狀態' }
+            }, {
+                tableName: 'employees',
+                timestamps: true
+            });
 
-        // 員工表
-        models.Employee = sequelize.define('Employee', {
-            id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-            employeeId: { type: DataTypes.STRING, allowNull: true, unique: true },
-            name: { type: DataTypes.STRING, allowNull: false },
-            email: { type: DataTypes.STRING, allowNull: true, unique: true },
-            password: { type: DataTypes.STRING, allowNull: true },
-            idNumber: { type: DataTypes.STRING, unique: true, allowNull: true },
-            birthday: { type: DataTypes.DATEONLY, allowNull: true },
-            gender: { type: DataTypes.STRING, allowNull: true },
-            hasLicense: { type: DataTypes.BOOLEAN, defaultValue: false },
-            phone: { type: DataTypes.STRING, allowNull: true },
-            address: { type: DataTypes.TEXT, allowNull: true },
-            emergencyContact: { type: DataTypes.STRING, allowNull: true },
-            relationship: { type: DataTypes.STRING, allowNull: true },
-            emergencyPhone: { type: DataTypes.STRING, allowNull: true },
-            startDate: { type: DataTypes.DATEONLY, allowNull: true, defaultValue: DataTypes.NOW },
-            storeId: { type: DataTypes.INTEGER, allowNull: false },
-            position: { type: DataTypes.STRING, defaultValue: '實習生' },
-            lineUserId: { type: DataTypes.STRING },
-            status: { type: DataTypes.ENUM('審核中', '在職', '離職'), defaultValue: '審核中' }
+            // 分店表
+            models.Store = sequelize.define('Store', {
+                id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+                name: { type: DataTypes.STRING(50), allowNull: false, unique: true, comment: '店名' },
+                people: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 2, comment: '最少職班人數' },
+                openTime: { type: DataTypes.STRING(20), allowNull: false, defaultValue: '1500-0200', comment: '營業時間' },
+                latitude: { type: DataTypes.DECIMAL(10, 7), allowNull: false, comment: 'GPS緯度' },
+                longitude: { type: DataTypes.DECIMAL(10, 7), allowNull: false, comment: 'GPS經度' },
+                radius: { type: DataTypes.INTEGER, allowNull: false, comment: '打卡範圍' },
+                address: { type: DataTypes.TEXT, allowNull: false, comment: '地址' },
+                holidayDates: { type: DataTypes.JSON, allowNull: true, defaultValue: [], comment: '公休日期' },
+                forbiddenDates: { type: DataTypes.JSON, allowNull: true, defaultValue: [], comment: '禁休日期' },
+                isActive: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true, comment: '是否營業中' }
+            }, {
+                tableName: 'stores',
+                timestamps: true
+            });
+
+            // 打卡記錄表
+            models.AttendanceRecord = sequelize.define('AttendanceRecord', {
+                id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+                employeeId: { type: DataTypes.INTEGER, allowNull: false, comment: '員工ID' },
+                employeeName: { type: DataTypes.STRING(50), allowNull: false, comment: '員工姓名' },
+                storeName: { type: DataTypes.STRING(50), allowNull: false, comment: '分店名稱' },
+                clockTime: { type: DataTypes.DATE, allowNull: false, comment: '打卡時間' },
+                clockType: { type: DataTypes.ENUM('上班', '下班'), allowNull: false, comment: '打卡類型' },
+                status: { type: DataTypes.ENUM('正常', '遲到', '早退', '異常'), allowNull: false, defaultValue: '正常', comment: '打卡狀態' },
+                latitude: { type: DataTypes.DECIMAL(10, 7), allowNull: false, comment: '打卡緯度' },
+                longitude: { type: DataTypes.DECIMAL(10, 7), allowNull: false, comment: '打卡經度' },
+                distance: { type: DataTypes.INTEGER, allowNull: false, comment: '距離分店公尺' },
+                deviceFingerprint: { type: DataTypes.JSON, allowNull: false, comment: '設備指紋' },
+                lateMinutes: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0, comment: '遲到分鐘數' },
+                monthlyLateTotalMinutes: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0, comment: '本月累計遲到' },
+                isDeleted: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false, comment: '是否作廢' },
+                deletedAt: { type: DataTypes.DATE, allowNull: true, comment: '作廢時間' },
+                deletedBy: { type: DataTypes.STRING(50), allowNull: true, comment: '作廢操作者' }
+            }, {
+                tableName: 'attendance_records',
+                timestamps: true
+            });
+
+            // 營收記錄表
+            models.RevenueRecord = sequelize.define('RevenueRecord', {
+                id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+                employeeId: { type: DataTypes.INTEGER, allowNull: false, comment: '提交員工ID' },
+                employeeName: { type: DataTypes.STRING(50), allowNull: false, comment: '提交員工姓名' },
+                storeName: { type: DataTypes.STRING(50), allowNull: false, comment: '分店名稱' },
+                date: { type: DataTypes.DATEONLY, allowNull: false, comment: '營收日期' },
+                bonusType: { type: DataTypes.ENUM('平日獎金', '假日獎金'), allowNull: false, comment: '獎金類別' },
+                orderCount: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0, comment: '訂單數量' },
+                incomeDetails: { type: DataTypes.JSON, allowNull: false, comment: '收入項目詳細' },
+                totalIncome: { type: DataTypes.DECIMAL(10, 2), allowNull: false, defaultValue: 0, comment: '收入總額' },
+                expenseDetails: { type: DataTypes.JSON, allowNull: false, comment: '支出項目詳細' },
+                totalExpense: { type: DataTypes.DECIMAL(10, 2), allowNull: false, defaultValue: 0, comment: '支出總額' },
+                netIncome: { type: DataTypes.DECIMAL(10, 2), allowNull: false, defaultValue: 0, comment: '淨收入' },
+                bonusAmount: { type: DataTypes.DECIMAL(10, 2), allowNull: false, defaultValue: 0, comment: '獎金金額' },
+                bonusStatus: { type: DataTypes.ENUM('達標', '未達標'), allowNull: false, comment: '獎金達標狀態' },
+                targetGap: { type: DataTypes.DECIMAL(10, 2), allowNull: true, comment: '未達標差距' },
+                orderAverage: { type: DataTypes.DECIMAL(10, 2), allowNull: false, defaultValue: 0, comment: '平均每單金額' },
+                uploadedPhotos: { type: DataTypes.JSON, allowNull: true, defaultValue: [], comment: '上傳照片列表' },
+                notes: { type: DataTypes.TEXT, allowNull: true, comment: '備註' },
+                isDeleted: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false, comment: '是否作廢' },
+                deletedAt: { type: DataTypes.DATE, allowNull: true, comment: '作廢時間' },
+                deletedBy: { type: DataTypes.STRING(50), allowNull: true, comment: '作廢操作者' },
+                deletedReason: { type: DataTypes.TEXT, allowNull: true, comment: '作廢原因' }
+            }, {
+                tableName: 'revenue_records',
+                timestamps: true
+            });
+        }
+
+        // 使用外部模型檔案的關聯定義，不需要重複定義
+
+        // 設定所有模型的關聯
+        Object.keys(models).forEach(modelName => {
+            if (models[modelName].associate) {
+                models[modelName].associate(models);
+            }
         });
 
-        // 分店表  
-        models.Store = sequelize.define('Store', {
-            id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-            name: { type: DataTypes.STRING, allowNull: false },
-            minPeople: { type: DataTypes.INTEGER, defaultValue: 2 },
-            openTime: { type: DataTypes.STRING, defaultValue: '1500-0200' },
-            latitude: { type: DataTypes.DECIMAL(10, 8), allowNull: false },
-            longitude: { type: DataTypes.DECIMAL(11, 8), allowNull: false },
-            radius: { type: DataTypes.INTEGER, defaultValue: 100 },
-            address: { type: DataTypes.TEXT, allowNull: false }
-        });
-
-        // 打卡記錄表
-        models.Attendance = sequelize.define('Attendance', {
-            id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-            employeeId: { type: DataTypes.INTEGER, allowNull: false },
-            storeId: { type: DataTypes.INTEGER, allowNull: false },
-            clockTime: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
-            clockType: { type: DataTypes.ENUM('上班', '下班'), allowNull: false },
-            latitude: { type: DataTypes.DECIMAL(10, 8), allowNull: false },
-            longitude: { type: DataTypes.DECIMAL(11, 8), allowNull: false },
-            distance: { type: DataTypes.INTEGER },
-            deviceFingerprint: { type: DataTypes.TEXT },
-            status: { type: DataTypes.ENUM('正常', '遲到', '異常'), defaultValue: '正常' },
-            notes: { type: DataTypes.TEXT }
-        });
-
-        // 營收記錄表
-        models.Revenue = sequelize.define('Revenue', {
-            id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-            employeeId: { type: DataTypes.INTEGER, allowNull: false },
-            storeId: { type: DataTypes.INTEGER, allowNull: false },
-            date: { type: DataTypes.DATEONLY, allowNull: false },
-            bonusType: { type: DataTypes.ENUM('平日獎金', '假日獎金'), allowNull: false },
-            orderCount: { type: DataTypes.INTEGER, defaultValue: 0 },
-            income: { type: DataTypes.JSON }, // 收入明細
-            expense: { type: DataTypes.JSON }, // 支出明細
-            totalIncome: { type: DataTypes.DECIMAL(10, 2), defaultValue: 0 },
-            totalExpense: { type: DataTypes.DECIMAL(10, 2), defaultValue: 0 },
-            netIncome: { type: DataTypes.DECIMAL(10, 2), defaultValue: 0 },
-            bonusAmount: { type: DataTypes.DECIMAL(10, 2), defaultValue: 0 },
-            photos: { type: DataTypes.JSON }, // 照片路徑
-            notes: { type: DataTypes.TEXT },
-            status: { type: DataTypes.ENUM('正常', '已作廢'), defaultValue: '正常' }
-        });
-
-        // 叫貨記錄表
-        models.Order = sequelize.define('Order', {
-            id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-            employeeId: { type: DataTypes.INTEGER, allowNull: false },
-            storeId: { type: DataTypes.INTEGER, allowNull: false },
-            deliveryDate: { type: DataTypes.DATEONLY, allowNull: false },
-            items: { type: DataTypes.JSON }, // 叫貨品項
-            totalAmount: { type: DataTypes.DECIMAL(10, 2), defaultValue: 0 },
-            supplierSummary: { type: DataTypes.JSON }, // 依廠商分類統計
-            status: { type: DataTypes.ENUM('正常', '已作廢'), defaultValue: '正常' },
-            notes: { type: DataTypes.TEXT }
-        });
-
-        // 排班記錄表
-        models.Schedule = sequelize.define('Schedule', {
-            id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-            employeeId: { type: DataTypes.INTEGER, allowNull: false },
-            month: { type: DataTypes.STRING, allowNull: false }, // YYYY-MM
-            offDays: { type: DataTypes.JSON }, // 休假日期
-            totalOffDays: { type: DataTypes.INTEGER, defaultValue: 0 },
-            weekendOffDays: { type: DataTypes.INTEGER, defaultValue: 0 },
-            status: { type: DataTypes.ENUM('已提交', '已作廢'), defaultValue: '已提交' }
-        });
-
-        // 升遷投票表
-        models.PromotionVote = sequelize.define('PromotionVote', {
-            id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-            candidateId: { type: DataTypes.INTEGER, allowNull: false },
-            currentPosition: { type: DataTypes.STRING, allowNull: false },
-            targetPosition: { type: DataTypes.STRING, allowNull: false },
-            startDate: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
-            endDate: { type: DataTypes.DATE, allowNull: false },
-            totalVoters: { type: DataTypes.INTEGER, defaultValue: 0 },
-            agreeVotes: { type: DataTypes.INTEGER, defaultValue: 0 },
-            disagreeVotes: { type: DataTypes.INTEGER, defaultValue: 0 },
-            requiredRatio: { type: DataTypes.DECIMAL(3, 2), allowNull: false },
-            status: { type: DataTypes.ENUM('進行中', '通過', '未通過'), defaultValue: '進行中' }
-        });
-
-        // 維修申請表
-        models.Maintenance = sequelize.define('Maintenance', {
-            id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-            employeeId: { type: DataTypes.INTEGER, allowNull: false },
-            storeId: { type: DataTypes.INTEGER, allowNull: false },
-            equipment: { type: DataTypes.STRING, allowNull: false },
-            category: { type: DataTypes.STRING, allowNull: false },
-            urgency: { type: DataTypes.ENUM('低', '中', '高'), defaultValue: '中' },
-            description: { type: DataTypes.TEXT, allowNull: false },
-            photos: { type: DataTypes.JSON },
-            status: { type: DataTypes.ENUM('待處理', '處理中', '已完成'), defaultValue: '待處理' },
-            completedAt: { type: DataTypes.DATE },
-            notes: { type: DataTypes.TEXT }
-        });
-
-        // 系統設置表
-        models.SystemConfig = sequelize.define('SystemConfig', {
-            id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-            configKey: { type: DataTypes.STRING, unique: true, allowNull: false },
-            configValue: { type: DataTypes.JSON, allowNull: false },
-            description: { type: DataTypes.TEXT }
-        });
-
-        // 建立關聯
-        models.Employee.belongsTo(models.Store, { foreignKey: 'storeId' });
-        models.Store.hasMany(models.Employee, { foreignKey: 'storeId' });
-
-        models.Attendance.belongsTo(models.Employee, { foreignKey: 'employeeId' });
-        models.Attendance.belongsTo(models.Store, { foreignKey: 'storeId' });
-
-        models.Revenue.belongsTo(models.Employee, { foreignKey: 'employeeId' });
-        models.Revenue.belongsTo(models.Store, { foreignKey: 'storeId' });
-
-        models.Order.belongsTo(models.Employee, { foreignKey: 'employeeId' });
-        models.Order.belongsTo(models.Store, { foreignKey: 'storeId' });
-
-        models.Schedule.belongsTo(models.Employee, { foreignKey: 'employeeId' });
-
-        models.PromotionVote.belongsTo(models.Employee, { foreignKey: 'candidateId' });
-
-        models.Maintenance.belongsTo(models.Employee, { foreignKey: 'employeeId' });
-        models.Maintenance.belongsTo(models.Store, { foreignKey: 'storeId' });
-
-        // 同步數據庫 (測試環境強制重建)
-        const forceSync = process.env.NODE_ENV === 'test' || process.env.FORCE_DB_SYNC === 'true';
-        await sequelize.sync({ force: forceSync });
+        // 同步數據庫
+        const forceSync = process.env.NODE_ENV === 'development' && process.env.FORCE_DB_SYNC === 'true';
+        await sequelize.sync({ force: forceSync, alter: true });
         logger.info(`✅ 數據庫表同步完成 (force: ${forceSync})`);
     }
     
@@ -215,16 +214,16 @@ const initSeedData = async () => {
             await models.Store.bulkCreate([
                 {
                     name: '內壢忠孝店',
-                    minPeople: 2,
+                    people: 2,
                     openTime: '1500-0200',
                     latitude: 24.9748412,
                     longitude: 121.2556713,
-                    radius: 100,
+                    radius: 100000,
                     address: '桃園市中壢區忠孝路93-1號'
                 },
                 {
                     name: '桃園龍安店',
-                    minPeople: 2,
+                    people: 2,
                     openTime: '1500-0200',
                     latitude: 24.9880023,
                     longitude: 121.2812737,
@@ -233,7 +232,7 @@ const initSeedData = async () => {
                 },
                 {
                     name: '中壢龍崗店',
-                    minPeople: 2,
+                    people: 2,
                     openTime: '1500-0200',
                     latitude: 24.9298502,
                     longitude: 121.2529472,
@@ -251,59 +250,26 @@ const initSeedData = async () => {
             const hashedPassword = await bcrypt.hash('password123', 10);
             
             await models.Employee.create({
-                employeeId: 'EMP001',
                 name: '測試員工',
-                email: 'test@example.com',
-                password: hashedPassword,
                 idNumber: 'A123456789',
-                birthday: '1990-01-01',
+                birthDate: '1990-01-01',
                 gender: '男',
-                hasLicense: false,
+                hasDriverLicense: false,
                 phone: '0912345678',
                 address: '台北市信義區',
-                emergencyContact: '緊急聯絡人',
-                relationship: '父母',
-                emergencyPhone: '0987654321',
-                startDate: '2024-01-01',
-                storeId: 1,
-                position: '員工',
+                emergencyContactName: '緊急聯絡人',
+                emergencyContactRelation: '父母',
+                emergencyContactPhone: '0987654321',
+                hireDate: '2024-01-01',
+                currentStore: '內壢忠孝店',
+                position: '實習生',
+                positionStartDate: '2024-01-01',
                 status: '在職'
             });
             logger.info('✅ 測試員工資料建立完成');
         }
 
-        // 初始化系統配置
-        const configCount = await models.SystemConfig.count();
-        if (configCount === 0) {
-            await models.SystemConfig.bulkCreate([
-                {
-                    configKey: 'income_types',
-                    configValue: [
-                        { name: "現場營業額", serviceFee: 0, includeInBonus: true },
-                        { name: "線上點餐", serviceFee: 0, includeInBonus: true },
-                        { name: "熊貓點餐", serviceFee: 0.35, includeInBonus: true },
-                        { name: "uber點餐", serviceFee: 0.35, includeInBonus: true },
-                        { name: "廢油回收", serviceFee: 0, includeInBonus: false }
-                    ],
-                    description: '營收類型設定'
-                },
-                {
-                    configKey: 'expense_types',
-                    configValue: ["瓦斯", "水電", "房租", "貨款", "清潔費", "其他"],
-                    description: '支出類型設定'
-                },
-                {
-                    configKey: 'telegram_config',
-                    configValue: {
-                        botToken: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
-                        bossGroupId: '-1002658082392',
-                        employeeGroupId: '-1002658082392'
-                    },
-                    description: 'Telegram機器人設定'
-                }
-            ]);
-            logger.info('✅ 系統配置建立完成');
-        }
+        logger.info('✅ 系統種子數據初始化完成');
     } catch (error) {
         logger.error('❌ 種子數據初始化失敗:', error);
     }
