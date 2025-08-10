@@ -57,12 +57,58 @@ module.exports = (sequelize) => {
             comment: '上架狀態'
         },
         
-        // 異常監控 (系統邏輯.txt line 284-286)
+        // 進階異常監控參數
         abnormalDays: {
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 2,
-            comment: '異常叫貨提醒天數'
+            comment: '太久沒叫貨異常天數閾值'
+        },
+        frequentOrderDays: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 7,
+            comment: '頻繁叫貨檢測期間(天)'
+        },
+        maxOrdersInPeriod: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 3,
+            comment: '期間內最大叫貨次數'
+        },
+        
+        // 進階庫存管理
+        lowStockThreshold: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 5,
+            comment: '低庫存警戒值'
+        },
+        autoRestockLevel: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 20,
+            comment: '自動補貨建議量'
+        },
+        
+        // 品項屬性
+        priority: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 2,
+            comment: '優先級: 1=高 2=中 3=低'
+        },
+        seasonalItem: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+            comment: '是否為季節性商品'
+        },
+        supplierLeadTime: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 1,
+            comment: '供應商交貨時間(天)'
         },
         
         // 庫存管理
@@ -97,11 +143,21 @@ module.exports = (sequelize) => {
             comment: '最後叫貨數量'
         },
         
-        // 備註
+        // 備註系統 (權限分級)
+        employeeNotes: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            comment: '員工可見備註 - 品項說明、特色等'
+        },
+        managerNotes: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            comment: '管理員專用備註 - 供應商信息、成本分析等'
+        },
         notes: {
             type: DataTypes.TEXT,
             allowNull: true,
-            comment: '備註'
+            comment: '通用備註'
         },
         
         // 系統記錄

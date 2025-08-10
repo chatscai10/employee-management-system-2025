@@ -37,6 +37,7 @@ const maintenanceRoutes = require('./routes/api/maintenance');
 const monitoringRoutes = require('./routes/api/monitoring');
 const alertsRoutes = require('./routes/api/alerts');
 const employeesRoutes = require('./routes/api/employees');
+const inventoryAdvancedRoutes = require('./routes/inventory-advanced');
 
 // 載入服務
 const notificationService = require('./services/notificationService');
@@ -208,6 +209,7 @@ class EmployeeManagementServer {
         this.app.use('/api/monitoring', monitoringRoutes);
         this.app.use('/api/alerts', alertsRoutes);
         this.app.use('/api/employees', employeesRoutes);
+        this.app.use('/api/inventory/advanced', inventoryAdvancedRoutes);
 
         // 主頁面路由 (重定向到登入頁面)
         this.app.get('/', (req, res) => {
