@@ -10,7 +10,8 @@
       "Bash(FORCE_DB_SYNC=true NODE_ENV=development cd server)",
       "Bash(railway logs:*)",
       "Bash(git commit:*)",
-      "Bash(railway init:*)"
+      "Bash(railway init:*)",
+      "Bash(git branch:*)"
     ],
     "deny": []
   }

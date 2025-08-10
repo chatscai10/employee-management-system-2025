@@ -63,7 +63,7 @@ class EmployeeManagementServer {
             }
         });
         
-        this.port = process.env.PORT || process.env.RAILWAY_TCP_PROXY_PORT || 3000;
+        this.port = process.env.PORT || 3000;
         this.host = '0.0.0.0'; // Railway需要監聽所有interface
         
         this.initializeMiddleware();
@@ -579,8 +579,17 @@ class EmployeeManagementServer {
      */
     async start() {
         try {
+            console.log('🚀 開始啟動企業員工管理系統...');
+            console.log(`📊 環境變數檢查: NODE_ENV=${process.env.NODE_ENV}, PORT=${process.env.PORT}, HOST=${this.host}`);
+            
             // 檢查資料庫連接
-            await this.checkDatabaseConnection();
+            try {
+                await this.checkDatabaseConnection();
+                console.log('✅ 資料庫連接檢查完成');
+            } catch (error) {
+                console.warn('⚠️ 資料庫連接失敗，但繼續啟動:', error.message);
+                // 不要因為資料庫問題而停止啟動
+            }
             
             // 啟動 HTTP 伺服器
             this.server.listen(this.port, this.host, () => {
@@ -593,9 +602,21 @@ class EmployeeManagementServer {
                 console.log('\n🎉 企業員工管理系統已就緒！');
                 console.log('=' .repeat(50));
             });
+            
+            this.server.on('error', (error) => {
+                console.error('❌ 伺服器啟動錯誤:', error);
+                if (error.code === 'EADDRINUSE') {
+                    console.error(`Port ${this.port} 已被使用`);
+                }
+            });
 
             // 啟動定時任務
-            await this.startScheduledTasks();
+            try {
+                await this.startScheduledTasks();
+                console.log('✅ 定時任務啟動完成');
+            } catch (error) {
+                console.warn('⚠️ 定時任務啟動失敗，但繼續運行:', error.message);
+            }
 
             // 發送啟動通知
             if (process.env.NODE_ENV === 'production') {
