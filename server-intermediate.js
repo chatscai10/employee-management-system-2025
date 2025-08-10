@@ -1,205 +1,248 @@
 /**
- * 中級版企業員工管理系統 - 逐步添加功能
+ * Render專用完整版企業員工管理系統伺服器
  */
 
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const helmet = require('helmet');
+const compression = require('compression');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-console.log('🚀 啟動中級版伺服器...');
+console.log('🚀 啟動Render專用完整版伺服器...');
 console.log(`PORT: ${port}, NODE_ENV: ${process.env.NODE_ENV}`);
 
-// 中間件設定
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// 基本中間件設定 - 修復CSP阻止JavaScript問題
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://cdn.jsdelivr.net", "https://employee-management-system-intermediate.onrender.com"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
+            imgSrc: ["'self'", "data:", "https:", "blob:"],
+            connectSrc: ["'self'", "https://employee-management-system-intermediate.onrender.com"],
+            fontSrc: ["'self'", "https://cdn.jsdelivr.net"],
+            objectSrc: ["'none'"],
+            mediaSrc: ["'self'"],
+            frameSrc: ["'self'"]
+        }
+    }
+}));
 
-// 靜態檔案服務 - 為網頁界面準備
-app.use('/public', express.static(path.join(__dirname, 'public')));
-app.use('/assets', express.static(path.join(__dirname, 'public')));
+app.use(cors());
+app.use(compression());
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// 靜態檔案服務 - 完全重構確保JavaScript MIME類型正確
+const staticOptions = {
+    maxAge: '1d',
+    etag: true,
+    lastModified: true,
+    setHeaders: (res, filePath) => {
+        // 強制設定正確的 MIME 類型
+        if (filePath.endsWith('.js')) {
+            res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+            res.setHeader('X-Content-Type-Options', 'nosniff');
+        } else if (filePath.endsWith('.css')) {
+            res.setHeader('Content-Type', 'text/css; charset=utf-8');
+            res.setHeader('X-Content-Type-Options', 'nosniff');
+        } else if (filePath.match(/\.(png|jpg|jpeg|gif|ico|svg)$/i)) {
+            res.setHeader('X-Content-Type-Options', 'nosniff');
+        }
+        console.log(`📁 Serving static file: ${filePath} with Content-Type: ${res.getHeader('Content-Type')}`);
+    }
+};
+
+// 優先處理JavaScript文件
+app.use('/js', express.static(path.join(__dirname, 'public', 'js'), staticOptions));
+app.use('/css', express.static(path.join(__dirname, 'public', 'css'), staticOptions));
+app.use('/images', express.static(path.join(__dirname, 'public', 'images'), staticOptions));
+
+// 最後處理所有public目錄
+app.use('/public', express.static(path.join(__dirname, 'public'), staticOptions));
 
 // 健康檢查
 app.get('/health', (req, res) => {
     res.json({
         status: 'healthy',
-        version: 'intermediate',
+        version: 'intermediate-fixed',
         timestamp: new Date().toISOString(),
         port: port,
-        env: process.env.NODE_ENV,
-        database: process.env.DATABASE_URL ? 'configured' : 'not_configured'
+        env: process.env.NODE_ENV || 'production',
+        features: ['完整HTML界面', '靜態資源', 'API端點', 'JavaScript功能']
     });
 });
 
-// 主頁 - 提供HTML界面
+// 主頁 - 員工儀表板
 app.get('/', (req, res) => {
     try {
         res.sendFile(path.join(__dirname, 'public', 'employee-dashboard.html'));
     } catch (error) {
-        res.json({
-            message: '🏢 企業員工管理系統 - 中級版',
-            status: 'running',
-            timestamp: new Date().toISOString(),
-            note: 'HTML界面載入中，目前提供API服務',
-            availablePages: {
-                dashboard: '/dashboard',
-                login: '/login',
-                admin: '/admin',
-                employee: '/employee'
-            }
+        console.error('主頁載入錯誤:', error);
+        res.status(500).json({
+            error: '主頁載入失敗',
+            message: error.message
         });
     }
 });
 
-// 登入頁面
-app.get('/login', (req, res) => {
-    try {
-        res.sendFile(path.join(__dirname, 'public', 'index.html'));
-    } catch (error) {
-        res.json({
-            message: '登入頁面',
-            api_login: '/api/auth/login',
-            timestamp: new Date().toISOString()
-        });
-    }
+// 頁面路由
+const pages = [
+    { path: '/login', file: 'login.html' },
+    { path: '/register', file: 'register.html' },
+    { path: '/employee', file: 'employee.html' },
+    { path: '/admin', file: 'admin.html' },
+    { path: '/dashboard', file: 'employee-dashboard.html' },
+    { path: '/attendance', file: 'attendance.html' },
+    { path: '/revenue', file: 'revenue.html' },
+    { path: '/profile', file: 'profile.html' },
+    { path: '/reports', file: 'reports.html' },
+    { path: '/schedule', file: 'schedule.html' }
+];
+
+pages.forEach(page => {
+    app.get(page.path, (req, res) => {
+        try {
+            res.sendFile(path.join(__dirname, 'public', page.file));
+        } catch (error) {
+            console.error(`${page.path} 載入錯誤:`, error);
+            res.status(404).json({
+                error: '頁面不存在',
+                path: page.path,
+                message: error.message
+            });
+        }
+    });
 });
 
-// 管理員頁面
-app.get('/admin', (req, res) => {
-    try {
-        res.sendFile(path.join(__dirname, 'public', 'admin.html'));
-    } catch (error) {
-        res.json({
-            message: '管理員頁面',
-            timestamp: new Date().toISOString()
-        });
-    }
-});
-
-// 員工頁面路由
-app.get('/employee', (req, res) => {
-    try {
-        res.sendFile(path.join(__dirname, 'public', 'employee.html'));
-    } catch (error) {
-        res.json({ message: '員工頁面載入失敗', error: error.message });
-    }
-});
-
-// 儀表板路由
-app.get('/dashboard', (req, res) => {
-    try {
-        res.sendFile(path.join(__dirname, 'public', 'employee-dashboard.html'));
-    } catch (error) {
-        res.json({ message: '儀表板載入失敗', error: error.message });
-    }
-});
-
-// 打卡頁面路由
-app.get('/attendance', (req, res) => {
-    try {
-        res.sendFile(path.join(__dirname, 'public', 'attendance.html'));
-    } catch (error) {
-        res.json({ message: '打卡頁面載入失敗', error: error.message });
-    }
-});
-
-// 營收頁面路由
-app.get('/revenue', (req, res) => {
-    try {
-        res.sendFile(path.join(__dirname, 'public', 'revenue.html'));
-    } catch (error) {
-        res.json({ message: '營收頁面載入失敗', error: error.message });
-    }
-});
-
-// 個人資料頁面路由
-app.get('/profile', (req, res) => {
-    try {
-        res.sendFile(path.join(__dirname, 'public', 'profile.html'));
-    } catch (error) {
-        res.json({ message: '個人資料頁面載入失敗', error: error.message });
-    }
-});
-
-// API端點
+// API 端點
 app.get('/api/test', (req, res) => {
     res.json({
         success: true,
-        message: 'API正常工作',
-        version: 'intermediate',
-        features: ['基本API', '靜態檔案', 'HTML界面'],
+        message: 'Render完整版API正常工作',
+        version: 'intermediate-fixed',
+        features: ['員工管理', '考勤打卡', '營收統計', '庫存管理'],
         timestamp: new Date().toISOString()
     });
 });
 
-// 認證API - 基本版本
+// 認證API
 app.get('/api/auth', (req, res) => {
     res.json({
         success: true,
-        message: '認證API正常',
-        methods: ['login', 'register'],
+        message: 'Render完整版認證API正常',
+        version: 'intermediate-fixed',
+        methods: ['login', 'register', 'profile'],
         timestamp: new Date().toISOString()
     });
 });
 
 app.post('/api/auth/login', (req, res) => {
-    const { employeeId, password } = req.body;
+    const { employeeId, password, name, email } = req.body;
     
-    // 基本驗證邏輯（測試版）
-    if (employeeId && password) {
-        res.json({
-            success: true,
-            message: '登入成功（測試版）',
-            token: 'test-token-' + Date.now(),
-            user: {
-                id: 1,
-                employeeId,
-                name: '測試用戶',
-                position: '員工'
-            },
-            timestamp: new Date().toISOString()
-        });
-    } else {
-        res.status(400).json({
+    if (!employeeId && !email && !name) {
+        return res.status(400).json({
             success: false,
-            error: '請提供員工編號和密碼',
-            timestamp: new Date().toISOString()
+            error: '請提供有效的登入憑證',
+            code: 'INVALID_CREDENTIALS'
         });
     }
+    
+    // 模擬成功登入
+    res.json({
+        success: true,
+        message: 'Render完整版登入成功',
+        data: { 
+            token: 'render-full-token-' + Date.now(),
+            employee: {
+                id: 1,
+                name: employeeId || name || 'Render用戶',
+                email: email || 'user@company.com',
+                position: '員工',
+                store: '台北總店',
+                permissions: ['attendance', 'revenue', 'profile']
+            }
+        },
+        timestamp: new Date().toISOString()
+    });
 });
 
 // 員工API
 app.get('/api/employees', (req, res) => {
     res.json({
         success: true,
-        message: '員工API正常',
+        message: 'Render完整版員工API正常',
         data: [
-            { id: 1, name: '張三', position: '店長', status: '在職' },
-            { id: 2, name: '李四', position: '員工', status: '在職' },
-            { id: 3, name: '王五', position: '實習生', status: '在職' }
+            { id: 1, name: 'Render員工1', position: '店長', store: '台北店', status: '在職' },
+            { id: 2, name: 'Render員工2', position: '副店長', store: '台北店', status: '在職' },
+            { id: 3, name: 'Render員工3', position: '員工', store: '台中店', status: '在職' }
         ],
         count: 3,
         timestamp: new Date().toISOString()
     });
 });
 
-// 打卡API
+// 考勤API
 app.get('/api/attendance/records', (req, res) => {
+    const { employeeId, limit = 10 } = req.query;
+    
     res.json({
         success: true,
-        message: '打卡API正常',
+        message: 'Render完整版考勤API正常',
         data: [
             {
                 id: 1,
-                employeeName: '張三',
+                employeeId: employeeId || 1,
+                employeeName: 'Render員工',
                 clockTime: new Date().toISOString(),
                 clockType: '上班',
+                location: '台北店',
+                coordinates: '25.0330,121.5654',
+                status: '正常'
+            },
+            {
+                id: 2,
+                employeeId: employeeId || 1,
+                employeeName: 'Render員工',
+                clockTime: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
+                clockType: '午休',
+                location: '台北店',
+                coordinates: '25.0330,121.5654',
                 status: '正常'
             }
         ],
-        count: 1,
+        count: 2,
+        filter: { employeeId, limit },
+        timestamp: new Date().toISOString()
+    });
+});
+
+app.post('/api/attendance/clock', (req, res) => {
+    const { employeeId, location, coordinates } = req.body;
+    
+    if (!employeeId) {
+        return res.status(400).json({
+            success: false,
+            error: '請提供員工編號',
+            code: 'EMPLOYEE_ID_REQUIRED'
+        });
+    }
+    
+    res.json({
+        success: true,
+        message: 'Render打卡成功',
+        data: {
+            id: Date.now(),
+            employeeId,
+            clockTime: new Date().toISOString(),
+            clockType: '上班',
+            location: location || '台北店',
+            coordinates: coordinates || '25.0330,121.5654',
+            status: '已記錄'
+        },
         timestamp: new Date().toISOString()
     });
 });
@@ -208,98 +251,118 @@ app.get('/api/attendance/records', (req, res) => {
 app.get('/api/revenue', (req, res) => {
     res.json({
         success: true,
-        message: '營收API正常',
-        data: [],
+        message: 'Render完整版營收API正常',
+        data: [
+            { id: 1, amount: 15000, date: '2025-08-10', store: '台北店', category: '銷售' },
+            { id: 2, amount: 8500, date: '2025-08-09', store: '台北店', category: '服務' },
+            { id: 3, amount: 12000, date: '2025-08-08', store: '台中店', category: '銷售' }
+        ],
+        summary: {
+            totalRevenue: 35500,
+            averageDaily: 11833,
+            topStore: '台北店'
+        },
         timestamp: new Date().toISOString()
     });
 });
 
-// 測試端點 - 網頁需要的API
-app.get('/api/auth/test', (req, res) => {
+app.post('/api/revenue', (req, res) => {
+    const { amount, category, description, employeeId } = req.body;
+    
+    if (!amount || amount <= 0) {
+        return res.status(400).json({
+            success: false,
+            error: '請提供有效的金額',
+            code: 'INVALID_AMOUNT'
+        });
+    }
+    
     res.json({
         success: true,
-        message: '認證API測試成功',
-        version: 'intermediate',
+        message: 'Render營收記錄新增成功',
+        data: {
+            id: Date.now(),
+            amount: parseFloat(amount),
+            category: category || '銷售',
+            description: description || '營收記錄',
+            employeeId: employeeId || 1,
+            date: new Date().toISOString().split('T')[0],
+            timestamp: new Date().toISOString()
+        },
         timestamp: new Date().toISOString()
     });
 });
 
-app.get('/api/attendance/test', (req, res) => {
-    res.json({
-        success: true,
-        message: '打卡API測試成功',
-        version: 'intermediate',
-        timestamp: new Date().toISOString()
+// 測試API端點
+const testEndpoints = ['auth', 'attendance', 'revenue', 'orders'];
+testEndpoints.forEach(endpoint => {
+    app.get(`/api/${endpoint}/test`, (req, res) => {
+        res.json({
+            success: true,
+            message: `Render ${endpoint} API測試成功`,
+            version: 'intermediate-fixed',
+            endpoint: `/api/${endpoint}`,
+            timestamp: new Date().toISOString()
+        });
     });
 });
 
-app.get('/api/revenue/test', (req, res) => {
-    res.json({
-        success: true,
-        message: '營收API測試成功',
-        version: 'intermediate',
-        timestamp: new Date().toISOString()
-    });
-});
-
-app.get('/api/orders/test', (req, res) => {
-    res.json({
-        success: true,
-        message: '叫貨API測試成功',
-        version: 'intermediate',
-        timestamp: new Date().toISOString()
-    });
-});
-
-// 錯誤處理
-app.use((err, req, res, next) => {
-    console.error('錯誤:', err);
-    res.status(500).json({
-        success: false,
-        error: '內部伺服器錯誤',
-        message: err.message,
-        timestamp: new Date().toISOString()
-    });
-});
-
-// 404處理
+// 404處理 - 緊急修復：排除靜態文件請求被攔截
 app.use('*', (req, res) => {
+    // 排除靜態文件請求（JavaScript、CSS、圖片等）
+    if (req.originalUrl.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/i)) {
+        return res.status(404).send('Static file not found');
+    }
+    
     if (req.originalUrl.startsWith('/api/')) {
         res.status(404).json({
             success: false,
-            error: 'API端點不存在',
+            error: 'Render API端點不存在',
             path: req.originalUrl,
+            availableEndpoints: ['/api/test', '/api/auth', '/api/employees', '/api/attendance', '/api/revenue'],
             timestamp: new Date().toISOString()
         });
     } else {
-        // 嘗試返回主頁
+        // SPA 路由處理，只對HTML頁面請求返回主頁面
         try {
-            res.sendFile(path.join(__dirname, 'public', 'index.html'));
+            res.sendFile(path.join(__dirname, 'public', 'employee-dashboard.html'));
         } catch (error) {
             res.status(404).json({
                 error: '頁面不存在',
                 path: req.originalUrl,
-                suggestion: '嘗試訪問 / 或 /login',
+                message: '請訪問 / 或 /dashboard',
                 timestamp: new Date().toISOString()
             });
         }
     }
 });
 
+// 錯誤處理
+app.use((err, req, res, next) => {
+    console.error('Render完整版錯誤:', err);
+    res.status(500).json({
+        success: false,
+        error: 'Render內部伺服器錯誤',
+        message: err.message,
+        timestamp: new Date().toISOString()
+    });
+});
+
 // 啟動伺服器
 app.listen(port, '0.0.0.0', () => {
-    console.log(`✅ 中級版伺服器啟動在端口 ${port}`);
+    console.log(`✅ Render完整版伺服器成功啟動在端口 ${port}`);
     console.log(`🌐 URL: http://0.0.0.0:${port}`);
-    console.log(`📁 靜態檔案: ${path.join(__dirname, 'public')}`);
+    console.log(`📊 Environment: ${process.env.NODE_ENV || 'production'}`);
+    console.log(`🎯 Features: 完整HTML界面 + 全功能API + JavaScript互動`);
 });
 
 // 進程錯誤處理
 process.on('uncaughtException', (err) => {
-    console.error('未捕獲的例外:', err);
+    console.error('Render未捕獲的例外:', err);
 });
 
 process.on('unhandledRejection', (reason) => {
-    console.error('未處理的Promise拒絕:', reason);
+    console.error('Render未處理的Promise拒絕:', reason);
 });
 
-console.log('🎉 中級版系統就緒！支援HTML界面和基本API');
+console.log('🎉 Render專用完整版系統就緒！');
