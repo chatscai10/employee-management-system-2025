@@ -49,7 +49,7 @@ router.get('/equipment', async (req, res) => {
                 {
                     model: models.Store,
                     as: 'Store',
-                    attributes: ['id', 'storeName', 'address']
+                    attributes: ['id', 'name', 'address']
                 }
             ],
             order: [['equipmentName', 'ASC']],
@@ -113,7 +113,7 @@ router.get('/equipment/:id', async (req, res) => {
                 {
                     model: models.Store,
                     as: 'Store',
-                    attributes: ['id', 'storeName', 'address']
+                    attributes: ['id', 'name', 'address']
                 },
                 {
                     model: models.MaintenanceTask,

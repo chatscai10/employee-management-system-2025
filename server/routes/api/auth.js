@@ -79,6 +79,7 @@ router.post('/login', async (req, res) => {
             where: whereClause,
             include: [{
                 model: models.Store,
+                as: 'AssignedStore',
                 attributes: ['name', 'address']
             }]
         });

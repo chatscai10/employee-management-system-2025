@@ -334,15 +334,26 @@ router.get('/records', async (req, res) => {
             limit = 20 
         } = req.query;
         
-        if (!employeeId) {
-            return res.status(400).json({
-                success: false,
-                message: '缺少員工ID參數'
-            });
-        }
-        
         await initModels();
         const models = getModels();
+        
+        // 如果沒有提供employeeId，返回所有記錄（用於測試）
+        if (!employeeId) {
+            const records = await models.AttendanceRecord.findAll({
+                where: { isDeleted: false },
+                order: [['clockTime', 'DESC']],
+                limit: parseInt(limit)
+            });
+            
+            return res.json({
+                success: true,
+                data: {
+                    records: records,
+                    total: records.length,
+                    message: '返回所有打卡記錄（測試模式）'
+                }
+            });
+        }
         
         const where = {
             employeeId: employeeId,

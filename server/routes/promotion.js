@@ -11,6 +11,53 @@ const logger = require('../utils/logger');
  */
 
 /**
+ * 獲取所有投票活動 (用於測試)
+ * GET /api/promotion/campaigns
+ */
+router.get('/campaigns', async (req, res) => {
+    try {
+        const models = getModels();
+        
+        const campaigns = await models.PromotionCampaign.findAll({
+            include: [
+                {
+                    model: models.PromotionCandidate,
+                    as: 'candidates',
+                    include: [{
+                        model: models.Employee,
+                        as: 'employee',
+                        attributes: ['id', 'name', 'position', 'currentStore']
+                    }]
+                }
+            ],
+            order: [['createdAt', 'DESC']],
+            limit: 50
+        });
+
+        res.json({
+            success: true,
+            data: campaigns.map(campaign => ({
+                id: campaign.id,
+                campaignName: campaign.campaignName,
+                campaignType: campaign.campaignType,
+                status: campaign.status,
+                startDate: campaign.startDate,
+                endDate: campaign.endDate,
+                candidateCount: campaign.candidates?.length || 0
+            })),
+            message: '投票活動列表獲取成功'
+        });
+        
+    } catch (error) {
+        console.error('獲取投票活動列表失敗:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+/**
  * 獲取活動中的升遷投票
  * GET /api/promotion/campaigns/active
  */

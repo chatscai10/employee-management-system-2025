@@ -308,6 +308,36 @@ router.get('/employee/:employeeId/:year/:month', async (req, res) => {
 });
 
 /**
+ * 獲取基本排班配置 (用於測試)
+ * GET /api/schedule/config
+ */
+router.get('/config', async (req, res) => {
+    try {
+        const models = getModels();
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth() + 1;
+        
+        const config = await models.ScheduleConfig.getConfig(year, month);
+        
+        res.json({
+            success: true,
+            data: config || {
+                year,
+                month,
+                status: 'no_config',
+                message: '當前月份無排班配置'
+            }
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+/**
  * 獲取排班配置
  * GET /api/schedule/config/:year/:month
  */

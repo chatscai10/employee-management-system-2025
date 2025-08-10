@@ -21,6 +21,35 @@ const {
 router.get('/health', healthCheck);
 
 /**
+ * @route GET /api/monitoring/metrics/basic
+ * @desc 獲取基本系統指標 (用於測試)
+ * @access Public
+ */
+router.get('/metrics/basic', (req, res) => {
+    const used = process.memoryUsage();
+    const startTime = process.uptime();
+    
+    res.json({
+        success: true,
+        data: {
+            timestamp: new Date().toISOString(),
+            uptime: Math.floor(startTime),
+            memory: {
+                rss: Math.round(used.rss / 1024 / 1024) + ' MB',
+                heapTotal: Math.round(used.heapTotal / 1024 / 1024) + ' MB',
+                heapUsed: Math.round(used.heapUsed / 1024 / 1024) + ' MB'
+            },
+            system: {
+                platform: process.platform,
+                nodeVersion: process.version,
+                pid: process.pid
+            }
+        },
+        message: '基本系統指標獲取成功'
+    });
+});
+
+/**
  * @route GET /api/monitoring/metrics
  * @desc 獲取系統指標
  * @access Private (需要認證)

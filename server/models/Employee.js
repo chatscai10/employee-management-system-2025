@@ -156,6 +156,13 @@ module.exports = (sequelize) => {
 
     // 模型關聯定義
     Employee.associate = (models) => {
+        // 員工與分店關聯 - 基於分店名稱
+        Employee.belongsTo(models.Store, {
+            foreignKey: 'currentStore',
+            targetKey: 'name',
+            as: 'AssignedStore'
+        });
+        
         // 員工與打卡記錄關聯
         Employee.hasMany(models.AttendanceRecord, {
             foreignKey: 'employeeId',

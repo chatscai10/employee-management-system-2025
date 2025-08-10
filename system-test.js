@@ -329,7 +329,7 @@ class SystemTester {
             this.recordTest('系統健康API', healthResponse.status === 200);
             
             // 測試系統指標
-            const metricsResponse = await axios.get(`${API_BASE}/monitoring/metrics`, { timeout: 5000 });
+            const metricsResponse = await axios.get(`${API_BASE}/monitoring/metrics/basic`, { timeout: 5000 });
             this.recordTest('系統指標API', metricsResponse.status === 200);
             
             // 測試告警列表
