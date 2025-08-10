@@ -12,7 +12,8 @@
       "Bash(git commit:*)",
       "Bash(railway init:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebFetch(domain:employee-management-system-intermediate.onrender.com)"
     ],
     "deny": []
   }
