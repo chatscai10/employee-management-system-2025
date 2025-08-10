@@ -30,7 +30,7 @@ const attendanceRoutes = require('./routes/api/attendance');
 const revenueRoutes = require('./routes/api/revenue');
 const inventoryRoutes = require('./routes/api/inventory');
 const orderRoutes = require('./routes/api/orders');
-const scheduleRoutes = require('./routes/api/schedule');
+const scheduleRoutes = require('./routes/schedule');
 const promotionRoutes = require('./routes/api/promotion');
 const maintenanceRoutes = require('./routes/api/maintenance');
 // 移除舊的adminRoutes載入

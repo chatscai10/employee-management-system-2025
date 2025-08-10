@@ -54,7 +54,10 @@ const loadModels = (sequelize) => {
         'InventoryOrder.js',
         'InventoryLog.js',
         'InventoryAlert.js',
-        'Schedule.js'
+        'Schedule.js',
+        'ScheduleConfig.js',
+        'ScheduleSession.js',
+        'WorkAssignment.js'
     ];
 
     modelFiles.forEach(file => {
