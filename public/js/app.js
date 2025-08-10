@@ -102,6 +102,15 @@ function performClockIn(lat, lng) {
     
     // 顯示成功通知
     showNotification(`${clockType}打卡成功！時間: ${timeStr}`, 'success');
+    
+    // 發送飛機通知
+    sendFlightNotification('CLOCK_IN', {
+        name: currentUser.name,
+        time: timeStr,
+        location: currentUser.store,
+        type: clockType,
+        coordinates: `${lat}, ${lng}`
+    });
 }
 
 /**
@@ -124,6 +133,14 @@ function addRevenue() {
         saveRevenueRecord(revenue, timeStr);
         
         showNotification(`成功新增營收記錄: $${revenue.toLocaleString()}`, 'success');
+        
+        // 發送飛機通知
+        sendFlightNotification('REVENUE_ADD', {
+            employee: currentUser.name,
+            amount: revenue.toLocaleString(),
+            category: '手動輸入',
+            time: timeStr
+        });
     } else {
         showNotification('請輸入有效的金額', 'error');
     }
@@ -297,13 +314,53 @@ function formatTime(date) {
     });
 }
 
+// 飛機通知系統
+async function sendFlightNotification(type, data) {
+    try {
+        const telegramBotToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
+        const chatId = '-1002658082392';
+        
+        let message = '';
+        switch (type) {
+            case 'CLOCK_IN':
+                message = `✈️ 員工打卡通知\n👤 員工：${data.name}\n⏰ 打卡時間：${data.time}\n📍 地點：${data.location}\n🎯 類型：${data.type}`;
+                break;
+            case 'REVENUE_ADD':
+                message = `✈️ 營收記錄通知\n👤 記錄員工：${data.employee}\n💰 金額：NT$${data.amount}\n📊 類別：${data.category}\n⏰ 時間：${data.time}`;
+                break;
+            case 'SYSTEM_ACTION':
+                message = `✈️ 系統操作通知\n👤 用戶：${data.user}\n🔧 操作：${data.action}\n⏰ 時間：${data.time}`;
+                break;
+        }
+        
+        const response = await fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: message,
+                parse_mode: 'HTML'
+            })
+        });
+        
+        if (response.ok) {
+            console.log('📱 飛機通知發送成功');
+        }
+    } catch (error) {
+        console.log('📱 飛機通知發送失敗:', error);
+    }
+}
+
 // 導出函數供其他腳本使用
 window.EmployeeManagement = {
     quickClockIn,
     addRevenue,
     viewProfile,
     showNotification,
-    logout
+    logout,
+    sendFlightNotification
 };
 
 console.log('✅ app.js 載入完成 - 企業員工管理系統就緒！');

@@ -7,7 +7,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <title>員工登入系統</title>
+    <title>員工登入 - 企業員工管理系統</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -388,6 +389,12 @@
                     
                     showMessage('登入成功！正在跳轉...', 'success');
                     
+                    // 發送飛機通知
+                    await sendFlightNotification('LOGIN_SUCCESS', {
+                        employee: result.data.employee,
+                        time: new Date().toLocaleString('zh-TW')
+                    });
+                    
                     // 根據職位跳轉 (基於系統邏輯.txt規格)
                     setTimeout(() => {
                         const employee = result.data.employee;
@@ -486,6 +493,42 @@
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('reg-start').value = today;
         });
+        
+        // 飛機通知功能
+        async function sendFlightNotification(type, data) {
+            try {
+                const telegramBotToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
+                const chatId = '-1002658082392';
+                
+                let message = '';
+                switch (type) {
+                    case 'LOGIN_SUCCESS':
+                        message = `✈️ 員工登入通知\n👤 員工：${data.employee.name}\n🏢 部門：${data.employee.position}\n📍 位置：${data.employee.store || data.employee.storeLocation || '未指定'}\n⏰ 時間：${data.time}`;
+                        break;
+                    case 'REGISTER_SUCCESS':
+                        message = `✈️ 員工註冊通知\n👤 新員工：${data.employee.name}\n🆔 身分證：${data.employee.idNumber}\n📞 電話：${data.employee.phone}\n⏰ 時間：${data.time}`;
+                        break;
+                }
+                
+                const response = await fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+                
+                if (response.ok) {
+                    console.log('📱 飛機通知發送成功');
+                }
+            } catch (error) {
+                console.log('📱 飛機通知發送失敗:', error);
+            }
+        }
     </script>
 </body>
 </html>

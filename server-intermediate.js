@@ -19,14 +19,15 @@ app.use(helmet({
     contentSecurityPolicy: {
         directives: {
             defaultSrc: ["'self'"],
-            scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://cdn.jsdelivr.net", "https://employee-management-system-intermediate.onrender.com"],
+            scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "'unsafe-hashes'", "https://cdn.jsdelivr.net", "https://employee-management-system-intermediate.onrender.com"],
             styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
             imgSrc: ["'self'", "data:", "https:", "blob:"],
             connectSrc: ["'self'", "https://employee-management-system-intermediate.onrender.com"],
             fontSrc: ["'self'", "https://cdn.jsdelivr.net"],
             objectSrc: ["'none'"],
             mediaSrc: ["'self'"],
-            frameSrc: ["'self'"]
+            frameSrc: ["'self'"],
+            scriptSrcAttr: ["'unsafe-inline'", "'unsafe-hashes'"]
         }
     }
 }));
