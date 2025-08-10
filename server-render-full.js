@@ -312,8 +312,13 @@ testEndpoints.forEach(endpoint => {
     });
 });
 
-// 404處理
+// 404處理 - 緊急修復：排除靜態文件請求被攔截
 app.use('*', (req, res) => {
+    // 排除靜態文件請求（JavaScript、CSS、圖片等）
+    if (req.originalUrl.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/i)) {
+        return res.status(404).send('Static file not found');
+    }
+    
     if (req.originalUrl.startsWith('/api/')) {
         res.status(404).json({
             success: false,
@@ -323,7 +328,7 @@ app.use('*', (req, res) => {
             timestamp: new Date().toISOString()
         });
     } else {
-        // SPA 路由處理，返回主頁面
+        // SPA 路由處理，只對HTML頁面請求返回主頁面
         try {
             res.sendFile(path.join(__dirname, 'public', 'employee-dashboard.html'));
         } catch (error) {
