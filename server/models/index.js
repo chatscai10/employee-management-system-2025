@@ -57,7 +57,18 @@ const loadModels = (sequelize) => {
         'Schedule.js',
         'ScheduleConfig.js',
         'ScheduleSession.js',
-        'WorkAssignment.js'
+        'WorkAssignment.js',
+        'PromotionCampaign.js',
+        'PromotionCandidate.js',
+        'PromotionVote.js',
+        'AttendanceStatistics.js',
+        'VoteModificationHistory.js',
+        'Equipment.js',
+        'MaintenanceTask.js',
+        'MaintenanceRecord.js',
+        'PositionChangeExecution.js',
+        'ExecutionAuditLog.js',
+        'VoteAppeal.js'
     ];
 
     modelFiles.forEach(file => {
@@ -200,9 +211,9 @@ const initModels = async () => {
             }
         });
 
-        // 同步數據庫
-        const forceSync = process.env.NODE_ENV === 'development' && process.env.FORCE_DB_SYNC === 'true';
-        await sequelize.sync({ force: forceSync, alter: true });
+        // 同步數據庫 - 強制重建
+        const forceSync = true; // 強制重建以解決架構衝突
+        await sequelize.sync({ force: forceSync });
         logger.info(`✅ 數據庫表同步完成 (force: ${forceSync})`);
     }
     

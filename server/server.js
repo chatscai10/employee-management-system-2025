@@ -31,13 +31,19 @@ const revenueRoutes = require('./routes/api/revenue');
 const inventoryRoutes = require('./routes/api/inventory');
 const orderRoutes = require('./routes/api/orders');
 const scheduleRoutes = require('./routes/schedule');
-const promotionRoutes = require('./routes/api/promotion');
-const maintenanceRoutes = require('./routes/api/maintenance');
+const workAssignmentRoutes = require('./routes/work-assignments');
+const promotionRoutes = require('./routes/promotion');
+const maintenanceRoutes = require('./routes/maintenance');
+const executionRoutes = require('./routes/execution');
+const telegramRoutes = require('./routes/telegram-notifications');
+const appealsRoutes = require('./routes/appeals');
 // 移除舊的adminRoutes載入
 const monitoringRoutes = require('./routes/api/monitoring');
 const alertsRoutes = require('./routes/api/alerts');
 const employeesRoutes = require('./routes/api/employees');
 const inventoryAdvancedRoutes = require('./routes/inventory-advanced');
+const scheduledJobsRoutes = require('./routes/api/scheduled-jobs');
+const adminVotingRoutes = require('./routes/api/admin-voting');
 
 // 載入服務
 const notificationService = require('./services/notificationService');
@@ -202,14 +208,20 @@ class EmployeeManagementServer {
         this.app.use('/api/inventory', inventoryRoutes);
         this.app.use('/api/orders', orderRoutes);
         this.app.use('/api/schedule', scheduleRoutes);
+        this.app.use('/api/work-assignments', workAssignmentRoutes);
         this.app.use('/api/promotion', promotionRoutes);
         this.app.use('/api/maintenance', maintenanceRoutes);
+        this.app.use('/api/execution', executionRoutes);
+        this.app.use('/api/telegram', telegramRoutes);
+        this.app.use('/api/appeals', appealsRoutes);
         this.app.use('/api/admin', require('./routes/admin'));
         this.app.use('/api/admin/auth', require('./routes/auth')); // 員工認證系統
         this.app.use('/api/monitoring', monitoringRoutes);
         this.app.use('/api/alerts', alertsRoutes);
         this.app.use('/api/employees', employeesRoutes);
         this.app.use('/api/inventory/advanced', inventoryAdvancedRoutes);
+        this.app.use('/api/scheduled-jobs', scheduledJobsRoutes);
+        this.app.use('/api/admin/voting', adminVotingRoutes);
 
         // 主頁面路由 (重定向到登入頁面)
         this.app.get('/', (req, res) => {
@@ -434,45 +446,50 @@ class EmployeeManagementServer {
      * ⏰ 啟動定時任務
      */
     async startScheduledTasks() {
-        logger.info('⏰ 啟動定時任務...');
+        try {
+            logger.info('⏰ 啟動定時任務系統...');
 
-        const cron = require('node-cron');
+            // 載入自動投票定時任務管理器
+            const scheduledJobManager = require('./jobs/ScheduledJobManager');
+            await scheduledJobManager.initialize();
+            scheduledJobManager.startAllJobs();
+            
+            // 將定時任務管理器存儲為實例屬性，以便在關閉時清理
+            this.scheduledJobManager = scheduledJobManager;
 
-        // 每日備份 (凌晨2點)
-        if (process.env.NODE_ENV === 'production') {
-            cron.schedule('0 2 * * *', async () => {
-                logger.info('💾 開始執行每日備份...');
+            // 載入傳統 node-cron 定時任務
+            const cron = require('node-cron');
+
+            // 每日備份 (凌晨2點)
+            if (process.env.NODE_ENV === 'production') {
+                cron.schedule('0 2 * * *', async () => {
+                    logger.info('💾 開始執行每日備份...');
+                    try {
+                        const backupService = require('./services/backupService');
+                        await backupService.performDailyBackup();
+                        logger.info('✅ 每日備份完成');
+                    } catch (error) {
+                        logger.error('❌ 每日備份失敗:', error);
+                    }
+                });
+            }
+
+            // 清理臨時檔案 (每小時)
+            cron.schedule('0 * * * *', async () => {
                 try {
-                    const backupService = require('./services/backupService');
-                    await backupService.performDailyBackup();
-                    logger.info('✅ 每日備份完成');
+                    const cleanupService = require('./services/cleanupService');
+                    await cleanupService.cleanupTempFiles();
                 } catch (error) {
-                    logger.error('❌ 每日備份失敗:', error);
+                    logger.error('❌ 臨時檔案清理失敗:', error);
                 }
             });
+
+            logger.info('✅ 所有定時任務啟動完成');
+
+        } catch (error) {
+            logger.error('❌ 定時任務啟動失敗:', error);
+            throw error;
         }
-
-        // 健康檢查 (每分鐘)
-        cron.schedule('* * * * *', async () => {
-            try {
-                const healthService = require('./services/healthService');
-                await healthService.performHealthCheck();
-            } catch (error) {
-                logger.error('❌ 健康檢查失敗:', error);
-            }
-        });
-
-        // 清理臨時檔案 (每小時)
-        cron.schedule('0 * * * *', async () => {
-            try {
-                const cleanupService = require('./services/cleanupService');
-                await cleanupService.cleanupTempFiles();
-            } catch (error) {
-                logger.error('❌ 臨時檔案清理失敗:', error);
-            }
-        });
-
-        logger.info('✅ 定時任務啟動完成');
     }
 
     /**
@@ -482,6 +499,12 @@ class EmployeeManagementServer {
         logger.info('🛑 開始優雅關閉程序...');
 
         try {
+            // 停止定時任務
+            if (this.scheduledJobManager) {
+                await this.scheduledJobManager.shutdown();
+                logger.info('⏰ 定時任務已停止');
+            }
+
             // 停止接受新連接
             this.server.close(async () => {
                 logger.info('📪 HTTP 伺服器已關閉');
@@ -493,15 +516,22 @@ class EmployeeManagementServer {
 
                 // 關閉資料庫連接
                 const db = require('./models');
-                await db.sequelize.close();
-                logger.info('🗄️ 資料庫連接已關閉');
+                const sequelize = db.getSequelize();
+                if (sequelize) {
+                    await sequelize.close();
+                    logger.info('🗄️ 資料庫連接已關閉');
+                }
 
                 // 發送關閉通知
                 if (process.env.NODE_ENV === 'production') {
-                    await notificationService.sendSystemNotification(
-                        '🛑 系統關閉通知',
-                        `企業員工管理系統已優雅關閉\n時間: ${new Date().toLocaleString('zh-TW')}`
-                    );
+                    try {
+                        await notificationService.sendSystemNotification(
+                            '🛑 系統關閉通知',
+                            `企業員工管理系統已優雅關閉\n時間: ${new Date().toLocaleString('zh-TW')}`
+                        );
+                    } catch (error) {
+                        logger.error('發送關閉通知失敗:', error);
+                    }
                 }
 
                 logger.info('✅ 優雅關閉完成');

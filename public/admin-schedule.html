@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理員排班分配 - 企業員工管理系統</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --info-color: #17a2b8;
+            --light-bg: #ecf0f1;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #bdc3c7 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .admin-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 25px;
+            background: #f8f9fa;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 25px;
+            padding: 25px;
+        }
+
+        .schedule-overview {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .overview-header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .period-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: #e9ecef;
+            margin: 20px;
+        }
+
+        .calendar-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .calendar-day {
+            background: white;
+            min-height: 120px;
+            padding: 8px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .calendar-day:hover {
+            background: #f8f9fa;
+        }
+
+        .day-number {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .conflict-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--danger-color);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .employee-list {
+            max-height: 90px;
+            overflow-y: auto;
+        }
+
+        .employee-item {
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            margin: 1px 0;
+            border-radius: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .employee-working {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .employee-off {
+            background: var(--warning-color);
+            color: white;
+        }
+
+        .employee-conflict {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .control-panel {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .panel-section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .panel-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .conflict-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .conflict-item {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .conflict-date {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .assignment-form {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .btn-assign {
+            background: linear-gradient(135deg, var(--success-color), #2ecc71);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-assign:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .employee-stats {
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .employee-stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .stat-badges {
+            display: flex;
+            gap: 5px;
+        }
+
+        .stat-badge {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .badge-off {
+            background: var(--warning-color);
+            color: white;
+        }
+
+        .badge-work {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .badge-weekend {
+            background: var(--info-color);
+            color: white;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .loading-spinner {
+            color: white;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .control-panel {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 15px;
+            }
+            
+            .calendar-grid {
+                margin: 10px;
+            }
+            
+            .calendar-day {
+                min-height: 80px;
+                padding: 4px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-users-cog me-3"></i>管理員排班分配</h1>
+            <div class="mt-2">
+                <span class="badge bg-light text-dark">管理員控制台</span>
+                <span class="badge bg-success ms-2" id="systemStatus">系統正常</span>
+            </div>
+        </div>
+
+        <!-- Statistics Grid -->
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-icon text-primary">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-value text-primary" id="totalEmployees">0</div>
+                <div class="stat-label">總員工數</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon text-success">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-value text-success" id="completedSchedules">0</div>
+                <div class="stat-label">已完成排班</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon text-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="stat-value text-warning" id="conflicts">0</div>
+                <div class="stat-label">排班衝突</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon text-info">
+                    <i class="fas fa-calendar-day"></i>
+                </div>
+                <div class="stat-value text-info" id="totalOffDays">0</div>
+                <div class="stat-label">總休假天數</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Schedule Overview -->
+            <div class="schedule-overview">
+                <div class="overview-header">
+                    <div>
+                        <h4><i class="fas fa-calendar-alt me-2"></i>排班總覽</h4>
+                    </div>
+                    <div class="period-nav">
+                        <button class="nav-btn" id="prevMonth">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span id="currentPeriod">2025年2月</span>
+                        <button class="nav-btn" id="nextMonth">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Calendar Grid -->
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar will be generated here -->
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <!-- Conflict Detection -->
+                <div class="panel-section">
+                    <div class="section-title">
+                        <i class="fas fa-exclamation-triangle text-warning"></i>
+                        衝突檢測
+                    </div>
+                    <div class="conflict-list" id="conflictList">
+                        <div class="text-muted text-center py-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            目前無排班衝突
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manual Assignment -->
+                <div class="panel-section">
+                    <div class="section-title">
+                        <i class="fas fa-user-plus text-primary"></i>
+                        手動分配
+                    </div>
+                    <div class="assignment-form">
+                        <div class="form-group">
+                            <label class="form-label">選擇日期</label>
+                            <input type="date" class="form-control" id="assignDate">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">選擇員工</label>
+                            <select class="form-control" id="assignEmployee">
+                                <option value="">選擇員工...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">分店</label>
+                            <select class="form-control" id="assignStore">
+                                <option value="">選擇分店...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">值班類型</label>
+                            <select class="form-control" id="assignType">
+                                <option value="regular">正常值班</option>
+                                <option value="support">支援值班</option>
+                                <option value="overtime">加班值班</option>
+                            </select>
+                        </div>
+                        <button class="btn-assign" id="assignButton">
+                            <i class="fas fa-plus-circle me-2"></i>分配值班
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Employee Statistics -->
+                <div class="panel-section">
+                    <div class="section-title">
+                        <i class="fas fa-chart-bar text-info"></i>
+                        員工統計
+                    </div>
+                    <div class="employee-stats" id="employeeStats">
+                        <!-- Employee statistics will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <div class="mt-3">處理中...</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        class AdminScheduleManager {
+            constructor() {
+                this.currentYear = 2025;
+                this.currentMonth = 2;
+                this.employees = [];
+                this.stores = [];
+                this.schedules = [];
+                this.workAssignments = [];
+                this.conflicts = [];
+                this.statistics = {};
+                
+                this.init();
+            }
+
+            async init() {
+                await this.loadInitialData();
+                this.renderCalendar();
+                this.setupEventListeners();
+                this.startPeriodicUpdate();
+            }
+
+            async loadInitialData() {
+                try {
+                    this.showLoading(true);
+                    
+                    // Parallel loading for better performance
+                    const [employeesRes, storesRes, statisticsRes] = await Promise.all([
+                        fetch('/api/employees'),
+                        fetch('/api/stores'),
+                        fetch(`/api/schedule/statistics/${this.currentYear}/${this.currentMonth}`)
+                    ]);
+
+                    if (employeesRes.ok) {
+                        const employeesData = await employeesRes.json();
+                        this.employees = employeesData.data || [];
+                    }
+
+                    if (storesRes.ok) {
+                        const storesData = await storesRes.json();
+                        this.stores = storesData.data || [];
+                    }
+
+                    if (statisticsRes.ok) {
+                        const statsData = await statisticsRes.json();
+                        this.statistics = statsData.data || {};
+                        this.updateStatistics();
+                    }
+
+                    await this.loadScheduleData();
+                    this.populateDropdowns();
+
+                } catch (error) {
+                    console.error('載入初始數據失敗:', error);
+                } finally {
+                    this.showLoading(false);
+                }
+            }
+
+            async loadScheduleData() {
+                try {
+                    // Load schedules and work assignments
+                    const [schedulesRes, assignmentsRes] = await Promise.all([
+                        fetch(`/api/schedule/statistics/${this.currentYear}/${this.currentMonth}`),
+                        this.loadWorkAssignments()
+                    ]);
+
+                    if (schedulesRes.ok) {
+                        const data = await schedulesRes.json();
+                        this.schedules = data.data?.employeeStats || [];
+                    }
+
+                    await this.detectConflicts();
+                    this.updateConflictList();
+                    this.updateEmployeeStats();
+
+                } catch (error) {
+                    console.error('載入排班數據失敗:', error);
+                }
+            }
+
+            async loadWorkAssignments() {
+                // This would load existing work assignments
+                // For now, we'll simulate this
+                this.workAssignments = [];
+            }
+
+            populateDropdowns() {
+                // Populate employee dropdown
+                const employeeSelect = document.getElementById('assignEmployee');
+                employeeSelect.innerHTML = '<option value="">選擇員工...</option>';
+                
+                this.employees.forEach(emp => {
+                    const option = document.createElement('option');
+                    option.value = emp.id;
+                    option.textContent = `${emp.name} (${emp.position})`;
+                    employeeSelect.appendChild(option);
+                });
+
+                // Populate store dropdown
+                const storeSelect = document.getElementById('assignStore');
+                storeSelect.innerHTML = '<option value="">選擇分店...</option>';
+                
+                this.stores.forEach(store => {
+                    const option = document.createElement('option');
+                    option.value = store.id;
+                    option.textContent = store.name;
+                    storeSelect.appendChild(option);
+                });
+            }
+
+            updateStatistics() {
+                document.getElementById('totalEmployees').textContent = this.statistics.totalEmployees || 0;
+                document.getElementById('completedSchedules').textContent = this.statistics.completedSchedules || 0;
+                document.getElementById('conflicts').textContent = this.conflicts.length;
+                document.getElementById('totalOffDays').textContent = this.statistics.totalOffDays || 0;
+            }
+
+            async detectConflicts() {
+                this.conflicts = [];
+                
+                // Simulate conflict detection based on schedules
+                const daysInMonth = new Date(this.currentYear, this.currentMonth, 0).getDate();
+                
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dateStr = `${this.currentYear}-${this.currentMonth.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+                    
+                    // Check for conflicts on this date
+                    const offEmployees = this.schedules.filter(s => 
+                        s.offDates && s.offDates.includes(dateStr)
+                    );
+
+                    // Simulate different types of conflicts
+                    if (offEmployees.length > 2) {
+                        this.conflicts.push({
+                            date: dateStr,
+                            type: 'too_many_off',
+                            message: `${day}日休假人數過多 (${offEmployees.length}人)`,
+                            employees: offEmployees.map(e => e.employeeName)
+                        });
+                    }
+
+                    // Check store-specific conflicts
+                    const storeGroups = {};
+                    offEmployees.forEach(emp => {
+                        const empData = this.employees.find(e => e.name === emp.employeeName);
+                        if (empData && empData.currentStore) {
+                            if (!storeGroups[empData.currentStore]) {
+                                storeGroups[empData.currentStore] = [];
+                            }
+                            storeGroups[empData.currentStore].push(emp.employeeName);
+                        }
+                    });
+
+                    Object.keys(storeGroups).forEach(store => {
+                        if (storeGroups[store].length > 1) {
+                            this.conflicts.push({
+                                date: dateStr,
+                                type: 'store_conflict',
+                                message: `${day}日 ${store} 分店休假人數過多 (${storeGroups[store].length}人)`,
+                                employees: storeGroups[store],
+                                store: store
+                            });
+                        }
+                    });
+                }
+            }
+
+            updateConflictList() {
+                const conflictList = document.getElementById('conflictList');
+                
+                if (this.conflicts.length === 0) {
+                    conflictList.innerHTML = `
+                        <div class="text-muted text-center py-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            目前無排班衝突
+                        </div>
+                    `;
+                } else {
+                    conflictList.innerHTML = this.conflicts.map(conflict => `
+                        <div class="conflict-item">
+                            <div class="conflict-date">${conflict.date}</div>
+                            <div class="mt-1">${conflict.message}</div>
+                            <div class="mt-2">
+                                <small class="text-muted">
+                                    涉及員工: ${conflict.employees.join(', ')}
+                                </small>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            updateEmployeeStats() {
+                const employeeStats = document.getElementById('employeeStats');
+                
+                if (this.schedules.length === 0) {
+                    employeeStats.innerHTML = `
+                        <div class="text-muted text-center py-3">
+                            <i class="fas fa-info-circle me-2"></i>
+                            暫無排班數據
+                        </div>
+                    `;
+                    return;
+                }
+
+                employeeStats.innerHTML = this.schedules.map(emp => {
+                    const workDays = this.getDaysInMonth() - emp.totalOffDays;
+                    return `
+                        <div class="employee-stat-item">
+                            <div>
+                                <div class="fw-bold">${emp.employeeName}</div>
+                                <small class="text-muted">${emp.status === 'completed' ? '已完成' : '進行中'}</small>
+                            </div>
+                            <div class="stat-badges">
+                                <span class="stat-badge badge-off">${emp.totalOffDays}休</span>
+                                <span class="stat-badge badge-work">${workDays}班</span>
+                                <span class="stat-badge badge-weekend">${emp.weekendOffDays}週</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            renderCalendar() {
+                const grid = document.getElementById('calendarGrid');
+                grid.innerHTML = '';
+
+                // Day headers
+                const dayHeaders = ['日', '一', '二', '三', '四', '五', '六'];
+                dayHeaders.forEach(day => {
+                    const header = document.createElement('div');
+                    header.className = 'calendar-header';
+                    header.textContent = day;
+                    grid.appendChild(header);
+                });
+
+                // Calendar days
+                const firstDay = new Date(this.currentYear, this.currentMonth - 1, 1);
+                const lastDay = new Date(this.currentYear, this.currentMonth, 0);
+                const startDate = new Date(firstDay);
+                startDate.setDate(startDate.getDate() - firstDay.getDay());
+
+                for (let i = 0; i < 42; i++) {
+                    const currentDate = new Date(startDate);
+                    currentDate.setDate(startDate.getDate() + i);
+                    
+                    const dayElement = this.createDayElement(currentDate);
+                    grid.appendChild(dayElement);
+                }
+
+                document.getElementById('currentPeriod').textContent = `${this.currentYear}年${this.currentMonth}月`;
+            }
+
+            createDayElement(date) {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'calendar-day';
+                
+                const isCurrentMonth = date.getMonth() === this.currentMonth - 1;
+                const dateString = date.toISOString().split('T')[0];
+                const dayNumber = date.getDate();
+
+                if (!isCurrentMonth) {
+                    dayDiv.style.opacity = '0.3';
+                }
+
+                // Check for conflicts on this date
+                const dayConflicts = this.conflicts.filter(c => c.date === dateString);
+                const hasConflict = dayConflicts.length > 0;
+
+                const dayNumberDiv = document.createElement('div');
+                dayNumberDiv.className = 'day-number';
+                dayNumberDiv.innerHTML = `
+                    <span>${dayNumber}</span>
+                    ${hasConflict ? '<div class="conflict-indicator" title="有排班衝突"></div>' : ''}
+                `;
+
+                const employeeListDiv = document.createElement('div');
+                employeeListDiv.className = 'employee-list';
+
+                if (isCurrentMonth) {
+                    // Get employees for this date
+                    const offEmployees = this.schedules.filter(s => 
+                        s.offDates && s.offDates.includes(dateString)
+                    );
+                    
+                    const workingEmployees = this.schedules.filter(s => 
+                        !s.offDates || !s.offDates.includes(dateString)
+                    );
+
+                    // Add off employees
+                    offEmployees.forEach(emp => {
+                        const empDiv = document.createElement('div');
+                        empDiv.className = `employee-item employee-off`;
+                        empDiv.textContent = `${emp.employeeName} (休)`;
+                        empDiv.title = `${emp.employeeName} - 休假`;
+                        employeeListDiv.appendChild(empDiv);
+                    });
+
+                    // Add working employees (limited to show only a few)
+                    workingEmployees.slice(0, 3).forEach(emp => {
+                        const empDiv = document.createElement('div');
+                        empDiv.className = 'employee-item employee-working';
+                        empDiv.textContent = `${emp.employeeName} (班)`;
+                        empDiv.title = `${emp.employeeName} - 上班`;
+                        employeeListDiv.appendChild(empDiv);
+                    });
+
+                    if (workingEmployees.length > 3) {
+                        const moreDiv = document.createElement('div');
+                        moreDiv.className = 'employee-item';
+                        moreDiv.style.background = '#6c757d';
+                        moreDiv.style.color = 'white';
+                        moreDiv.textContent = `+${workingEmployees.length - 3}人`;
+                        employeeListDiv.appendChild(moreDiv);
+                    }
+                }
+
+                dayDiv.appendChild(dayNumberDiv);
+                dayDiv.appendChild(employeeListDiv);
+
+                if (isCurrentMonth) {
+                    dayDiv.addEventListener('click', () => this.onDayClick(dateString, dayConflicts));
+                }
+
+                return dayDiv;
+            }
+
+            onDayClick(dateString, conflicts) {
+                // Set the assignment date
+                document.getElementById('assignDate').value = dateString;
+                
+                // Show conflict details if any
+                if (conflicts.length > 0) {
+                    const conflictMessages = conflicts.map(c => c.message).join('\n');
+                    alert(`此日期有排班衝突:\n\n${conflictMessages}`);
+                }
+            }
+
+            async assignWork() {
+                const date = document.getElementById('assignDate').value;
+                const employeeId = document.getElementById('assignEmployee').value;
+                const storeId = document.getElementById('assignStore').value;
+                const assignmentType = document.getElementById('assignType').value;
+
+                if (!date || !employeeId || !storeId) {
+                    alert('請填寫所有必要欄位');
+                    return;
+                }
+
+                try {
+                    this.showLoading(true);
+
+                    // This would be the API call to create work assignment
+                    const response = await fetch('/api/work-assignments', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            assignmentDate: date,
+                            employeeId: parseInt(employeeId),
+                            storeId: parseInt(storeId),
+                            assignmentType: assignmentType,
+                            assignedBy: '管理員', // This would come from login
+                            assignedAt: new Date().toISOString()
+                        })
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        alert('值班分配成功!');
+                        
+                        // Reset form
+                        document.getElementById('assignDate').value = '';
+                        document.getElementById('assignEmployee').value = '';
+                        document.getElementById('assignStore').value = '';
+                        document.getElementById('assignType').value = 'regular';
+                        
+                        // Refresh data
+                        await this.loadScheduleData();
+                        this.renderCalendar();
+                    } else {
+                        const errorData = await response.json();
+                        alert(`分配失敗: ${errorData.error || '未知錯誤'}`);
+                    }
+
+                } catch (error) {
+                    console.error('分配值班失敗:', error);
+                    alert('分配失敗: 網路錯誤');
+                } finally {
+                    this.showLoading(false);
+                }
+            }
+
+            getDaysInMonth() {
+                return new Date(this.currentYear, this.currentMonth, 0).getDate();
+            }
+
+            setupEventListeners() {
+                document.getElementById('prevMonth').addEventListener('click', () => {
+                    if (this.currentMonth === 1) {
+                        this.currentMonth = 12;
+                        this.currentYear--;
+                    } else {
+                        this.currentMonth--;
+                    }
+                    this.loadScheduleData().then(() => this.renderCalendar());
+                });
+
+                document.getElementById('nextMonth').addEventListener('click', () => {
+                    if (this.currentMonth === 12) {
+                        this.currentMonth = 1;
+                        this.currentYear++;
+                    } else {
+                        this.currentMonth++;
+                    }
+                    this.loadScheduleData().then(() => this.renderCalendar());
+                });
+
+                document.getElementById('assignButton').addEventListener('click', () => {
+                    this.assignWork();
+                });
+            }
+
+            startPeriodicUpdate() {
+                // Update data every 30 seconds
+                setInterval(async () => {
+                    await this.loadScheduleData();
+                    this.updateStatistics();
+                    this.updateConflictList();
+                    this.updateEmployeeStats();
+                }, 30000);
+            }
+
+            showLoading(show) {
+                document.getElementById('loadingOverlay').style.display = show ? 'flex' : 'none';
+            }
+        }
+
+        // Initialize the admin schedule manager when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new AdminScheduleManager();
+        });
+    </script>
+</body>
+</html>

@@ -6,7 +6,8 @@
       "Bash(npm install:*)",
       "Bash(curl:*)",
       "Bash(pkill:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(FORCE_DB_SYNC=true NODE_ENV=development cd server)"
     ],
     "deny": []
   }

@@ -1,21 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { initModels } = require('../models');
+const { initModels, getModels } = require('../models');
 const ScheduleRuleEngine = require('../services/schedule-rule-engine');
 const ScheduleTimeController = require('../services/schedule-time-controller');
-
-let models = {};
-
-// 初始化模型
-const initializeModels = async () => {
-    try {
-        models = await initModels();
-        console.log('✅ 排班路由 - 模型初始化完成');
-    } catch (error) {
-        console.error('❌ 排班路由 - 模型初始化失敗:', error);
-        throw error;
-    }
-};
+const ScheduleNotificationService = require('../services/schedule-notification-service');
 
 /**
  * 獲取系統狀態
@@ -23,8 +11,12 @@ const initializeModels = async () => {
  */
 router.get('/status/:year/:month', async (req, res) => {
     try {
+        const models = getModels();
         if (!models.ScheduleConfig) {
-            await initializeModels();
+            return res.status(500).json({
+                success: false,
+                error: '模型未初始化'
+            });
         }
 
         const { year, month } = req.params;
@@ -49,8 +41,12 @@ router.get('/status/:year/:month', async (req, res) => {
  */
 router.post('/start-session', async (req, res) => {
     try {
+        const models = getModels();
         if (!models.ScheduleSession) {
-            await initializeModels();
+            return res.status(500).json({
+                success: false,
+                error: '模型未初始化'
+            });
         }
 
         const { employeeId, employeeName, year, month } = req.body;
@@ -120,8 +116,12 @@ router.get('/session/:sessionId/timeout', async (req, res) => {
  */
 router.post('/validate-rules', async (req, res) => {
     try {
-        if (!models.Schedule) {
-            await initializeModels();
+        const models = getModels();
+        if (!models.Schedule || !models.Employee || !models.ScheduleConfig) {
+            return res.status(500).json({
+                success: false,
+                error: `規則驗證模型未初始化 - Schedule: ${!!models.Schedule}, Employee: ${!!models.Employee}, ScheduleConfig: ${!!models.ScheduleConfig}`
+            });
         }
 
         const { employeeId, year, month, offDates } = req.body;
@@ -156,8 +156,12 @@ router.post('/validate-rules', async (req, res) => {
  */
 router.post('/submit', async (req, res) => {
     try {
+        const models = getModels();
         if (!models.Schedule) {
-            await initializeModels();
+            return res.status(500).json({
+                success: false,
+                error: '模型未初始化'
+            });
         }
 
         const { employeeId, employeeName, year, month, offDates, sessionId } = req.body;
@@ -210,6 +214,20 @@ router.post('/submit', async (req, res) => {
 
         console.log(`✅ 排班提交成功 - ${employeeName} (${year}-${month}): ${offDates.length}天`);
 
+        // 發送排班完成通知
+        const notificationResult = await ScheduleNotificationService.sendScheduleCompletedNotification({
+            employeeName: schedule.employeeName,
+            year,
+            month,
+            totalOffDays: schedule.totalOffDays,
+            weekendOffDays: schedule.weekendOffDays,
+            offDates: schedule.offDates
+        });
+
+        if (notificationResult.success) {
+            console.log('📨 排班完成通知已發送');
+        }
+
         res.json({
             success: true,
             message: '排班提交成功',
@@ -220,7 +238,8 @@ router.post('/submit', async (req, res) => {
                 totalOffDays: schedule.totalOffDays,
                 weekendOffDays: schedule.weekendOffDays,
                 offDates: schedule.offDates,
-                status: schedule.scheduleStatus
+                status: schedule.scheduleStatus,
+                notification: notificationResult.success ? '已發送' : '發送失敗'
             }
         });
     } catch (error) {
@@ -238,8 +257,12 @@ router.post('/submit', async (req, res) => {
  */
 router.get('/employee/:employeeId/:year/:month', async (req, res) => {
     try {
+        const models = getModels();
         if (!models.Schedule) {
-            await initializeModels();
+            return res.status(500).json({
+                success: false,
+                error: '模型未初始化'
+            });
         }
 
         const { employeeId, year, month } = req.params;
@@ -290,8 +313,12 @@ router.get('/employee/:employeeId/:year/:month', async (req, res) => {
  */
 router.get('/config/:year/:month', async (req, res) => {
     try {
+        const models = getModels();
         if (!models.ScheduleConfig) {
-            await initializeModels();
+            return res.status(500).json({
+                success: false,
+                error: '模型未初始化'
+            });
         }
 
         const { year, month } = req.params;
@@ -344,8 +371,12 @@ router.get('/config/:year/:month', async (req, res) => {
  */
 router.put('/config/:year/:month', async (req, res) => {
     try {
+        const models = getModels();
         if (!models.ScheduleConfig) {
-            await initializeModels();
+            return res.status(500).json({
+                success: false,
+                error: '模型未初始化'
+            });
         }
 
         const { year, month } = req.params;
@@ -391,8 +422,12 @@ router.put('/config/:year/:month', async (req, res) => {
  */
 router.get('/statistics/:year/:month', async (req, res) => {
     try {
+        const models = getModels();
         if (!models.Schedule) {
-            await initializeModels();
+            return res.status(500).json({
+                success: false,
+                error: '模型未初始化'
+            });
         }
 
         const { year, month } = req.params;
@@ -463,6 +498,126 @@ router.post('/cleanup-sessions', async (req, res) => {
         res.json(result);
     } catch (error) {
         console.error('清理超時會話錯誤:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+/**
+ * 檢查並發送排班通知
+ * POST /api/schedule/notifications/:year/:month
+ */
+router.post('/notifications/:year/:month', async (req, res) => {
+    try {
+        const { year, month } = req.params;
+        
+        const result = await ScheduleNotificationService.checkAndSendPendingNotifications(
+            parseInt(year), 
+            parseInt(month)
+        );
+        
+        res.json(result);
+    } catch (error) {
+        console.error('檢查排班通知錯誤:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+/**
+ * 手動發送排班衝突警告
+ * POST /api/schedule/conflict-alert/:year/:month
+ */
+router.post('/conflict-alert/:year/:month', async (req, res) => {
+    try {
+        const { year, month } = req.params;
+        const models = getModels();
+        
+        if (!models.Schedule) {
+            return res.status(500).json({
+                success: false,
+                error: '模型未初始化'
+            });
+        }
+
+        // 模擬衝突檢測 (簡化版)
+        const schedules = await models.Schedule.findAll({
+            where: {
+                scheduleYear: parseInt(year),
+                scheduleMonth: parseInt(month)
+            }
+        });
+
+        // 簡單的衝突檢測邏輯
+        const conflicts = [];
+        const daysInMonth = new Date(year, month, 0).getDate();
+        
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dateStr = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+            
+            const offEmployees = schedules.filter(s => 
+                s.offDates && s.offDates.includes(dateStr)
+            );
+
+            if (offEmployees.length > 2) { // 假設每日最多2人休假
+                conflicts.push({
+                    date: dateStr,
+                    type: 'too_many_off',
+                    message: `${day}日休假人數過多`,
+                    employees: offEmployees.map(s => s.employeeName)
+                });
+            }
+        }
+
+        const result = await ScheduleNotificationService.sendScheduleConflictAlert({
+            conflicts,
+            year: parseInt(year),
+            month: parseInt(month)
+        });
+        
+        res.json(result);
+    } catch (error) {
+        console.error('發送衝突警告錯誤:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+/**
+ * 生成排班統計報告
+ * POST /api/schedule/statistics-report/:year/:month
+ */
+router.post('/statistics-report/:year/:month', async (req, res) => {
+    try {
+        const { year, month } = req.params;
+        
+        // 獲取統計數據
+        const statisticsRes = await fetch(`http://localhost:${process.env.PORT || 3000}/api/schedule/statistics/${year}/${month}`);
+        
+        if (!statisticsRes.ok) {
+            return res.status(500).json({
+                success: false,
+                error: '無法獲取統計數據'
+            });
+        }
+        
+        const statisticsData = await statisticsRes.json();
+        
+        const result = await ScheduleNotificationService.sendScheduleStatisticsReport({
+            year: parseInt(year),
+            month: parseInt(month),
+            statistics: statisticsData.data
+        });
+        
+        res.json(result);
+    } catch (error) {
+        console.error('生成統計報告錯誤:', error);
         res.status(500).json({
             success: false,
             error: error.message

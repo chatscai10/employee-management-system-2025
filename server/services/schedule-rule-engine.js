@@ -1,7 +1,5 @@
 const { Op } = require('sequelize');
-const Schedule = require('../models/Schedule');
-const ScheduleConfig = require('../models/ScheduleConfig');
-const Employee = require('../models/Employee');
+const { getModels } = require('../models');
 
 /**
  * 排班系統 6重規則引擎
@@ -27,20 +25,27 @@ class ScheduleRuleEngine {
                 ruleResults: {}
             };
 
+            // 獲取模型
+            const models = getModels();
+            if (!models.Employee || !models.ScheduleConfig) {
+                throw new Error('模型未正確載入');
+            }
+
+
             // 獲取員工資訊
-            const employee = await Employee.findByPk(employeeId);
+            const employee = await models.Employee.findByPk(employeeId);
             if (!employee) {
                 throw new Error('員工不存在');
             }
 
             // 獲取排班配置
-            const config = await ScheduleConfig.getConfig(year, month);
+            const config = await models.ScheduleConfig.getConfig(year, month);
             if (!config) {
                 throw new Error('無法獲取排班配置');
             }
 
             // 規則1：月度休假限制
-            const rule1 = await this.validateMonthlyOffDaysLimit(employeeId, year, month, offDates, config);
+            const rule1 = await this.validateMonthlyOffDaysLimit(models, employeeId, year, month, offDates, config);
             results.ruleResults.rule1 = rule1;
             if (!rule1.valid) {
                 results.isValid = false;
@@ -48,7 +53,7 @@ class ScheduleRuleEngine {
             }
 
             // 規則2：日度休假限制
-            const rule2 = await this.validateDailyOffDaysLimit(offDates, year, month, employeeId, config);
+            const rule2 = await this.validateDailyOffDaysLimit(models, offDates, year, month, employeeId, config);
             results.ruleResults.rule2 = rule2;
             if (!rule2.valid) {
                 results.isValid = false;
@@ -56,7 +61,7 @@ class ScheduleRuleEngine {
             }
 
             // 規則3：週末休假限制
-            const rule3 = await this.validateWeekendOffDaysLimit(employeeId, year, month, offDates, config);
+            const rule3 = await this.validateWeekendOffDaysLimit(models, employeeId, year, month, offDates, config);
             results.ruleResults.rule3 = rule3;
             if (!rule3.valid) {
                 results.isValid = false;
@@ -64,7 +69,7 @@ class ScheduleRuleEngine {
             }
 
             // 規則4：分店休假限制
-            const rule4 = await this.validateStoreOffDaysLimit(employee.storeId, offDates, year, month, employeeId, config);
+            const rule4 = await this.validateStoreOffDaysLimit(models, employee.currentStore, offDates, year, month, employeeId, config);
             results.ruleResults.rule4 = rule4;
             if (!rule4.valid) {
                 results.isValid = false;
@@ -72,15 +77,15 @@ class ScheduleRuleEngine {
             }
 
             // 規則5：職位休假限制
-            const rule5 = await this.validatePositionOffDaysLimit(employee.position, offDates, year, month, employeeId, config);
+            const rule5 = await this.validatePositionOffDaysLimit(models, employee.position, offDates, year, month, employeeId, config);
             results.ruleResults.rule5 = rule5;
             if (!rule5.valid) {
                 results.isValid = false;
                 results.violations.push(`規則5違反: ${rule5.message}`);
             }
 
-            // 規則6：特殊日期規則
-            const rule6 = await this.validateSpecialDates(offDates, year, month, employee.storeId, config);
+            // 規則6：特殊日期規則  
+            const rule6 = await this.validateSpecialDates(models, offDates, year, month, employee.currentStore, config);
             results.ruleResults.rule6 = rule6;
             if (!rule6.valid) {
                 results.isValid = false;
@@ -107,9 +112,9 @@ class ScheduleRuleEngine {
      * 規則1：月度休假限制
      * 每人每月休假天數不得超過設定上限
      */
-    static async validateMonthlyOffDaysLimit(employeeId, year, month, newOffDates, config) {
+    static async validateMonthlyOffDaysLimit(models, employeeId, year, month, newOffDates, config) {
         try {
-            const currentOffDays = await Schedule.getEmployeeOffDaysCount(employeeId, year, month);
+            const currentOffDays = await models.Schedule.getEmployeeOffDaysCount(employeeId, year, month);
             const newOffDaysCount = Array.isArray(newOffDates) ? newOffDates.length : 0;
             const maxAllowed = config.maxOffDaysPerPerson;
 
@@ -141,7 +146,7 @@ class ScheduleRuleEngine {
      * 規則2：日度休假限制
      * 任何一天的休假人數不得超過設定上限
      */
-    static async validateDailyOffDaysLimit(offDates, year, month, excludeEmployeeId, config) {
+    static async validateDailyOffDaysLimit(models, offDates, year, month, excludeEmployeeId, config) {
         try {
             if (!Array.isArray(offDates) || offDates.length === 0) {
                 return { valid: true, message: '無休假日期', details: {} };
@@ -151,7 +156,7 @@ class ScheduleRuleEngine {
             const violations = [];
 
             for (const dateStr of offDates) {
-                const currentCount = await this.getDailyOffCountExcludeEmployee(dateStr, year, month, excludeEmployeeId);
+                const currentCount = await this.getDailyOffCountExcludeEmployee(models, dateStr, year, month, excludeEmployeeId);
                 const newCount = currentCount + 1; // 加上這個員工
 
                 if (newCount > maxAllowed) {
@@ -187,7 +192,7 @@ class ScheduleRuleEngine {
      * 規則3：週末休假限制
      * 每人每月週末(週五六日)休假不得超過設定上限
      */
-    static async validateWeekendOffDaysLimit(employeeId, year, month, newOffDates, config) {
+    static async validateWeekendOffDaysLimit(models, employeeId, year, month, newOffDates, config) {
         try {
             if (!Array.isArray(newOffDates)) {
                 return { valid: true, message: '無休假日期', details: {} };
@@ -227,7 +232,7 @@ class ScheduleRuleEngine {
      * 規則4：分店休假限制
      * 同一分店同一天休假人數不得超過設定上限
      */
-    static async validateStoreOffDaysLimit(storeId, offDates, year, month, excludeEmployeeId, config) {
+    static async validateStoreOffDaysLimit(models, storeName, offDates, year, month, excludeEmployeeId, config) {
         try {
             if (!Array.isArray(offDates) || offDates.length === 0) {
                 return { valid: true, message: '無休假日期', details: {} };
@@ -237,7 +242,7 @@ class ScheduleRuleEngine {
             const violations = [];
 
             for (const dateStr of offDates) {
-                const currentCount = await this.getStoreOffCountExcludeEmployee(storeId, dateStr, year, month, excludeEmployeeId);
+                const currentCount = await this.getStoreOffCountExcludeEmployee(models, storeName, dateStr, year, month, excludeEmployeeId);
                 const newCount = currentCount + 1;
 
                 if (newCount > maxAllowed) {
@@ -257,7 +262,7 @@ class ScheduleRuleEngine {
                 message: isValid ? 
                     `分店休假人數檢查通過` : 
                     `以下日期超過分店每日休假人數限制: ${violations.map(v => `${v.date}(${v.newCount}/${v.maxAllowed}人)`).join(', ')}`,
-                details: { violations, maxAllowed, storeId }
+                details: { violations, maxAllowed, storeName }
             };
         } catch (error) {
             console.error('規則4驗證錯誤:', error);
@@ -273,7 +278,7 @@ class ScheduleRuleEngine {
      * 規則5：職位休假限制
      * 特定職位(兼職/待命)每天休假人數不得超過設定上限
      */
-    static async validatePositionOffDaysLimit(position, offDates, year, month, excludeEmployeeId, config) {
+    static async validatePositionOffDaysLimit(models, position, offDates, year, month, excludeEmployeeId, config) {
         try {
             if (!Array.isArray(offDates) || offDates.length === 0) {
                 return { valid: true, message: '無休假日期', details: {} };
@@ -299,7 +304,7 @@ class ScheduleRuleEngine {
             const violations = [];
 
             for (const dateStr of offDates) {
-                const currentCount = await this.getPositionOffCountExcludeEmployee(position, dateStr, year, month, excludeEmployeeId);
+                const currentCount = await this.getPositionOffCountExcludeEmployee(models, position, dateStr, year, month, excludeEmployeeId);
                 const newCount = currentCount + 1;
 
                 if (newCount > maxAllowed) {
@@ -335,7 +340,7 @@ class ScheduleRuleEngine {
      * 規則6：特殊日期規則
      * 檢查公休日和禁休日規則
      */
-    static async validateSpecialDates(offDates, year, month, storeId, config) {
+    static async validateSpecialDates(models, offDates, year, month, storeName, config) {
         try {
             if (!Array.isArray(offDates) || offDates.length === 0) {
                 return { valid: true, message: '無休假日期', details: {} };
@@ -347,7 +352,7 @@ class ScheduleRuleEngine {
 
             for (const dateStr of offDates) {
                 // 檢查禁休日
-                if (config.isForbiddenDate(dateStr, storeId)) {
+                if (config.isForbiddenDate(dateStr, storeName)) {
                     forbiddenViolations.push(dateStr);
                     violations.push({
                         date: dateStr,
@@ -357,7 +362,7 @@ class ScheduleRuleEngine {
                 }
 
                 // 檢查公休日 - 警告但不阻止
-                if (config.isHolidayDate(dateStr, storeId)) {
+                if (config.isHolidayDate(dateStr, storeName)) {
                     holidayViolations.push(dateStr);
                 }
             }
@@ -394,9 +399,9 @@ class ScheduleRuleEngine {
     }
 
     // 輔助方法：獲取特定日期休假人數(排除指定員工)
-    static async getDailyOffCountExcludeEmployee(date, year, month, excludeEmployeeId) {
+    static async getDailyOffCountExcludeEmployee(models, date, year, month, excludeEmployeeId) {
         try {
-            const schedules = await Schedule.findAll({
+            const schedules = await models.Schedule.findAll({
                 where: {
                     scheduleYear: year,
                     scheduleMonth: month,
@@ -424,17 +429,17 @@ class ScheduleRuleEngine {
     }
 
     // 輔助方法：獲取分店特定日期休假人數(排除指定員工)
-    static async getStoreOffCountExcludeEmployee(storeId, date, year, month, excludeEmployeeId) {
+    static async getStoreOffCountExcludeEmployee(models, storeName, date, year, month, excludeEmployeeId) {
         try {
             // 先獲取該分店的所有員工
-            const storeEmployees = await Employee.findAll({
-                where: { storeId },
+            const storeEmployees = await models.Employee.findAll({
+                where: { currentStore: storeName },
                 attributes: ['id']
             });
             const storeEmployeeIds = storeEmployees.map(emp => emp.id);
 
             // 獲取這些員工的排班記錄(排除指定員工)
-            const schedules = await Schedule.findAll({
+            const schedules = await models.Schedule.findAll({
                 where: {
                     scheduleYear: year,
                     scheduleMonth: month,
@@ -465,17 +470,17 @@ class ScheduleRuleEngine {
     }
 
     // 輔助方法：獲取特定職位特定日期休假人數(排除指定員工)
-    static async getPositionOffCountExcludeEmployee(position, date, year, month, excludeEmployeeId) {
+    static async getPositionOffCountExcludeEmployee(models, position, date, year, month, excludeEmployeeId) {
         try {
             // 先獲取該職位的所有員工
-            const positionEmployees = await Employee.findAll({
+            const positionEmployees = await models.Employee.findAll({
                 where: { position },
                 attributes: ['id']
             });
             const positionEmployeeIds = positionEmployees.map(emp => emp.id);
 
             // 獲取這些員工的排班記錄(排除指定員工)
-            const schedules = await Schedule.findAll({
+            const schedules = await models.Schedule.findAll({
                 where: {
                     scheduleYear: year,
                     scheduleMonth: month,

@@ -97,6 +97,11 @@ module.exports = (sequelize) => {
             allowNull: true,
             comment: 'LINE使用者ID - 系統自動綁定'
         },
+        telegramChatId: {
+            type: DataTypes.STRING(100),
+            allowNull: true,
+            comment: 'Telegram Chat ID - 用於通知發送'
+        },
         status: {
             type: DataTypes.ENUM('審核中', '在職', '離職'),
             allowNull: false,

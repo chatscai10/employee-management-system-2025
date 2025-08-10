@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排班系統 - 企業員工管理系統</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --light-bg: #ecf0f1;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #bdc3c7 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .schedule-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+
+        .system-status {
+            background: rgba(255,255,255,0.1);
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-available { background: var(--success-color); }
+        .status-busy { background: var(--warning-color); }
+        .status-closed { background: var(--danger-color); }
+
+        .content-area {
+            padding: 30px;
+        }
+
+        .rules-panel {
+            background: #f8f9fa;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        .rules-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .calendar-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .calendar-header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .month-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: #e9ecef;
+        }
+
+        .calendar-day-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .calendar-day {
+            background: white;
+            min-height: 80px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .calendar-day:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .calendar-day.other-month {
+            background: #f8f9fa;
+            color: #adb5bd;
+            cursor: not-allowed;
+        }
+
+        .calendar-day.selected {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .calendar-day.holiday {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+        }
+
+        .calendar-day.forbidden {
+            background: linear-gradient(135deg, #f8d7da, #fab1a0);
+            cursor: not-allowed;
+        }
+
+        .day-number {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .day-indicators {
+            display: flex;
+            gap: 4px;
+            margin-top: auto;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .indicator.weekend { background: var(--warning-color); }
+        .indicator.selected { background: var(--success-color); }
+
+        .selected-summary {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-label {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .summary-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .validation-panel {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid;
+        }
+
+        .validation-success {
+            background: #d1e7dd;
+            border-color: var(--success-color);
+            color: #0a3622;
+        }
+
+        .validation-error {
+            background: #f8d7da;
+            border-color: var(--danger-color);
+            color: #721c24;
+        }
+
+        .action-buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--success-color), #2ecc71);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-submit:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .time-remaining {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--warning-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .loading-spinner {
+            color: white;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-area {
+                padding: 20px;
+            }
+            
+            .calendar-day {
+                min-height: 60px;
+                padding: 8px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .time-remaining {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="schedule-container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-calendar-alt me-3"></i>排班系統</h1>
+            <div class="system-status" id="systemStatus">
+                <div class="d-flex justify-content-center align-items-center">
+                    <span class="status-indicator" id="statusIndicator"></span>
+                    <span id="statusText">系統載入中...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content-area">
+            <!-- Rules Panel -->
+            <div class="rules-panel">
+                <div class="rules-title">
+                    <i class="fas fa-info-circle me-2"></i>排班規則說明
+                </div>
+                <div class="row" id="rulesDisplay">
+                    <div class="col-md-6">
+                        <ul class="mb-0">
+                            <li>每人每月休假上限：<strong id="maxOffDays">8</strong> 天</li>
+                            <li>每日休假總人數上限：<strong id="maxDailyOff">2</strong> 人</li>
+                            <li>週末休假上限：<strong id="maxWeekendOff">3</strong> 天</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="mb-0">
+                            <li>分店每日休假上限：<strong id="maxStoreOff">1</strong> 人</li>
+                            <li>排班時間限制：<strong id="timeLimit">5</strong> 分鐘</li>
+                            <li>系統開放期間：<strong id="systemPeriod">載入中...</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar -->
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <div class="month-nav">
+                        <button class="nav-btn" id="prevMonth">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span id="currentMonth">2025年2月</span>
+                        <button class="nav-btn" id="nextMonth">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar will be generated here -->
+                </div>
+            </div>
+
+            <!-- Selected Summary -->
+            <div class="selected-summary">
+                <h5><i class="fas fa-clipboard-check me-2"></i>選擇摘要</h5>
+                <div class="summary-item">
+                    <span class="summary-label">已選休假天數：</span>
+                    <span class="summary-value text-info" id="selectedCount">0</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">週末休假天數：</span>
+                    <span class="summary-value text-warning" id="weekendCount">0</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">剩餘可選天數：</span>
+                    <span class="summary-value text-success" id="remainingDays">8</span>
+                </div>
+            </div>
+
+            <!-- Validation Panel -->
+            <div class="validation-panel validation-success" id="validationPanel" style="display: none;">
+                <div id="validationMessage">
+                    <i class="fas fa-check-circle me-2"></i>
+                    排班規則驗證通過
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn-submit" id="submitSchedule" disabled>
+                    <i class="fas fa-paper-plane me-2"></i>提交排班
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Time Remaining -->
+    <div class="time-remaining" id="timeRemaining" style="display: none;">
+        <i class="fas fa-clock me-2"></i>
+        <span id="timeDisplay">05:00</span>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <div class="mt-3">處理中...</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        class ScheduleSystem {
+            constructor() {
+                this.currentYear = 2025;
+                this.currentMonth = 2;
+                this.selectedDates = [];
+                this.systemConfig = {};
+                this.systemStatus = {};
+                this.sessionId = null;
+                this.timeRemaining = 300; // 5 minutes in seconds
+                this.timerInterval = null;
+                this.employeeId = 1; // 從登入狀態獲取
+                
+                this.init();
+            }
+
+            async init() {
+                await this.loadSystemConfig();
+                await this.checkSystemStatus();
+                this.renderCalendar();
+                this.setupEventListeners();
+                this.startSession();
+            }
+
+            async loadSystemConfig() {
+                try {
+                    const response = await fetch(`/api/schedule/config/${this.currentYear}/${this.currentMonth}`);
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.systemConfig = data.data;
+                        this.updateRulesDisplay();
+                    }
+                } catch (error) {
+                    console.error('載入系統配置失敗:', error);
+                }
+            }
+
+            async checkSystemStatus() {
+                try {
+                    const response = await fetch(`/api/schedule/status/${this.currentYear}/${this.currentMonth}`);
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.systemStatus = data.data;
+                        this.updateStatusDisplay();
+                    }
+                } catch (error) {
+                    console.error('檢查系統狀態失敗:', error);
+                }
+            }
+
+            updateRulesDisplay() {
+                if (!this.systemConfig.rules) return;
+                
+                document.getElementById('maxOffDays').textContent = this.systemConfig.rules.maxOffDaysPerPerson;
+                document.getElementById('maxDailyOff').textContent = this.systemConfig.rules.maxOffDaysPerDay;
+                document.getElementById('maxWeekendOff').textContent = this.systemConfig.rules.maxWeekendOffDays;
+                document.getElementById('maxStoreOff').textContent = this.systemConfig.rules.maxStoreOffDaysPerDay;
+                document.getElementById('timeLimit').textContent = this.systemConfig.timeControl.scheduleTimeLimit;
+                
+                const openDate = new Date(this.systemConfig.timeControl.systemOpenDate);
+                const closeDate = new Date(this.systemConfig.timeControl.systemCloseDate);
+                document.getElementById('systemPeriod').textContent = 
+                    `${openDate.getDate()}日 ${openDate.getHours()}:00 - ${closeDate.getDate()}日 ${closeDate.getHours()}:00`;
+            }
+
+            updateStatusDisplay() {
+                const indicator = document.getElementById('statusIndicator');
+                const text = document.getElementById('statusText');
+                
+                if (this.systemStatus.canAccess) {
+                    indicator.className = 'status-indicator status-available';
+                    text.textContent = '系統開放中，可以進行排班';
+                } else if (this.systemStatus.isBusy) {
+                    indicator.className = 'status-indicator status-busy';
+                    text.textContent = `系統使用中 - ${this.systemStatus.busyInfo.session.employeeName} 正在排班`;
+                } else {
+                    indicator.className = 'status-indicator status-closed';
+                    text.textContent = '系統未開放或已關閉';
+                }
+            }
+
+            async startSession() {
+                if (!this.systemStatus.canAccess) return;
+                
+                try {
+                    const response = await fetch('/api/schedule/start-session', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            employeeId: this.employeeId,
+                            employeeName: '測試員工', // 從登入狀態獲取
+                            year: this.currentYear,
+                            month: this.currentMonth
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    if (data.success) {
+                        this.sessionId = data.session.id;
+                        this.startTimer();
+                        document.getElementById('timeRemaining').style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('開始會話失敗:', error);
+                }
+            }
+
+            startTimer() {
+                this.timerInterval = setInterval(() => {
+                    this.timeRemaining--;
+                    this.updateTimeDisplay();
+                    
+                    if (this.timeRemaining <= 0) {
+                        this.handleTimeout();
+                    }
+                }, 1000);
+            }
+
+            updateTimeDisplay() {
+                const minutes = Math.floor(this.timeRemaining / 60);
+                const seconds = this.timeRemaining % 60;
+                document.getElementById('timeDisplay').textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            handleTimeout() {
+                clearInterval(this.timerInterval);
+                alert('排班時間已到，系統將自動提交當前選擇');
+                this.submitSchedule();
+            }
+
+            renderCalendar() {
+                const grid = document.getElementById('calendarGrid');
+                grid.innerHTML = '';
+
+                // Day headers
+                const dayHeaders = ['日', '一', '二', '三', '四', '五', '六'];
+                dayHeaders.forEach(day => {
+                    const header = document.createElement('div');
+                    header.className = 'calendar-day-header';
+                    header.textContent = day;
+                    grid.appendChild(header);
+                });
+
+                // Calendar days
+                const firstDay = new Date(this.currentYear, this.currentMonth - 1, 1);
+                const lastDay = new Date(this.currentYear, this.currentMonth, 0);
+                const startDate = new Date(firstDay);
+                startDate.setDate(startDate.getDate() - firstDay.getDay());
+
+                for (let i = 0; i < 42; i++) {
+                    const currentDate = new Date(startDate);
+                    currentDate.setDate(startDate.getDate() + i);
+                    
+                    const dayElement = this.createDayElement(currentDate);
+                    grid.appendChild(dayElement);
+                }
+
+                document.getElementById('currentMonth').textContent = `${this.currentYear}年${this.currentMonth}月`;
+            }
+
+            createDayElement(date) {
+                const dayDiv = document.createElement('div');
+                dayDiv.className = 'calendar-day';
+                
+                const isCurrentMonth = date.getMonth() === this.currentMonth - 1;
+                const dateString = date.toISOString().split('T')[0];
+                const isWeekend = date.getDay() === 0 || date.getDay() === 5 || date.getDay() === 6;
+                const isSelected = this.selectedDates.includes(dateString);
+
+                if (!isCurrentMonth) {
+                    dayDiv.classList.add('other-month');
+                }
+
+                if (isSelected) {
+                    dayDiv.classList.add('selected');
+                }
+
+                if (isWeekend && isCurrentMonth) {
+                    dayDiv.classList.add('weekend-day');
+                }
+
+                // Check for special dates
+                if (this.systemConfig.specialDates) {
+                    if (this.systemConfig.specialDates.holidayDates.includes(dateString)) {
+                        dayDiv.classList.add('holiday');
+                    }
+                    if (this.systemConfig.specialDates.forbiddenDates.includes(dateString)) {
+                        dayDiv.classList.add('forbidden');
+                    }
+                }
+
+                const dayNumber = document.createElement('div');
+                dayNumber.className = 'day-number';
+                dayNumber.textContent = date.getDate();
+
+                const indicators = document.createElement('div');
+                indicators.className = 'day-indicators';
+
+                if (isWeekend && isCurrentMonth) {
+                    const weekendIndicator = document.createElement('div');
+                    weekendIndicator.className = 'indicator weekend';
+                    weekendIndicator.title = '週末';
+                    indicators.appendChild(weekendIndicator);
+                }
+
+                if (isSelected) {
+                    const selectedIndicator = document.createElement('div');
+                    selectedIndicator.className = 'indicator selected';
+                    selectedIndicator.title = '已選擇';
+                    indicators.appendChild(selectedIndicator);
+                }
+
+                dayDiv.appendChild(dayNumber);
+                dayDiv.appendChild(indicators);
+
+                if (isCurrentMonth && !dayDiv.classList.contains('forbidden')) {
+                    dayDiv.addEventListener('click', () => this.toggleDate(dateString, dayDiv));
+                }
+
+                return dayDiv;
+            }
+
+            toggleDate(dateString, element) {
+                const index = this.selectedDates.indexOf(dateString);
+                
+                if (index > -1) {
+                    this.selectedDates.splice(index, 1);
+                    element.classList.remove('selected');
+                } else {
+                    this.selectedDates.push(dateString);
+                    element.classList.add('selected');
+                }
+
+                this.updateSummary();
+                this.validateSelection();
+            }
+
+            updateSummary() {
+                const selectedCount = this.selectedDates.length;
+                const weekendCount = this.selectedDates.filter(date => {
+                    const d = new Date(date);
+                    return d.getDay() === 0 || d.getDay() === 5 || d.getDay() === 6;
+                }).length;
+
+                const maxDays = this.systemConfig.rules?.maxOffDaysPerPerson || 8;
+                const remaining = maxDays - selectedCount;
+
+                document.getElementById('selectedCount').textContent = selectedCount;
+                document.getElementById('weekendCount').textContent = weekendCount;
+                document.getElementById('remainingDays').textContent = Math.max(0, remaining);
+
+                // Update colors
+                document.getElementById('selectedCount').className = 
+                    `summary-value ${selectedCount > maxDays ? 'text-danger' : 'text-info'}`;
+                document.getElementById('remainingDays').className = 
+                    `summary-value ${remaining < 0 ? 'text-danger' : 'text-success'}`;
+            }
+
+            async validateSelection() {
+                if (this.selectedDates.length === 0) {
+                    document.getElementById('validationPanel').style.display = 'none';
+                    document.getElementById('submitSchedule').disabled = true;
+                    return;
+                }
+
+                try {
+                    this.showLoading(true);
+                    
+                    const response = await fetch('/api/schedule/validate-rules', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            employeeId: this.employeeId,
+                            year: this.currentYear,
+                            month: this.currentMonth,
+                            offDates: this.selectedDates
+                        })
+                    });
+
+                    const data = await response.json();
+                    this.displayValidationResult(data.validation);
+                    
+                } catch (error) {
+                    console.error('驗證失敗:', error);
+                } finally {
+                    this.showLoading(false);
+                }
+            }
+
+            displayValidationResult(validation) {
+                const panel = document.getElementById('validationPanel');
+                const message = document.getElementById('validationMessage');
+                const submitBtn = document.getElementById('submitSchedule');
+
+                panel.style.display = 'block';
+
+                if (validation.isValid) {
+                    panel.className = 'validation-panel validation-success';
+                    message.innerHTML = '<i class="fas fa-check-circle me-2"></i>排班規則驗證通過，可以提交';
+                    submitBtn.disabled = false;
+                } else {
+                    panel.className = 'validation-panel validation-error';
+                    message.innerHTML = `<i class="fas fa-exclamation-circle me-2"></i>驗證失敗：${validation.violations.join('；')}`;
+                    submitBtn.disabled = true;
+                }
+            }
+
+            async submitSchedule() {
+                if (this.selectedDates.length === 0) {
+                    alert('請先選擇休假日期');
+                    return;
+                }
+
+                try {
+                    this.showLoading(true);
+
+                    const response = await fetch('/api/schedule/submit', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            employeeId: this.employeeId,
+                            employeeName: '測試員工',
+                            year: this.currentYear,
+                            month: this.currentMonth,
+                            offDates: this.selectedDates,
+                            sessionId: this.sessionId
+                        })
+                    });
+
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        alert(`排班提交成功！\n休假天數：${data.data.totalOffDays}\n週末天數：${data.data.weekendOffDays}`);
+                        this.clearSession();
+                        // 可以重定向到成功頁面或重新載入
+                        window.location.reload();
+                    } else {
+                        alert('提交失敗：' + data.error);
+                    }
+
+                } catch (error) {
+                    console.error('提交失敗:', error);
+                    alert('提交失敗：網路錯誤');
+                } finally {
+                    this.showLoading(false);
+                }
+            }
+
+            clearSession() {
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                }
+                document.getElementById('timeRemaining').style.display = 'none';
+            }
+
+            showLoading(show) {
+                document.getElementById('loadingOverlay').style.display = show ? 'flex' : 'none';
+            }
+
+            setupEventListeners() {
+                document.getElementById('prevMonth').addEventListener('click', () => {
+                    if (this.currentMonth === 1) {
+                        this.currentMonth = 12;
+                        this.currentYear--;
+                    } else {
+                        this.currentMonth--;
+                    }
+                    this.loadSystemConfig().then(() => this.renderCalendar());
+                });
+
+                document.getElementById('nextMonth').addEventListener('click', () => {
+                    if (this.currentMonth === 12) {
+                        this.currentMonth = 1;
+                        this.currentYear++;
+                    } else {
+                        this.currentMonth++;
+                    }
+                    this.loadSystemConfig().then(() => this.renderCalendar());
+                });
+
+                document.getElementById('submitSchedule').addEventListener('click', () => {
+                    this.submitSchedule();
+                });
+
+                // 定期更新會話活動時間
+                if (this.sessionId) {
+                    setInterval(async () => {
+                        try {
+                            await fetch(`/api/schedule/session/${this.sessionId}/activity`, {
+                                method: 'PUT'
+                            });
+                        } catch (error) {
+                            console.error('更新會話活動時間失敗:', error);
+                        }
+                    }, 30000); // 每30秒更新一次
+                }
+            }
+        }
+
+        // Initialize the schedule system when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new ScheduleSystem();
+        });
+    </script>
+</body>
+</html>
