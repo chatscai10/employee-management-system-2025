@@ -1,8 +1,7 @@
 services:
-  # 主要應用服務
   - type: web
     name: employee-management-system
-    runtime: node
+    env: node
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /health
@@ -10,16 +9,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: JWT_SECRET
-        generateValue: true
+        value: your-super-secret-jwt-key-2024-enterprise
       - key: HOST
         value: 0.0.0.0
-      - key: TELEGRAM_BOT_TOKEN
-        value: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-    autoDeploy: false
 
 databases:
-  # PostgreSQL 資料庫
   - name: employee-management-db
-    databaseName: employee_management
-    user: emp_user
-    plan: free
