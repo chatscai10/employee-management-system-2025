@@ -171,6 +171,131 @@ app.post('/api/auth/login', (req, res) => {
     });
 });
 
+// 管理員認證API - 處理登入頁面的請求
+app.post('/api/admin/auth/login', (req, res) => {
+    const { name, idNumber } = req.body;
+    
+    if (!name || !idNumber) {
+        return res.status(400).json({
+            success: false,
+            message: '請提供姓名和身分證號碼',
+            code: 'MISSING_CREDENTIALS'
+        });
+    }
+    
+    // 預設管理員帳號驗證 (可擴展為資料庫查詢)
+    const defaultAccounts = [
+        { name: '系統管理員', idNumber: 'A123456789', position: '管理員' },
+        { name: '店長', idNumber: 'B123456789', position: '店長' },
+        { name: '張三', idNumber: 'C123456789', position: '員工' },
+        { name: '李四', idNumber: 'D123456789', position: '員工' }
+    ];
+    
+    const user = defaultAccounts.find(acc => 
+        acc.name === name && acc.idNumber === idNumber
+    );
+    
+    if (user) {
+        res.json({
+            success: true,
+            message: '登入成功',
+            data: {
+                token: 'admin-token-' + Date.now(),
+                employee: {
+                    id: Date.now(),
+                    name: user.name,
+                    idNumber: user.idNumber,
+                    position: user.position,
+                    store: '台北總店',
+                    storeLocation: '台北總店',
+                    permissions: user.position === '管理員' ? 
+                        ['all'] : ['attendance', 'revenue', 'profile']
+                }
+            },
+            timestamp: new Date().toISOString()
+        });
+    } else {
+        res.status(401).json({
+            success: false,
+            message: '姓名或身分證號碼錯誤，請檢查後重試',
+            code: 'INVALID_CREDENTIALS'
+        });
+    }
+});
+
+// 管理員註冊API
+app.post('/api/admin/auth/register', (req, res) => {
+    const { name, idNumber, phone, email, position = '員工', storeLocation = '台北總店' } = req.body;
+    
+    if (!name || !idNumber || !phone) {
+        return res.status(400).json({
+            success: false,
+            message: '請填寫所有必填欄位（姓名、身分證號碼、電話）',
+            code: 'MISSING_REQUIRED_FIELDS'
+        });
+    }
+    
+    // 檢查身分證號碼格式 (簡單驗證)
+    if (!/^[A-Z][12][0-9]{8}$/.test(idNumber)) {
+        return res.status(400).json({
+            success: false,
+            message: '身分證號碼格式不正確',
+            code: 'INVALID_ID_FORMAT'
+        });
+    }
+    
+    // 模擬註冊成功 (實際應該儲存到資料庫)
+    res.json({
+        success: true,
+        message: '註冊申請已提交，請等待管理員審核',
+        data: {
+            employee: {
+                name,
+                idNumber,
+                phone,
+                email: email || '',
+                position,
+                storeLocation,
+                status: '待審核',
+                registeredAt: new Date().toISOString()
+            }
+        },
+        timestamp: new Date().toISOString()
+    });
+});
+
+// Token驗證API
+app.post('/api/auth/verify', (req, res) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({
+            success: false,
+            message: '無效的Token格式',
+            code: 'INVALID_TOKEN_FORMAT'
+        });
+    }
+    
+    const token = authHeader.substring(7);
+    if (token.startsWith('admin-token-') || token.startsWith('render-full-token-')) {
+        res.json({
+            success: true,
+            message: 'Token有效',
+            data: {
+                user: {
+                    name: '驗證用戶',
+                    position: token.startsWith('admin-token-') ? '管理員' : '員工'
+                }
+            }
+        });
+    } else {
+        res.status(401).json({
+            success: false,
+            message: '無效的Token',
+            code: 'INVALID_TOKEN'
+        });
+    }
+});
+
 // 員工API
 app.get('/api/employees', (req, res) => {
     res.json({
