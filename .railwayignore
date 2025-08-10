@@ -1,34 +1,9 @@
-# Railway 忽略檔案 - 最終版本
-# Docker相關
-Dockerfile*
-docker-compose*
-*.disabled
-
-# 測試和開發檔案
-*test*.js
-*minimal*.js
-*backup*
-*force*.js
-railway-fix-*.js
-railway-direct-*.js
-
-# 系統檔案
+# 強制忽略舊版本檔案
+*.old
+*.backup
+*minimal*
+*test*
 .git/
-.github/
-node_modules/
-*.log
-.DS_Store
-.env.local
-.env.development
-.env.test
-.env.production.local
-
-# 文檔和報告
+coverage/
+tests/
 docs/
-.claude-reports/
-problem-solving-flight-report.js
-github-deploy.sh
-
-# 測試目錄
-tests/e2e/
-tests/integration/
