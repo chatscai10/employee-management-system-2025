@@ -50,6 +50,8 @@ const loadModels = (sequelize) => {
         'AttendanceRecord.js', 
         'Store.js',
         'RevenueRecord.js',
+        'InventoryItem.js',
+        'InventoryOrder.js',
         'Schedule.js'
     ];
 

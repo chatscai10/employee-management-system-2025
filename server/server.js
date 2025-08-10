@@ -28,6 +28,7 @@ const { authMiddleware } = require('./middleware/auth');
 const authRoutes = require('./routes/api/auth');
 const attendanceRoutes = require('./routes/api/attendance');
 const revenueRoutes = require('./routes/api/revenue');
+const inventoryRoutes = require('./routes/api/inventory');
 const orderRoutes = require('./routes/api/orders');
 const scheduleRoutes = require('./routes/api/schedule');
 const promotionRoutes = require('./routes/api/promotion');
@@ -197,6 +198,7 @@ class EmployeeManagementServer {
         this.app.use('/api/auth', authRoutes);
         this.app.use('/api/attendance', attendanceRoutes);
         this.app.use('/api/revenue', revenueRoutes);
+        this.app.use('/api/inventory', inventoryRoutes);
         this.app.use('/api/orders', orderRoutes);
         this.app.use('/api/schedule', scheduleRoutes);
         this.app.use('/api/promotion', promotionRoutes);
