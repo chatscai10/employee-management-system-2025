@@ -1,31 +1,15 @@
 services:
   - type: web
-    name: employee-management-system-simple
+    name: employee-management-system
     env: node
     buildCommand: npm install
-    startCommand: npm run start-simple
+    startCommand: npm start
     healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production
       - key: JWT_SECRET
         value: your-super-secret-jwt-key-2024-enterprise
-      - key: HOST
-        value: 0.0.0.0
-  
-  - type: web
-    name: employee-management-system-intermediate
-    env: node
-    buildCommand: npm install
-    startCommand: npm run start-intermediate
-    healthCheckPath: /health
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: JWT_SECRET
-        value: your-super-secret-jwt-key-2024-enterprise
-      - key: HOST
-        value: 0.0.0.0
 
 databases:
   - name: employee-management-db
