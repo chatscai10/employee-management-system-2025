@@ -11,7 +11,8 @@
       "Bash(railway logs:*)",
       "Bash(git commit:*)",
       "Bash(railway init:*)",
-      "Bash(git branch:*)"
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }
