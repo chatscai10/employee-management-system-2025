@@ -36,38 +36,33 @@ app.use(compression());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// 靜態檔案服務 - 修復JavaScript MIME類型問題
-app.use('/public', express.static(path.join(__dirname, 'public'), {
-    maxAge: '1y',
+// 靜態檔案服務 - 完全重構確保JavaScript MIME類型正確
+const staticOptions = {
+    maxAge: '1d',
     etag: true,
     lastModified: true,
-    setHeaders: (res, path) => {
-        if (path.endsWith('.js')) {
+    setHeaders: (res, filePath) => {
+        // 強制設定正確的 MIME 類型
+        if (filePath.endsWith('.js')) {
             res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
-        }
-        if (path.endsWith('.css')) {
+            res.setHeader('X-Content-Type-Options', 'nosniff');
+        } else if (filePath.endsWith('.css')) {
             res.setHeader('Content-Type', 'text/css; charset=utf-8');
+            res.setHeader('X-Content-Type-Options', 'nosniff');
+        } else if (filePath.match(/\.(png|jpg|jpeg|gif|ico|svg)$/i)) {
+            res.setHeader('X-Content-Type-Options', 'nosniff');
         }
+        console.log(`📁 Serving static file: ${filePath} with Content-Type: ${res.getHeader('Content-Type')}`);
     }
-}));
+};
 
-app.use('/css', express.static(path.join(__dirname, 'public', 'css'), {
-    setHeaders: (res, path) => {
-        if (path.endsWith('.css')) {
-            res.setHeader('Content-Type', 'text/css; charset=utf-8');
-        }
-    }
-}));
+// 優先處理JavaScript文件
+app.use('/js', express.static(path.join(__dirname, 'public', 'js'), staticOptions));
+app.use('/css', express.static(path.join(__dirname, 'public', 'css'), staticOptions));
+app.use('/images', express.static(path.join(__dirname, 'public', 'images'), staticOptions));
 
-app.use('/js', express.static(path.join(__dirname, 'public', 'js'), {
-    setHeaders: (res, path) => {
-        if (path.endsWith('.js')) {
-            res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
-        }
-    }
-}));
-
-app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
+// 最後處理所有public目錄
+app.use('/public', express.static(path.join(__dirname, 'public'), staticOptions));
 
 // 健康檢查
 app.get('/health', (req, res) => {
