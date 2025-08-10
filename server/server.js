@@ -202,6 +202,7 @@ class EmployeeManagementServer {
         this.app.use('/api/promotion', promotionRoutes);
         this.app.use('/api/maintenance', maintenanceRoutes);
         this.app.use('/api/admin', require('./routes/admin'));
+        this.app.use('/api/admin/auth', require('./routes/auth')); // 員工認證系統
         this.app.use('/api/monitoring', monitoringRoutes);
         this.app.use('/api/alerts', alertsRoutes);
         this.app.use('/api/employees', employeesRoutes);

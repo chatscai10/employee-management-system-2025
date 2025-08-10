@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>GPS打卡系統 - 企業員工管理系統</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: #f8fafc;
+            color: #1f2937;
+            padding-bottom: 60px;
+        }
+        
+        .header {
+            background: #3b82f6;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .status-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status-info {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .employee-info {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .current-status {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .status-not-clocked {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .status-checked-in {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .status-checked-out {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        
+        .map-container {
+            height: 250px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            background: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+        }
+        
+        .location-info {
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .location-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .location-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .clock-button {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 1rem;
+        }
+        
+        .clock-button.checkin {
+            background: #10b981;
+            color: white;
+        }
+        
+        .clock-button.checkin:hover {
+            background: #059669;
+        }
+        
+        .clock-button.checkout {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .clock-button.checkout:hover {
+            background: #d97706;
+        }
+        
+        .clock-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .records-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .records-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .record-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0.75rem 0;
+        }
+        
+        .record-item:last-child {
+            border-bottom: none;
+        }
+        
+        .record-time {
+            font-weight: 500;
+            color: #1f2937;
+        }
+        
+        .record-details {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .alert-success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .alert-error {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+        
+        .alert-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #93c5fd;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 0.5rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .location-accuracy {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            margin-top: 0.5rem;
+        }
+        
+        .store-list {
+            margin-top: 1rem;
+        }
+        
+        .store-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .store-item.in-range {
+            background: #dcfce7;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .store-name {
+            font-weight: 500;
+        }
+        
+        .store-distance {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .store-distance.in-range {
+            color: #166534;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 0.5rem;
+            }
+            
+            .status-card, .records-card {
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+                border-radius: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📍 GPS打卡系統</h1>
+    </div>
+
+    <div class="container">
+        <!-- 狀態卡片 -->
+        <div class="status-card">
+            <div class="status-info">
+                <div class="employee-info" id="employee-info">載入中...</div>
+                <div class="current-status" id="current-status">檢查狀態中</div>
+            </div>
+
+            <!-- 地圖容器 -->
+            <div class="map-container" id="map-container">
+                <div>🗺️ 正在載入地圖...</div>
+            </div>
+
+            <!-- 位置信息 -->
+            <div class="location-info" id="location-info" style="display: none;">
+                <div class="location-row">
+                    <span>📍 當前位置:</span>
+                    <span id="current-location">獲取中...</span>
+                </div>
+                <div class="location-row">
+                    <span>🏪 最近分店:</span>
+                    <span id="nearest-store">計算中...</span>
+                </div>
+                <div class="location-row">
+                    <span>📏 距離:</span>
+                    <span id="distance">計算中...</span>
+                </div>
+                <div class="location-accuracy" id="location-accuracy"></div>
+            </div>
+
+            <!-- 附近分店列表 -->
+            <div class="store-list" id="store-list" style="display: none;"></div>
+
+            <!-- 提示信息 -->
+            <div id="alert-container"></div>
+
+            <!-- 打卡按鈕 -->
+            <button class="clock-button" id="clock-button" onclick="performClock()" disabled>
+                <span id="button-text">準備中...</span>
+                <span id="loading-spinner" class="loading" style="display: none;"></span>
+            </button>
+        </div>
+
+        <!-- 打卡記錄 -->
+        <div class="records-card">
+            <div class="records-title">📋 最近打卡記錄</div>
+            <div id="records-container">
+                <div style="text-align: center; color: #6b7280; padding: 1rem;">載入中...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentEmployee = null;
+        let currentLocation = null;
+        let nearbyStores = [];
+        let currentStatus = null;
+
+        // 檢查認證狀態
+        function checkAuth() {
+            const token = localStorage.getItem('token');
+            const employee = localStorage.getItem('employee');
+            
+            if (!token || !employee) {
+                window.location.href = '/login';
+                return null;
+            }
+            
+            return JSON.parse(employee);
+        }
+
+        // 顯示提示信息
+        function showAlert(message, type = 'info') {
+            const alertContainer = document.getElementById('alert-container');
+            alertContainer.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            
+            setTimeout(() => {
+                alertContainer.innerHTML = '';
+            }, 5000);
+        }
+
+        // 設置按鈕狀態
+        function setButtonState(loading, disabled = false, text = '', type = '') {
+            const button = document.getElementById('clock-button');
+            const buttonText = document.getElementById('button-text');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            
+            button.disabled = disabled;
+            buttonText.textContent = text;
+            
+            if (loading) {
+                loadingSpinner.style.display = 'inline-block';
+            } else {
+                loadingSpinner.style.display = 'none';
+            }
+            
+            // 設置按鈕樣式
+            button.className = `clock-button ${type}`;
+        }
+
+        // 獲取GPS位置
+        function getCurrentLocation() {
+            return new Promise((resolve, reject) => {
+                if (!navigator.geolocation) {
+                    reject(new Error('瀏覽器不支援GPS定位'));
+                    return;
+                }
+
+                const options = {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 60000
+                };
+
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const location = {
+                            latitude: position.coords.latitude,
+                            longitude: position.coords.longitude,
+                            accuracy: position.coords.accuracy
+                        };
+                        resolve(location);
+                    },
+                    (error) => {
+                        let message = '無法獲取GPS位置';
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                message = '請允許存取您的位置信息';
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                message = 'GPS位置信息不可用';
+                                break;
+                            case error.TIMEOUT:
+                                message = 'GPS定位請求超時';
+                                break;
+                        }
+                        reject(new Error(message));
+                    },
+                    options
+                );
+            });
+        }
+
+        // 獲取附近分店
+        async function getNearbyStores(latitude, longitude) {
+            try {
+                const response = await fetch('/api/attendance/nearby-stores', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        latitude,
+                        longitude,
+                        radius: 1000
+                    })
+                });
+
+                const result = await response.json();
+                return result.success ? result.data.stores : [];
+            } catch (error) {
+                console.error('獲取附近分店失敗:', error);
+                return [];
+            }
+        }
+
+        // 獲取打卡狀態
+        async function getAttendanceStatus() {
+            try {
+                const response = await fetch(`/api/attendance/status/${currentEmployee.id}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    currentStatus = result.data;
+                    updateStatusDisplay();
+                }
+            } catch (error) {
+                console.error('獲取打卡狀態失敗:', error);
+            }
+        }
+
+        // 更新狀態顯示
+        function updateStatusDisplay() {
+            const statusElement = document.getElementById('current-status');
+            const buttonElement = document.getElementById('clock-button');
+            
+            let statusText = '';
+            let buttonText = '';
+            let buttonType = '';
+            let statusClass = '';
+            
+            switch (currentStatus.status) {
+                case 'not_clocked':
+                    statusText = '未打卡';
+                    buttonText = '📍 上班打卡';
+                    buttonType = 'checkin';
+                    statusClass = 'status-not-clocked';
+                    break;
+                case 'checked_in':
+                    statusText = '已上班';
+                    buttonText = '📤 下班打卡';
+                    buttonType = 'checkout';
+                    statusClass = 'status-checked-in';
+                    break;
+                case 'checked_out':
+                    statusText = '已下班';
+                    buttonText = '📍 上班打卡';
+                    buttonType = 'checkin';
+                    statusClass = 'status-checked-out';
+                    break;
+            }
+            
+            statusElement.textContent = statusText;
+            statusElement.className = `current-status ${statusClass}`;
+            setButtonState(false, false, buttonText, buttonType);
+        }
+
+        // 更新位置信息
+        function updateLocationInfo() {
+            if (!currentLocation || nearbyStores.length === 0) return;
+
+            const locationInfo = document.getElementById('location-info');
+            const currentLocationElement = document.getElementById('current-location');
+            const nearestStoreElement = document.getElementById('nearest-store');
+            const distanceElement = document.getElementById('distance');
+            const accuracyElement = document.getElementById('location-accuracy');
+            const storeListElement = document.getElementById('store-list');
+
+            locationInfo.style.display = 'block';
+            storeListElement.style.display = 'block';
+
+            // 顯示當前位置
+            currentLocationElement.textContent = `${currentLocation.latitude.toFixed(6)}, ${currentLocation.longitude.toFixed(6)}`;
+            accuracyElement.textContent = `定位精度: ±${Math.round(currentLocation.accuracy)}公尺`;
+
+            // 找最近分店
+            if (nearbyStores.length > 0) {
+                const nearest = nearbyStores[0];
+                nearestStoreElement.textContent = nearest.name;
+                distanceElement.textContent = `${nearest.distance}公尺 ${nearest.inRange ? '✅' : '❌'}`;
+                distanceElement.style.color = nearest.inRange ? '#166534' : '#dc2626';
+
+                // 顯示所有附近分店
+                storeListElement.innerHTML = nearbyStores.map(store => `
+                    <div class="store-item ${store.inRange ? 'in-range' : ''}">
+                        <div class="store-name">${store.name}</div>
+                        <div class="store-distance ${store.inRange ? 'in-range' : ''}">${store.distance}公尺 ${store.inRange ? '✅' : ''}</div>
+                    </div>
+                `).join('');
+            } else {
+                nearestStoreElement.textContent = '附近無分店';
+                distanceElement.textContent = '無法打卡';
+                distanceElement.style.color = '#dc2626';
+            }
+        }
+
+        // 執行打卡
+        async function performClock() {
+            if (!currentLocation) {
+                showAlert('請先獲取GPS位置', 'error');
+                return;
+            }
+
+            const inRangeStores = nearbyStores.filter(store => store.inRange);
+            if (inRangeStores.length === 0) {
+                showAlert('您不在任何分店的打卡範圍內', 'error');
+                return;
+            }
+
+            setButtonState(true, true, '打卡中...', '');
+
+            try {
+                const response = await fetch('/api/attendance/clock', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        employeeId: currentEmployee.id,
+                        latitude: currentLocation.latitude,
+                        longitude: currentLocation.longitude,
+                        accuracy: currentLocation.accuracy
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showAlert(result.message, 'success');
+                    
+                    // 更新狀態和記錄
+                    await getAttendanceStatus();
+                    await loadRecentRecords();
+                } else {
+                    showAlert(result.message || '打卡失敗', 'error');
+                }
+            } catch (error) {
+                console.error('打卡失敗:', error);
+                showAlert('打卡失敗，請檢查網路連接', 'error');
+            }
+
+            setButtonState(false, false, '', '');
+        }
+
+        // 載入最近打卡記錄
+        async function loadRecentRecords() {
+            try {
+                const response = await fetch(`/api/attendance/records?employeeId=${currentEmployee.id}&limit=5`);
+                const result = await response.json();
+
+                if (result.success) {
+                    const recordsContainer = document.getElementById('records-container');
+                    
+                    if (result.data.records.length === 0) {
+                        recordsContainer.innerHTML = '<div style="text-align: center; color: #6b7280; padding: 1rem;">暫無打卡記錄</div>';
+                        return;
+                    }
+
+                    recordsContainer.innerHTML = result.data.records.map(record => `
+                        <div class="record-item">
+                            <div class="record-time">
+                                ${new Date(record.clockTime).toLocaleString('zh-TW')} - ${record.type === 'checkin' ? '上班' : '下班'}
+                            </div>
+                            <div class="record-details">
+                                ${record.storeName} • 距離 ${record.distance}公尺 • ${record.status === 'normal' ? '正常' : record.status}
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('載入打卡記錄失敗:', error);
+            }
+        }
+
+        // 初始化頁面
+        async function init() {
+            // 檢查認證
+            currentEmployee = checkAuth();
+            if (!currentEmployee) return;
+
+            // 顯示員工信息
+            document.getElementById('employee-info').textContent = `${currentEmployee.name} (${currentEmployee.currentStore})`;
+
+            // 載入打卡狀態
+            await getAttendanceStatus();
+
+            // 載入打卡記錄
+            await loadRecentRecords();
+
+            // 獲取GPS位置
+            try {
+                showAlert('正在獲取GPS位置...', 'info');
+                currentLocation = await getCurrentLocation();
+                
+                // 獲取附近分店
+                nearbyStores = await getNearbyStores(currentLocation.latitude, currentLocation.longitude);
+                
+                // 更新顯示
+                updateLocationInfo();
+                
+                showAlert('GPS定位成功，可以開始打卡', 'success');
+                
+                // 簡單地圖顯示
+                document.getElementById('map-container').innerHTML = `
+                    <div style="text-align: center;">
+                        <div>🌍 當前位置已定位</div>
+                        <div style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">
+                            ${currentLocation.latitude.toFixed(4)}, ${currentLocation.longitude.toFixed(4)}
+                        </div>
+                    </div>
+                `;
+                
+            } catch (error) {
+                console.error('GPS定位失敗:', error);
+                showAlert(error.message, 'error');
+                
+                document.getElementById('map-container').innerHTML = `
+                    <div style="text-align: center; color: #dc2626;">
+                        <div>❌ GPS定位失敗</div>
+                        <div style="font-size: 0.875rem; margin-top: 0.5rem;">${error.message}</div>
+                    </div>
+                `;
+                
+                setButtonState(false, true, '無法定位', '');
+            }
+        }
+
+        // 頁面載入完成後初始化
+        document.addEventListener('DOMContentLoaded', init);
+
+        // 定期更新位置（每30秒）
+        setInterval(async () => {
+            if (currentEmployee) {
+                try {
+                    const newLocation = await getCurrentLocation();
+                    currentLocation = newLocation;
+                    nearbyStores = await getNearbyStores(newLocation.latitude, newLocation.longitude);
+                    updateLocationInfo();
+                } catch (error) {
+                    console.log('定期位置更新失敗:', error);
+                }
+            }
+        }, 30000);
+    </script>
+</body>
+</html>
