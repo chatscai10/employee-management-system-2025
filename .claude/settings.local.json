@@ -7,7 +7,8 @@
       "Bash(curl:*)",
       "Bash(pkill:*)",
       "Bash(rm:*)",
-      "Bash(FORCE_DB_SYNC=true NODE_ENV=development cd server)"
+      "Bash(FORCE_DB_SYNC=true NODE_ENV=development cd server)",
+      "Bash(railway logs:*)"
     ],
     "deny": []
   }

@@ -4,11 +4,11 @@
   "description": "企業員工管理系統 - 一頁式手機端優先設計",
   "main": "server/server.js",
   "scripts": {
-    "start": "NODE_ENV=production node server/server.js",
-    "dev": "NODE_ENV=development node server/server.js",
+    "start": "node server/server.js",
+    "dev": "NODE_ENV=development nodemon server/server.js",
     "build": "echo 'No build step required'",
-    "test": "echo 'Tests available'",
-    "lint": "echo 'Linting available'"
+    "test": "node system-test.js",
+    "deploy": "railway deploy"
   },
   "keywords": [
     "employee-management",
@@ -39,6 +39,8 @@
     "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.14.3",
+    "pg": "^8.11.5",
+    "pg-hstore": "^2.3.4",
     "node-cron": "^3.0.3",
     "sequelize": "^6.37.7",
     "sharp": "^0.32.6",

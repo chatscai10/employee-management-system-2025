@@ -15,6 +15,30 @@ let models = {};
 
 // 創建數據庫連接
 const createConnection = () => {
+    // 如果有DATABASE_URL（Railway提供），使用PostgreSQL
+    if (process.env.DATABASE_URL) {
+        return new Sequelize(process.env.DATABASE_URL, {
+            dialect: 'postgres',
+            logging: (msg) => {
+                if (process.env.SEQUELIZE_LOGGING === 'true') {
+                    logger.debug('SQL:', msg);
+                }
+            },
+            define: {
+                timestamps: true,
+                underscored: false,
+                freezeTableName: true
+            },
+            pool: {
+                max: 5,
+                min: 0,
+                acquire: 30000,
+                idle: 10000
+            }
+        });
+    }
+    
+    // 否則使用本地SQLite
     // 確保資料庫目錄存在
     const dbDir = path.dirname('./database/employee_management.db');
     if (!fs.existsSync(dbDir)) {
@@ -211,8 +235,8 @@ const initModels = async () => {
             }
         });
 
-        // 同步數據庫 - 強制重建
-        const forceSync = true; // 強制重建以解決架構衝突
+        // 同步數據庫 - 根據環境變數決定是否強制重建
+        const forceSync = process.env.FORCE_DB_SYNC === 'true';
         await sequelize.sync({ force: forceSync });
         logger.info(`✅ 數據庫表同步完成 (force: ${forceSync})`);
     }
