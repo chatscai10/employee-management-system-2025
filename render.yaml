@@ -1,26 +1,25 @@
 services:
+  # 主要應用服務
   - type: web
     name: employee-management-system
-    runtime: docker
-    plan: starter
-    dockerfilePath: ./Dockerfile
-    buildCommand: docker build -t employee-management .
+    runtime: node
+    buildCommand: npm install
     startCommand: npm start
-    healthCheckPath: /api/health
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 3000
       - key: JWT_SECRET
         generateValue: true
-        
-  - type: redis
-    name: employee-redis
-    plan: starter
-    maxMemoryPolicy: allkeys-lru
-    
+      - key: HOST
+        value: 0.0.0.0
+      - key: TELEGRAM_BOT_TOKEN
+        value: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
+    autoDeploy: false
+
 databases:
-  - name: employee-database
+  # PostgreSQL 資料庫
+  - name: employee-management-db
     databaseName: employee_management
-    user: employee_user
+    user: emp_user
+    plan: free

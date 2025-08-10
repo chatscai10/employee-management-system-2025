@@ -8,7 +8,8 @@
     "dev": "NODE_ENV=development nodemon server/server.js",
     "build": "echo 'No build step required'",
     "test": "node system-test.js",
-    "deploy": "railway deploy"
+    "deploy": "railway deploy",
+    "render-postbuild": "echo 'Render build completed'"
   },
   "keywords": [
     "employee-management",
