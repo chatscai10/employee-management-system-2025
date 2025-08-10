@@ -1,0 +1,12 @@
+強制重新部署觸發器 - 時間戳: 2025-08-10T20:19:30Z
+
+修復摘要：
+1. ✅ 修復CSP設定允許JavaScript執行
+2. ✅ 修復通配符路由攔截靜態文件問題
+3. ✅ 重構靜態文件服務確保正確MIME類型
+4. ✅ 本地測試確認JavaScript文件正常服務
+
+期望結果：
+- /js/app.js 應返回 Content-Type: application/javascript; charset=utf-8
+- 消除 app.js:1 Uncaught SyntaxError: Unexpected token '<' 錯誤
+- JavaScript功能正常運作
