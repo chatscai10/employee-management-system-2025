@@ -78,31 +78,31 @@ class InventoryNotificationService {
      * @returns {String} 通知內容
      */
     static buildManagerNotification(orderData, analysisData) {
-        let notification = `🛒 叫貨記錄詳細報告 + 庫存分析\\n`;
-        notification += `━━━━━━━━━━━━━━━━━━━\\n\\n`;
+        let notification = `🛒 叫貨記錄詳細報告 + 庫存分析\n`;
+        notification += `━━━━━━━━━━━━━━━━━━━\n\n`;
         
         // 叫貨明細
-        notification += `📦 叫貨明細:\\n`;
-        notification += `叫貨人員：${orderData.employeeName}\\n`;
-        notification += `📅 送貨日期: ${orderData.deliveryDate || '待確認'}\\n`;
-        notification += `🏪 分店: ${orderData.storeName}\\n`;
-        notification += `💰 總金額: $${orderData.totalAmount}\\n\\n`;
+        notification += `📦 叫貨明細:\n`;
+        notification += `叫貨人員：${orderData.employeeName}\n`;
+        notification += `📅 送貨日期: ${orderData.deliveryDate || '待確認'}\n`;
+        notification += `🏪 分店: ${orderData.storeName}\n`;
+        notification += `💰 總金額: $${orderData.totalAmount}\n\n`;
         
         // 廠商分類
-        notification += `🏭 廠商分類:\\n`;
+        notification += `🏭 廠商分類:\n`;
         const supplierGroups = this.groupItemsBySupplier(orderData.orderItems);
         
         Object.keys(supplierGroups).forEach(supplier => {
-            notification += `${supplier}\\n`;
+            notification += `${supplier}\n`;
             supplierGroups[supplier].forEach(item => {
-                notification += `  • ${item.itemName} ${item.quantity} ${item.unit}\\n`;
+                notification += `  • ${item.itemName} ${item.quantity} ${item.unit}\n`;
             });
-            notification += `\\n`;
+            notification += `\n`;
         });
         
         // 庫存警報 - 只顯示低庫存需要備貨的品項
         if (analysisData && analysisData.findings && analysisData.findings.lowStock && analysisData.findings.lowStock.length > 0) {
-            notification += `⚠️ 庫存警報 - 需要備貨:\\n`;
+            notification += `⚠️ 庫存警報 - 需要備貨:\n`;
             
             analysisData.findings.lowStock.forEach(item => {
                 const urgency = item.severity === 'critical' ? '🚨 緊急' : 
@@ -112,11 +112,11 @@ class InventoryNotificationService {
                 if (item.suggestedOrderQuantity > 0) {
                     notification += ` (建議叫貨: ${item.suggestedOrderQuantity} ${item.analysisData.unit})`;
                 }
-                notification += `\\n`;
+                notification += `\n`;
             });
-            notification += `\\n`;
+            notification += `\n`;
         } else {
-            notification += `✅ 庫存狀況: 所有品項庫存充足\\n\\n`;
+            notification += `✅ 庫存狀況: 所有品項庫存充足\n\n`;
         }
         
         notification += `━━━━━━━━━━━━━━━━━━━`;
@@ -130,21 +130,15 @@ class InventoryNotificationService {
      * @returns {String} 通知內容
      */
     static buildEmployeeNotification(orderData) {
-        let notification = `🛒 叫貨記錄\\n`;
-        notification += `📅 送貨日期: ${orderData.deliveryDate || '待確認'}\\n`;
-        notification += `🏪 分店: ${orderData.storeName}\\n`;
-        notification += `💰 總價: $${orderData.totalAmount}\\n\\n`;
+        let notification = `🛒 叫貨記錄\n`;
+        notification += `📅 送貨日期: ${orderData.deliveryDate || '待確認'}\n`;
+        notification += `🏪 分店: ${orderData.storeName}\n`;
+        notification += `💰 總價: $${orderData.totalAmount}\n\n`;
         
-        // 顯示具體品項和數量
-        notification += `📦 叫貨明細:\\n`;
-        const supplierGroups = this.groupItemsBySupplier(orderData.orderItems);
-        
-        Object.keys(supplierGroups).forEach(supplier => {
-            notification += `${supplier}\\n`;
-            supplierGroups[supplier].forEach(item => {
-                notification += `  • ${item.itemName} ${item.quantity} ${item.unit}\\n`;
-            });
-            notification += `\\n`;
+        // 顯示具體品項和數量 (不顯示廠商名稱)
+        notification += `📦 叫貨明細:\n`;
+        orderData.orderItems.forEach(item => {
+            notification += `  • ${item.itemName} ${item.quantity} ${item.unit}\n`;
         });
         
         return notification.trim();
@@ -179,56 +173,56 @@ class InventoryNotificationService {
                 return { success: true, message: '無異常項目，不需發送警報' };
             }
             
-            let notification = `⚠️ 庫存異常監控警報\\n`;
-            notification += `━━━━━━━━━━━━━━━━━━━\\n`;
-            notification += `📊 監控時間: ${new Date(analysisReport.analysisTime).toLocaleString('zh-TW')}\\n`;
-            notification += `🔍 分析品項: ${analysisReport.summary.totalItems}項\\n`;
-            notification += `🚨 發現異常: ${analysisReport.summary.abnormalItems}項\\n`;
-            notification += `🔥 緊急項目: ${analysisReport.summary.criticalItems}項\\n\\n`;
+            let notification = `⚠️ 庫存異常監控警報\n`;
+            notification += `━━━━━━━━━━━━━━━━━━━\n`;
+            notification += `📊 監控時間: ${new Date(analysisReport.analysisTime).toLocaleString('zh-TW')}\n`;
+            notification += `🔍 分析品項: ${analysisReport.summary.totalItems}項\n`;
+            notification += `🚨 發現異常: ${analysisReport.summary.abnormalItems}項\n`;
+            notification += `🔥 緊急項目: ${analysisReport.summary.criticalItems}項\n\n`;
             
             // 太久沒叫貨項目
             if (analysisReport.findings.noOrderTooLong.length > 0) {
-                notification += `⏰ 太久沒叫貨項目 (${analysisReport.findings.noOrderTooLong.length}項):\\n`;
+                notification += `⏰ 太久沒叫貨項目 (${analysisReport.findings.noOrderTooLong.length}項):\n`;
                 analysisReport.findings.noOrderTooLong.forEach(item => {
-                    notification += `  • ${item.itemName}: ${item.daysSinceOrder}天 (${item.supplier})\\n`;
+                    notification += `  • ${item.itemName}: ${item.daysSinceOrder}天 (${item.supplier})\n`;
                 });
-                notification += `\\n`;
+                notification += `\n`;
             }
             
             // 頻繁叫貨項目
             if (analysisReport.findings.tooFrequentOrders.length > 0) {
-                notification += `🔄 頻繁叫貨項目 (${analysisReport.findings.tooFrequentOrders.length}項):\\n`;
+                notification += `🔄 頻繁叫貨項目 (${analysisReport.findings.tooFrequentOrders.length}項):\n`;
                 analysisReport.findings.tooFrequentOrders.forEach(item => {
-                    notification += `  • ${item.itemName}: ${item.ordersInPeriod}次/${item.checkPeriodDays}天\\n`;
+                    notification += `  • ${item.itemName}: ${item.ordersInPeriod}次/${item.checkPeriodDays}天\n`;
                 });
-                notification += `\\n`;
+                notification += `\n`;
             }
             
             // 新品項無叫貨
             if (analysisReport.findings.newItemNoOrder.length > 0) {
-                notification += `🆕 新品項無叫貨 (${analysisReport.findings.newItemNoOrder.length}項):\\n`;
+                notification += `🆕 新品項無叫貨 (${analysisReport.findings.newItemNoOrder.length}項):\n`;
                 analysisReport.findings.newItemNoOrder.forEach(item => {
-                    notification += `  • ${item.itemName}: ${item.daysSinceCreated}天無叫貨\\n`;
+                    notification += `  • ${item.itemName}: ${item.daysSinceCreated}天無叫貨\n`;
                 });
-                notification += `\\n`;
+                notification += `\n`;
             }
             
             // 低庫存項目
             if (analysisReport.findings.lowStock.length > 0) {
-                notification += `📉 低庫存項目 (${analysisReport.findings.lowStock.length}項):\\n`;
+                notification += `📉 低庫存項目 (${analysisReport.findings.lowStock.length}項):\n`;
                 analysisReport.findings.lowStock.forEach(item => {
                     const urgency = item.severity === 'critical' ? '🚨' : 
                                    item.severity === 'high' ? '🔥' : '⚠️';
-                    notification += `  ${urgency} ${item.itemName}: ${item.currentStock}${item.analysisData.unit}\\n`;
+                    notification += `  ${urgency} ${item.itemName}: ${item.currentStock}${item.analysisData.unit}\n`;
                 });
-                notification += `\\n`;
+                notification += `\n`;
             }
             
             // 建議行動
             if (analysisReport.recommendations.length > 0) {
-                notification += `💡 建議行動:\\n`;
+                notification += `💡 建議行動:\n`;
                 analysisReport.recommendations.forEach(rec => {
-                    notification += `  • ${rec.title}\\n`;
+                    notification += `  • ${rec.title}\n`;
                 });
             }
             
@@ -338,19 +332,19 @@ class InventoryNotificationService {
                 return { success: true, message: '無緊急項目需要通知' };
             }
             
-            let notification = `🚨 緊急庫存警報 🚨\\n`;
-            notification += `━━━━━━━━━━━━━━━━━━━\\n`;
-            notification += `⏰ 時間: ${new Date().toLocaleString('zh-TW')}\\n`;
-            notification += `🔥 緊急項目: ${criticalItems.length}項\\n\\n`;
+            let notification = `🚨 緊急庫存警報 🚨\n`;
+            notification += `━━━━━━━━━━━━━━━━━━━\n`;
+            notification += `⏰ 時間: ${new Date().toLocaleString('zh-TW')}\n`;
+            notification += `🔥 緊急項目: ${criticalItems.length}項\n\n`;
             
             criticalItems.forEach(item => {
-                notification += `🚨 ${item.itemName}\\n`;
-                notification += `  📦 目前庫存: ${item.currentStock} ${item.analysisData.unit}\\n`;
-                notification += `  🏭 供應商: ${item.supplier}\\n`;
-                notification += `  💡 建議叫貨: ${item.suggestedOrderQuantity} ${item.analysisData.unit}\\n\\n`;
+                notification += `🚨 ${item.itemName}\n`;
+                notification += `  📦 目前庫存: ${item.currentStock} ${item.analysisData.unit}\n`;
+                notification += `  🏭 供應商: ${item.supplier}\n`;
+                notification += `  💡 建議叫貨: ${item.suggestedOrderQuantity} ${item.analysisData.unit}\n\n`;
             });
             
-            notification += `⚡ 請立即處理緊急補貨！\\n`;
+            notification += `⚡ 請立即處理緊急補貨！\n`;
             notification += `━━━━━━━━━━━━━━━━━━━`;
             
             // 發送通知
