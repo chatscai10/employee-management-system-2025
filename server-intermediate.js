@@ -36,13 +36,19 @@ app.get('/health', (req, res) => {
 // 主頁 - 提供HTML界面
 app.get('/', (req, res) => {
     try {
-        res.sendFile(path.join(__dirname, 'public', 'index.html'));
+        res.sendFile(path.join(__dirname, 'public', 'employee-dashboard.html'));
     } catch (error) {
         res.json({
             message: '🏢 企業員工管理系統 - 中級版',
             status: 'running',
             timestamp: new Date().toISOString(),
-            note: 'HTML界面載入中，目前提供API服務'
+            note: 'HTML界面載入中，目前提供API服務',
+            availablePages: {
+                dashboard: '/dashboard',
+                login: '/login',
+                admin: '/admin',
+                employee: '/employee'
+            }
         });
     }
 });
@@ -69,6 +75,51 @@ app.get('/admin', (req, res) => {
             message: '管理員頁面',
             timestamp: new Date().toISOString()
         });
+    }
+});
+
+// 員工頁面路由
+app.get('/employee', (req, res) => {
+    try {
+        res.sendFile(path.join(__dirname, 'public', 'employee.html'));
+    } catch (error) {
+        res.json({ message: '員工頁面載入失敗', error: error.message });
+    }
+});
+
+// 儀表板路由
+app.get('/dashboard', (req, res) => {
+    try {
+        res.sendFile(path.join(__dirname, 'public', 'employee-dashboard.html'));
+    } catch (error) {
+        res.json({ message: '儀表板載入失敗', error: error.message });
+    }
+});
+
+// 打卡頁面路由
+app.get('/attendance', (req, res) => {
+    try {
+        res.sendFile(path.join(__dirname, 'public', 'attendance.html'));
+    } catch (error) {
+        res.json({ message: '打卡頁面載入失敗', error: error.message });
+    }
+});
+
+// 營收頁面路由
+app.get('/revenue', (req, res) => {
+    try {
+        res.sendFile(path.join(__dirname, 'public', 'revenue.html'));
+    } catch (error) {
+        res.json({ message: '營收頁面載入失敗', error: error.message });
+    }
+});
+
+// 個人資料頁面路由
+app.get('/profile', (req, res) => {
+    try {
+        res.sendFile(path.join(__dirname, 'public', 'profile.html'));
+    } catch (error) {
+        res.json({ message: '個人資料頁面載入失敗', error: error.message });
     }
 });
 
