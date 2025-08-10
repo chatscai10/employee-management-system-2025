@@ -163,6 +163,43 @@ app.get('/api/revenue', (req, res) => {
     });
 });
 
+// 測試端點 - 網頁需要的API
+app.get('/api/auth/test', (req, res) => {
+    res.json({
+        success: true,
+        message: '認證API測試成功',
+        version: 'intermediate',
+        timestamp: new Date().toISOString()
+    });
+});
+
+app.get('/api/attendance/test', (req, res) => {
+    res.json({
+        success: true,
+        message: '打卡API測試成功',
+        version: 'intermediate',
+        timestamp: new Date().toISOString()
+    });
+});
+
+app.get('/api/revenue/test', (req, res) => {
+    res.json({
+        success: true,
+        message: '營收API測試成功',
+        version: 'intermediate',
+        timestamp: new Date().toISOString()
+    });
+});
+
+app.get('/api/orders/test', (req, res) => {
+    res.json({
+        success: true,
+        message: '叫貨API測試成功',
+        version: 'intermediate',
+        timestamp: new Date().toISOString()
+    });
+});
+
 // 錯誤處理
 app.use((err, req, res, next) => {
     console.error('錯誤:', err);
