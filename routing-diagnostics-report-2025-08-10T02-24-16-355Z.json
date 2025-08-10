@@ -1,0 +1,697 @@
+{
+  "timestamp": "2025-08-10T02:24:15.925Z",
+  "routeFiles": [
+    {
+      "filename": "admin.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\admin.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express",
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../services/notificationService",
+        "../../middleware/auth"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": true,
+        "routeEndpoints": 9,
+        "authProtectedRoutes": 1
+      }
+    },
+    {
+      "filename": "alerts.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\alerts.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express",
+        "../../services/alertService",
+        "../../middleware/auth"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": true,
+        "routeEndpoints": 10,
+        "authProtectedRoutes": 11
+      }
+    },
+    {
+      "filename": "attendance.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\attendance.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express",
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../services/notificationService",
+        "../../middleware/auth",
+        "crypto",
+        "sequelize",
+        "sequelize",
+        "sequelize",
+        "sequelize",
+        "sequelize",
+        "sequelize",
+        "sequelize"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": true,
+        "routeEndpoints": 8,
+        "authProtectedRoutes": 7
+      }
+    },
+    {
+      "filename": "auth-production.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\auth-production.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express",
+        "bcryptjs",
+        "../../middleware/auth/production",
+        "../../utils/logger"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": true,
+        "routeEndpoints": 6,
+        "authProtectedRoutes": 0
+      }
+    },
+    {
+      "filename": "auth.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\auth.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express",
+        "bcryptjs",
+        "jsonwebtoken",
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../services/notificationService"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": true,
+        "routeEndpoints": 9,
+        "authProtectedRoutes": 0
+      }
+    },
+    {
+      "filename": "employees.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\employees.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express",
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../middleware/auth"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": true,
+        "routeEndpoints": 4,
+        "authProtectedRoutes": 5
+      }
+    },
+    {
+      "filename": "maintenance.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\maintenance.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": false,
+        "routeEndpoints": 1,
+        "authProtectedRoutes": 0
+      }
+    },
+    {
+      "filename": "monitoring.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\monitoring.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express",
+        "../../middleware/auth",
+        "../../middleware/monitoring",
+        "../../middleware/monitoring",
+        "../../middleware/monitoring"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": true,
+        "routeEndpoints": 7,
+        "authProtectedRoutes": 7
+      }
+    },
+    {
+      "filename": "orders.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\orders.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": false,
+        "routeEndpoints": 1,
+        "authProtectedRoutes": 0
+      }
+    },
+    {
+      "filename": "promotion.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\promotion.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": false,
+        "routeEndpoints": 1,
+        "authProtectedRoutes": 0
+      }
+    },
+    {
+      "filename": "revenue.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\revenue.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express",
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../middleware/auth",
+        "sequelize"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": true,
+        "routeEndpoints": 6,
+        "authProtectedRoutes": 4
+      }
+    },
+    {
+      "filename": "schedule.js",
+      "exists": true,
+      "path": "D:\\0809\\server\\routes\\api\\schedule.js",
+      "expected": true,
+      "syntaxIssues": [],
+      "nodeValidation": {
+        "valid": true,
+        "error": "",
+        "exitCode": 0
+      },
+      "exportAnalysis": {
+        "hasModuleExports": true,
+        "hasRouterExport": true,
+        "hasExpressRouter": true,
+        "valid": true
+      },
+      "dependencies": [
+        "express"
+      ],
+      "middlewareAnalysis": {
+        "hasAuthMiddleware": false,
+        "routeEndpoints": 2,
+        "authProtectedRoutes": 0
+      }
+    }
+  ],
+  "serverConfig": {
+    "imports": [
+      {
+        "variable": "authRoutes",
+        "path": "./routes/api/auth",
+        "line": 28,
+        "content": "const authRoutes = require('./routes/api/auth');"
+      },
+      {
+        "variable": "attendanceRoutes",
+        "path": "./routes/api/attendance",
+        "line": 29,
+        "content": "const attendanceRoutes = require('./routes/api/attendance');"
+      },
+      {
+        "variable": "revenueRoutes",
+        "path": "./routes/api/revenue",
+        "line": 30,
+        "content": "const revenueRoutes = require('./routes/api/revenue');"
+      },
+      {
+        "variable": "orderRoutes",
+        "path": "./routes/api/orders",
+        "line": 31,
+        "content": "const orderRoutes = require('./routes/api/orders');"
+      },
+      {
+        "variable": "scheduleRoutes",
+        "path": "./routes/api/schedule",
+        "line": 32,
+        "content": "const scheduleRoutes = require('./routes/api/schedule');"
+      },
+      {
+        "variable": "promotionRoutes",
+        "path": "./routes/api/promotion",
+        "line": 33,
+        "content": "const promotionRoutes = require('./routes/api/promotion');"
+      },
+      {
+        "variable": "maintenanceRoutes",
+        "path": "./routes/api/maintenance",
+        "line": 34,
+        "content": "const maintenanceRoutes = require('./routes/api/maintenance');"
+      },
+      {
+        "variable": "adminRoutes",
+        "path": "./routes/api/admin",
+        "line": 35,
+        "content": "const adminRoutes = require('./routes/api/admin');"
+      },
+      {
+        "variable": "monitoringRoutes",
+        "path": "./routes/api/monitoring",
+        "line": 36,
+        "content": "const monitoringRoutes = require('./routes/api/monitoring');"
+      },
+      {
+        "variable": "alertsRoutes",
+        "path": "./routes/api/alerts",
+        "line": 37,
+        "content": "const alertsRoutes = require('./routes/api/alerts');"
+      },
+      {
+        "variable": "employeesRoutes",
+        "path": "./routes/api/employees",
+        "line": 38,
+        "content": "const employeesRoutes = require('./routes/api/employees');"
+      }
+    ],
+    "routeUsages": [
+      {
+        "path": "/api/",
+        "variable": "limiter",
+        "line": 149,
+        "content": "this.app.use('/api/', limiter);"
+      },
+      {
+        "path": "/api/auth/login",
+        "variable": "loginLimiter",
+        "line": 150,
+        "content": "this.app.use('/api/auth/login', loginLimiter);"
+      },
+      {
+        "path": "/api/auth",
+        "variable": "authRoutes",
+        "line": 197,
+        "content": "this.app.use('/api/auth', authRoutes);"
+      },
+      {
+        "path": "/api/attendance",
+        "variable": "attendanceRoutes",
+        "line": 198,
+        "content": "this.app.use('/api/attendance', attendanceRoutes);"
+      },
+      {
+        "path": "/api/revenue",
+        "variable": "revenueRoutes",
+        "line": 199,
+        "content": "this.app.use('/api/revenue', revenueRoutes);"
+      },
+      {
+        "path": "/api/orders",
+        "variable": "orderRoutes",
+        "line": 200,
+        "content": "this.app.use('/api/orders', orderRoutes);"
+      },
+      {
+        "path": "/api/schedule",
+        "variable": "scheduleRoutes",
+        "line": 201,
+        "content": "this.app.use('/api/schedule', scheduleRoutes);"
+      },
+      {
+        "path": "/api/promotion",
+        "variable": "promotionRoutes",
+        "line": 202,
+        "content": "this.app.use('/api/promotion', promotionRoutes);"
+      },
+      {
+        "path": "/api/maintenance",
+        "variable": "maintenanceRoutes",
+        "line": 203,
+        "content": "this.app.use('/api/maintenance', maintenanceRoutes);"
+      },
+      {
+        "path": "/api/admin",
+        "variable": "adminRoutes",
+        "line": 204,
+        "content": "this.app.use('/api/admin', adminRoutes);"
+      },
+      {
+        "path": "/api/monitoring",
+        "variable": "monitoringRoutes",
+        "line": 205,
+        "content": "this.app.use('/api/monitoring', monitoringRoutes);"
+      },
+      {
+        "path": "/api/alerts",
+        "variable": "alertsRoutes",
+        "line": 206,
+        "content": "this.app.use('/api/alerts', alertsRoutes);"
+      },
+      {
+        "path": "/api/employees",
+        "variable": "employeesRoutes",
+        "line": 207,
+        "content": "this.app.use('/api/employees', employeesRoutes);"
+      }
+    ],
+    "totalImports": 11,
+    "totalUsages": 13
+  },
+  "issues": [
+    {
+      "type": "MISSING_ROUTE_IMPORT",
+      "severity": "HIGH",
+      "message": "使用了但未導入的路由變數: limiter",
+      "location": "server.js",
+      "timestamp": "2025-08-10T02:24:15.928Z"
+    },
+    {
+      "type": "MISSING_ROUTE_IMPORT",
+      "severity": "HIGH",
+      "message": "使用了但未導入的路由變數: loginLimiter",
+      "location": "server.js",
+      "timestamp": "2025-08-10T02:24:15.928Z"
+    }
+  ],
+  "warnings": [
+    {
+      "type": "MISSING_COMMON_DEPENDENCIES",
+      "severity": "LOW",
+      "message": "alerts.js 可能缺少常見依賴",
+      "details": [
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../services/notificationService"
+      ],
+      "location": "D:\\0809\\server\\routes\\api\\alerts.js",
+      "timestamp": "2025-08-10T02:24:16.349Z"
+    },
+    {
+      "type": "MISSING_COMMON_DEPENDENCIES",
+      "severity": "LOW",
+      "message": "auth-production.js 可能缺少常見依賴",
+      "details": [
+        "../../models",
+        "../../utils/responseHelper",
+        "../../services/notificationService"
+      ],
+      "location": "D:\\0809\\server\\routes\\api\\auth-production.js",
+      "timestamp": "2025-08-10T02:24:16.349Z"
+    },
+    {
+      "type": "MISSING_COMMON_DEPENDENCIES",
+      "severity": "LOW",
+      "message": "auth.js 可能缺少常見依賴",
+      "details": [
+        "../../middleware/auth"
+      ],
+      "location": "D:\\0809\\server\\routes\\api\\auth.js",
+      "timestamp": "2025-08-10T02:24:16.350Z"
+    },
+    {
+      "type": "MISSING_COMMON_DEPENDENCIES",
+      "severity": "LOW",
+      "message": "employees.js 可能缺少常見依賴",
+      "details": [
+        "../../services/notificationService"
+      ],
+      "location": "D:\\0809\\server\\routes\\api\\employees.js",
+      "timestamp": "2025-08-10T02:24:16.350Z"
+    },
+    {
+      "type": "MISSING_COMMON_DEPENDENCIES",
+      "severity": "LOW",
+      "message": "maintenance.js 可能缺少常見依賴",
+      "details": [
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../services/notificationService",
+        "../../middleware/auth"
+      ],
+      "location": "D:\\0809\\server\\routes\\api\\maintenance.js",
+      "timestamp": "2025-08-10T02:24:16.350Z"
+    },
+    {
+      "type": "MISSING_COMMON_DEPENDENCIES",
+      "severity": "LOW",
+      "message": "monitoring.js 可能缺少常見依賴",
+      "details": [
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../services/notificationService"
+      ],
+      "location": "D:\\0809\\server\\routes\\api\\monitoring.js",
+      "timestamp": "2025-08-10T02:24:16.350Z"
+    },
+    {
+      "type": "MISSING_COMMON_DEPENDENCIES",
+      "severity": "LOW",
+      "message": "orders.js 可能缺少常見依賴",
+      "details": [
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../services/notificationService",
+        "../../middleware/auth"
+      ],
+      "location": "D:\\0809\\server\\routes\\api\\orders.js",
+      "timestamp": "2025-08-10T02:24:16.350Z"
+    },
+    {
+      "type": "MISSING_COMMON_DEPENDENCIES",
+      "severity": "LOW",
+      "message": "promotion.js 可能缺少常見依賴",
+      "details": [
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../services/notificationService",
+        "../../middleware/auth"
+      ],
+      "location": "D:\\0809\\server\\routes\\api\\promotion.js",
+      "timestamp": "2025-08-10T02:24:16.351Z"
+    },
+    {
+      "type": "MISSING_COMMON_DEPENDENCIES",
+      "severity": "LOW",
+      "message": "revenue.js 可能缺少常見依賴",
+      "details": [
+        "../../services/notificationService"
+      ],
+      "location": "D:\\0809\\server\\routes\\api\\revenue.js",
+      "timestamp": "2025-08-10T02:24:16.351Z"
+    },
+    {
+      "type": "MISSING_COMMON_DEPENDENCIES",
+      "severity": "LOW",
+      "message": "schedule.js 可能缺少常見依賴",
+      "details": [
+        "../../models",
+        "../../utils/logger",
+        "../../utils/responseHelper",
+        "../../services/notificationService",
+        "../../middleware/auth"
+      ],
+      "location": "D:\\0809\\server\\routes\\api\\schedule.js",
+      "timestamp": "2025-08-10T02:24:16.351Z"
+    },
+    {
+      "type": "NO_AUTH_MIDDLEWARE",
+      "severity": "MEDIUM",
+      "message": "maintenance.js 有 1 個端點但沒有使用認證中間件",
+      "location": "D:\\0809\\server\\routes\\api\\maintenance.js",
+      "timestamp": "2025-08-10T02:24:16.353Z"
+    },
+    {
+      "type": "NO_AUTH_MIDDLEWARE",
+      "severity": "MEDIUM",
+      "message": "orders.js 有 1 個端點但沒有使用認證中間件",
+      "location": "D:\\0809\\server\\routes\\api\\orders.js",
+      "timestamp": "2025-08-10T02:24:16.354Z"
+    },
+    {
+      "type": "NO_AUTH_MIDDLEWARE",
+      "severity": "MEDIUM",
+      "message": "promotion.js 有 1 個端點但沒有使用認證中間件",
+      "location": "D:\\0809\\server\\routes\\api\\promotion.js",
+      "timestamp": "2025-08-10T02:24:16.354Z"
+    },
+    {
+      "type": "NO_AUTH_MIDDLEWARE",
+      "severity": "MEDIUM",
+      "message": "schedule.js 有 2 個端點但沒有使用認證中間件",
+      "location": "D:\\0809\\server\\routes\\api\\schedule.js",
+      "timestamp": "2025-08-10T02:24:16.354Z"
+    }
+  ],
+  "suggestions": [],
+  "summary": {
+    "totalFiles": 12,
+    "totalIssues": 2,
+    "totalWarnings": 14,
+    "issuesBySeverity": {
+      "HIGH": 2
+    },
+    "issuesByType": {
+      "MISSING_ROUTE_IMPORT": 2
+    },
+    "healthScore": 66,
+    "recommendations": [
+      "在server.js中添加缺失的路由導入"
+    ]
+  }
+}

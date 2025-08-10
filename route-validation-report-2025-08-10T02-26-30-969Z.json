@@ -1,0 +1,735 @@
+{
+  "timestamp": "2025-08-10T02:26:26.541Z",
+  "baseUrl": "http://localhost:3000",
+  "endpoints": [
+    {
+      "endpoint": "/api/auth/login",
+      "method": "POST",
+      "expectedAuth": false,
+      "statusCode": 404,
+      "responseTime": 2,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:26.588Z"
+    },
+    {
+      "endpoint": "/api/auth/register",
+      "method": "POST",
+      "expectedAuth": false,
+      "statusCode": 404,
+      "responseTime": 4,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:26.695Z"
+    },
+    {
+      "endpoint": "/api/auth/logout",
+      "method": "POST",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 3,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:26.802Z"
+    },
+    {
+      "endpoint": "/api/auth/verify",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 5,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:26.914Z"
+    },
+    {
+      "endpoint": "/api/attendance/",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 3,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:27.021Z"
+    },
+    {
+      "endpoint": "/api/attendance/",
+      "method": "POST",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:27.127Z"
+    },
+    {
+      "endpoint": "/api/attendance/checkin",
+      "method": "POST",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 5,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:27.240Z"
+    },
+    {
+      "endpoint": "/api/attendance/checkout",
+      "method": "POST",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 5,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:27.348Z"
+    },
+    {
+      "endpoint": "/api/attendance/records",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 5,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:27.456Z"
+    },
+    {
+      "endpoint": "/api/attendance/1",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 3,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:27.563Z"
+    },
+    {
+      "endpoint": "/api/attendance/1",
+      "method": "PUT",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:27.670Z"
+    },
+    {
+      "endpoint": "/api/attendance/1",
+      "method": "DELETE",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:27.781Z"
+    },
+    {
+      "endpoint": "/api/employees/",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:27.891Z"
+    },
+    {
+      "endpoint": "/api/employees/",
+      "method": "POST",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:28.000Z"
+    },
+    {
+      "endpoint": "/api/employees/1",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 4,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:28.112Z"
+    },
+    {
+      "endpoint": "/api/employees/1",
+      "method": "PUT",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 3,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:28.219Z"
+    },
+    {
+      "endpoint": "/api/employees/1",
+      "method": "DELETE",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 4,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:28.329Z"
+    },
+    {
+      "endpoint": "/api/revenue/",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 5,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:28.437Z"
+    },
+    {
+      "endpoint": "/api/revenue/",
+      "method": "POST",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 4,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:28.545Z"
+    },
+    {
+      "endpoint": "/api/revenue/reports",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 2,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:28.653Z"
+    },
+    {
+      "endpoint": "/api/revenue/1",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 3,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:28.761Z"
+    },
+    {
+      "endpoint": "/api/revenue/1",
+      "method": "PUT",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 3,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:28.870Z"
+    },
+    {
+      "endpoint": "/api/revenue/1",
+      "method": "DELETE",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 4,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:28.980Z"
+    },
+    {
+      "endpoint": "/api/admin/",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:29.087Z"
+    },
+    {
+      "endpoint": "/api/admin/users",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:29.197Z"
+    },
+    {
+      "endpoint": "/api/admin/settings",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 2,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:29.307Z"
+    },
+    {
+      "endpoint": "/api/admin/settings",
+      "method": "PUT",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:29.417Z"
+    },
+    {
+      "endpoint": "/api/admin/system",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:29.529Z"
+    },
+    {
+      "endpoint": "/api/schedule/",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 2,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:29.638Z"
+    },
+    {
+      "endpoint": "/api/schedule/",
+      "method": "POST",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 4,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:29.751Z"
+    },
+    {
+      "endpoint": "/api/schedule/1",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 2,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:29.857Z"
+    },
+    {
+      "endpoint": "/api/schedule/1",
+      "method": "PUT",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 2,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:29.967Z"
+    },
+    {
+      "endpoint": "/api/schedule/1",
+      "method": "DELETE",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 4,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:30.078Z"
+    },
+    {
+      "endpoint": "/api/monitoring/",
+      "method": "GET",
+      "expectedAuth": false,
+      "statusCode": 404,
+      "responseTime": 4,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:30.187Z"
+    },
+    {
+      "endpoint": "/api/monitoring/health",
+      "method": "GET",
+      "expectedAuth": false,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:30.293Z"
+    },
+    {
+      "endpoint": "/api/monitoring/status",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 3,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:30.403Z"
+    },
+    {
+      "endpoint": "/api/monitoring/metrics",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:30.510Z"
+    },
+    {
+      "endpoint": "/api/maintenance/",
+      "method": "GET",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:30.622Z"
+    },
+    {
+      "endpoint": "/api/maintenance/backup",
+      "method": "POST",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:30.732Z"
+    },
+    {
+      "endpoint": "/api/maintenance/cleanup",
+      "method": "POST",
+      "expectedAuth": true,
+      "statusCode": 404,
+      "responseTime": 1,
+      "success": false,
+      "timestamp": "2025-08-10T02:26:30.841Z"
+    }
+  ],
+  "summary": {
+    "totalEndpoints": 40,
+    "successfulEndpoints": 0,
+    "failedEndpoints": 40,
+    "successRate": "0.00",
+    "averageResponseTime": 3,
+    "statusCodeStats": {
+      "404": 40
+    },
+    "issueStats": {
+      "ENDPOINT_404": 40,
+      "LOGIN_ENDPOINT_404": 1
+    },
+    "totalIssues": 41,
+    "totalWarnings": 2,
+    "serverAvailable": true,
+    "authMechanismWorking": false,
+    "recommendations": [
+      "修復返回404的API端點 - 這是路由配置問題",
+      "檢查server.js中的路由註冊是否正確",
+      "驗證所有路由文件是否正確導出router對象",
+      "執行完整的瀏覽器驗證測試",
+      "檢查API文檔與實際實現的一致性"
+    ]
+  },
+  "issues": [
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/auth/login",
+      "endpoint": "/api/auth/login",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:26.588Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/auth/register",
+      "endpoint": "/api/auth/register",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:26.695Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/auth/logout",
+      "endpoint": "/api/auth/logout",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:26.803Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/auth/verify",
+      "endpoint": "/api/auth/verify",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:26.915Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/attendance/",
+      "endpoint": "/api/attendance/",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:27.021Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/attendance/",
+      "endpoint": "/api/attendance/",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:27.128Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/attendance/checkin",
+      "endpoint": "/api/attendance/checkin",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:27.240Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/attendance/checkout",
+      "endpoint": "/api/attendance/checkout",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:27.348Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/attendance/records",
+      "endpoint": "/api/attendance/records",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:27.456Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/attendance/1",
+      "endpoint": "/api/attendance/1",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:27.563Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: PUT /api/attendance/1",
+      "endpoint": "/api/attendance/1",
+      "method": "PUT",
+      "timestamp": "2025-08-10T02:26:27.670Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: DELETE /api/attendance/1",
+      "endpoint": "/api/attendance/1",
+      "method": "DELETE",
+      "timestamp": "2025-08-10T02:26:27.781Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/employees/",
+      "endpoint": "/api/employees/",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:27.891Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/employees/",
+      "endpoint": "/api/employees/",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:28.000Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/employees/1",
+      "endpoint": "/api/employees/1",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:28.112Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: PUT /api/employees/1",
+      "endpoint": "/api/employees/1",
+      "method": "PUT",
+      "timestamp": "2025-08-10T02:26:28.219Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: DELETE /api/employees/1",
+      "endpoint": "/api/employees/1",
+      "method": "DELETE",
+      "timestamp": "2025-08-10T02:26:28.329Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/revenue/",
+      "endpoint": "/api/revenue/",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:28.437Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/revenue/",
+      "endpoint": "/api/revenue/",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:28.545Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/revenue/reports",
+      "endpoint": "/api/revenue/reports",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:28.653Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/revenue/1",
+      "endpoint": "/api/revenue/1",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:28.761Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: PUT /api/revenue/1",
+      "endpoint": "/api/revenue/1",
+      "method": "PUT",
+      "timestamp": "2025-08-10T02:26:28.870Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: DELETE /api/revenue/1",
+      "endpoint": "/api/revenue/1",
+      "method": "DELETE",
+      "timestamp": "2025-08-10T02:26:28.980Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/admin/",
+      "endpoint": "/api/admin/",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:29.087Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/admin/users",
+      "endpoint": "/api/admin/users",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:29.197Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/admin/settings",
+      "endpoint": "/api/admin/settings",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:29.307Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: PUT /api/admin/settings",
+      "endpoint": "/api/admin/settings",
+      "method": "PUT",
+      "timestamp": "2025-08-10T02:26:29.417Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/admin/system",
+      "endpoint": "/api/admin/system",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:29.529Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/schedule/",
+      "endpoint": "/api/schedule/",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:29.638Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/schedule/",
+      "endpoint": "/api/schedule/",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:29.751Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/schedule/1",
+      "endpoint": "/api/schedule/1",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:29.857Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: PUT /api/schedule/1",
+      "endpoint": "/api/schedule/1",
+      "method": "PUT",
+      "timestamp": "2025-08-10T02:26:29.967Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: DELETE /api/schedule/1",
+      "endpoint": "/api/schedule/1",
+      "method": "DELETE",
+      "timestamp": "2025-08-10T02:26:30.078Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/monitoring/",
+      "endpoint": "/api/monitoring/",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:30.188Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/monitoring/health",
+      "endpoint": "/api/monitoring/health",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:30.293Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/monitoring/status",
+      "endpoint": "/api/monitoring/status",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:30.403Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/monitoring/metrics",
+      "endpoint": "/api/monitoring/metrics",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:30.510Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: GET /api/maintenance/",
+      "endpoint": "/api/maintenance/",
+      "method": "GET",
+      "timestamp": "2025-08-10T02:26:30.622Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/maintenance/backup",
+      "endpoint": "/api/maintenance/backup",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:30.732Z"
+    },
+    {
+      "type": "ENDPOINT_404",
+      "severity": "HIGH",
+      "message": "端點返回404: POST /api/maintenance/cleanup",
+      "endpoint": "/api/maintenance/cleanup",
+      "method": "POST",
+      "timestamp": "2025-08-10T02:26:30.841Z"
+    },
+    {
+      "type": "LOGIN_ENDPOINT_404",
+      "severity": "CRITICAL",
+      "message": "登入端點返回404，這是關鍵問題",
+      "timestamp": "2025-08-10T02:26:30.960Z"
+    }
+  ],
+  "warnings": [
+    {
+      "type": "AUTH_MECHANISM_ISSUE",
+      "severity": "HIGH",
+      "message": "認證機制可能失效，期望401/403但得到404",
+      "timestamp": "2025-08-10T02:26:30.956Z"
+    },
+    {
+      "type": "UNEXPECTED_ERROR_STATUS",
+      "severity": "MEDIUM",
+      "message": "無效ID: 期望400但得到404",
+      "timestamp": "2025-08-10T02:26:30.962Z"
+    }
+  ],
+  "serverAvailable": true,
+  "authMechanismWorking": false
+}

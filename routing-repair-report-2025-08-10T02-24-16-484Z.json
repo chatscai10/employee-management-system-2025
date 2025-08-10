@@ -1,0 +1,81 @@
+{
+  "timestamp": "2025-08-10T02:24:15.923Z",
+  "backupsCreated": [
+    "D:\\0809\\route-backups\\server.js.backup.1754792656356",
+    "D:\\0809\\route-backups\\admin.js.backup.1754792656358",
+    "D:\\0809\\route-backups\\alerts.js.backup.1754792656358",
+    "D:\\0809\\route-backups\\attendance.js.backup.1754792656359",
+    "D:\\0809\\route-backups\\auth-production.js.backup.1754792656359",
+    "D:\\0809\\route-backups\\auth.js.backup.1754792656447",
+    "D:\\0809\\route-backups\\employees.js.backup.1754792656448",
+    "D:\\0809\\route-backups\\maintenance.js.backup.1754792656450",
+    "D:\\0809\\route-backups\\monitoring.js.backup.1754792656450",
+    "D:\\0809\\route-backups\\orders.js.backup.1754792656451",
+    "D:\\0809\\route-backups\\promotion.js.backup.1754792656451",
+    "D:\\0809\\route-backups\\revenue.js.backup.1754792656451",
+    "D:\\0809\\route-backups\\schedule.js.backup.1754792656452"
+  ],
+  "repairsApplied": [
+    {
+      "type": "DEPENDENCY_FIX",
+      "file": "D:\\0809\\server\\server.js",
+      "description": "添加缺失的路由導入: 使用了但未導入的路由變數: limiter",
+      "timestamp": "2025-08-10T02:24:16.454Z"
+    },
+    {
+      "type": "DEPENDENCY_FIX",
+      "file": "D:\\0809\\server\\server.js",
+      "description": "添加缺失的路由導入: 使用了但未導入的路由變數: loginLimiter",
+      "timestamp": "2025-08-10T02:24:16.467Z"
+    },
+    {
+      "type": "STRUCTURE_STANDARDIZATION",
+      "file": "D:\\0809\\server\\routes\\api\\maintenance.js",
+      "description": "標準化路由結構",
+      "timestamp": "2025-08-10T02:24:16.469Z"
+    },
+    {
+      "type": "STRUCTURE_STANDARDIZATION",
+      "file": "D:\\0809\\server\\routes\\api\\orders.js",
+      "description": "標準化路由結構",
+      "timestamp": "2025-08-10T02:24:16.469Z"
+    },
+    {
+      "type": "STRUCTURE_STANDARDIZATION",
+      "file": "D:\\0809\\server\\routes\\api\\promotion.js",
+      "description": "標準化路由結構",
+      "timestamp": "2025-08-10T02:24:16.470Z"
+    },
+    {
+      "type": "STRUCTURE_STANDARDIZATION",
+      "file": "D:\\0809\\server\\routes\\api\\schedule.js",
+      "description": "標準化路由結構",
+      "timestamp": "2025-08-10T02:24:16.470Z"
+    }
+  ],
+  "issuesFixed": [],
+  "filesModified": [
+    "D:\\0809\\server\\routes\\api\\maintenance.js",
+    "D:\\0809\\server\\routes\\api\\orders.js",
+    "D:\\0809\\server\\routes\\api\\promotion.js",
+    "D:\\0809\\server\\routes\\api\\schedule.js"
+  ],
+  "summary": {
+    "totalRepairs": 6,
+    "filesModified": 4,
+    "backupsCreated": 13,
+    "repairsByType": {
+      "DEPENDENCY_FIX": 2,
+      "STRUCTURE_STANDARDIZATION": 4
+    },
+    "issuesFixed": 2,
+    "recommendations": [
+      "運行路由端點驗證測試",
+      "執行完整的瀏覽器驗證",
+      "檢查API端點功能性",
+      "運行單元測試確保功能正常",
+      "更新API文檔",
+      "進行負載測試"
+    ]
+  }
+}

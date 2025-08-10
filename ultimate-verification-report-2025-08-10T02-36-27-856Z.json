@@ -1,0 +1,1748 @@
+{
+  "metadata": {
+    "title": "🌟 終極智慧瀏覽器深度驗證報告",
+    "version": "3.0",
+    "timestamp": "2025-08-10T02:37:03.024Z",
+    "duration": "35秒",
+    "targetUrl": "https://employee-management-system-production-4361.up.railway.app",
+    "totalTests": 12,
+    "totalErrors": 11,
+    "totalScreenshots": 18
+  },
+  "executiveSummary": {
+    "overallStatus": "CRITICAL_ISSUES_FOUND",
+    "keyFindings": [
+      {
+        "category": "路由連通性",
+        "status": "PARTIAL",
+        "details": "1/23 端點正常運作"
+      }
+    ],
+    "criticalIssues": [
+      {
+        "severity": "HIGH",
+        "issue": "API端點404錯誤",
+        "count": 22,
+        "impact": "核心功能無法正常使用"
+      },
+      {
+        "severity": "HIGH",
+        "issue": "網路請求失敗",
+        "count": 10,
+        "impact": "影響用戶體驗和系統功能"
+      },
+      {
+        "severity": "HIGH",
+        "issue": "業務流程失敗",
+        "flow": "用戶登入流程",
+        "impact": "核心業務功能不可用"
+      },
+      {
+        "severity": "HIGH",
+        "issue": "業務流程失敗",
+        "flow": "出勤打卡流程",
+        "impact": "核心業務功能不可用"
+      }
+    ],
+    "successfulTests": [],
+    "performanceIssues": [],
+    "securityConcerns": []
+  },
+  "findings": [
+    {
+      "category": "connectivity",
+      "type": "http_direct_test",
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "content-length": "120",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:29 GMT",
+        "etag": "W/\"78-HX2zCWAiwfsO67YcEh7vfoMwfQA\"",
+        "server": "railway-edge",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "iybmeRg3QZeLl36HacI7Nw"
+      },
+      "loadTime": "unknown"
+    },
+    {
+      "category": "connectivity",
+      "type": "browser_access_test",
+      "title": "",
+      "finalUrl": "https://employee-management-system-production-4361.up.railway.app/",
+      "loadTime": 1925,
+      "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\connectivity-test-1754793390932.png"
+    },
+    {
+      "category": "route_exploration",
+      "type": "deep_route_scan",
+      "totalEndpoints": 23,
+      "results": [
+        {
+          "endpoint": "/",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/",
+          "httpStatus": 200,
+          "httpStatusText": "OK",
+          "httpTime": 109,
+          "httpHeaders": {
+            "content-length": "120",
+            "content-type": "application/json; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:31 GMT",
+            "etag": "W/\"78-veZW2T6G6jyyRdvlsSpgmUBhWGE\"",
+            "server": "railway-edge",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "6sM7UlKyQJmh5DQiacI7Nw"
+          },
+          "contentType": "application/json; charset=utf-8",
+          "browserResult": {
+            "loadTime": 102,
+            "title": "",
+            "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_-1754793391221.png"
+          },
+          "timestamp": "2025-08-10T02:36:31.293Z"
+        },
+        {
+          "endpoint": "/login.html",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/login.html",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 108,
+          "httpHeaders": {
+            "content-length": "149",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:32 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "jxk3cZ2TQsiUwECiacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": {
+            "loadTime": 106,
+            "title": "Error",
+            "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_login_html-1754793391734.png"
+          },
+          "timestamp": "2025-08-10T02:36:31.792Z"
+        },
+        {
+          "endpoint": "/admin.html",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 102,
+          "httpHeaders": {
+            "content-length": "149",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:32 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "fykT7aBcQs29S-QQacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": {
+            "loadTime": 108,
+            "title": "Error",
+            "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_admin_html-1754793392217.png"
+          },
+          "timestamp": "2025-08-10T02:36:32.311Z"
+        },
+        {
+          "endpoint": "/attendance.html",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/attendance.html",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 102,
+          "httpHeaders": {
+            "content-length": "154",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:33 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "MCll0FBGRByoQUpRacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": {
+            "loadTime": 111,
+            "title": "Error",
+            "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_attendance_html-1754793392730.png"
+          },
+          "timestamp": "2025-08-10T02:36:32.812Z"
+        },
+        {
+          "endpoint": "/employee-dashboard.html",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/employee-dashboard.html",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 106,
+          "httpHeaders": {
+            "content-length": "162",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:33 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "TEYxRF6MRnmT28XtacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": {
+            "loadTime": 119,
+            "title": "Error",
+            "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_employee-dashboard_html-1754793393246.png"
+          },
+          "timestamp": "2025-08-10T02:36:33.346Z"
+        },
+        {
+          "endpoint": "/register.html",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/register.html",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 99,
+          "httpHeaders": {
+            "content-length": "152",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:34 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "Q6zxaFWERHSk81v-acI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": {
+            "loadTime": 107,
+            "title": "Error",
+            "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_register_html-1754793393766.png"
+          },
+          "timestamp": "2025-08-10T02:36:33.847Z"
+        },
+        {
+          "endpoint": "/api/auth/login",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/auth/login",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 111,
+          "httpHeaders": {
+            "content-length": "153",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:35 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "I5wrW_WtSzK8kA5WacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:34.170Z"
+        },
+        {
+          "endpoint": "/api/auth/register",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/auth/register",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 105,
+          "httpHeaders": {
+            "content-length": "156",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:35 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "ww2yW2qnTj-xXG5TacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:34.477Z"
+        },
+        {
+          "endpoint": "/api/auth/logout",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/auth/logout",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 102,
+          "httpHeaders": {
+            "content-length": "154",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:35 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "UEjTCOarS7aWdYt0acI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:34.786Z"
+        },
+        {
+          "endpoint": "/api/auth/verify",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/auth/verify",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 110,
+          "httpHeaders": {
+            "content-length": "154",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:35 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "uyKIe8gXSBqo-Gq5acI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:35.104Z"
+        },
+        {
+          "endpoint": "/api/attendance/",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/attendance/",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 112,
+          "httpHeaders": {
+            "content-length": "154",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:36 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "fE3HVS2jSUaCmzrkacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:35.418Z"
+        },
+        {
+          "endpoint": "/api/attendance/checkin",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/attendance/checkin",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 112,
+          "httpHeaders": {
+            "content-length": "161",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:36 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "F-p0SuRdTGWIBugHacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:35.741Z"
+        },
+        {
+          "endpoint": "/api/attendance/checkout",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/attendance/checkout",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 104,
+          "httpHeaders": {
+            "content-length": "162",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:36 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "UYgjG6CdRACYe1y5acI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:36.046Z"
+        },
+        {
+          "endpoint": "/api/attendance/records",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/attendance/records",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 107,
+          "httpHeaders": {
+            "content-length": "161",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:37 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "MLLyu2P-SJSLHEJ5acI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:36.357Z"
+        },
+        {
+          "endpoint": "/api/employees/",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/employees/",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 105,
+          "httpHeaders": {
+            "content-length": "153",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:37 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "bgGuC3eiQpq6tPWYacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:36.667Z"
+        },
+        {
+          "endpoint": "/api/revenue/",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/revenue/",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 106,
+          "httpHeaders": {
+            "content-length": "151",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:37 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "FUQAjq2_RJeFM6V5acI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:36.981Z"
+        },
+        {
+          "endpoint": "/api/admin/",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/admin/",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 100,
+          "httpHeaders": {
+            "content-length": "149",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:38 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "k3r_-WTIRIShqmU_acI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:37.285Z"
+        },
+        {
+          "endpoint": "/api/schedule/",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/schedule/",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 106,
+          "httpHeaders": {
+            "content-length": "152",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:38 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "XI0lcuTSS3WD5QR2acI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:37.603Z"
+        },
+        {
+          "endpoint": "/api/monitoring/health",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/monitoring/health",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 101,
+          "httpHeaders": {
+            "content-length": "160",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:38 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "os2WTgPBQWmFv_OAacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:37.910Z"
+        },
+        {
+          "endpoint": "/api/maintenance/",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/maintenance/",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 108,
+          "httpHeaders": {
+            "content-length": "155",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:39 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "51I3ipgWQ6KPh-c9acI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:38.226Z"
+        },
+        {
+          "endpoint": "/api/orders/test",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/orders/test",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 106,
+          "httpHeaders": {
+            "content-length": "154",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:39 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "JwuAp1IPRgCXCYk7acI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:38.536Z"
+        },
+        {
+          "endpoint": "/api/maintenance/test",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/maintenance/test",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 114,
+          "httpHeaders": {
+            "content-length": "159",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:39 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "jDC9n5jTSO-_KZlzacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:38.857Z"
+        },
+        {
+          "endpoint": "/api/schedule/test",
+          "fullUrl": "https://employee-management-system-production-4361.up.railway.app/api/schedule/test",
+          "httpStatus": 404,
+          "httpStatusText": "Not Found",
+          "httpTime": 117,
+          "httpHeaders": {
+            "content-length": "156",
+            "content-security-policy": "default-src 'none'",
+            "content-type": "text/html; charset=utf-8",
+            "date": "Sun, 10 Aug 2025 02:36:40 GMT",
+            "server": "railway-edge",
+            "x-content-type-options": "nosniff",
+            "x-powered-by": "Express",
+            "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+            "x-railway-request-id": "F03zIcjDTJumZyJFacI7Nw"
+          },
+          "contentType": "text/html; charset=utf-8",
+          "browserResult": null,
+          "timestamp": "2025-08-10T02:36:39.187Z"
+        }
+      ],
+      "summary": {
+        "total": 23,
+        "successful": 1,
+        "redirects": 0,
+        "notFound": 22,
+        "errors": 0,
+        "serverErrors": 0,
+        "workingEndpoints": [
+          "/"
+        ],
+        "brokenEndpoints": [
+          "/login.html",
+          "/admin.html",
+          "/attendance.html",
+          "/employee-dashboard.html",
+          "/register.html",
+          "/api/auth/login",
+          "/api/auth/register",
+          "/api/auth/logout",
+          "/api/auth/verify",
+          "/api/attendance/",
+          "/api/attendance/checkin",
+          "/api/attendance/checkout",
+          "/api/attendance/records",
+          "/api/employees/",
+          "/api/revenue/",
+          "/api/admin/",
+          "/api/schedule/",
+          "/api/monitoring/health",
+          "/api/maintenance/",
+          "/api/orders/test",
+          "/api/maintenance/test",
+          "/api/schedule/test"
+        ],
+        "redirectEndpoints": []
+      }
+    },
+    {
+      "category": "dynamic_page_testing",
+      "type": "page_functionality_test",
+      "result": {
+        "name": "首頁功能測試",
+        "url": "https://employee-management-system-production-4361.up.railway.app",
+        "tests": {
+          "pageLoad": {
+            "title": "",
+            "url": "https://employee-management-system-production-4361.up.railway.app/",
+            "hasContent": false
+          },
+          "forms": {
+            "formCount": 0,
+            "formDetails": []
+          },
+          "navigation": {
+            "linkCount": 0,
+            "internalLinks": 0,
+            "externalLinks": 0
+          },
+          "jsErrors": [
+            "Failed to load resource: the server responded with a status of 404 ()",
+            "Failed to load resource: the server responded with a status of 404 ()",
+            "Failed to load resource: the server responded with a status of 404 ()",
+            "Failed to load resource: the server responded with a status of 404 ()",
+            "Failed to load resource: the server responded with a status of 404 ()"
+          ]
+        },
+        "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\page-test-首頁功能測試-1754793400542.png",
+        "errors": []
+      }
+    },
+    {
+      "category": "dynamic_page_testing",
+      "type": "page_functionality_test",
+      "result": {
+        "name": "登入頁面測試",
+        "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+        "tests": {
+          "pageLoad": {
+            "title": "Error",
+            "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+            "hasContent": false
+          },
+          "forms": {
+            "formCount": 0,
+            "formDetails": []
+          },
+          "jsErrors": [
+            "Failed to load resource: the server responded with a status of 404 ()",
+            "Failed to load resource: the server responded with a status of 404 ()",
+            "Failed to load resource: the server responded with a status of 404 ()",
+            "Failed to load resource: the server responded with a status of 404 ()"
+          ]
+        },
+        "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\page-test-登入頁面測試-1754793401732.png",
+        "errors": []
+      }
+    },
+    {
+      "category": "dynamic_page_testing",
+      "type": "page_functionality_test",
+      "result": {
+        "name": "管理頁面測試",
+        "url": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+        "tests": {
+          "pageLoad": {
+            "title": "Error",
+            "url": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+            "hasContent": false
+          },
+          "jsErrors": [
+            "Failed to load resource: the server responded with a status of 404 ()",
+            "Failed to load resource: the server responded with a status of 404 ()",
+            "Failed to load resource: the server responded with a status of 404 ()"
+          ]
+        },
+        "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\page-test-管理頁面測試-1754793403922.png",
+        "errors": []
+      }
+    },
+    {
+      "category": "business_flow_validation",
+      "type": "end_to_end_flow_test",
+      "result": {
+        "name": "用戶登入流程",
+        "steps": [
+          {
+            "step": 1,
+            "action": "navigate",
+            "success": true,
+            "duration": 726,
+            "details": {
+              "action": "navigate",
+              "url": "https://employee-management-system-production-4361.up.railway.app/login.html"
+            }
+          },
+          {
+            "step": 2,
+            "action": "fill",
+            "success": false,
+            "error": "Waiting for selector `input[name=\"username\"]` failed: Waiting failed: 5000ms exceeded",
+            "details": {
+              "action": "fill",
+              "selector": "input[name=\"username\"]",
+              "value": "admin"
+            }
+          }
+        ],
+        "success": false,
+        "screenshots": [
+          "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\flow-用戶登入流程-step-1-1754793404735.png"
+        ],
+        "errors": [
+          "Waiting for selector `input[name=\"username\"]` failed: Waiting failed: 5000ms exceeded"
+        ]
+      }
+    },
+    {
+      "category": "business_flow_validation",
+      "type": "end_to_end_flow_test",
+      "result": {
+        "name": "出勤打卡流程",
+        "steps": [
+          {
+            "step": 1,
+            "action": "navigate",
+            "success": true,
+            "duration": 921,
+            "details": {
+              "action": "navigate",
+              "url": "https://employee-management-system-production-4361.up.railway.app/attendance.html"
+            }
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "success": false,
+            "error": "Waiting for selector `#checkin-button` failed: Waiting failed: 5000ms exceeded",
+            "details": {
+              "action": "click",
+              "selector": "#checkin-button"
+            }
+          }
+        ],
+        "success": false,
+        "screenshots": [
+          "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\flow-出勤打卡流程-step-1-1754793410737.png"
+        ],
+        "errors": [
+          "Waiting for selector `#checkin-button` failed: Waiting failed: 5000ms exceeded"
+        ]
+      }
+    },
+    {
+      "category": "network_analysis",
+      "type": "comprehensive_network_scan",
+      "analysis": {
+        "totalRequests": 13,
+        "totalResponses": 13,
+        "statusCodes": {
+          "200": 3,
+          "404": 10
+        },
+        "domains": {
+          "employee-management-system-production-4361.up.railway.app": 13
+        },
+        "resourceTypes": {
+          "other": 4,
+          "html": 9
+        },
+        "errors": [],
+        "problemRequests": [
+          {
+            "url": "https://employee-management-system-production-4361.up.railway.app/favicon.ico",
+            "status": 404,
+            "statusText": ""
+          },
+          {
+            "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+            "status": 404,
+            "statusText": ""
+          },
+          {
+            "url": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+            "status": 404,
+            "statusText": ""
+          },
+          {
+            "url": "https://employee-management-system-production-4361.up.railway.app/attendance.html",
+            "status": 404,
+            "statusText": ""
+          },
+          {
+            "url": "https://employee-management-system-production-4361.up.railway.app/employee-dashboard.html",
+            "status": 404,
+            "statusText": ""
+          },
+          {
+            "url": "https://employee-management-system-production-4361.up.railway.app/register.html",
+            "status": 404,
+            "statusText": ""
+          },
+          {
+            "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+            "status": 404,
+            "statusText": ""
+          },
+          {
+            "url": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+            "status": 404,
+            "statusText": ""
+          },
+          {
+            "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+            "status": 404,
+            "statusText": ""
+          },
+          {
+            "url": "https://employee-management-system-production-4361.up.railway.app/attendance.html",
+            "status": 404,
+            "statusText": ""
+          }
+        ]
+      }
+    },
+    {
+      "category": "responsive_design",
+      "type": "multi_device_compatibility_test",
+      "results": [
+        {
+          "device": {
+            "name": "Desktop",
+            "width": 1920,
+            "height": 1080
+          },
+          "check": {
+            "viewportWidth": 1920,
+            "viewportHeight": 1080,
+            "overflowElements": 0,
+            "hiddenElements": 3,
+            "totalElements": 7
+          },
+          "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\responsive-Desktop-1920x1080-1754793416936.png",
+          "timestamp": "2025-08-10T02:36:57.026Z"
+        },
+        {
+          "device": {
+            "name": "Laptop",
+            "width": 1366,
+            "height": 768
+          },
+          "check": {
+            "viewportWidth": 1366,
+            "viewportHeight": 768,
+            "overflowElements": 0,
+            "hiddenElements": 3,
+            "totalElements": 7
+          },
+          "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\responsive-Laptop-1366x768-1754793418142.png",
+          "timestamp": "2025-08-10T02:36:58.202Z"
+        },
+        {
+          "device": {
+            "name": "Tablet",
+            "width": 768,
+            "height": 1024
+          },
+          "check": {
+            "viewportWidth": 768,
+            "viewportHeight": 1024,
+            "overflowElements": 0,
+            "hiddenElements": 3,
+            "totalElements": 7
+          },
+          "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\responsive-Tablet-768x1024-1754793419306.png",
+          "timestamp": "2025-08-10T02:36:59.365Z"
+        },
+        {
+          "device": {
+            "name": "Mobile",
+            "width": 375,
+            "height": 667
+          },
+          "check": {
+            "viewportWidth": 375,
+            "viewportHeight": 667,
+            "overflowElements": 0,
+            "hiddenElements": 3,
+            "totalElements": 7
+          },
+          "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\responsive-Mobile-375x667-1754793420388.png",
+          "timestamp": "2025-08-10T02:37:00.437Z"
+        },
+        {
+          "device": {
+            "name": "Mobile-Large",
+            "width": 414,
+            "height": 896
+          },
+          "check": {
+            "viewportWidth": 414,
+            "viewportHeight": 896,
+            "overflowElements": 0,
+            "hiddenElements": 3,
+            "totalElements": 7
+          },
+          "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\responsive-Mobile-Large-414x896-1754793421559.png",
+          "timestamp": "2025-08-10T02:37:01.602Z"
+        }
+      ]
+    },
+    {
+      "category": "performance_analysis",
+      "type": "comprehensive_performance_test",
+      "result": {
+        "totalLoadTime": 1116,
+        "metrics": {
+          "navigationTiming": {
+            "domContentLoaded": 0.09999996423721313,
+            "loadComplete": 0,
+            "domInteractive": null,
+            "firstByte": 94.5
+          },
+          "paintTiming": {
+            "first-paint": 124,
+            "first-contentful-paint": 124
+          },
+          "resourceCount": 0,
+          "memoryUsage": {
+            "usedJSHeapSize": 2458137,
+            "totalJSHeapSize": 7881973,
+            "jsHeapSizeLimit": 4294705152
+          }
+        },
+        "networkRequestCount": 19,
+        "errorCount": 10,
+        "screenshot": "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\performance-analysis-1754793422829.png"
+      }
+    },
+    {
+      "category": "security_analysis",
+      "type": "comprehensive_security_test",
+      "results": [
+        {
+          "name": "HTTPS檢查",
+          "result": {
+            "isHttps": true,
+            "protocol": "https:"
+          },
+          "timestamp": "2025-08-10T02:37:02.892Z"
+        },
+        {
+          "name": "XSS防護檢查",
+          "result": {
+            "error": "No element found for selector: input[name=\"username\"]",
+            "xssVulnerable": false
+          },
+          "timestamp": "2025-08-10T02:37:03.023Z"
+        },
+        {
+          "name": "敏感信息洩漏檢查",
+          "result": {
+            "sensitivePatternsFound": 0,
+            "findings": []
+          },
+          "timestamp": "2025-08-10T02:37:03.024Z"
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:36:30.392Z"
+    },
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:36:31.712Z"
+    },
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:36:32.206Z"
+    },
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:36:32.724Z"
+    },
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:36:33.234Z"
+    },
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:36:33.760Z"
+    },
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:36:40.730Z"
+    },
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:36:41.906Z"
+    },
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:36:44.106Z"
+    },
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:36:49.916Z"
+    },
+    {
+      "stage": "browser_console",
+      "error": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-10T02:37:02.993Z"
+    }
+  ],
+  "screenshots": [
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\connectivity-test-1754793390932.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_-1754793391221.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_login_html-1754793391734.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_admin_html-1754793392217.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_attendance_html-1754793392730.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_employee-dashboard_html-1754793393246.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\route-_register_html-1754793393766.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\page-test-首頁功能測試-1754793400542.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\page-test-登入頁面測試-1754793401732.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\page-test-管理頁面測試-1754793403922.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\flow-用戶登入流程-step-1-1754793404735.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\flow-出勤打卡流程-step-1-1754793410737.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\responsive-Desktop-1920x1080-1754793416936.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\responsive-Laptop-1366x768-1754793418142.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\responsive-Tablet-768x1024-1754793419306.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\responsive-Mobile-375x667-1754793420388.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\responsive-Mobile-Large-414x896-1754793421559.png",
+    "ultimate-verification-screenshots-2025-08-10T02-36-27-856Z\\performance-analysis-1754793422829.png"
+  ],
+  "networkRequests": [
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:29.007Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-length": "120",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:31 GMT",
+        "etag": "W/\"78-Ql/JIj1h5l2gasvkzFHvAx0FSro\"",
+        "server": "railway-edge",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "uSbdnFaETTibl4yBAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:30.267Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/favicon.ico",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "referer": "https://employee-management-system-production-4361.up.railway.app/"
+      },
+      "timestamp": "2025-08-10T02:36:30.301Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/favicon.ico",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "150",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:31 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "HHR6t5hXROiSGWBbAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:30.391Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:31.121Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-length": "120",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:32 GMT",
+        "etag": "W/\"78-8sqEhPqNiVADVNYQzOY+qkEDm+4\"",
+        "server": "railway-edge",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "bulf-CK_RFaTZYeAAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:31.214Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:31.615Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "149",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:32 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "Vfegcbr8Qe6V702-AQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:31.709Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:32.113Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "149",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:33 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "uw9kB-qPQeu0rCexAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:32.203Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/attendance.html",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:32.624Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/attendance.html",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "154",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:33 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "WrCkn_5hQVewBHlLAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:32.721Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/employee-dashboard.html",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:33.129Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/employee-dashboard.html",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "162",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:34 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "bYfR-G5MS7iK30GFAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:33.230Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/register.html",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:33.664Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/register.html",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "152",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:34 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "S1v8bb0_Qk2uTuR6AQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:33.756Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:39.403Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-length": "120",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:40 GMT",
+        "etag": "W/\"78-bONxUt7Xyu3Lvu4kYGeT1qd20Cg\"",
+        "server": "railway-edge",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "TV_6Id33SWeJo2WpAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:39.505Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:40.630Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "149",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:41 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "ErPp4I49RAGlyBG0AQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:40.727Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:41.811Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/admin.html",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "149",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:42 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "r2dpYRYKTP6Nc1sUAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:41.902Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:44.011Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "149",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:44 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "bWLJVDhfSWekhvHEAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:44.104Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/attendance.html",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:49.818Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/attendance.html",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "154",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:50 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "XMGnizHSTbq2-7uCAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:49.914Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:55.827Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-length": "120",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:56 GMT",
+        "etag": "W/\"78-B93nBVzLMv0nzDwCB1bLTvtJT9M\"",
+        "server": "railway-edge",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "5SBdXZgKRG-KKK1hAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:55.924Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:57.031Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-length": "120",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:57 GMT",
+        "etag": "W/\"78-a8mI3kL1TaCzs8Dwud0XbxbKHu4\"",
+        "server": "railway-edge",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "QrjM_ifWR6y3PoIFAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:57.124Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:58.205Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-length": "120",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:36:59 GMT",
+        "etag": "W/\"78-LT+6rVXMOZW9EKmekj/L5EDnXqg\"",
+        "server": "railway-edge",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "PXr_ObefQD2HjH92AQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:58.300Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:36:59.369Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-length": "120",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:37:00 GMT",
+        "etag": "W/\"78-aOEkwyttt7K5QiQGPmbRm39uKeU\"",
+        "server": "railway-edge",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "OXq21IM7Qs2DMXATAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:36:59.464Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:37:00.441Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-length": "120",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:37:01 GMT",
+        "etag": "W/\"78-PxsRv0L4el5M5mOTFT03RmfODMs\"",
+        "server": "railway-edge",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "_TVHkQwfRJSVQFf5AQeqjw"
+      },
+      "timestamp": "2025-08-10T02:37:00.535Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:37:01.628Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/",
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "content-length": "120",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:37:02 GMT",
+        "etag": "W/\"78-KHyKECd7YWuY/3huoaXCe5A/UE0\"",
+        "server": "railway-edge",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "yUprUVu2RKKu5gHBAQeqjw"
+      },
+      "timestamp": "2025-08-10T02:37:01.728Z"
+    },
+    {
+      "type": "request",
+      "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+      "method": "GET",
+      "headers": {
+        "accept-language": "zh-TW,zh;q=0.9",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "UltimateBrowserVerificationEngine/3.0 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      },
+      "timestamp": "2025-08-10T02:37:02.895Z"
+    },
+    {
+      "type": "response",
+      "url": "https://employee-management-system-production-4361.up.railway.app/login.html",
+      "status": 404,
+      "statusText": "",
+      "headers": {
+        "content-length": "149",
+        "content-security-policy": "default-src 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 10 Aug 2025 02:37:03 GMT",
+        "server": "railway-edge",
+        "x-content-type-options": "nosniff",
+        "x-powered-by": "Express",
+        "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+        "x-railway-request-id": "knIen1eHSWaX5N34AQeqjw"
+      },
+      "timestamp": "2025-08-10T02:37:02.988Z"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "CRITICAL",
+      "category": "API路由修復",
+      "issue": "API端點返回404錯誤",
+      "solution": "檢查server.js中的路由配置，確保所有API端點正確註冊",
+      "technicalSteps": [
+        "1. 檢查 server/routes/api/ 目錄中的路由檔案",
+        "2. 確認 server.js 中正確引入所有路由模組",
+        "3. 驗證路由前綴配置是否正確",
+        "4. 檢查中間件順序，確保認證中間件不會阻塞API調用"
+      ],
+      "estimatedTime": "2-4小時"
+    },
+    {
+      "priority": "HIGH",
+      "category": "系統維護",
+      "issue": "磁碟使用率過高 (>90%)",
+      "solution": "立即清理不必要的檔案和日誌",
+      "technicalSteps": [
+        "1. 清理舊的日誌檔案和臨時檔案",
+        "2. 檢查並刪除不必要的node_modules副本",
+        "3. 壓縮或歸檔舊的備份檔案",
+        "4. 設置自動日誌輪轉機制"
+      ],
+      "estimatedTime": "1-2小時"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "網路優化",
+      "issue": "存在失敗的網路請求",
+      "solution": "優化API調用和錯誤處理機制",
+      "technicalSteps": [
+        "1. 實現適當的API錯誤處理",
+        "2. 添加請求重試機制",
+        "3. 優化前端API調用邏輯",
+        "4. 添加載入狀態指示器"
+      ],
+      "estimatedTime": "4-6小時"
+    },
+    {
+      "priority": "HIGH",
+      "category": "安全性改善",
+      "issue": "需要加強安全防護",
+      "solution": "實施全面的安全措施",
+      "technicalSteps": [
+        "1. 實現適當的輸入驗證和清理",
+        "2. 添加CSRF保護",
+        "3. 設置安全HTTP標頭",
+        "4. 實施API速率限制"
+      ],
+      "estimatedTime": "6-8小時"
+    }
+  ],
+  "nextSteps": [
+    {
+      "phase": "立即行動 (0-24小時)",
+      "actions": [
+        "🔧 修復API路由404錯誤",
+        "🧹 清理磁碟空間，降低使用率",
+        "📊 檢查伺服器運行狀態",
+        "⚡ 重啟相關服務確保穩定運行"
+      ]
+    },
+    {
+      "phase": "短期改善 (1-3天)",
+      "actions": [
+        "🔍 深入診斷路由配置問題",
+        "📝 完善API文檔和測試",
+        "🚀 優化前端用戶體驗",
+        "🛡️ 加強安全防護措施"
+      ]
+    },
+    {
+      "phase": "中期優化 (1-2週)",
+      "actions": [
+        "📈 實施全面監控系統",
+        "🔄 建立自動化測試流程",
+        "📚 完善系統文檔",
+        "⚙️ 優化系統架構和效能"
+      ]
+    },
+    {
+      "phase": "長期發展 (1個月+)",
+      "actions": [
+        "🌟 升級到微服務架構",
+        "☁️ 遷移到更穩定的雲端環境",
+        "📊 實施商業智慧分析",
+        "🔮 探索AI和機器學習整合"
+      ]
+    }
+  ],
+  "technicalDetails": {
+    "browser": "Chrome/Puppeteer",
+    "userAgent": "UltimateBrowserVerificationEngine/3.0",
+    "viewport": "1920x1080",
+    "networkMonitoring": true,
+    "securityTesting": true,
+    "performanceAnalysis": true
+  }
+}
