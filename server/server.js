@@ -32,7 +32,7 @@ const orderRoutes = require('./routes/api/orders');
 const scheduleRoutes = require('./routes/api/schedule');
 const promotionRoutes = require('./routes/api/promotion');
 const maintenanceRoutes = require('./routes/api/maintenance');
-const adminRoutes = require('./routes/api/admin');
+// 移除舊的adminRoutes載入
 const monitoringRoutes = require('./routes/api/monitoring');
 const alertsRoutes = require('./routes/api/alerts');
 const employeesRoutes = require('./routes/api/employees');
@@ -201,7 +201,7 @@ class EmployeeManagementServer {
         this.app.use('/api/schedule', scheduleRoutes);
         this.app.use('/api/promotion', promotionRoutes);
         this.app.use('/api/maintenance', maintenanceRoutes);
-        this.app.use('/api/admin', adminRoutes);
+        this.app.use('/api/admin', require('./routes/admin'));
         this.app.use('/api/monitoring', monitoringRoutes);
         this.app.use('/api/alerts', alertsRoutes);
         this.app.use('/api/employees', employeesRoutes);
