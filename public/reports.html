@@ -3,20 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>報表頁面 - 企業員工管理系統</title>
+    <title>報表儀表板 - 企業員工管理系統</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container mt-4">
-        <h1>報表頁面</h1>
-        <p>各種報表和統計頁面</p>
-        <div class="alert alert-info">
-            此頁面正在開發中...
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="employee-dashboard.html">員工管理系統</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="profile.html">個人資料</a>
+                <a class="nav-link" href="attendance.html">考勤打卡</a>
+                <a class="nav-link" href="#" onclick="logout()">登出</a>
+            </div>
         </div>
-        <a href="index.html" class="btn btn-primary">返回首頁</a>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>📊 報表儀表板</h2>
+                <p class="text-muted">查看各種統計報表和數據分析</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">💰 營收報表</h5>
+                                <p class="card-text">查看營收統計和趨勢分析</p>
+                                <a href="revenue.html" class="btn btn-success">查看營收</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">📅 考勤報表</h5>
+                                <p class="card-text">查看考勤記錄和統計</p>
+                                <a href="attendance.html" class="btn btn-primary">查看考勤</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">📈 統計分析</h5>
+                                <p class="card-text">綜合統計和數據分析</p>
+                                <button class="btn btn-info" onclick="showStats()">查看統計</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>快速報表功能</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="btn-group" role="group">
+                                    <button class="btn btn-outline-primary" onclick="generateReport('daily')">
+                                        📊 日報表
+                                    </button>
+                                    <button class="btn btn-outline-success" onclick="generateReport('weekly')">
+                                        📈 週報表
+                                    </button>
+                                    <button class="btn btn-outline-info" onclick="generateReport('monthly')">
+                                        📉 月報表
+                                    </button>
+                                    <button class="btn btn-outline-warning" onclick="exportReport()">
+                                        💾 匯出報表
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="reportContent" class="mt-4" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 id="reportTitle">報表內容</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="reportData">
+                                <p>載入中...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="employee-dashboard.html" class="btn btn-secondary">
+                        ← 返回工作台
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
+    <script>
+        function showStats() {
+            alert('統計功能開發中，敬請期待！');
+        }
+        
+        function generateReport(type) {
+            const reportContent = document.getElementById('reportContent');
+            const reportTitle = document.getElementById('reportTitle');
+            const reportData = document.getElementById('reportData');
+            
+            reportTitle.textContent = type === 'daily' ? '日報表' : 
+                                    type === 'weekly' ? '週報表' : '月報表';
+            
+            reportData.innerHTML = `
+                <div class="alert alert-info">
+                    <h6>${reportTitle.textContent} - 模擬數據</h6>
+                    <ul>
+                        <li>總營收: NT$ 50,000</li>
+                        <li>出勤率: 95%</li>
+                        <li>完成任務: 48/50</li>
+                        <li>客戶滿意度: 4.8/5.0</li>
+                    </ul>
+                    <small class="text-muted">
+                        注意：這是示範數據，實際功能需要連接後端API
+                    </small>
+                </div>
+            `;
+            
+            reportContent.style.display = 'block';
+        }
+        
+        function exportReport() {
+            alert('報表匯出功能開發中！');
+        }
+        
+        function logout() {
+            if (confirm('確定要登出嗎？')) {
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
 </body>
 </html>
