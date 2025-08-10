@@ -1,0 +1,109 @@
+{
+  "timestamp": "2025-08-10T02:58:41.357Z",
+  "summary": {
+    "total": 8,
+    "passed": 4,
+    "failed": 4,
+    "successRate": 50
+  },
+  "results": [
+    {
+      "endpoint": "GET /health",
+      "statusCode": 200,
+      "success": true,
+      "response": {
+        "success": true,
+        "message": "系統運行正常",
+        "timestamp": "2025-08-10T02:58:39.648Z",
+        "data": {
+          "status": "healthy",
+          "timestamp": "2025-08-10T02:58:39.648Z",
+          "uptime": 72042.0209723,
+          "memory": {
+            "rss": 59117568,
+            "heapTotal": 24453120,
+            "heapUsed": 22896872,
+            "external": 2380204,
+            "arrayBuffers": 99051
+          },
+          "version": "1.0.0"
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/auth",
+      "statusCode": 404,
+      "success": false,
+      "response": {
+        "success": false,
+        "error": "API 端點不存在",
+        "code": "ENDPOINT_NOT_FOUND",
+        "timestamp": "2025-08-10T02:58:39.866Z"
+      }
+    },
+    {
+      "endpoint": "GET /api/auth/test",
+      "statusCode": 200,
+      "success": true,
+      "response": {
+        "success": true,
+        "message": "認證路由測試成功",
+        "timestamp": "2025-08-10T02:58:40.081Z"
+      }
+    },
+    {
+      "endpoint": "GET /api/attendance",
+      "statusCode": 404,
+      "success": false,
+      "response": {
+        "success": false,
+        "error": "API 端點不存在",
+        "code": "ENDPOINT_NOT_FOUND",
+        "timestamp": "2025-08-10T02:58:40.298Z"
+      }
+    },
+    {
+      "endpoint": "GET /api/attendance/test",
+      "statusCode": 200,
+      "success": true,
+      "response": {
+        "success": true,
+        "message": "打卡路由測試成功",
+        "user": null,
+        "timestamp": "2025-08-10T02:58:40.512Z"
+      }
+    },
+    {
+      "endpoint": "GET /api/employees",
+      "statusCode": 404,
+      "success": false,
+      "response": {
+        "success": false,
+        "error": "API 端點不存在",
+        "code": "ENDPOINT_NOT_FOUND",
+        "timestamp": "2025-08-10T02:58:40.719Z"
+      }
+    },
+    {
+      "endpoint": "GET /api/revenue",
+      "statusCode": 404,
+      "success": false,
+      "response": {
+        "success": false,
+        "error": "API 端點不存在",
+        "code": "ENDPOINT_NOT_FOUND",
+        "timestamp": "2025-08-10T02:58:40.926Z"
+      }
+    },
+    {
+      "endpoint": "GET /api/revenue/test",
+      "statusCode": 200,
+      "success": true,
+      "response": {
+        "success": true,
+        "message": "營收路由測試成功",
+        "timestamp": "2025-08-10T02:58:41.143Z"
+      }
+    }
+  ]
+}

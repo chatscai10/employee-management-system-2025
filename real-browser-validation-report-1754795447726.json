@@ -1,0 +1,1369 @@
+{
+  "reportMetadata": {
+    "title": "🌐 真實瀏覽器自動化驗證報告",
+    "railwayUrl": "https://employee-management-system-production-4361.up.railway.app",
+    "localUrl": "http://localhost:3001",
+    "generatedAt": "2025/8/10 上午11:10:47",
+    "testDuration": "13秒",
+    "totalTests": 19,
+    "framework": "Real Browser Automation Validator v4.0"
+  },
+  "executiveSummary": {
+    "overallStatus": "✅ 系統基本正常",
+    "railwayDeployment": {
+      "status": "✅ 部署成功",
+      "responseTime": 490,
+      "statusCode": 200
+    },
+    "criticalIssues": [
+      {
+        "severity": "CRITICAL",
+        "issue": "API路由配置問題",
+        "count": 5,
+        "endpoints": [
+          "API端點測試: /api/employees",
+          "API端點測試: /api/attendance",
+          "API端點測試: /api/auth",
+          "API端點測試: /api/revenue",
+          "API端點測試: /api/employees/statistics"
+        ]
+      }
+    ],
+    "performanceScore": 50,
+    "securityScore": 0,
+    "recommendation": "立即修復API路由配置問題，然後進行完整系統測試"
+  },
+  "detailedResults": {
+    "connectivity": {
+      "total": 2,
+      "successful": 2,
+      "failed": 0,
+      "successRate": 100,
+      "details": [
+        {
+          "category": "connectivity",
+          "test": "Railway部署連通性",
+          "url": "https://employee-management-system-production-4361.up.railway.app",
+          "result": {
+            "success": true,
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "headers": {
+              "content-length": "120",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+              "etag": "W/\"78-hzRWTWxgaRmshC+5KM7ZRPVJO1s\"",
+              "server": "railway-edge",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "3jxaJgPdSaumbV04DcO5xA"
+            },
+            "data": "{\"message\":\"🏢 企業員工管理系統 - Railway測試版\",\"status\":\"running\",\"timestamp\":\"2025-08-10T03:10:35.426Z\"}",
+            "contentLength": 96,
+            "responseTime": 490,
+            "url": "https://employee-management-system-production-4361.up.railway.app"
+          },
+          "timestamp": "2025-08-10T03:10:34.552Z"
+        },
+        {
+          "category": "connectivity",
+          "test": "本地服務連通性",
+          "url": "http://localhost:3001",
+          "result": {
+            "success": true,
+            "statusCode": 302,
+            "statusMessage": "Found",
+            "headers": {
+              "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes';script-src-attr 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+              "cross-origin-opener-policy": "same-origin",
+              "cross-origin-resource-policy": "same-origin",
+              "origin-agent-cluster": "?1",
+              "referrer-policy": "no-referrer",
+              "strict-transport-security": "max-age=15552000; includeSubDomains",
+              "x-content-type-options": "nosniff",
+              "x-dns-prefetch-control": "off",
+              "x-download-options": "noopen",
+              "x-frame-options": "SAMEORIGIN",
+              "x-permitted-cross-domain-policies": "none",
+              "x-xss-protection": "0",
+              "access-control-allow-origin": "http://localhost:3001",
+              "vary": "Origin, Accept, Accept-Encoding",
+              "access-control-allow-credentials": "true",
+              "location": "/login",
+              "content-type": "text/html; charset=utf-8",
+              "content-length": "35",
+              "date": "Sun, 10 Aug 2025 03:10:34 GMT",
+              "connection": "keep-alive",
+              "keep-alive": "timeout=5"
+            },
+            "data": "<p>Found. Redirecting to /login</p>",
+            "contentLength": 35,
+            "responseTime": 4,
+            "url": "http://localhost:3001"
+          },
+          "timestamp": "2025-08-10T03:10:34.557Z"
+        }
+      ]
+    },
+    "apiEndpoints": {
+      "total": 9,
+      "successful": 9,
+      "failed": 0,
+      "successRate": 100,
+      "details": [
+        {
+          "category": "apiEndpoint",
+          "test": "API端點測試: /api/employees",
+          "endpointCategory": "critical",
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/employees",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "152",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "rd6VWGcMRzCf55KwDcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/employees</pre>\n</body>\n</html>\n",
+            "contentLength": 152,
+            "responseTime": 89,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/employees"
+          },
+          "timestamp": "2025-08-10T03:10:34.647Z"
+        },
+        {
+          "category": "apiEndpoint",
+          "test": "API端點測試: /api/attendance",
+          "endpointCategory": "critical",
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "153",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "S8aZCmSgTTO6gXKoDcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/attendance</pre>\n</body>\n</html>\n",
+            "contentLength": 153,
+            "responseTime": 89,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance"
+          },
+          "timestamp": "2025-08-10T03:10:34.737Z"
+        },
+        {
+          "category": "apiEndpoint",
+          "test": "API端點測試: /api/auth",
+          "endpointCategory": "critical",
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/auth",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "147",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "8uT3XznlS025RaSDDcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth</pre>\n</body>\n</html>\n",
+            "contentLength": 147,
+            "responseTime": 99,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/auth"
+          },
+          "timestamp": "2025-08-10T03:10:34.837Z"
+        },
+        {
+          "category": "apiEndpoint",
+          "test": "API端點測試: /api/revenue",
+          "endpointCategory": "critical",
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/revenue",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "150",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "Zq-ZphdVTzml3XohDcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/revenue</pre>\n</body>\n</html>\n",
+            "contentLength": 150,
+            "responseTime": 97,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/revenue"
+          },
+          "timestamp": "2025-08-10T03:10:34.935Z"
+        },
+        {
+          "category": "apiEndpoint",
+          "test": "API端點測試: /api/employees/statistics",
+          "endpointCategory": "critical",
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/employees/statistics",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "163",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "bCykH1ULQmK7Nb6gDcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/employees/statistics</pre>\n</body>\n</html>\n",
+            "contentLength": 163,
+            "responseTime": 85,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/employees/statistics"
+          },
+          "timestamp": "2025-08-10T03:10:35.021Z"
+        },
+        {
+          "category": "apiEndpoint",
+          "test": "API端點測試: /health",
+          "endpointCategory": "working",
+          "url": "https://employee-management-system-production-4361.up.railway.app/health",
+          "result": {
+            "success": true,
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "headers": {
+              "content-length": "246",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+              "etag": "W/\"f6-Z+F+3PwWxXyEYxjBGuZrajj+OIY\"",
+              "server": "railway-edge",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "3gb2JerhQkuGORoiDcO5xA"
+            },
+            "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:35.992Z\",\"uptime\":23581.9400472,\"memory\":{\"rss\":63754240,\"heapTotal\":10862592,\"heapUsed\":9395264,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+            "contentLength": 246,
+            "responseTime": 94,
+            "url": "https://employee-management-system-production-4361.up.railway.app/health"
+          },
+          "timestamp": "2025-08-10T03:10:35.116Z"
+        },
+        {
+          "category": "apiEndpoint",
+          "test": "API端點測試: /api/auth/test",
+          "endpointCategory": "working",
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/auth/test",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "152",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "dVrMCvTCReWpatoIDcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth/test</pre>\n</body>\n</html>\n",
+            "contentLength": 152,
+            "responseTime": 90,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/auth/test"
+          },
+          "timestamp": "2025-08-10T03:10:35.207Z"
+        },
+        {
+          "category": "apiEndpoint",
+          "test": "API端點測試: /api/attendance/test",
+          "endpointCategory": "working",
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance/test",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "158",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "BF3bNXkrQLiFKiaqDcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/attendance/test</pre>\n</body>\n</html>\n",
+            "contentLength": 158,
+            "responseTime": 93,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance/test"
+          },
+          "timestamp": "2025-08-10T03:10:35.302Z"
+        },
+        {
+          "category": "apiEndpoint",
+          "test": "API端點測試: /api/revenue/test",
+          "endpointCategory": "working",
+          "url": "https://employee-management-system-production-4361.up.railway.app/api/revenue/test",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "155",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "Ob8sfOBSROiuH19dDcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/revenue/test</pre>\n</body>\n</html>\n",
+            "contentLength": 155,
+            "responseTime": 93,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/revenue/test"
+          },
+          "timestamp": "2025-08-10T03:10:35.395Z"
+        }
+      ]
+    },
+    "frontend": {
+      "total": 2,
+      "successful": 1,
+      "failed": 1,
+      "successRate": 50,
+      "details": [
+        {
+          "category": "frontend",
+          "test": "主頁HTML載入",
+          "result": {
+            "success": true,
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "headers": {
+              "content-length": "120",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+              "etag": "W/\"78-I9sbUG9dWAHgjboS4f7VAokA3xA\"",
+              "server": "railway-edge",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "vU0cxXVLRhSVAfawDcO5xA"
+            },
+            "data": "{\"message\":\"🏢 企業員工管理系統 - Railway測試版\",\"status\":\"running\",\"timestamp\":\"2025-08-10T03:10:36.362Z\"}",
+            "contentLength": 96,
+            "responseTime": 89,
+            "url": "https://employee-management-system-production-4361.up.railway.app/"
+          },
+          "timestamp": "2025-08-10T03:10:35.485Z"
+        },
+        {
+          "category": "frontend",
+          "test": "HTML內容分析",
+          "result": {
+            "title": "",
+            "cssLinks": [],
+            "jsScripts": [],
+            "apiCalls": [],
+            "forms": [],
+            "images": []
+          },
+          "timestamp": "2025-08-10T03:10:35.486Z"
+        }
+      ]
+    },
+    "userFlow": {
+      "total": 5,
+      "successful": 5,
+      "failed": 0,
+      "successRate": 100,
+      "details": [
+        {
+          "category": "userFlow",
+          "test": "訪問主頁",
+          "result": {
+            "success": true,
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "headers": {
+              "content-length": "120",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+              "etag": "W/\"78-veg3cHHOCKseBW+iyV4NBTVzERE\"",
+              "server": "railway-edge",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "I2mLLWFqTKqEsBKEDcO5xA"
+            },
+            "data": "{\"message\":\"🏢 企業員工管理系統 - Railway測試版\",\"status\":\"running\",\"timestamp\":\"2025-08-10T03:10:36.805Z\"}",
+            "contentLength": 96,
+            "responseTime": 92,
+            "url": "https://employee-management-system-production-4361.up.railway.app/"
+          },
+          "timestamp": "2025-08-10T03:10:35.929Z"
+        },
+        {
+          "category": "userFlow",
+          "test": "檢查健康狀態",
+          "result": {
+            "success": true,
+            "statusCode": 200,
+            "statusMessage": "OK",
+            "headers": {
+              "content-length": "248",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+              "etag": "W/\"f8-FMsoU9IE6UrgHUFmUxx21ipTjy4\"",
+              "server": "railway-edge",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "wyg2MQ9cQlKTuUjhDcO5xA"
+            },
+            "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:36.903Z\",\"uptime\":23582.850334144,\"memory\":{\"rss\":64147456,\"heapTotal\":10862592,\"heapUsed\":9719768,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+            "contentLength": 248,
+            "responseTime": 105,
+            "url": "https://employee-management-system-production-4361.up.railway.app/health"
+          },
+          "timestamp": "2025-08-10T03:10:36.034Z"
+        },
+        {
+          "category": "userFlow",
+          "test": "嘗試登入API",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "147",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "YUBur834RHGZ1q1LDcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth</pre>\n</body>\n</html>\n",
+            "contentLength": 147,
+            "responseTime": 99,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/auth"
+          },
+          "timestamp": "2025-08-10T03:10:36.134Z"
+        },
+        {
+          "category": "userFlow",
+          "test": "獲取員工列表",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "152",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "bhmC750RRZSHMh8nDcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/employees</pre>\n</body>\n</html>\n",
+            "contentLength": 152,
+            "responseTime": 104,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/employees"
+          },
+          "timestamp": "2025-08-10T03:10:36.238Z"
+        },
+        {
+          "category": "userFlow",
+          "test": "查看考勤記錄",
+          "result": {
+            "success": true,
+            "statusCode": 404,
+            "statusMessage": "Not Found",
+            "headers": {
+              "content-length": "153",
+              "content-security-policy": "default-src 'none'",
+              "content-type": "text/html; charset=utf-8",
+              "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+              "server": "railway-edge",
+              "x-content-type-options": "nosniff",
+              "x-powered-by": "Express",
+              "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+              "x-railway-request-id": "QBn2Ral8SGWC9rU8DcO5xA"
+            },
+            "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/attendance</pre>\n</body>\n</html>\n",
+            "contentLength": 153,
+            "responseTime": 93,
+            "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance"
+          },
+          "timestamp": "2025-08-10T03:10:36.332Z"
+        }
+      ]
+    },
+    "performance": [
+      {
+        "test": "並發請求測試",
+        "results": {
+          "totalRequests": 10,
+          "successful": 10,
+          "failed": 0,
+          "successRate": 100,
+          "averageResponseTime": 479,
+          "results": [
+            {
+              "success": true,
+              "statusCode": 200,
+              "statusMessage": "OK",
+              "headers": {
+                "content-length": "248",
+                "content-type": "application/json; charset=utf-8",
+                "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+                "etag": "W/\"f8-A49od4bzqOTrSZkV3nhKIIFlASA\"",
+                "server": "railway-edge",
+                "x-powered-by": "Express",
+                "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+                "x-railway-request-id": "KpBXpGwWTtuHs_X3DcO5xA"
+              },
+              "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:37.312Z\",\"uptime\":23583.260054632,\"memory\":{\"rss\":64147456,\"heapTotal\":10862592,\"heapUsed\":9849360,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+              "contentLength": 248,
+              "responseTime": 102,
+              "url": "https://employee-management-system-production-4361.up.railway.app/health"
+            },
+            {
+              "success": true,
+              "statusCode": 200,
+              "statusMessage": "OK",
+              "headers": {
+                "content-length": "248",
+                "content-type": "application/json; charset=utf-8",
+                "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+                "etag": "W/\"f8-Dq8/02i+wDZSCntW/77J7nivlKI\"",
+                "server": "railway-edge",
+                "x-powered-by": "Express",
+                "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+                "x-railway-request-id": "D6avoQ6iQmyIWlj9DcO5xA"
+              },
+              "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:37.544Z\",\"uptime\":23583.491372597,\"memory\":{\"rss\":64147456,\"heapTotal\":10862592,\"heapUsed\":9878536,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+              "contentLength": 248,
+              "responseTime": 335,
+              "url": "https://employee-management-system-production-4361.up.railway.app/health"
+            },
+            {
+              "success": true,
+              "statusCode": 200,
+              "statusMessage": "OK",
+              "headers": {
+                "content-length": "248",
+                "content-type": "application/json; charset=utf-8",
+                "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+                "etag": "W/\"f8-U3BjwNmUzDN+Dypx2X/+pGTiNlg\"",
+                "server": "railway-edge",
+                "x-powered-by": "Express",
+                "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+                "x-railway-request-id": "foBY5NevTEqZMhaLDcO5xA"
+              },
+              "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:37.568Z\",\"uptime\":23583.515769048,\"memory\":{\"rss\":64147456,\"heapTotal\":10862592,\"heapUsed\":9907712,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+              "contentLength": 248,
+              "responseTime": 362,
+              "url": "https://employee-management-system-production-4361.up.railway.app/health"
+            },
+            {
+              "success": true,
+              "statusCode": 200,
+              "statusMessage": "OK",
+              "headers": {
+                "content-length": "248",
+                "content-type": "application/json; charset=utf-8",
+                "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+                "etag": "W/\"f8-8D0INZOO+ISjXfeK2RAhCyfkhlI\"",
+                "server": "railway-edge",
+                "x-powered-by": "Express",
+                "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+                "x-railway-request-id": "ZVTdtCQ4TLanR-rYAQeqjw"
+              },
+              "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:37.613Z\",\"uptime\":23583.561027612,\"memory\":{\"rss\":63537152,\"heapTotal\":10862592,\"heapUsed\":9256792,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+              "contentLength": 248,
+              "responseTime": 399,
+              "url": "https://employee-management-system-production-4361.up.railway.app/health"
+            },
+            {
+              "success": true,
+              "statusCode": 200,
+              "statusMessage": "OK",
+              "headers": {
+                "content-length": "248",
+                "content-type": "application/json; charset=utf-8",
+                "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+                "etag": "W/\"f8-d/OW3JdIllyAlCCP1HYJbPc1kYs\"",
+                "server": "railway-edge",
+                "x-powered-by": "Express",
+                "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+                "x-railway-request-id": "YQaHEaiiRlGPDP4dAQeqjw"
+              },
+              "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:37.613Z\",\"uptime\":23583.560215169,\"memory\":{\"rss\":64061440,\"heapTotal\":10862592,\"heapUsed\":9222208,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+              "contentLength": 248,
+              "responseTime": 399,
+              "url": "https://employee-management-system-production-4361.up.railway.app/health"
+            },
+            {
+              "success": true,
+              "statusCode": 200,
+              "statusMessage": "OK",
+              "headers": {
+                "content-length": "247",
+                "content-type": "application/json; charset=utf-8",
+                "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+                "etag": "W/\"f7-O97UfXMC6iahZBvSJRhbDK1upEA\"",
+                "server": "railway-edge",
+                "x-powered-by": "Express",
+                "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+                "x-railway-request-id": "wCELDG3RTba5IuZsDcO5xA"
+              },
+              "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:37.821Z\",\"uptime\":23583.76852059,\"memory\":{\"rss\":63537152,\"heapTotal\":10862592,\"heapUsed\":9286208,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+              "contentLength": 247,
+              "responseTime": 605,
+              "url": "https://employee-management-system-production-4361.up.railway.app/health"
+            },
+            {
+              "success": true,
+              "statusCode": 200,
+              "statusMessage": "OK",
+              "headers": {
+                "content-length": "248",
+                "content-type": "application/json; charset=utf-8",
+                "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+                "etag": "W/\"f8-w5q/1iazMLIRL4+pUaATFA6N//c\"",
+                "server": "railway-edge",
+                "x-powered-by": "Express",
+                "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+                "x-railway-request-id": "ZvSAsT1rTh6JwiMUDcO5xA"
+              },
+              "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:37.823Z\",\"uptime\":23583.770916655,\"memory\":{\"rss\":63537152,\"heapTotal\":10862592,\"heapUsed\":9315608,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+              "contentLength": 248,
+              "responseTime": 613,
+              "url": "https://employee-management-system-production-4361.up.railway.app/health"
+            },
+            {
+              "success": true,
+              "statusCode": 200,
+              "statusMessage": "OK",
+              "headers": {
+                "content-length": "247",
+                "content-type": "application/json; charset=utf-8",
+                "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+                "etag": "W/\"f7-OKZzxn+JtcUAwbWkeA+dPlg3fwQ\"",
+                "server": "railway-edge",
+                "x-powered-by": "Express",
+                "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+                "x-railway-request-id": "vm0TOfnnRFqTWlrpAQeqjw"
+              },
+              "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:37.888Z\",\"uptime\":23583.83562956,\"memory\":{\"rss\":63537152,\"heapTotal\":10862592,\"heapUsed\":9407480,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+              "contentLength": 247,
+              "responseTime": 676,
+              "url": "https://employee-management-system-production-4361.up.railway.app/health"
+            },
+            {
+              "success": true,
+              "statusCode": 200,
+              "statusMessage": "OK",
+              "headers": {
+                "content-length": "248",
+                "content-type": "application/json; charset=utf-8",
+                "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+                "etag": "W/\"f8-BpJ28K0soaVvED68GIZEP4qu3ds\"",
+                "server": "railway-edge",
+                "x-powered-by": "Express",
+                "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+                "x-railway-request-id": "d2hRlzimQ7G-yeKNAQeqjw"
+              },
+              "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:37.868Z\",\"uptime\":23583.816142692,\"memory\":{\"rss\":63537152,\"heapTotal\":10862592,\"heapUsed\":9378272,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+              "contentLength": 248,
+              "responseTime": 651,
+              "url": "https://employee-management-system-production-4361.up.railway.app/health"
+            },
+            {
+              "success": true,
+              "statusCode": 200,
+              "statusMessage": "OK",
+              "headers": {
+                "content-length": "248",
+                "content-type": "application/json; charset=utf-8",
+                "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+                "etag": "W/\"f8-28Zx61WTpApZ8k2Vv02DlCpA+WQ\"",
+                "server": "railway-edge",
+                "x-powered-by": "Express",
+                "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+                "x-railway-request-id": "oPsdXCkBRCy8i67zDcO5xA"
+              },
+              "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:37.864Z\",\"uptime\":23583.811445085,\"memory\":{\"rss\":63537152,\"heapTotal\":10862592,\"heapUsed\":9344816,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+              "contentLength": 248,
+              "responseTime": 643,
+              "url": "https://employee-management-system-production-4361.up.railway.app/health"
+            }
+          ]
+        },
+        "timestamp": "2025-08-10T03:10:37.017Z"
+      },
+      {
+        "test": "負載穩定性測試",
+        "results": {
+          "duration": 10,
+          "totalRequests": 10,
+          "successful": 10,
+          "failed": 0,
+          "stabilityScore": 100,
+          "averageResponseTime": 107
+        },
+        "timestamp": "2025-08-10T03:10:47.155Z"
+      }
+    ],
+    "security": [
+      {
+        "test": "HTTPS配置檢查",
+        "result": {
+          "secure": true,
+          "tlsVersion": "TLSv1.3",
+          "certificateStatus": "valid",
+          "issuer": "R11",
+          "validTo": "Nov  1 14:01:42 2025 GMT"
+        },
+        "timestamp": "2025-08-10T03:10:47.270Z"
+      },
+      {
+        "test": "安全標頭檢查",
+        "result": {
+          "score": 0,
+          "headers": {
+            "x-frame-options": 0,
+            "x-content-type-options": 0,
+            "x-xss-protection": 0,
+            "strict-transport-security": 0,
+            "content-security-policy": 0,
+            "referrer-policy": 0,
+            "permissions-policy": 0
+          },
+          "recommendations": [
+            "添加 X-Frame-Options 標頭防止點擊劫持",
+            "實施內容安全策略(CSP)",
+            "啟用HSTS強制HTTPS"
+          ]
+        },
+        "timestamp": "2025-08-10T03:10:47.725Z"
+      }
+    ]
+  },
+  "criticalFindings": [
+    "🚨 主要API端點(/api/employees, /api/attendance, /api/auth, /api/revenue)返回404錯誤",
+    "✅ Railway部署基礎設施正常運行",
+    "✅ 健康檢查端點和測試端點正常工作",
+    "⚠️ 路由配置存在問題，需要立即修復",
+    "📊 系統響應時間在可接受範圍內"
+  ],
+  "performanceAnalysis": {
+    "responseTime": "平均響應時間在正常範圍內",
+    "concurrency": "並發處理能力良好",
+    "stability": "系統穩定性符合預期",
+    "recommendations": [
+      "監控API端點修復後的性能變化",
+      "建立性能基準測試",
+      "設置響應時間告警"
+    ]
+  },
+  "securityAssessment": {
+    "https": "HTTPS配置正常",
+    "headers": "安全標頭需要加強",
+    "recommendations": [
+      "完善內容安全策略(CSP)",
+      "添加缺失的安全標頭",
+      "定期進行安全掃描"
+    ]
+  },
+  "actionPlan": [
+    {
+      "priority": 1,
+      "title": "🚨 緊急修復API路由問題",
+      "tasks": [
+        "檢查server.js中的路由註冊",
+        "驗證routes目錄中的模組導出",
+        "修復路由配置並測試",
+        "部署修復版本到Railway"
+      ],
+      "estimatedTime": "2-4小時"
+    },
+    {
+      "priority": 2,
+      "title": "🔍 驗證修復結果",
+      "tasks": [
+        "重新執行API端點測試",
+        "驗證用戶流程完整性",
+        "確認性能指標正常",
+        "更新監控和告警設置"
+      ],
+      "estimatedTime": "1-2小時"
+    }
+  ],
+  "technicalRecommendations": [
+    "🔧 立即修復API路由註冊問題",
+    "📊 建立API端點健康監控",
+    "🔒 加強安全標頭配置",
+    "⚡ 設置性能基準和告警",
+    "🧪 實施自動化API測試",
+    "📋 建立部署驗證檢查清單"
+  ],
+  "rawTestData": [
+    {
+      "category": "connectivity",
+      "test": "Railway部署連通性",
+      "url": "https://employee-management-system-production-4361.up.railway.app",
+      "result": {
+        "success": true,
+        "statusCode": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "content-length": "120",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+          "etag": "W/\"78-hzRWTWxgaRmshC+5KM7ZRPVJO1s\"",
+          "server": "railway-edge",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "3jxaJgPdSaumbV04DcO5xA"
+        },
+        "data": "{\"message\":\"🏢 企業員工管理系統 - Railway測試版\",\"status\":\"running\",\"timestamp\":\"2025-08-10T03:10:35.426Z\"}",
+        "contentLength": 96,
+        "responseTime": 490,
+        "url": "https://employee-management-system-production-4361.up.railway.app"
+      },
+      "timestamp": "2025-08-10T03:10:34.552Z"
+    },
+    {
+      "category": "connectivity",
+      "test": "本地服務連通性",
+      "url": "http://localhost:3001",
+      "result": {
+        "success": true,
+        "statusCode": 302,
+        "statusMessage": "Found",
+        "headers": {
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes';script-src-attr 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0",
+          "access-control-allow-origin": "http://localhost:3001",
+          "vary": "Origin, Accept, Accept-Encoding",
+          "access-control-allow-credentials": "true",
+          "location": "/login",
+          "content-type": "text/html; charset=utf-8",
+          "content-length": "35",
+          "date": "Sun, 10 Aug 2025 03:10:34 GMT",
+          "connection": "keep-alive",
+          "keep-alive": "timeout=5"
+        },
+        "data": "<p>Found. Redirecting to /login</p>",
+        "contentLength": 35,
+        "responseTime": 4,
+        "url": "http://localhost:3001"
+      },
+      "timestamp": "2025-08-10T03:10:34.557Z"
+    },
+    {
+      "category": "apiEndpoint",
+      "test": "API端點測試: /api/employees",
+      "endpointCategory": "critical",
+      "url": "https://employee-management-system-production-4361.up.railway.app/api/employees",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "152",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "rd6VWGcMRzCf55KwDcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/employees</pre>\n</body>\n</html>\n",
+        "contentLength": 152,
+        "responseTime": 89,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/employees"
+      },
+      "timestamp": "2025-08-10T03:10:34.647Z"
+    },
+    {
+      "category": "apiEndpoint",
+      "test": "API端點測試: /api/attendance",
+      "endpointCategory": "critical",
+      "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "153",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "S8aZCmSgTTO6gXKoDcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/attendance</pre>\n</body>\n</html>\n",
+        "contentLength": 153,
+        "responseTime": 89,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance"
+      },
+      "timestamp": "2025-08-10T03:10:34.737Z"
+    },
+    {
+      "category": "apiEndpoint",
+      "test": "API端點測試: /api/auth",
+      "endpointCategory": "critical",
+      "url": "https://employee-management-system-production-4361.up.railway.app/api/auth",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "147",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "8uT3XznlS025RaSDDcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth</pre>\n</body>\n</html>\n",
+        "contentLength": 147,
+        "responseTime": 99,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/auth"
+      },
+      "timestamp": "2025-08-10T03:10:34.837Z"
+    },
+    {
+      "category": "apiEndpoint",
+      "test": "API端點測試: /api/revenue",
+      "endpointCategory": "critical",
+      "url": "https://employee-management-system-production-4361.up.railway.app/api/revenue",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "150",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "Zq-ZphdVTzml3XohDcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/revenue</pre>\n</body>\n</html>\n",
+        "contentLength": 150,
+        "responseTime": 97,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/revenue"
+      },
+      "timestamp": "2025-08-10T03:10:34.935Z"
+    },
+    {
+      "category": "apiEndpoint",
+      "test": "API端點測試: /api/employees/statistics",
+      "endpointCategory": "critical",
+      "url": "https://employee-management-system-production-4361.up.railway.app/api/employees/statistics",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "163",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "bCykH1ULQmK7Nb6gDcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/employees/statistics</pre>\n</body>\n</html>\n",
+        "contentLength": 163,
+        "responseTime": 85,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/employees/statistics"
+      },
+      "timestamp": "2025-08-10T03:10:35.021Z"
+    },
+    {
+      "category": "apiEndpoint",
+      "test": "API端點測試: /health",
+      "endpointCategory": "working",
+      "url": "https://employee-management-system-production-4361.up.railway.app/health",
+      "result": {
+        "success": true,
+        "statusCode": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "content-length": "246",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:35 GMT",
+          "etag": "W/\"f6-Z+F+3PwWxXyEYxjBGuZrajj+OIY\"",
+          "server": "railway-edge",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "3gb2JerhQkuGORoiDcO5xA"
+        },
+        "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:35.992Z\",\"uptime\":23581.9400472,\"memory\":{\"rss\":63754240,\"heapTotal\":10862592,\"heapUsed\":9395264,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+        "contentLength": 246,
+        "responseTime": 94,
+        "url": "https://employee-management-system-production-4361.up.railway.app/health"
+      },
+      "timestamp": "2025-08-10T03:10:35.116Z"
+    },
+    {
+      "category": "apiEndpoint",
+      "test": "API端點測試: /api/auth/test",
+      "endpointCategory": "working",
+      "url": "https://employee-management-system-production-4361.up.railway.app/api/auth/test",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "152",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "dVrMCvTCReWpatoIDcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth/test</pre>\n</body>\n</html>\n",
+        "contentLength": 152,
+        "responseTime": 90,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/auth/test"
+      },
+      "timestamp": "2025-08-10T03:10:35.207Z"
+    },
+    {
+      "category": "apiEndpoint",
+      "test": "API端點測試: /api/attendance/test",
+      "endpointCategory": "working",
+      "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance/test",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "158",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "BF3bNXkrQLiFKiaqDcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/attendance/test</pre>\n</body>\n</html>\n",
+        "contentLength": 158,
+        "responseTime": 93,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance/test"
+      },
+      "timestamp": "2025-08-10T03:10:35.302Z"
+    },
+    {
+      "category": "apiEndpoint",
+      "test": "API端點測試: /api/revenue/test",
+      "endpointCategory": "working",
+      "url": "https://employee-management-system-production-4361.up.railway.app/api/revenue/test",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "155",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "Ob8sfOBSROiuH19dDcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/revenue/test</pre>\n</body>\n</html>\n",
+        "contentLength": 155,
+        "responseTime": 93,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/revenue/test"
+      },
+      "timestamp": "2025-08-10T03:10:35.395Z"
+    },
+    {
+      "category": "analysis",
+      "test": "API響應分析",
+      "result": {
+        "workingEndpoints": [
+          {
+            "endpoint": "API端點測試: /health",
+            "responseTime": 94,
+            "contentLength": 246
+          }
+        ],
+        "failingEndpoints": [
+          {
+            "endpoint": "API端點測試: /api/employees",
+            "statusCode": 404,
+            "category": "critical"
+          },
+          {
+            "endpoint": "API端點測試: /api/attendance",
+            "statusCode": 404,
+            "category": "critical"
+          },
+          {
+            "endpoint": "API端點測試: /api/auth",
+            "statusCode": 404,
+            "category": "critical"
+          },
+          {
+            "endpoint": "API端點測試: /api/revenue",
+            "statusCode": 404,
+            "category": "critical"
+          },
+          {
+            "endpoint": "API端點測試: /api/employees/statistics",
+            "statusCode": 404,
+            "category": "critical"
+          },
+          {
+            "endpoint": "API端點測試: /api/auth/test",
+            "statusCode": 404,
+            "category": "working"
+          },
+          {
+            "endpoint": "API端點測試: /api/attendance/test",
+            "statusCode": 404,
+            "category": "working"
+          },
+          {
+            "endpoint": "API端點測試: /api/revenue/test",
+            "statusCode": 404,
+            "category": "working"
+          }
+        ],
+        "responsePatterns": {},
+        "performanceMetrics": {}
+      },
+      "timestamp": "2025-08-10T03:10:35.396Z"
+    },
+    {
+      "category": "frontend",
+      "test": "主頁HTML載入",
+      "result": {
+        "success": true,
+        "statusCode": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "content-length": "120",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+          "etag": "W/\"78-I9sbUG9dWAHgjboS4f7VAokA3xA\"",
+          "server": "railway-edge",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "vU0cxXVLRhSVAfawDcO5xA"
+        },
+        "data": "{\"message\":\"🏢 企業員工管理系統 - Railway測試版\",\"status\":\"running\",\"timestamp\":\"2025-08-10T03:10:36.362Z\"}",
+        "contentLength": 96,
+        "responseTime": 89,
+        "url": "https://employee-management-system-production-4361.up.railway.app/"
+      },
+      "timestamp": "2025-08-10T03:10:35.485Z"
+    },
+    {
+      "category": "frontend",
+      "test": "HTML內容分析",
+      "result": {
+        "title": "",
+        "cssLinks": [],
+        "jsScripts": [],
+        "apiCalls": [],
+        "forms": [],
+        "images": []
+      },
+      "timestamp": "2025-08-10T03:10:35.486Z"
+    },
+    {
+      "category": "userFlow",
+      "test": "訪問主頁",
+      "result": {
+        "success": true,
+        "statusCode": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "content-length": "120",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+          "etag": "W/\"78-veg3cHHOCKseBW+iyV4NBTVzERE\"",
+          "server": "railway-edge",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "I2mLLWFqTKqEsBKEDcO5xA"
+        },
+        "data": "{\"message\":\"🏢 企業員工管理系統 - Railway測試版\",\"status\":\"running\",\"timestamp\":\"2025-08-10T03:10:36.805Z\"}",
+        "contentLength": 96,
+        "responseTime": 92,
+        "url": "https://employee-management-system-production-4361.up.railway.app/"
+      },
+      "timestamp": "2025-08-10T03:10:35.929Z"
+    },
+    {
+      "category": "userFlow",
+      "test": "檢查健康狀態",
+      "result": {
+        "success": true,
+        "statusCode": 200,
+        "statusMessage": "OK",
+        "headers": {
+          "content-length": "248",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:36 GMT",
+          "etag": "W/\"f8-FMsoU9IE6UrgHUFmUxx21ipTjy4\"",
+          "server": "railway-edge",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "wyg2MQ9cQlKTuUjhDcO5xA"
+        },
+        "data": "{\"status\":\"healthy\",\"timestamp\":\"2025-08-10T03:10:36.903Z\",\"uptime\":23582.850334144,\"memory\":{\"rss\":64147456,\"heapTotal\":10862592,\"heapUsed\":9719768,\"external\":1092674,\"arrayBuffers\":57546},\"environment\":\"production\",\"port\":\"3000\",\"host\":\"0.0.0.0\"}",
+        "contentLength": 248,
+        "responseTime": 105,
+        "url": "https://employee-management-system-production-4361.up.railway.app/health"
+      },
+      "timestamp": "2025-08-10T03:10:36.034Z"
+    },
+    {
+      "category": "userFlow",
+      "test": "嘗試登入API",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "147",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "YUBur834RHGZ1q1LDcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/auth</pre>\n</body>\n</html>\n",
+        "contentLength": 147,
+        "responseTime": 99,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/auth"
+      },
+      "timestamp": "2025-08-10T03:10:36.134Z"
+    },
+    {
+      "category": "userFlow",
+      "test": "獲取員工列表",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "152",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "bhmC750RRZSHMh8nDcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/employees</pre>\n</body>\n</html>\n",
+        "contentLength": 152,
+        "responseTime": 104,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/employees"
+      },
+      "timestamp": "2025-08-10T03:10:36.238Z"
+    },
+    {
+      "category": "userFlow",
+      "test": "查看考勤記錄",
+      "result": {
+        "success": true,
+        "statusCode": 404,
+        "statusMessage": "Not Found",
+        "headers": {
+          "content-length": "153",
+          "content-security-policy": "default-src 'none'",
+          "content-type": "text/html; charset=utf-8",
+          "date": "Sun, 10 Aug 2025 03:10:37 GMT",
+          "server": "railway-edge",
+          "x-content-type-options": "nosniff",
+          "x-powered-by": "Express",
+          "x-railway-edge": "railway/asia-southeast1-eqsg3a",
+          "x-railway-request-id": "QBn2Ral8SGWC9rU8DcO5xA"
+        },
+        "data": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/attendance</pre>\n</body>\n</html>\n",
+        "contentLength": 153,
+        "responseTime": 93,
+        "url": "https://employee-management-system-production-4361.up.railway.app/api/attendance"
+      },
+      "timestamp": "2025-08-10T03:10:36.332Z"
+    }
+  ]
+}
