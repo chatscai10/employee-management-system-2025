@@ -52,6 +52,8 @@ const loadModels = (sequelize) => {
         'RevenueRecord.js',
         'InventoryItem.js',
         'InventoryOrder.js',
+        'InventoryLog.js',
+        'InventoryAlert.js',
         'Schedule.js'
     ];
 
