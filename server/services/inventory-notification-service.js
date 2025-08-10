@@ -95,76 +95,28 @@ class InventoryNotificationService {
         Object.keys(supplierGroups).forEach(supplier => {
             notification += `${supplier}\\n`;
             supplierGroups[supplier].forEach(item => {
-                notification += `  • ${item.itemName} ${item.quantity} ${item.unit}`;
-                if (item.currentStock !== undefined) {
-                    notification += ` (庫存: ${item.currentStock})`;
-                }
-                notification += `\\n`;
+                notification += `  • ${item.itemName} ${item.quantity} ${item.unit}\\n`;
             });
             notification += `\\n`;
         });
         
-        // 庫存警報
-        if (analysisData && analysisData.findings) {
-            notification += `⚠️ 庫存警報:\\n`;
+        // 庫存警報 - 只顯示低庫存需要備貨的品項
+        if (analysisData && analysisData.findings && analysisData.findings.lowStock && analysisData.findings.lowStock.length > 0) {
+            notification += `⚠️ 庫存警報 - 需要備貨:\\n`;
             
-            // 低庫存警告
-            if (analysisData.findings.lowStock && analysisData.findings.lowStock.length > 0) {
-                const lowStockItems = analysisData.findings.lowStock
-                    .filter(item => item.severity !== 'critical')
-                    .map(item => item.itemName)
-                    .join('、');
+            analysisData.findings.lowStock.forEach(item => {
+                const urgency = item.severity === 'critical' ? '🚨 緊急' : 
+                               item.severity === 'high' ? '🔥 較急' : '⚠️ 注意';
+                notification += `  ${urgency} ${item.itemName}: 剩餘 ${item.currentStock} ${item.analysisData.unit}`;
                 
-                if (lowStockItems) {
-                    notification += `📉 低庫存警告: ${lowStockItems}\\n`;
+                if (item.suggestedOrderQuantity > 0) {
+                    notification += ` (建議叫貨: ${item.suggestedOrderQuantity} ${item.analysisData.unit})`;
                 }
-                
-                // 缺貨警告
-                const outOfStockItems = analysisData.findings.lowStock
-                    .filter(item => item.severity === 'critical')
-                    .map(item => item.itemName)
-                    .join('、');
-                
-                if (outOfStockItems) {
-                    notification += `🚨 缺貨警告: ${outOfStockItems}\\n`;
-                }
-            }
-            
-            // 異常品項分析
-            if (analysisData.findings.noOrderTooLong && analysisData.findings.noOrderTooLong.length > 0 ||
-                analysisData.findings.tooFrequentOrders && analysisData.findings.tooFrequentOrders.length > 0) {
-                
-                notification += `⏰ 異常品項分析:\\n`;
-                
-                // 太久沒叫貨
-                analysisData.findings.noOrderTooLong.forEach(item => {
-                    notification += `  • ${item.itemName}: ${item.daysSinceOrder}天未叫貨 (閾值:${item.abnormalThreshold}天)\\n`;
-                });
-                
-                // 叫貨頻繁
-                analysisData.findings.tooFrequentOrders.forEach(item => {
-                    notification += `  • ${item.itemName}: ${item.ordersInPeriod}次頻繁叫貨 (期間:${item.checkPeriodDays}天)\\n`;
-                });
-                
                 notification += `\\n`;
-            }
-            
-            // 補貨建議
-            if (analysisData.recommendations && analysisData.recommendations.length > 0) {
-                notification += `💡 補貨建議:\\n`;
-                
-                analysisData.recommendations.forEach(rec => {
-                    if (rec.actionItems) {
-                        rec.actionItems.forEach(action => {
-                            if (action.suggestedQuantity) {
-                                notification += `  • ${action.item}: 建議叫貨${action.suggestedQuantity}\\n`;
-                            } else if (action.action) {
-                                notification += `  • ${action.item}: ${action.action}\\n`;
-                            }
-                        });
-                    }
-                });
-            }
+            });
+            notification += `\\n`;
+        } else {
+            notification += `✅ 庫存狀況: 所有品項庫存充足\\n\\n`;
         }
         
         notification += `━━━━━━━━━━━━━━━━━━━`;
@@ -181,10 +133,21 @@ class InventoryNotificationService {
         let notification = `🛒 叫貨記錄\\n`;
         notification += `📅 送貨日期: ${orderData.deliveryDate || '待確認'}\\n`;
         notification += `🏪 分店: ${orderData.storeName}\\n`;
-        notification += `📦 叫貨品項: ${orderData.orderItems.length}項\\n`;
-        notification += `💰 總價: $${orderData.totalAmount}`;
+        notification += `💰 總價: $${orderData.totalAmount}\\n\\n`;
         
-        return notification;
+        // 顯示具體品項和數量
+        notification += `📦 叫貨明細:\\n`;
+        const supplierGroups = this.groupItemsBySupplier(orderData.orderItems);
+        
+        Object.keys(supplierGroups).forEach(supplier => {
+            notification += `${supplier}\\n`;
+            supplierGroups[supplier].forEach(item => {
+                notification += `  • ${item.itemName} ${item.quantity} ${item.unit}\\n`;
+            });
+            notification += `\\n`;
+        });
+        
+        return notification.trim();
     }
     
     /**

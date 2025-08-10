@@ -574,15 +574,13 @@ router.post('/send-notification', async (req, res) => {
                             itemName: '雞排',
                             quantity: 10,
                             unit: '包',
-                            supplier: '大大食品',
-                            currentStock: 15
+                            supplier: '大大食品'
                         },
                         {
                             itemName: '薯條',
                             quantity: 5,
                             unit: '包',
-                            supplier: '大大食品',
-                            currentStock: 8
+                            supplier: '大大食品'
                         }
                     ]
                 };
@@ -596,7 +594,11 @@ router.post('/send-notification', async (req, res) => {
                 const simpleOrderData = {
                     deliveryDate: new Date().toLocaleDateString('zh-TW'),
                     storeName: '內壢忠孝店',
-                    orderItems: [{ itemName: '雞排' }, { itemName: '薯條' }, { itemName: '飲料' }],
+                    orderItems: [
+                        { itemName: '雞排', quantity: 10, unit: '包', supplier: '大大食品' },
+                        { itemName: '薯條', quantity: 5, unit: '包', supplier: '大大食品' },
+                        { itemName: '飲料', quantity: 8, unit: '瓶', supplier: '飲料供應商' }
+                    ],
                     totalAmount: 1200
                 };
                 result = await InventoryNotificationService.sendEmployeeSimpleNotification(simpleOrderData);
