@@ -8,7 +8,9 @@
       "Bash(pkill:*)",
       "Bash(rm:*)",
       "Bash(FORCE_DB_SYNC=true NODE_ENV=development cd server)",
-      "Bash(railway logs:*)"
+      "Bash(railway logs:*)",
+      "Bash(git commit:*)",
+      "Bash(railway init:*)"
     ],
     "deny": []
   }
