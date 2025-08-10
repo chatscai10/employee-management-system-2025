@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-08-10T19:54:18.672Z",
+  "url": "https://employee-management-system-intermediate.onrender.com",
+  "title": "員工工作台 - 企業員工管理系統",
+  "linksFound": 8,
+  "buttonsFound": 13,
+  "links": [
+    {
+      "text": "員工管理系統",
+      "href": "https://employee-management-system-intermediate.onrender.com/index.html",
+      "innerText": "員工管理系統"
+    },
+    {
+      "text": "個人資料",
+      "href": "https://employee-management-system-intermediate.onrender.com/profile.html",
+      "innerText": "個人資料"
+    },
+    {
+      "text": "考勤打卡",
+      "href": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+      "innerText": "考勤打卡"
+    },
+    {
+      "text": "登出",
+      "href": "https://employee-management-system-intermediate.onrender.com/#",
+      "innerText": "登出"
+    },
+    {
+      "text": "前往打卡",
+      "href": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+      "innerText": "前往打卡"
+    },
+    {
+      "text": "查看記錄",
+      "href": "https://employee-management-system-intermediate.onrender.com/revenue.html",
+      "innerText": "查看記錄"
+    },
+    {
+      "text": "編輯資料",
+      "href": "https://employee-management-system-intermediate.onrender.com/profile.html",
+      "innerText": "編輯資料"
+    },
+    {
+      "text": "查看報表",
+      "href": "https://employee-management-system-intermediate.onrender.com/reports.html",
+      "innerText": "查看報表"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "今日考勤\n                                點擊進行打卡\n      ",
+      "className": "card bg-primary text-white",
+      "onclick": null,
+      "href": null
+    },
+    {
+      "text": "營收記錄\n                                查看營收統計\n      ",
+      "className": "card bg-success text-white",
+      "onclick": null,
+      "href": null
+    },
+    {
+      "text": "個人資料\n                                管理個人信息\n      ",
+      "className": "card bg-info text-white",
+      "onclick": null,
+      "href": null
+    },
+    {
+      "text": "報表查看\n                                查看各項報表\n      ",
+      "className": "card bg-warning text-white",
+      "onclick": null,
+      "href": null
+    },
+    {
+      "text": "近期考勤記錄\n                    \n                    \n ",
+      "className": "card",
+      "onclick": null,
+      "href": null
+    },
+    {
+      "text": "快速操作\n                    \n                    \n   ",
+      "className": "card",
+      "onclick": null,
+      "href": null
+    }
+  ],
+  "testResults": [
+    "/attendance",
+    "/revenue",
+    "/profile",
+    "/admin"
+  ],
+  "status": "completed"
+}

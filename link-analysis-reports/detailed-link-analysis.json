@@ -1,0 +1,421 @@
+{
+  "timestamp": "2025-08-10T19:43:47.681Z",
+  "baseUrl": "https://employee-management-system-intermediate.onrender.com",
+  "summary": {
+    "totalLinks": 8,
+    "problemLinks": 1,
+    "workingPages": 5,
+    "totalPages": 5
+  },
+  "findings": {
+    "linkAnalysis": {
+      "allLinks": [
+        {
+          "index": 0,
+          "text": "員工管理系統",
+          "href": "https://employee-management-system-intermediate.onrender.com/index.html",
+          "originalHref": "index.html",
+          "className": "navbar-brand",
+          "id": "",
+          "target": "",
+          "exists": true,
+          "isClickable": true
+        },
+        {
+          "index": 1,
+          "text": "個人資料",
+          "href": "https://employee-management-system-intermediate.onrender.com/profile.html",
+          "originalHref": "profile.html",
+          "className": "nav-link",
+          "id": "",
+          "target": "",
+          "exists": true,
+          "isClickable": true
+        },
+        {
+          "index": 2,
+          "text": "考勤打卡",
+          "href": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+          "originalHref": "attendance.html",
+          "className": "nav-link",
+          "id": "",
+          "target": "",
+          "exists": true,
+          "isClickable": true
+        },
+        {
+          "index": 3,
+          "text": "登出",
+          "href": "https://employee-management-system-intermediate.onrender.com/#",
+          "originalHref": "#",
+          "className": "nav-link",
+          "id": "",
+          "target": "",
+          "exists": true,
+          "isClickable": true
+        },
+        {
+          "index": 4,
+          "text": "前往打卡",
+          "href": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+          "originalHref": "attendance.html",
+          "className": "btn btn-light",
+          "id": "",
+          "target": "",
+          "exists": true,
+          "isClickable": true
+        },
+        {
+          "index": 5,
+          "text": "查看記錄",
+          "href": "https://employee-management-system-intermediate.onrender.com/revenue.html",
+          "originalHref": "revenue.html",
+          "className": "btn btn-light",
+          "id": "",
+          "target": "",
+          "exists": true,
+          "isClickable": true
+        },
+        {
+          "index": 6,
+          "text": "編輯資料",
+          "href": "https://employee-management-system-intermediate.onrender.com/profile.html",
+          "originalHref": "profile.html",
+          "className": "btn btn-light",
+          "id": "",
+          "target": "",
+          "exists": true,
+          "isClickable": true
+        },
+        {
+          "index": 7,
+          "text": "查看報表",
+          "href": "https://employee-management-system-intermediate.onrender.com/reports.html",
+          "originalHref": "reports.html",
+          "className": "btn btn-light",
+          "id": "",
+          "target": "",
+          "exists": true,
+          "isClickable": true
+        }
+      ],
+      "problemLinks": [
+        {
+          "index": 7,
+          "text": "查看報表",
+          "href": "https://employee-management-system-intermediate.onrender.com/reports.html",
+          "originalHref": "reports.html",
+          "className": "btn btn-light",
+          "id": "",
+          "target": "",
+          "exists": true,
+          "isClickable": true,
+          "issue": "reports.html連結指向不存在或錯誤的頁面",
+          "shouldPointTo": "應該指向正確的報表功能頁面"
+        }
+      ],
+      "workingLinks": [],
+      "buttonActions": [
+        {
+          "index": 0,
+          "text": "快速打卡",
+          "onclick": "function onclick(event) {\nquickClockIn()\n}",
+          "className": "btn btn-primary w-100 mb-2",
+          "id": "",
+          "disabled": false,
+          "type": "submit"
+        },
+        {
+          "index": 1,
+          "text": "新增營收",
+          "onclick": "function onclick(event) {\naddRevenue()\n}",
+          "className": "btn btn-success w-100 mb-2",
+          "id": "",
+          "disabled": false,
+          "type": "submit"
+        },
+        {
+          "index": 2,
+          "text": "查看資料",
+          "onclick": "function onclick(event) {\nviewProfile()\n}",
+          "className": "btn btn-info w-100",
+          "id": "",
+          "disabled": false,
+          "type": "submit"
+        }
+      ]
+    },
+    "pageTests": [
+      {
+        "name": "主頁",
+        "url": "/index.html",
+        "status": 200,
+        "success": true,
+        "pageInfo": {
+          "title": "企業員工管理系統",
+          "hasContent": false,
+          "bodyText": "\n    \n        🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        \ud83d",
+          "statusIndicators": {
+            "hasNavbar": false,
+            "hasMainContent": true,
+            "hasErrorMessage": true
+          }
+        },
+        "screenshot": "主頁.png"
+      },
+      {
+        "name": "員工檔案",
+        "url": "/profile.html",
+        "status": 200,
+        "success": true,
+        "pageInfo": {
+          "title": "企業員工管理系統",
+          "hasContent": false,
+          "bodyText": "\n    \n        🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        \ud83d",
+          "statusIndicators": {
+            "hasNavbar": false,
+            "hasMainContent": true,
+            "hasErrorMessage": true
+          }
+        },
+        "screenshot": "員工檔案.png"
+      },
+      {
+        "name": "考勤打卡",
+        "url": "/attendance.html",
+        "status": 200,
+        "success": true,
+        "pageInfo": {
+          "title": "企業員工管理系統",
+          "hasContent": false,
+          "bodyText": "\n    \n        🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        \ud83d",
+          "statusIndicators": {
+            "hasNavbar": false,
+            "hasMainContent": true,
+            "hasErrorMessage": true
+          }
+        },
+        "screenshot": "考勤打卡.png"
+      },
+      {
+        "name": "營收記錄",
+        "url": "/revenue.html",
+        "status": 200,
+        "success": true,
+        "pageInfo": {
+          "title": "企業員工管理系統",
+          "hasContent": false,
+          "bodyText": "\n    \n        🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        \ud83d",
+          "statusIndicators": {
+            "hasNavbar": false,
+            "hasMainContent": true,
+            "hasErrorMessage": true
+          }
+        },
+        "screenshot": "營收記錄.png"
+      },
+      {
+        "name": "報表頁面",
+        "url": "/reports.html",
+        "status": 200,
+        "success": true,
+        "pageInfo": {
+          "title": "企業員工管理系統",
+          "hasContent": false,
+          "bodyText": "\n    \n        🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        \ud83d",
+          "statusIndicators": {
+            "hasNavbar": false,
+            "hasMainContent": true,
+            "hasErrorMessage": true
+          }
+        },
+        "screenshot": "報表頁面.png"
+      }
+    ],
+    "navigationAnalysis": {
+      "cardMappings": [
+        {
+          "cardTitle": "今日考勤",
+          "linkText": "前往打卡",
+          "href": "attendance.html",
+          "fullHref": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+          "expectedFunction": "今日考勤"
+        },
+        {
+          "cardTitle": "營收記錄",
+          "linkText": "查看記錄",
+          "href": "revenue.html",
+          "fullHref": "https://employee-management-system-intermediate.onrender.com/revenue.html",
+          "expectedFunction": "營收記錄"
+        },
+        {
+          "cardTitle": "個人資料",
+          "linkText": "編輯資料",
+          "href": "profile.html",
+          "fullHref": "https://employee-management-system-intermediate.onrender.com/profile.html",
+          "expectedFunction": "個人資料"
+        },
+        {
+          "cardTitle": "報表查看",
+          "linkText": "查看報表",
+          "href": "reports.html",
+          "fullHref": "https://employee-management-system-intermediate.onrender.com/reports.html",
+          "expectedFunction": "報表查看"
+        }
+      ],
+      "duplicateLinks": [
+        {
+          "href": "profile.html",
+          "count": 2,
+          "elements": [
+            "個人資料",
+            "編輯資料"
+          ]
+        },
+        {
+          "href": "attendance.html",
+          "count": 2,
+          "elements": [
+            "考勤打卡",
+            "前往打卡"
+          ]
+        }
+      ],
+      "missingPages": [
+        {
+          "cardTitle": "報表查看",
+          "issue": "reports.html頁面不是真正的報表功能",
+          "suggestion": "應該建立真正的報表頁面或修改連結指向"
+        }
+      ],
+      "recommendations": []
+    }
+  },
+  "criticalIssues": [
+    {
+      "type": "broken_links",
+      "description": "發現 1 個問題連結",
+      "impact": "high",
+      "links": [
+        {
+          "index": 7,
+          "text": "查看報表",
+          "href": "https://employee-management-system-intermediate.onrender.com/reports.html",
+          "originalHref": "reports.html",
+          "className": "btn btn-light",
+          "id": "",
+          "target": "",
+          "exists": true,
+          "isClickable": true,
+          "issue": "reports.html連結指向不存在或錯誤的頁面",
+          "shouldPointTo": "應該指向正確的報表功能頁面"
+        }
+      ]
+    },
+    {
+      "type": "broken_pages",
+      "description": "發現 5 個頁面問題",
+      "impact": "high",
+      "pages": [
+        {
+          "name": "主頁",
+          "url": "/index.html",
+          "status": 200,
+          "success": true,
+          "pageInfo": {
+            "title": "企業員工管理系統",
+            "hasContent": false,
+            "bodyText": "\n    \n        🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        \ud83d",
+            "statusIndicators": {
+              "hasNavbar": false,
+              "hasMainContent": true,
+              "hasErrorMessage": true
+            }
+          },
+          "screenshot": "主頁.png"
+        },
+        {
+          "name": "員工檔案",
+          "url": "/profile.html",
+          "status": 200,
+          "success": true,
+          "pageInfo": {
+            "title": "企業員工管理系統",
+            "hasContent": false,
+            "bodyText": "\n    \n        🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        \ud83d",
+            "statusIndicators": {
+              "hasNavbar": false,
+              "hasMainContent": true,
+              "hasErrorMessage": true
+            }
+          },
+          "screenshot": "員工檔案.png"
+        },
+        {
+          "name": "考勤打卡",
+          "url": "/attendance.html",
+          "status": 200,
+          "success": true,
+          "pageInfo": {
+            "title": "企業員工管理系統",
+            "hasContent": false,
+            "bodyText": "\n    \n        🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        \ud83d",
+            "statusIndicators": {
+              "hasNavbar": false,
+              "hasMainContent": true,
+              "hasErrorMessage": true
+            }
+          },
+          "screenshot": "考勤打卡.png"
+        },
+        {
+          "name": "營收記錄",
+          "url": "/revenue.html",
+          "status": 200,
+          "success": true,
+          "pageInfo": {
+            "title": "企業員工管理系統",
+            "hasContent": false,
+            "bodyText": "\n    \n        🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        \ud83d",
+            "statusIndicators": {
+              "hasNavbar": false,
+              "hasMainContent": true,
+              "hasErrorMessage": true
+            }
+          },
+          "screenshot": "營收記錄.png"
+        },
+        {
+          "name": "報表頁面",
+          "url": "/reports.html",
+          "status": 200,
+          "success": true,
+          "pageInfo": {
+            "title": "企業員工管理系統",
+            "hasContent": false,
+            "bodyText": "\n    \n        🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        \ud83d",
+            "statusIndicators": {
+              "hasNavbar": false,
+              "hasMainContent": true,
+              "hasErrorMessage": true
+            }
+          },
+          "screenshot": "報表頁面.png"
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "high",
+      "issue": "reports.html連結問題",
+      "description": "主頁的\"查看報表\"按鈕指向reports.html，但該頁面不是真正的報表功能",
+      "solutions": [
+        "方案1: 建立真正的報表功能頁面（推薦）",
+        "方案2: 修改連結指向現有的營收頁面 (revenue.html)",
+        "方案3: 將reports.html改造成真正的報表功能頁面"
+      ],
+      "codeExample": "<!-- 修復方案 -->\n<a href=\"revenue.html\" class=\"btn btn-light\">查看報表</a>\n<!-- 或者 -->\n<a href=\"dashboard.html\" class=\"btn btn-light\">查看報表</a>"
+    }
+  ]
+}

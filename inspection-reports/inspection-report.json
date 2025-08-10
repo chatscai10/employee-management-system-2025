@@ -1,0 +1,283 @@
+{
+  "timestamp": "2025-08-10T19:46:57.588Z",
+  "baseUrl": "https://employee-management-system-intermediate.onrender.com",
+  "results": {
+    "homepage": {
+      "title": "員工工作台 - 企業員工管理系統",
+      "links": [
+        {
+          "type": "link",
+          "index": 0,
+          "text": "員工管理系統",
+          "href": "https://employee-management-system-intermediate.onrender.com/index.html",
+          "className": "navbar-brand",
+          "id": ""
+        },
+        {
+          "type": "link",
+          "index": 1,
+          "text": "個人資料",
+          "href": "https://employee-management-system-intermediate.onrender.com/profile.html",
+          "className": "nav-link",
+          "id": ""
+        },
+        {
+          "type": "link",
+          "index": 2,
+          "text": "考勤打卡",
+          "href": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+          "className": "nav-link",
+          "id": ""
+        },
+        {
+          "type": "link",
+          "index": 3,
+          "text": "登出",
+          "href": "https://employee-management-system-intermediate.onrender.com/#",
+          "className": "nav-link",
+          "id": ""
+        },
+        {
+          "type": "link",
+          "index": 4,
+          "text": "前往打卡",
+          "href": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+          "className": "btn btn-light",
+          "id": ""
+        },
+        {
+          "type": "link",
+          "index": 5,
+          "text": "查看記錄",
+          "href": "https://employee-management-system-intermediate.onrender.com/revenue.html",
+          "className": "btn btn-light",
+          "id": ""
+        },
+        {
+          "type": "link",
+          "index": 6,
+          "text": "編輯資料",
+          "href": "https://employee-management-system-intermediate.onrender.com/profile.html",
+          "className": "btn btn-light",
+          "id": ""
+        },
+        {
+          "type": "link",
+          "index": 7,
+          "text": "查看報表",
+          "href": "https://employee-management-system-intermediate.onrender.com/reports.html",
+          "className": "btn btn-light",
+          "id": ""
+        },
+        {
+          "type": "button",
+          "index": 0,
+          "text": "快速打卡",
+          "onclick": "function onclick(event) {\nquickClockIn()\n}",
+          "className": "btn btn-primary w-100 mb-2",
+          "id": ""
+        },
+        {
+          "type": "button",
+          "index": 1,
+          "text": "新增營收",
+          "onclick": "function onclick(event) {\naddRevenue()\n}",
+          "className": "btn btn-success w-100 mb-2",
+          "id": ""
+        },
+        {
+          "type": "button",
+          "index": 2,
+          "text": "查看資料",
+          "onclick": "function onclick(event) {\nviewProfile()\n}",
+          "className": "btn btn-info w-100",
+          "id": ""
+        }
+      ],
+      "reportsLinks": [
+        {
+          "type": "link",
+          "index": 7,
+          "text": "查看報表",
+          "href": "https://employee-management-system-intermediate.onrender.com/reports.html",
+          "className": "btn btn-light",
+          "id": ""
+        }
+      ],
+      "screenshot": "1-homepage.png"
+    },
+    "linkTests": [
+      {
+        "type": "link",
+        "index": 0,
+        "text": "員工管理系統",
+        "href": "https://employee-management-system-intermediate.onrender.com/index.html",
+        "className": "navbar-brand",
+        "id": "",
+        "testResult": "failed",
+        "error": "No element found for selector: a[href=\"https://employee-management-system-intermediate.onrender.com/index.html\"]"
+      },
+      {
+        "type": "link",
+        "index": 1,
+        "text": "個人資料",
+        "href": "https://employee-management-system-intermediate.onrender.com/profile.html",
+        "className": "nav-link",
+        "id": "",
+        "testResult": "failed",
+        "error": "No element found for selector: a[href=\"https://employee-management-system-intermediate.onrender.com/profile.html\"]"
+      },
+      {
+        "type": "link",
+        "index": 2,
+        "text": "考勤打卡",
+        "href": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+        "className": "nav-link",
+        "id": "",
+        "testResult": "failed",
+        "error": "No element found for selector: a[href=\"https://employee-management-system-intermediate.onrender.com/attendance.html\"]"
+      },
+      {
+        "type": "link",
+        "index": 3,
+        "text": "登出",
+        "href": "https://employee-management-system-intermediate.onrender.com/#",
+        "className": "nav-link",
+        "id": "",
+        "testResult": "failed",
+        "error": "No element found for selector: a[href=\"https://employee-management-system-intermediate.onrender.com/#\"]"
+      },
+      {
+        "type": "link",
+        "index": 4,
+        "text": "前往打卡",
+        "href": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+        "className": "btn btn-light",
+        "id": "",
+        "testResult": "failed",
+        "error": "No element found for selector: a[href=\"https://employee-management-system-intermediate.onrender.com/attendance.html\"]"
+      },
+      {
+        "type": "link",
+        "index": 5,
+        "text": "查看記錄",
+        "href": "https://employee-management-system-intermediate.onrender.com/revenue.html",
+        "className": "btn btn-light",
+        "id": "",
+        "testResult": "failed",
+        "error": "No element found for selector: a[href=\"https://employee-management-system-intermediate.onrender.com/revenue.html\"]"
+      },
+      {
+        "type": "link",
+        "index": 6,
+        "text": "編輯資料",
+        "href": "https://employee-management-system-intermediate.onrender.com/profile.html",
+        "className": "btn btn-light",
+        "id": "",
+        "testResult": "failed",
+        "error": "No element found for selector: a[href=\"https://employee-management-system-intermediate.onrender.com/profile.html\"]"
+      },
+      {
+        "type": "link",
+        "index": 7,
+        "text": "查看報表",
+        "href": "https://employee-management-system-intermediate.onrender.com/reports.html",
+        "className": "btn btn-light",
+        "id": "",
+        "testResult": "failed",
+        "error": "No element found for selector: a[href=\"https://employee-management-system-intermediate.onrender.com/reports.html\"]"
+      }
+    ],
+    "htmlAnalysis": {
+      "htmlLength": 4215,
+      "reportsReferences": [
+        {
+          "lineNumber": 57,
+          "content": "<a href=\"reports.html\" class=\"btn btn-light\">查看報表</a>"
+        }
+      ],
+      "saved": "homepage-source.html"
+    },
+    "reportsPage": {
+      "title": "企業員工管理系統",
+      "bodyText": "🏢 企業員工管理系統\n        \n        ❌ 系統連接失敗\n        \n        📱 手機端優先設計\n        📍 GPS 定位打卡\n        💰 營收管理系統\n        📦 庫存叫貨管理\n        📅 智慧排班系統\n        🗳️ 升遷投票系統\n        🔧 設備維修管理\n        📢 Telegram 即時通知\n        \n        🔍 檢查系統狀態\n        🧪 測試 API\n        \n        \n    \n\n    \n        async function checkStatus() {\n            try {\n                const response = await fetch('/health');\n                const data = await response.json();\n                \n                if (data.success) {\n                    document.getElementById('status').className = 'status success';\n                    document.getElementById('status').innerHTML = '✅ 系統運行正常';\n                } else {\n                    throw new Error('健康檢查失敗');\n                }\n            } catch (error) {\n                document.getElementById('status').className = 'status error';\n                document.getElementById('status').innerHTML = '❌ 系統連接失敗';\n            }\n        }\n        \n        async function testAPI() {\n            const result = document.getElementById('result');\n            result.innerHTML = '🧪 正在測試 API...';\n            \n            const tests = [\n                { name: '認證 API', url: '/api/auth/test' },\n                { name: '打卡 API', url: '/api/attendance/test', needAuth: true },\n                { name: '營收 API', url: '/api/revenue/test', needAuth: true },\n                { name: '叫貨 API', url: '/api/orders/test', needAuth: true }\n            ];\n            \n            let resultHTML = '<h3>API 測試結果:</h3>';\n            \n            for (const test of tests) {\n                try {\n                    const headers = {};\n                    if (test.needAuth) {\n                        headers['Authorization'] = 'Bearer test-token';\n                    }\n                    \n                    const response = await fetch(test.url, { headers });\n                    \n                    if (response.ok || response.status === 401) {\n                        resultHTML += `<div style=\"color: green;\">✅ ${test.name}: 連接成功</div>`;\n                    } else {\n                        resultHTML += `<div style=\"color: orange;\">⚠️ ${test.name}: ${response.status}</div>`;\n                    }\n                } catch (error) {\n                    resultHTML += `<div style=\"color: red;\">❌ ${test.name}: 連接失敗</div>`;\n                }\n            }\n            \n            result.innerHTML = resultHTML;\n        }\n        \n        // 自動檢查狀態\n        checkStatus();",
+      "hasContent": true,
+      "elementCount": 26,
+      "url": "https://employee-management-system-intermediate.onrender.com/reports.html",
+      "screenshot": "4-reports-page.png",
+      "htmlSaved": "reports-page-source.html"
+    },
+    "navigation": {
+      "navbar": [
+        {
+          "text": "員工管理系統",
+          "href": "https://employee-management-system-intermediate.onrender.com/index.html",
+          "className": "navbar-brand"
+        },
+        {
+          "text": "個人資料",
+          "href": "https://employee-management-system-intermediate.onrender.com/profile.html",
+          "className": "nav-link"
+        },
+        {
+          "text": "考勤打卡",
+          "href": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+          "className": "nav-link"
+        },
+        {
+          "text": "登出",
+          "href": "https://employee-management-system-intermediate.onrender.com/#",
+          "className": "nav-link"
+        }
+      ],
+      "sidebar": [],
+      "cards": [
+        {
+          "text": "前往打卡",
+          "href": "https://employee-management-system-intermediate.onrender.com/attendance.html",
+          "onclick": null,
+          "className": "btn btn-light"
+        },
+        {
+          "text": "查看記錄",
+          "href": "https://employee-management-system-intermediate.onrender.com/revenue.html",
+          "onclick": null,
+          "className": "btn btn-light"
+        },
+        {
+          "text": "編輯資料",
+          "href": "https://employee-management-system-intermediate.onrender.com/profile.html",
+          "onclick": null,
+          "className": "btn btn-light"
+        },
+        {
+          "text": "查看報表",
+          "href": "https://employee-management-system-intermediate.onrender.com/reports.html",
+          "onclick": null,
+          "className": "btn btn-light"
+        },
+        {
+          "text": "快速打卡",
+          "onclick": "function onclick(event) {\nquickClockIn()\n}",
+          "className": "btn btn-primary w-100 mb-2"
+        },
+        {
+          "text": "新增營收",
+          "onclick": "function onclick(event) {\naddRevenue()\n}",
+          "className": "btn btn-success w-100 mb-2"
+        },
+        {
+          "text": "查看資料",
+          "onclick": "function onclick(event) {\nviewProfile()\n}",
+          "className": "btn btn-info w-100"
+        }
+      ],
+      "forms": []
+    }
+  },
+  "summary": {
+    "totalIssues": 0,
+    "criticalIssues": 0,
+    "recommendations": []
+  }
+}

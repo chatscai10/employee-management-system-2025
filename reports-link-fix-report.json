@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-08-10T19:46:38.779Z",
+  "fixedFiles": [
+    "public/employee-dashboard.html",
+    "public/reports.html"
+  ],
+  "changes": [
+    {
+      "file": "employee-dashboard.html",
+      "change": "reports.html連結改為revenue.html",
+      "reason": "修復連結指向錯誤的問題"
+    },
+    {
+      "file": "employee-dashboard.html",
+      "change": "卡片標題從\"報表查看\"改為\"營收報表\"",
+      "reason": "使標題與實際功能一致"
+    },
+    {
+      "file": "reports.html",
+      "change": "建立完整的報表儀表板頁面",
+      "reason": "提供真正的報表功能給用戶"
+    }
+  ],
+  "backupLocation": "D:\\0809\\backup-before-fix",
+  "status": "completed"
+}
