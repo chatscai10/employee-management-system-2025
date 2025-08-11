@@ -556,7 +556,7 @@ app.use('*', (req, res) => {
             success: false,
             error: 'Render API端點不存在',
             path: req.originalUrl,
-            availableEndpoints: ['/api/test', '/api/auth', '/api/employees', '/api/attendance', '/api/revenue'],
+            availableEndpoints: ['/api/test', '/api/auth', '/api/employees', '/api/attendance', '/api/revenue', '/api/admin/stats', '/api/admin/stores', '/api/admin/employees', '/api/admin/auth/login', '/api/admin/auth/register', '/api/admin/auth/profile'],
             timestamp: new Date().toISOString()
         });
     } else {
