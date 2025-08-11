@@ -1,0 +1,53 @@
+{
+  "adminTest": {
+    "loginSuccess": true,
+    "currentUrl": "https://employee-management-system-intermediate.onrender.com/employee",
+    "title": "員工工作台 - 企業員工管理系統",
+    "hasToken": true,
+    "employeeData": "{\"id\":1,\"name\":\"系統管理員\",\"email\":\"user@company.com\",\"position\":\"員工\",\"store\":\"台北總店\",\"permissions\":[\"attendance\",\"revenue\",\"profile\"]}",
+    "pageLoaded": true,
+    "contentLength": 40619,
+    "url": "https://employee-management-system-intermediate.onrender.com/employee",
+    "systems": {
+      "employee-management": false,
+      "inventory-management": false,
+      "revenue-management": false,
+      "schedule-management": false,
+      "promotion-management": false,
+      "store-management": false,
+      "maintenance-management": false,
+      "system-settings": false
+    },
+    "features": {
+      "navItems": 16,
+      "buttons": 11,
+      "switchButton": false,
+      "hasBootstrap": true,
+      "hasModernCSS": false,
+      "dataSections": 8,
+      "hasAdminContent": true,
+      "hasEmployeeManagement": false,
+      "hasInventoryManagement": true,
+      "hasRevenueManagement": true,
+      "hasSystemSettings": true
+    },
+    "actualContent": "\n    <!-- Header -->\n    <div class=\"header\">\n        <div class=\"header-content\">\n            <h1>🏢 員工工作台</h1>\n            <div class=\"user-info\">\n                <span id=\"employeeName\">系統管理員</span>\n                <span id=\"employeePosition\">員工</span>\n                <span id=\"currentStore\">台北總店</span>\n                <button class=\"logout-btn\" onclick=\"logout()\">\n                    <i class=\"bi bi-box-arrow-right\"></i> 登出\n                </button>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"container\">\n        <!-- 統計概覽 -->\n        <div class=\"stats-grid\" id=\"statsGrid\">\n            <div class=\"stat-card\">\n                <div class=\"stat-number\" id=\"monthlyAttendance\">1</div>\n                <div class=\"stat-label\">本月出勤</div>\n            </div>\n            <div class=\"stat-card\">\n                <div class=\"stat-number\" id=\"lateCount\">0</div>\n                <div class=\"stat-label\">遲到次數</div>\n            </div>\n            <div class=\"stat-card\">\n              "
+  },
+  "employeeTest": {
+    "loginSuccess": false,
+    "error": "No element found for selector: #login-name"
+  },
+  "functionalTest": {
+    "error": "No element found for selector: #login-name"
+  },
+  "summary": {
+    "testDate": "2025/8/11 下午8:37:23",
+    "successRate": "50.0%",
+    "passedTests": 5,
+    "totalTests": 10,
+    "overallStatus": "⚠️ GPS修復成功，部分功能需優化",
+    "adminLoginSuccess": true,
+    "employeeLoginSuccess": false,
+    "gpsIssueFixed": true
+  }
+}

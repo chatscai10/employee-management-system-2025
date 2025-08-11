@@ -1,0 +1,86 @@
+{
+  "adminTest": {
+    "pageLoaded": false,
+    "title": "員工登入 - 企業員工管理系統",
+    "contentLength": 15016,
+    "systems": {
+      "employee-management": false,
+      "inventory-management": false,
+      "revenue-management": false,
+      "schedule-management": false,
+      "promotion-management": false,
+      "store-management": false,
+      "maintenance-management": false,
+      "system-settings": false
+    },
+    "features": {
+      "statsCards": 0,
+      "navigationItems": 0,
+      "filterBars": 0,
+      "actionButtons": 2,
+      "switchButton": false
+    },
+    "ui": {
+      "hasModernDesign": false,
+      "hasResponsive": false,
+      "hasDarkTheme": false
+    }
+  },
+  "employeeTest": {
+    "pageLoaded": true,
+    "title": "員工個人資料 - 企業員工管理系統",
+    "contentLength": 43427,
+    "features": {
+      "clockInBtn": true,
+      "clockOutBtn": true,
+      "editProfileBtn": true,
+      "attendanceRecords": false,
+      "personalInfo": false,
+      "switchButton": true,
+      "totalButtons": 12,
+      "totalCards": 0
+    },
+    "ui": {
+      "hasBootstrap": true,
+      "hasIcons": true,
+      "hasModernCSS": false,
+      "hasModal": false
+    }
+  },
+  "comparison": {
+    "pageLoadSuccess": {
+      "admin": false,
+      "employee": true
+    },
+    "contentRichness": {
+      "admin": 15016,
+      "employee": 43427
+    },
+    "managementSystems": {
+      "admin": 0,
+      "employee": 0
+    },
+    "switchingCapability": {
+      "adminToEmployee": false,
+      "employeeToAdmin": true
+    }
+  },
+  "switchingTest": {
+    "adminToEmployee": {
+      "buttonExists": false,
+      "tested": false
+    },
+    "employeeToAdmin": {
+      "buttonExists": true,
+      "permissionCheck": false,
+      "tested": false
+    }
+  },
+  "summary": {
+    "testDate": "2025-08-11T11:40:15.126Z",
+    "totalTests": 4,
+    "passedTests": 1,
+    "overallSuccess": false,
+    "successRate": "25.0%"
+  }
+}

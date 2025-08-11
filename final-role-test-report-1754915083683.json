@@ -1,0 +1,56 @@
+{
+  "adminTest": {
+    "pageLoaded": false,
+    "title": "員工登入 - 企業員工管理系統",
+    "contentLength": 15016,
+    "url": "https://employee-management-system-intermediate.onrender.com/login",
+    "systems": {
+      "employee-management": false,
+      "inventory-management": false,
+      "revenue-management": false,
+      "schedule-management": false,
+      "promotion-management": false,
+      "store-management": false,
+      "maintenance-management": false,
+      "system-settings": false
+    },
+    "features": {
+      "navItems": 0,
+      "buttons": 2,
+      "switchButton": false,
+      "hasBootstrap": false,
+      "hasModernCSS": false
+    }
+  },
+  "employeeTest": {
+    "pageLoaded": true,
+    "title": "員工個人資料 - 企業員工管理系統",
+    "contentLength": 41802,
+    "url": "https://employee-management-system-intermediate.onrender.com/public/profile-enhanced.html",
+    "features": {
+      "clockInBtn": true,
+      "clockOutBtn": true,
+      "editProfile": true,
+      "switchButton": true,
+      "totalButtons": 12,
+      "hasModal": false,
+      "hasGPS": true,
+      "hasBootstrap": true
+    }
+  },
+  "roleSwitch": {
+    "adminSwitchButton": false,
+    "adminSwitchFunction": false,
+    "employeeSwitchButton": false,
+    "employeeSwitchFunction": false
+  },
+  "summary": {
+    "testDate": "2025/8/11 下午8:24:43",
+    "successRate": "25.0%",
+    "passedTests": 2,
+    "totalTests": 8,
+    "overallStatus": "⚠️ 需要進一步優化",
+    "adminSystemsAvailable": 0,
+    "employeeFeaturesWorking": 7
+  }
+}

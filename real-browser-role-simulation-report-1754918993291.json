@@ -1,0 +1,87 @@
+{
+  "roleSimulations": {
+    "系統管理員": {
+      "loginSuccess": true,
+      "loginResult": {
+        "currentUrl": "https://employee-management-system-intermediate.onrender.com/employee",
+        "hasToken": true,
+        "employeeData": "{\"id\":1,\"name\":\"系統管理員\",\"email\":\"user@company.com\",\"position\":\"員工\",\"store\":\"台北總店\",\"permissions\":[\"attendance\",\"revenue\",\"profile\"]}",
+        "isLoginPage": false
+      },
+      "operationsCompleted": [
+        "員工管理CRUD操作",
+        "系統設定修改",
+        "通知系統測試"
+      ],
+      "crudOperations": {
+        "employeeCreate": {
+          "attempted": true,
+          "success": true,
+          "dataFilled": {
+            "filledInputs": 8,
+            "totalInputs": 8
+          },
+          "timestamp": "2025-08-11T13:29:29.730Z"
+        },
+        "systemSettings": {
+          "attempted": true,
+          "success": true,
+          "modificationsCount": 7,
+          "timestamp": "2025-08-11T13:29:34.755Z"
+        }
+      },
+      "notificationsTriggered": [
+        "表單提交通知",
+        "按鈕操作通知",
+        "JavaScript通知系統"
+      ],
+      "dataSubmissions": [
+        {
+          "operation": "新增員工",
+          "fields": 8,
+          "timestamp": "2025-08-11T13:29:29.733Z"
+        },
+        {
+          "operation": "系統設定修改",
+          "fields": 7,
+          "timestamp": "2025-08-11T13:29:34.755Z"
+        }
+      ],
+      "errors": []
+    },
+    "店長": {
+      "loginSuccess": false,
+      "error": "No element found for selector: #login-name"
+    },
+    "一般員工": {
+      "loginSuccess": false,
+      "error": "No element found for selector: #login-name"
+    }
+  },
+  "crudOperations": {},
+  "systemNotifications": {
+    "totalNotifications": 3,
+    "notificationTypes": [
+      "表單提交通知",
+      "按鈕操作通知",
+      "JavaScript通知系統"
+    ],
+    "systemResponsive": true
+  },
+  "dataValidations": {
+    "dataConsistency": true,
+    "crossRoleAccess": true,
+    "permissionValidation": true
+  },
+  "summary": {
+    "testDate": "2025/8/11 下午9:29:53",
+    "totalRoles": 3,
+    "successfulRoles": 1,
+    "totalOperations": 3,
+    "totalDataSubmissions": 2,
+    "totalErrors": 0,
+    "successRate": "33.3%",
+    "operationSuccessRate": "100.0%",
+    "overallStatus": "⚠️ 部分操作需要優化"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "adminTest": {
+    "loginSuccess": true,
+    "currentUrl": "https://employee-management-system-intermediate.onrender.com/employee",
+    "title": "員工工作台 - 企業員工管理系統",
+    "hasToken": true,
+    "employeeData": "{\"id\":1,\"name\":\"系統管理員\",\"email\":\"user@company.com\",\"position\":\"員工\",\"store\":\"台北總店\",\"permissions\":[\"attendance\",\"revenue\",\"profile\"]}",
+    "pageLoaded": true,
+    "contentLength": 40619,
+    "url": "https://employee-management-system-intermediate.onrender.com/employee",
+    "systems": {
+      "employee-management": false,
+      "inventory-management": false,
+      "revenue-management": false,
+      "schedule-management": false,
+      "promotion-management": false,
+      "store-management": false,
+      "maintenance-management": false,
+      "system-settings": false
+    },
+    "features": {
+      "navItems": 8,
+      "buttons": 11,
+      "switchButton": false,
+      "hasBootstrap": true,
+      "hasModernCSS": false,
+      "dataSections": 8
+    }
+  },
+  "employeeTest": {
+    "loginSuccess": false,
+    "error": "No element found for selector: #login-name"
+  },
+  "summary": {
+    "testDate": "2025/8/11 下午8:30:18",
+    "successRate": "25.0%",
+    "passedTests": 2,
+    "totalTests": 8,
+    "overallStatus": "❌ 需要修復",
+    "adminSystemsCount": 0,
+    "employeeFeaturesCount": 0,
+    "adminLoginSuccess": true,
+    "employeeLoginSuccess": false
+  }
+}

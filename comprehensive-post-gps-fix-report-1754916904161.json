@@ -1,0 +1,146 @@
+{
+  "adminComprehensiveTest": {
+    "loginSuccess": true,
+    "currentUrl": "https://employee-management-system-intermediate.onrender.com/employee",
+    "hasToken": true,
+    "employeeData": "{\"id\":1,\"name\":\"系統管理員\",\"email\":\"user@company.com\",\"position\":\"員工\",\"store\":\"台北總店\",\"permissions\":[\"attendance\",\"revenue\",\"profile\"]}",
+    "pageLoaded": true,
+    "title": "員工工作台 - 企業員工管理系統",
+    "contentLength": 40619,
+    "url": "https://employee-management-system-intermediate.onrender.com/employee",
+    "systems": {
+      "employee-management": false,
+      "inventory-management": false,
+      "revenue-management": false,
+      "schedule-management": false,
+      "promotion-management": false,
+      "store-management": false,
+      "maintenance-management": false,
+      "system-settings": false
+    },
+    "features": {
+      "navigationItems": 16,
+      "actionButtons": 11,
+      "formElements": 12,
+      "dataSections": 8,
+      "switchToEmployee": false,
+      "hasSearch": false,
+      "hasFilter": true,
+      "hasExport": false,
+      "hasPagination": true
+    },
+    "ui": {
+      "hasBootstrap": true,
+      "hasIcons": true,
+      "hasModernCSS": true,
+      "hasResponsive": true,
+      "hasDarkMode": false,
+      "hasAnimations": false
+    },
+    "contentAnalysis": {
+      "hasBusinessTerms": true,
+      "hasDataTables": true,
+      "hasCharts": true,
+      "hasStatistics": false,
+      "contentRichness": 245
+    }
+  },
+  "employeeComprehensiveTest": {
+    "loginSuccess": false,
+    "error": "No element found for selector: #login-name"
+  },
+  "roleSwitchingTest": {
+    "error": "No element found for selector: #login-name"
+  },
+  "crudOperationsTest": {
+    "error": "No element found for selector: #login-name"
+  },
+  "systemStabilityTest": {
+    "pageLoadTests": [
+      {
+        "page": "/login",
+        "success": true,
+        "loadTime": 1467,
+        "url": "https://employee-management-system-intermediate.onrender.com/employee",
+        "title": "員工工作台 - 企業員工管理系統",
+        "contentLength": 40619,
+        "hasErrors": false,
+        "is404": false,
+        "isLoginRequired": false,
+        "hasContent": true
+      },
+      {
+        "page": "/public/admin-enhanced.html",
+        "success": true,
+        "loadTime": 2038,
+        "url": "https://employee-management-system-intermediate.onrender.com/public/admin-enhanced.html",
+        "title": "企業管理員控制台 - 增強版",
+        "contentLength": 50568,
+        "hasErrors": true,
+        "is404": false,
+        "isLoginRequired": false,
+        "hasContent": true
+      },
+      {
+        "page": "/public/profile-enhanced.html",
+        "success": true,
+        "loadTime": 1274,
+        "url": "https://employee-management-system-intermediate.onrender.com/public/profile-enhanced.html",
+        "title": "員工個人資料 - 企業員工管理系統",
+        "contentLength": 43443,
+        "hasErrors": false,
+        "is404": false,
+        "isLoginRequired": false,
+        "hasContent": true
+      },
+      {
+        "page": "/public/admin.html",
+        "success": false,
+        "error": "Execution context was destroyed, most likely because of a navigation.",
+        "loadTime": 2531
+      }
+    ],
+    "errorTests": [],
+    "performanceTests": {
+      "domNodes": 244,
+      "scripts": 3,
+      "stylesheets": 2,
+      "images": 0,
+      "totalElements": 244,
+      "bodySize": 40619,
+      "navigationType": 0,
+      "redirectCount": 0
+    },
+    "metrics": {
+      "stabilityScore": 75,
+      "successfulLoads": 3,
+      "totalTests": 4,
+      "avgLoadTime": 1593,
+      "performanceMetrics": {
+        "domNodes": 244,
+        "scripts": 3,
+        "stylesheets": 2,
+        "images": 0,
+        "totalElements": 244,
+        "bodySize": 40619,
+        "navigationType": 0,
+        "redirectCount": 0
+      }
+    },
+    "overallStability": true
+  },
+  "summary": {
+    "testDate": "2025/8/11 下午8:55:04",
+    "successRate": "40.0%",
+    "passedTests": 8,
+    "totalTests": 20,
+    "overallStatus": "🔧 基本功能正常，部分需優化",
+    "adminSystemsDetected": 0,
+    "employeeCoreFeatures": 0,
+    "crudCapabilityScore": 0,
+    "systemStabilityScore": 75,
+    "gpsIssueResolved": true,
+    "testFlowSmooth": true,
+    "noHangingIssues": true
+  }
+}

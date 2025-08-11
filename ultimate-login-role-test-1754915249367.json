@@ -1,0 +1,26 @@
+{
+  "adminLoginTest": {
+    "loginSuccess": false,
+    "error": "No element found for selector: #idNumber"
+  },
+  "employeeLoginTest": {
+    "loginSuccess": false,
+    "error": "No element found for selector: #idNumber"
+  },
+  "functionalTest": {
+    "error": "No element found for selector: #idNumber",
+    "adminPageLoaded": false,
+    "adminSwitchButton": false
+  },
+  "summary": {
+    "testDate": "2025/8/11 下午8:27:29",
+    "successRate": "0.0%",
+    "passedTests": 0,
+    "totalTests": 10,
+    "overallStatus": "❌ 需要重大修復",
+    "adminSystemsCount": 0,
+    "employeeFeaturesCount": 0,
+    "adminLoginSuccess": false,
+    "employeeLoginSuccess": false
+  }
+}

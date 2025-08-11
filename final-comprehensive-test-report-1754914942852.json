@@ -1,0 +1,23 @@
+{
+  "adminTest": {
+    "error": "page.waitForTimeout is not a function"
+  },
+  "employeeTest": {
+    "error": "page.waitForTimeout is not a function"
+  },
+  "roleSwitch": {
+    "error": "page.waitForTimeout is not a function"
+  },
+  "crudOperations": {
+    "error": "page.waitForTimeout is not a function"
+  },
+  "summary": {
+    "testDate": "2025/8/11 下午8:22:22",
+    "successRate": "0.0%",
+    "passedTests": 0,
+    "totalTests": 8,
+    "overallStatus": "⚠️ 需要進一步優化",
+    "adminSystemsCount": 0,
+    "employeeFeaturesCount": 0
+  }
+}
