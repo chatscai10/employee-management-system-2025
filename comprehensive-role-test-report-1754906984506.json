@@ -1,0 +1,404 @@
+{
+  "testSummary": {
+    "executionTime": "2025-08-11T10:09:44.505Z",
+    "totalRoles": 3,
+    "totalTests": 0,
+    "passedTests": 0,
+    "failedTests": 0,
+    "successRate": 0
+  },
+  "roleResults": [
+    {
+      "role": "系統管理員",
+      "permissions": [
+        "all"
+      ],
+      "pages": [
+        {
+          "page": "admin",
+          "loginSuccess": true,
+          "systemsFound": 0,
+          "functionsExecuted": [],
+          "screenshots": [
+            "login-系統管理員-1754906912910.png"
+          ],
+          "errors": [
+            {
+              "error": "page.waitForTimeout is not a function",
+              "timestamp": "2025-08-11T10:08:37.140Z"
+            }
+          ]
+        },
+        {
+          "page": "admin-enhanced",
+          "loginSuccess": true,
+          "systemsFound": 0,
+          "functionsExecuted": [],
+          "screenshots": [
+            "login-系統管理員-1754906918851.png"
+          ],
+          "errors": [
+            {
+              "error": "page.waitForTimeout is not a function",
+              "timestamp": "2025-08-11T10:08:42.608Z"
+            }
+          ]
+        },
+        {
+          "page": "profile-enhanced",
+          "loginSuccess": true,
+          "systemsFound": 0,
+          "functionsExecuted": [],
+          "screenshots": [
+            "login-系統管理員-1754906924759.png"
+          ],
+          "errors": [
+            {
+              "error": "page.waitForTimeout is not a function",
+              "timestamp": "2025-08-11T10:08:48.729Z"
+            }
+          ]
+        },
+        {
+          "page": "employee",
+          "loginSuccess": true,
+          "systemsFound": 0,
+          "functionsExecuted": [],
+          "screenshots": [
+            "login-系統管理員-1754906930493.png"
+          ],
+          "errors": [
+            {
+              "error": "page.waitForTimeout is not a function",
+              "timestamp": "2025-08-11T10:08:54.186Z"
+            }
+          ]
+        }
+      ],
+      "systems": [],
+      "functions": [],
+      "totalFunctions": 0,
+      "passedFunctions": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "role": "店長",
+      "permissions": [
+        "management",
+        "staff"
+      ],
+      "pages": [
+        {
+          "page": "admin",
+          "loginSuccess": true,
+          "systemsFound": 0,
+          "functionsExecuted": [],
+          "screenshots": [
+            "login-店長-1754906946518.png"
+          ],
+          "errors": [
+            {
+              "error": "page.waitForTimeout is not a function",
+              "timestamp": "2025-08-11T10:09:10.260Z"
+            }
+          ]
+        },
+        {
+          "page": "profile-enhanced",
+          "loginSuccess": true,
+          "systemsFound": 0,
+          "functionsExecuted": [],
+          "screenshots": [
+            "login-店長-1754906952051.png"
+          ],
+          "errors": [
+            {
+              "error": "page.waitForTimeout is not a function",
+              "timestamp": "2025-08-11T10:09:15.983Z"
+            }
+          ]
+        },
+        {
+          "page": "employee",
+          "loginSuccess": true,
+          "systemsFound": 0,
+          "functionsExecuted": [],
+          "screenshots": [
+            "login-店長-1754906957686.png"
+          ],
+          "errors": [
+            {
+              "error": "page.waitForTimeout is not a function",
+              "timestamp": "2025-08-11T10:09:21.399Z"
+            }
+          ]
+        }
+      ],
+      "systems": [],
+      "functions": [],
+      "totalFunctions": 0,
+      "passedFunctions": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "role": "一般員工",
+      "permissions": [
+        "basic"
+      ],
+      "pages": [
+        {
+          "page": "profile-enhanced",
+          "loginSuccess": true,
+          "systemsFound": 0,
+          "functionsExecuted": [],
+          "screenshots": [
+            "login-一般員工-1754906973796.png"
+          ],
+          "errors": [
+            {
+              "error": "page.waitForTimeout is not a function",
+              "timestamp": "2025-08-11T10:09:37.560Z"
+            }
+          ]
+        },
+        {
+          "page": "employee",
+          "loginSuccess": true,
+          "systemsFound": 0,
+          "functionsExecuted": [],
+          "screenshots": [
+            "login-一般員工-1754906979287.png"
+          ],
+          "errors": [
+            {
+              "error": "page.waitForTimeout is not a function",
+              "timestamp": "2025-08-11T10:09:42.981Z"
+            }
+          ]
+        }
+      ],
+      "systems": [],
+      "functions": [],
+      "totalFunctions": 0,
+      "passedFunctions": 0,
+      "screenshots": [],
+      "errors": []
+    }
+  ],
+  "systemCoverage": {
+    "員工管理系統": {
+      "total": 4,
+      "tested": 0,
+      "percentage": 0
+    },
+    "庫存管理系統": {
+      "total": 3,
+      "tested": 0,
+      "percentage": 0
+    },
+    "營收管理系統": {
+      "total": 3,
+      "tested": 0,
+      "percentage": 0
+    },
+    "排班系統": {
+      "total": 3,
+      "tested": 0,
+      "percentage": 0
+    },
+    "升遷投票系統": {
+      "total": 3,
+      "tested": 0,
+      "percentage": 0
+    },
+    "分店管理系統": {
+      "total": 2,
+      "tested": 0,
+      "percentage": 0
+    },
+    "維修管理系統": {
+      "total": 3,
+      "tested": 0,
+      "percentage": 0
+    },
+    "系統設定": {
+      "total": 3,
+      "tested": 0,
+      "percentage": 0
+    }
+  },
+  "detailedFindings": [
+    {
+      "category": "權限控制分析",
+      "details": [
+        {
+          "role": "系統管理員",
+          "expectedSystems": 8,
+          "actualSystems": 0,
+          "accessibleSystems": [
+            "admin: 0個系統",
+            "admin-enhanced: 0個系統",
+            "profile-enhanced: 0個系統",
+            "employee: 0個系統"
+          ],
+          "permissionCheck": "通過"
+        },
+        {
+          "role": "店長",
+          "expectedSystems": 7,
+          "actualSystems": 0,
+          "accessibleSystems": [
+            "admin: 0個系統",
+            "profile-enhanced: 0個系統",
+            "employee: 0個系統"
+          ],
+          "permissionCheck": "通過"
+        },
+        {
+          "role": "一般員工",
+          "expectedSystems": 4,
+          "actualSystems": 0,
+          "accessibleSystems": [
+            "profile-enhanced: 0個系統",
+            "employee: 0個系統"
+          ],
+          "permissionCheck": "通過"
+        }
+      ]
+    },
+    {
+      "category": "功能可用性分析",
+      "details": [
+        {
+          "system": "員工管理系統",
+          "totalFunctions": 4,
+          "availableInRoles": [],
+          "issuesFound": []
+        },
+        {
+          "system": "庫存管理系統",
+          "totalFunctions": 3,
+          "availableInRoles": [],
+          "issuesFound": []
+        },
+        {
+          "system": "營收管理系統",
+          "totalFunctions": 3,
+          "availableInRoles": [],
+          "issuesFound": []
+        },
+        {
+          "system": "排班系統",
+          "totalFunctions": 3,
+          "availableInRoles": [],
+          "issuesFound": []
+        },
+        {
+          "system": "升遷投票系統",
+          "totalFunctions": 3,
+          "availableInRoles": [],
+          "issuesFound": []
+        },
+        {
+          "system": "分店管理系統",
+          "totalFunctions": 2,
+          "availableInRoles": [],
+          "issuesFound": []
+        },
+        {
+          "system": "維修管理系統",
+          "totalFunctions": 3,
+          "availableInRoles": [],
+          "issuesFound": []
+        },
+        {
+          "system": "系統設定",
+          "totalFunctions": 3,
+          "availableInRoles": [],
+          "issuesFound": []
+        }
+      ]
+    },
+    {
+      "category": "用戶體驗分析",
+      "details": [
+        {
+          "role": "系統管理員",
+          "loginSuccess": true,
+          "pageLoadSuccess": true,
+          "functionalityScore": 0,
+          "issuesEncountered": 0,
+          "overallExperience": "需要改進"
+        },
+        {
+          "role": "店長",
+          "loginSuccess": true,
+          "pageLoadSuccess": true,
+          "functionalityScore": 0,
+          "issuesEncountered": 0,
+          "overallExperience": "需要改進"
+        },
+        {
+          "role": "一般員工",
+          "loginSuccess": true,
+          "pageLoadSuccess": true,
+          "functionalityScore": 0,
+          "issuesEncountered": 0,
+          "overallExperience": "需要改進"
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "medium",
+      "category": "功能完整性",
+      "issue": "員工管理系統 功能覆蓋率低於50%",
+      "recommendation": "完善 員工管理系統 的功能實現和測試覆蓋"
+    },
+    {
+      "priority": "medium",
+      "category": "功能完整性",
+      "issue": "庫存管理系統 功能覆蓋率低於50%",
+      "recommendation": "完善 庫存管理系統 的功能實現和測試覆蓋"
+    },
+    {
+      "priority": "medium",
+      "category": "功能完整性",
+      "issue": "營收管理系統 功能覆蓋率低於50%",
+      "recommendation": "完善 營收管理系統 的功能實現和測試覆蓋"
+    },
+    {
+      "priority": "medium",
+      "category": "功能完整性",
+      "issue": "排班系統 功能覆蓋率低於50%",
+      "recommendation": "完善 排班系統 的功能實現和測試覆蓋"
+    },
+    {
+      "priority": "medium",
+      "category": "功能完整性",
+      "issue": "升遷投票系統 功能覆蓋率低於50%",
+      "recommendation": "完善 升遷投票系統 的功能實現和測試覆蓋"
+    },
+    {
+      "priority": "medium",
+      "category": "功能完整性",
+      "issue": "分店管理系統 功能覆蓋率低於50%",
+      "recommendation": "完善 分店管理系統 的功能實現和測試覆蓋"
+    },
+    {
+      "priority": "medium",
+      "category": "功能完整性",
+      "issue": "維修管理系統 功能覆蓋率低於50%",
+      "recommendation": "完善 維修管理系統 的功能實現和測試覆蓋"
+    },
+    {
+      "priority": "medium",
+      "category": "功能完整性",
+      "issue": "系統設定 功能覆蓋率低於50%",
+      "recommendation": "完善 系統設定 的功能實現和測試覆蓋"
+    }
+  ]
+}
