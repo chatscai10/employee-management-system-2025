@@ -559,7 +559,7 @@
         // 載入員工資料
         async function loadEmployeeProfile() {
             try {
-                const token = localStorage.getItem('authToken');
+                const token = localStorage.getItem('token');
                 if (!token) {
                     window.location.href = '/login';
                     return;
@@ -613,7 +613,7 @@
                 const employeeId = currentEmployee?.employeeId || 'EMP001';
                 const response = await fetch(`/api/attendance/records?employeeId=${employeeId}&limit=10`, {
                     headers: {
-                        'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
                         'Content-Type': 'application/json'
                     }
                 });
@@ -828,7 +828,7 @@
                 const response = await fetch('/api/attendance/clock', {
                     method: 'POST',
                     headers: {
-                        'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(clockData)
@@ -961,7 +961,7 @@
                 const response = await fetch('/api/admin/auth/profile', {
                     method: 'PUT',
                     headers: {
-                        'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(updateData)
