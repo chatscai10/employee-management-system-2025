@@ -96,10 +96,12 @@ const pages = [
     { path: '/register', file: 'register.html' },
     { path: '/employee', file: 'employee.html' },
     { path: '/admin', file: 'admin.html' },
+    { path: '/admin-enhanced', file: 'admin-enhanced.html' },
     { path: '/dashboard', file: 'employee-dashboard.html' },
     { path: '/attendance', file: 'attendance.html' },
     { path: '/revenue', file: 'revenue.html' },
     { path: '/profile', file: 'profile.html' },
+    { path: '/profile-enhanced', file: 'profile-enhanced.html' },
     { path: '/reports', file: 'reports.html' },
     { path: '/schedule', file: 'schedule.html' }
 ];
@@ -327,36 +329,145 @@ app.post('/api/admin/auth/register', (req, res) => {
     });
 });
 
-// 員工個人資料API
-app.get('/api/admin/auth/profile', (req, res) => {
-    const authHeader = req.headers.authorization;
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(401).json({
+// 員工個人資料API - 使用持久化資料庫
+app.get('/api/admin/auth/profile', async (req, res) => {
+    try {
+        const authHeader = req.headers.authorization;
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            return res.status(401).json({
+                success: false,
+                message: '需要登入',
+                code: 'AUTH_REQUIRED'
+            });
+        }
+        
+        const token = authHeader.substring(7);
+        if (token.startsWith('admin-token-') || token.startsWith('render-full-token-')) {
+            
+            // 從token中提取用戶資訊，或使用預設ID
+            let employeeId = 1; // 預設使用管理員ID
+            
+            // 嘗試從資料庫獲取員工資料
+            const employee = await dbSystem.getEmployeeProfile(employeeId);
+            
+            if (employee) {
+                res.json({
+                    success: true,
+                    message: '個人資料獲取成功',
+                    data: {
+                        employeeId: employee.id,
+                        name: employee.name,
+                        currentStore: employee.currentStore || '台北總店',
+                        position: employee.position,
+                        department: employee.department || '管理部',
+                        hireDate: employee.hireDate,
+                        phone: employee.phone,
+                        email: employee.email,
+                        address: employee.address,
+                        emergencyContact: employee.emergencyContact,
+                        emergencyPhone: employee.emergencyPhone,
+                        status: employee.status
+                    },
+                    persistent: true
+                });
+            } else {
+                // 如果資料庫中沒有資料，創建預設資料
+                const defaultEmployee = {
+                    name: '系統管理員',
+                    idNumber: 'A123456789',
+                    position: '管理員',
+                    status: 'active',
+                    phone: '0912-345-678',
+                    email: 'admin@company.com',
+                    address: '台北市信義區松高路1號',
+                    hireDate: '2024-01-01',
+                    emergencyContact: '張父親',
+                    emergencyPhone: '0987-654-321',
+                    department: '管理部',
+                    currentStore: '台北總店'
+                };
+                
+                const createdEmployee = await dbSystem.insert('employees', defaultEmployee);
+                
+                res.json({
+                    success: true,
+                    message: '個人資料獲取成功',
+                    data: {
+                        employeeId: createdEmployee.id,
+                        name: createdEmployee.name,
+                        currentStore: createdEmployee.currentStore,
+                        position: createdEmployee.position,
+                        department: createdEmployee.department,
+                        hireDate: createdEmployee.hireDate,
+                        phone: createdEmployee.phone,
+                        email: createdEmployee.email,
+                        address: createdEmployee.address,
+                        emergencyContact: createdEmployee.emergencyContact,
+                        emergencyPhone: createdEmployee.emergencyPhone,
+                        status: createdEmployee.status
+                    },
+                    persistent: true
+                });
+            }
+        } else {
+            res.status(401).json({
+                success: false,
+                message: '無效的Token',
+                code: 'INVALID_TOKEN'
+            });
+        }
+    } catch (error) {
+        console.error('獲取個人資料失敗:', error);
+        res.status(500).json({
             success: false,
-            message: '需要登入',
-            code: 'AUTH_REQUIRED'
+            message: '獲取個人資料失敗',
+            error: error.message
         });
     }
-    
-    const token = authHeader.substring(7);
-    if (token.startsWith('admin-token-') || token.startsWith('render-full-token-')) {
+});
+
+// 更新個人資料API
+app.put('/api/admin/auth/profile', async (req, res) => {
+    try {
+        const authHeader = req.headers.authorization;
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            return res.status(401).json({
+                success: false,
+                message: '需要登入',
+                code: 'AUTH_REQUIRED'
+            });
+        }
+        
+        const token = authHeader.substring(7);
+        if (!token.startsWith('admin-token-') && !token.startsWith('render-full-token-')) {
+            return res.status(401).json({
+                success: false,
+                message: '無效的Token',
+                code: 'INVALID_TOKEN'
+            });
+        }
+        
+        // 更新員工資料
+        const employeeId = 1; // 預設管理員ID
+        const updateData = req.body;
+        
+        const updatedEmployee = await dbSystem.updateEmployeeProfile(employeeId, updateData);
+        
+        console.log(`👤 員工資料更新成功: ${updatedEmployee.name}`);
+        
         res.json({
             success: true,
-            message: '個人資料獲取成功',
-            data: {
-                name: '系統用戶',
-                currentStore: '台北總店',
-                position: '員工',
-                hireDate: '2024-01-01',
-                phone: '0912345678',
-                email: 'user@company.com'
-            }
+            message: '個人資料更新成功',
+            data: updatedEmployee,
+            persistent: true
         });
-    } else {
-        res.status(401).json({
+        
+    } catch (error) {
+        console.error('更新個人資料失敗:', error);
+        res.status(500).json({
             success: false,
-            message: '無效的Token',
-            code: 'INVALID_TOKEN'
+            message: '更新個人資料失敗',
+            error: error.message
         });
     }
 });
@@ -489,66 +600,104 @@ app.get('/api/employees', (req, res) => {
     });
 });
 
-// 考勤API
-app.get('/api/attendance/records', (req, res) => {
-    const { employeeId, limit = 10 } = req.query;
-    
-    res.json({
-        success: true,
-        message: 'Render完整版考勤API正常',
-        data: [
-            {
-                id: 1,
-                employeeId: employeeId || 1,
-                employeeName: 'Render員工',
-                clockTime: new Date().toISOString(),
-                clockType: '上班',
-                location: '台北店',
-                coordinates: '25.0330,121.5654',
-                status: '正常'
-            },
-            {
-                id: 2,
-                employeeId: employeeId || 1,
-                employeeName: 'Render員工',
-                clockTime: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
-                clockType: '午休',
-                location: '台北店',
-                coordinates: '25.0330,121.5654',
-                status: '正常'
-            }
-        ],
-        count: 2,
-        filter: { employeeId, limit },
-        timestamp: new Date().toISOString()
-    });
-});
-
-app.post('/api/attendance/clock', (req, res) => {
-    const { employeeId, location, coordinates } = req.body;
-    
-    if (!employeeId) {
-        return res.status(400).json({
+// 考勤API - 使用持久化資料庫
+app.get('/api/attendance/records', async (req, res) => {
+    try {
+        const { employeeId, limit = 10 } = req.query;
+        
+        let records;
+        if (employeeId) {
+            records = await dbSystem.getEmployeeAttendance(employeeId, parseInt(limit));
+        } else {
+            records = await dbSystem.select('attendance');
+            records.sort((a, b) => new Date(b.clockTime) - new Date(a.clockTime));
+            records = records.slice(0, parseInt(limit));
+        }
+        
+        console.log(`📊 查詢考勤記錄: 員工${employeeId || '全部'}, ${records.length}筆記錄`);
+        
+        res.json({
+            success: true,
+            message: '考勤記錄查詢成功',
+            data: records,
+            count: records.length,
+            filter: { employeeId, limit },
+            timestamp: new Date().toISOString(),
+            persistent: true // 標示這是持久化的數據
+        });
+        
+    } catch (error) {
+        console.error('考勤記錄查詢失敗:', error);
+        res.status(500).json({
             success: false,
-            error: '請提供員工編號',
-            code: 'EMPLOYEE_ID_REQUIRED'
+            message: '考勤記錄查詢失敗',
+            error: error.message,
+            timestamp: new Date().toISOString()
         });
     }
-    
-    res.json({
-        success: true,
-        message: 'Render打卡成功',
-        data: {
-            id: Date.now(),
-            employeeId,
+});
+
+app.post('/api/attendance/clock', async (req, res) => {
+    try {
+        const { employeeId, employeeName, clockType, location, coordinates, status, distance } = req.body;
+        
+        if (!employeeId) {
+            return res.status(400).json({
+                success: false,
+                error: '請提供員工編號',
+                code: 'EMPLOYEE_ID_REQUIRED'
+            });
+        }
+
+        if (!clockType) {
+            return res.status(400).json({
+                success: false,
+                error: '請提供打卡類型',
+                code: 'CLOCK_TYPE_REQUIRED'
+            });
+        }
+        
+        // 插入考勤記錄到持久化資料庫
+        const attendanceRecord = await dbSystem.insertAttendanceRecord({
+            employeeId: parseInt(employeeId),
+            employeeName: employeeName || `員工${employeeId}`,
             clockTime: new Date().toISOString(),
-            clockType: '上班',
-            location: location || '台北店',
+            clockType: clockType,
+            location: location || '台北總店',
             coordinates: coordinates || '25.0330,121.5654',
-            status: '已記錄'
-        },
-        timestamp: new Date().toISOString()
-    });
+            status: status || '正常',
+            distance: distance || '15公尺'
+        });
+        
+        console.log(`⏰ ${employeeName || employeeId} ${clockType}打卡成功 - 已持久化保存`);
+        
+        // 發送Telegram通知
+        try {
+            await sendTelegramNotification(
+                `⏰ 考勤打卡通知\\n👤 員工: ${employeeName || employeeId}\\n📅 類型: ${clockType}\\n📍 地點: ${location || '台北總店'}\\n✅ 狀態: ${status || '正常'}`,
+                'success'
+            );
+        } catch (telegramError) {
+            console.log('Telegram通知發送失敗:', telegramError.message);
+        }
+        
+        res.json({
+            success: true,
+            message: `${clockType}打卡成功`,
+            data: attendanceRecord,
+            persistent: true,
+            timestamp: new Date().toISOString()
+        });
+        
+    } catch (error) {
+        console.error('打卡失敗:', error);
+        res.status(500).json({
+            success: false,
+            error: '打卡操作失敗',
+            message: error.message,
+            timestamp: new Date().toISOString()
+        });
+    }
 });
 
 // 營收API
@@ -1050,6 +1199,37 @@ app.post('/api/work-assignments', (req, res) => {
 });
 
 // ========================= 🎯 增強版API系統整合 =========================
+
+// 引入持久化資料庫系統
+const dbSystem = require('./database-persistent-system');
+console.log('🗄️ 持久化資料庫系統已載入');
+
+// Telegram通知功能
+async function sendTelegramNotification(message, type = 'info') {
+    try {
+        const botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
+        const chatId = '-1002658082392';
+        
+        const icon = type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️';
+        const fullMessage = `${icon} ${message}\\n\\n⏰ ${new Date().toLocaleString('zh-TW')}`;
+        
+        const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: fullMessage,
+                parse_mode: 'HTML'
+            })
+        });
+        
+        if (response.ok) {
+            console.log('📱 Telegram通知發送成功');
+        }
+    } catch (error) {
+        console.log('📱 Telegram通知發送失敗:', error.message);
+    }
+}
 
 // 設置增強版API端點 - 提供admin-enhanced.html完整後端支援
 const { setupEnhancedAPIs } = require('./server-enhanced-apis');
