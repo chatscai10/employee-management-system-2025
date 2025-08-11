@@ -194,8 +194,8 @@
         
         <!-- 切換標籤 -->
         <div class="tabs">
-            <div class="tab active" onclick="switchTab('login')">登入</div>
-            <div class="tab" onclick="switchTab('register')">註冊</div>
+            <div class="tab active" onclick="switchTab('login', this)">登入</div>
+            <div class="tab" onclick="switchTab('register', this)">註冊</div>
         </div>
         
         <!-- 訊息顯示區 -->
@@ -324,10 +324,18 @@
 
     <script>
         // 切換標籤
-        function switchTab(tab) {
+        function switchTab(tab, targetElement = null) {
             // 更新標籤樣式
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            event.target.classList.add('active');
+            if (targetElement) {
+                targetElement.classList.add('active');
+            } else {
+                // 如果沒有指定目標，找到對應的標籤並激活
+                const tabElement = document.querySelector(`[onclick="switchTab('${tab}')"]`);
+                if (tabElement) {
+                    tabElement.classList.add('active');
+                }
+            }
             
             // 切換表單
             document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));

@@ -22,7 +22,7 @@ app.use(helmet({
             scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "'unsafe-hashes'", "https://cdn.jsdelivr.net", "https://employee-management-system-intermediate.onrender.com"],
             styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
             imgSrc: ["'self'", "data:", "https:", "blob:"],
-            connectSrc: ["'self'", "https://employee-management-system-intermediate.onrender.com"],
+            connectSrc: ["'self'", "https://employee-management-system-intermediate.onrender.com", "https://api.telegram.org"],
             fontSrc: ["'self'", "https://cdn.jsdelivr.net"],
             objectSrc: ["'none'"],
             mediaSrc: ["'self'"],
@@ -208,6 +208,7 @@ app.post('/api/admin/auth/login', (req, res) => {
                     position: user.position,
                     store: '台北總店',
                     storeLocation: '台北總店',
+                    currentStore: '台北總店',  // employee.html期望的格式
                     permissions: user.position === '管理員' ? 
                         ['all'] : ['attendance', 'revenue', 'profile']
                 }
@@ -262,6 +263,40 @@ app.post('/api/admin/auth/register', (req, res) => {
         },
         timestamp: new Date().toISOString()
     });
+});
+
+// 員工個人資料API
+app.get('/api/admin/auth/profile', (req, res) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({
+            success: false,
+            message: '需要登入',
+            code: 'AUTH_REQUIRED'
+        });
+    }
+    
+    const token = authHeader.substring(7);
+    if (token.startsWith('admin-token-') || token.startsWith('render-full-token-')) {
+        res.json({
+            success: true,
+            message: '個人資料獲取成功',
+            data: {
+                name: '系統用戶',
+                currentStore: '台北總店',
+                position: '員工',
+                hireDate: '2024-01-01',
+                phone: '0912345678',
+                email: 'user@company.com'
+            }
+        });
+    } else {
+        res.status(401).json({
+            success: false,
+            message: '無效的Token',
+            code: 'INVALID_TOKEN'
+        });
+    }
 });
 
 // Token驗證API
