@@ -264,8 +264,8 @@
             
             <div class="form-row">
                 <div class="form-col">
-                    <label for="birthday">出生日期 <span class="required">*</span></label>
-                    <input type="date" id="birthday" name="birthday" required>
+                    <label for="birthDate">出生日期 <span class="required">*</span></label>
+                    <input type="date" id="birthDate" name="birthDate" required>
                 </div>
                 <div class="form-col">
                     <label for="gender">性別 <span class="required">*</span></label>
@@ -278,8 +278,8 @@
             </div>
             
             <div class="form-group">
-                <label for="hasLicense">持有駕照 <span class="required">*</span></label>
-                <select id="hasLicense" name="hasLicense" required>
+                <label for="hasDriverLicense">持有駕照 <span class="required">*</span></label>
+                <select id="hasDriverLicense" name="hasDriverLicense" required>
                     <option value="">請選擇</option>
                     <option value="true">有</option>
                     <option value="false">無</option>
@@ -302,12 +302,12 @@
             <!-- 緊急聯絡人 -->
             <div class="form-row">
                 <div class="form-col">
-                    <label for="emergencyContact">緊急聯絡人 <span class="required">*</span></label>
-                    <input type="text" id="emergencyContact" name="emergencyContact" required>
+                    <label for="emergencyContactName">緊急聯絡人 <span class="required">*</span></label>
+                    <input type="text" id="emergencyContactName" name="emergencyContactName" required>
                 </div>
                 <div class="form-col">
-                    <label for="relationship">關係 <span class="required">*</span></label>
-                    <select id="relationship" name="relationship" required>
+                    <label for="emergencyContactRelation">關係 <span class="required">*</span></label>
+                    <select id="emergencyContactRelation" name="emergencyContactRelation" required>
                         <option value="">請選擇</option>
                         <option value="父親">父親</option>
                         <option value="母親">母親</option>
@@ -321,15 +321,15 @@
             </div>
             
             <div class="form-group">
-                <label for="emergencyPhone">緊急聯絡人電話 <span class="required">*</span></label>
-                <input type="tel" id="emergencyPhone" name="emergencyPhone" 
+                <label for="emergencyContactPhone">緊急聯絡人電話 <span class="required">*</span></label>
+                <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" 
                        pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" 
                        placeholder="0912-345-678" required>
             </div>
             
             <div class="form-group">
-                <label for="startDate">到職日 <span class="required">*</span></label>
-                <input type="date" id="startDate" name="startDate" required>
+                <label for="hireDate">到職日 <span class="required">*</span></label>
+                <input type="date" id="hireDate" name="hireDate" required>
             </div>
             
             <button type="submit" class="btn" id="register-btn">
@@ -346,7 +346,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // 設定到職日預設為今天
             const today = new Date().toISOString().split('T')[0];
-            document.getElementById('startDate').value = today;
+            document.getElementById('hireDate').value = today;
         });
 
         function showError(message) {
@@ -383,7 +383,7 @@
             document.getElementById('register-form').reset();
             // 重新設定預設值
             const today = new Date().toISOString().split('T')[0];
-            document.getElementById('startDate').value = today;
+            document.getElementById('hireDate').value = today;
         }
 
         async function handleRegister(event) {
@@ -396,22 +396,18 @@
                 const data = {
                     name: formData.get('name'),
                     idNumber: formData.get('idNumber'),
-                    birthday: formData.get('birthday'),
+                    birthDate: formData.get('birthDate'),
                     gender: formData.get('gender'),
-                    hasLicense: formData.get('hasLicense') === 'true',
+                    hasDriverLicense: formData.get('hasDriverLicense') === 'true',
                     phone: formData.get('phone'),
                     address: formData.get('address'),
-                    emergencyContact: formData.get('emergencyContact'),
-                    relationship: formData.get('relationship'),
-                    emergencyPhone: formData.get('emergencyPhone'),
-                    startDate: formData.get('startDate'),
-                    // 系統自動設定的欄位
-                    storeId: 1, // 預設內壢忠孝店
-                    position: '實習生', // 預設職位
-                    status: '審核中' // 預設狀態
+                    emergencyContactName: formData.get('emergencyContactName'),
+                    emergencyContactRelation: formData.get('emergencyContactRelation'),
+                    emergencyContactPhone: formData.get('emergencyContactPhone'),
+                    hireDate: formData.get('hireDate')
                 };
 
-                const response = await fetch('/api/auth/register', {
+                const response = await fetch('/api/admin/auth/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -465,7 +461,7 @@
         }
 
         formatPhone(document.getElementById('phone'));
-        formatPhone(document.getElementById('emergencyPhone'));
+        formatPhone(document.getElementById('emergencyContactPhone'));
     </script>
 </body>
 </html>

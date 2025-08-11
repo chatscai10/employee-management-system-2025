@@ -1,0 +1,123 @@
+{
+  "timestamp": "2025-08-11T04:29:47.528Z",
+  "verification_summary": {
+    "total_tests": 13,
+    "successful": 4,
+    "warnings": 2,
+    "errors": 1,
+    "critical_errors": 0
+  },
+  "detailed_results": [
+    {
+      "type": "http_error",
+      "status": 404,
+      "url": "https://employee-management-system-intermediate.onrender.com/favicon.ico",
+      "timestamp": "2025-08-11T04:29:43.055Z"
+    },
+    {
+      "type": "console_error",
+      "message": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-11T04:29:43.056Z"
+    },
+    {
+      "type": "success",
+      "message": "✅ 首頁載入成功",
+      "details": {
+        "title": "員工工作台 - 企業員工管理系統",
+        "navLinks": [
+          {
+            "text": "員工管理系統",
+            "href": "https://employee-management-system-intermediate.onrender.com/index.html"
+          },
+          {
+            "text": "個人資料",
+            "href": "https://employee-management-system-intermediate.onrender.com/profile.html"
+          },
+          {
+            "text": "考勤打卡",
+            "href": "https://employee-management-system-intermediate.onrender.com/attendance.html"
+          },
+          {
+            "text": "登出",
+            "href": "https://employee-management-system-intermediate.onrender.com/#"
+          }
+        ]
+      }
+    },
+    {
+      "type": "error",
+      "stage": "login",
+      "message": "No element found for selector: #username"
+    },
+    {
+      "type": "success",
+      "api": "/api/admin/employees",
+      "status": 200
+    },
+    {
+      "type": "success",
+      "api": "/api/attendance/records",
+      "status": 200
+    },
+    {
+      "type": "success",
+      "api": "/api/revenue",
+      "status": 200
+    },
+    {
+      "type": "http_error",
+      "status": 404,
+      "url": "https://employee-management-system-intermediate.onrender.com/api/schedule/statistics/2025/8",
+      "timestamp": "2025-08-11T04:29:47.351Z"
+    },
+    {
+      "type": "console_error",
+      "message": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-11T04:29:47.352Z"
+    },
+    {
+      "type": "warning",
+      "api": "/api/schedule/statistics/2025/8",
+      "status": 404,
+      "expected": [
+        200,
+        401
+      ]
+    },
+    {
+      "type": "http_error",
+      "status": 404,
+      "url": "https://employee-management-system-intermediate.onrender.com/api/promotion/campaigns/active",
+      "timestamp": "2025-08-11T04:29:47.528Z"
+    },
+    {
+      "type": "console_error",
+      "message": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-11T04:29:47.528Z"
+    },
+    {
+      "type": "warning",
+      "api": "/api/promotion/campaigns/active",
+      "status": 404,
+      "expected": [
+        200,
+        401
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "homepage",
+      "filepath": "D:\\0809\\verification-screenshots\\screenshot-homepage-1754886583360.png"
+    },
+    {
+      "name": "registration-page",
+      "filepath": "D:\\0809\\verification-screenshots\\screenshot-registration-page-1754886584922.png"
+    },
+    {
+      "name": "login-page",
+      "filepath": "D:\\0809\\verification-screenshots\\screenshot-login-page-1754886586155.png"
+    }
+  ],
+  "conclusion": "✅ 系統基本正常，但有部分功能需要完善"
+}

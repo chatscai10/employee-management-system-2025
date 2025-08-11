@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="zh-TW"><head>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>員工工作台 - 企業員工管理系統</title>
@@ -69,27 +71,9 @@
                         <h5>近期考勤記錄</h5>
                     </div>
                     <div class="card-body">
-                        <div id="attendanceRecords"><div class="table-responsive"><table class="table table-striped"><thead><tr><th>時間</th><th>類型</th><th>地點</th><th>狀態</th></tr></thead><tbody><tr>
-                <td>上午11:57:38</td>
-                <td><span class="badge bg-info">上班</span></td>
-                <td>25.038400, 121.563700</td>
-                <td><span class="badge bg-success">已記錄</span></td>
-            </tr><tr>
-                <td>08:30</td>
-                <td><span class="badge bg-primary">上班</span></td>
-                <td>台北店</td>
-                <td><span class="badge bg-success">正常</span></td>
-            </tr><tr>
-                <td>12:00</td>
-                <td><span class="badge bg-primary">午休</span></td>
-                <td>台北店</td>
-                <td><span class="badge bg-success">正常</span></td>
-            </tr><tr>
-                <td>13:00</td>
-                <td><span class="badge bg-primary">上班</span></td>
-                <td>台北店</td>
-                <td><span class="badge bg-success">正常</span></td>
-            </tr></tbody></table></div></div>
+                        <div id="attendanceRecords">
+                            <p class="text-muted">載入中...</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -109,11 +93,62 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
-
-<div class="alert alert-danger alert-dismissible fade show position-fixed" style="top: 20px; right: 20px; z-index: 9999; min-width: 300px;">
-        請輸入有效的金額
-        <button type="button" class="btn-close" onclick="this.parentElement.remove()"></button>
-    </div><div class="alert alert-success alert-dismissible fade show position-fixed" style="top: 20px; right: 20px; z-index: 9999; min-width: 300px;">
-        上班打卡成功！時間: 上午11:57:38
-        <button type="button" class="btn-close" onclick="this.parentElement.remove()"></button>
-    </div></body></html>
+    
+    <script>
+        // 登入驗證和頁面初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthAndInitialize();
+        });
+        
+        function checkAuthAndInitialize() {
+            const token = localStorage.getItem('token');
+            const employee = localStorage.getItem('employee');
+            
+            if (!token || !employee) {
+                window.location.href = '/login';
+                return;
+            }
+            
+            try {
+                const employeeData = JSON.parse(employee);
+                
+                // 更新導航欄用戶信息
+                const navbar = document.querySelector('.navbar-brand');
+                if (navbar && employeeData.name) {
+                    navbar.textContent = `員工管理系統 - ${employeeData.name}`;
+                }
+                
+                // 更新頁面標題  
+                const pageTitle = document.querySelector('h2');
+                if (pageTitle && employeeData.name) {
+                    pageTitle.textContent = `${employeeData.name} 的工作台`;
+                }
+                
+                console.log('✅ 員工頁面初始化完成:', employeeData);
+            } catch (error) {
+                console.error('❌ 用戶資料解析失敗:', error);
+                localStorage.removeItem('token');
+                localStorage.removeItem('employee');
+                window.location.href = '/login';
+            }
+        }
+        
+        // 登出功能
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('employee');
+            
+            // 發送登出通知
+            if (window.EmployeeManagement && window.EmployeeManagement.sendFlightNotification) {
+                window.EmployeeManagement.sendFlightNotification('SYSTEM_ACTION', {
+                    user: '員工',
+                    action: '登出系統',
+                    time: new Date().toLocaleString('zh-TW')
+                });
+            }
+            
+            window.location.href = '/login';
+        }
+    </script>
+</body>
+</html>
