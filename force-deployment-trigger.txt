@@ -1,0 +1,4 @@
+Force deployment trigger - 強制觸發Railway重新部署
+Timestamp: 2025-08-11 18:45:00
+Problem: Railway serving wrong version of files
+Solution: Trigger new deployment with this dummy file
