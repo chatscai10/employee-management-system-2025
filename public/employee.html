@@ -703,10 +703,23 @@
         
         // 頁面初始化
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 員工頁面初始化開始...');
+            
+            // 確保所有必要元素都已載入
+            if (!document.querySelector('.content-area')) {
+                console.error('❌ 主要內容區域未找到');
+                return;
+            }
+            
             checkAuthAndInitialize();
             initializeCharts();
             setupEventListeners();
             getLocation();
+            
+            // 確保dashboard模組顯示
+            ensureDashboardVisible();
+            
+            console.log('✅ 員工頁面初始化完成');
         });
 
         // 認證檢查與初始化
@@ -838,24 +851,63 @@
 
         // 設置事件監聽
         function setupEventListeners() {
+            console.log('🔧 設置事件監聽器...');
+            
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+            
+            console.log(`找到導航連結: ${navLinks.length}個`);
+            console.log(`找到內容區塊: ${sections.length}個`);
+            
             // 導航切換
-            document.querySelectorAll('.nav-link').forEach(link => {
+            navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
+                    console.log(`🎯 切換到模組: ${this.dataset.section}`);
                     
                     // 更新導航狀態
-                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    navLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                     
                     // 切換內容區域
                     const sectionId = this.dataset.section;
-                    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-                    document.getElementById(sectionId).classList.add('active');
+                    sections.forEach(s => {
+                        s.classList.remove('active');
+                        console.log(`隱藏模組: ${s.id}`);
+                    });
+                    
+                    const targetSection = document.getElementById(sectionId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                        console.log(`✅ 顯示模組: ${sectionId}`);
+                    } else {
+                        console.error(`❌ 找不到目標模組: ${sectionId}`);
+                    }
                     
                     // 載入對應資料
                     loadSectionData(sectionId);
                 });
             });
+            
+            console.log('✅ 事件監聽器設置完成');
+        }
+        
+        // 確保dashboard模組可見
+        function ensureDashboardVisible() {
+            console.log('🎯 確保dashboard模組可見...');
+            
+            const dashboardSection = document.getElementById('dashboard');
+            if (dashboardSection && !dashboardSection.classList.contains('active')) {
+                dashboardSection.classList.add('active');
+                console.log('✅ dashboard模組已設為可見');
+            }
+            
+            // 確保導航狀態正確
+            const dashboardNav = document.querySelector('[data-section="dashboard"]');
+            if (dashboardNav && !dashboardNav.classList.contains('active')) {
+                dashboardNav.classList.add('active');
+                console.log('✅ dashboard導航已激活');
+            }
         }
 
         // 載入區段資料

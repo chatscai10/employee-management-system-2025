@@ -433,8 +433,33 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="inventory-management">
+                            📦 庫存管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="revenue-management">
+                            💰 營收管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="schedule-management">
+                            📅 排班系統
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="promotion-management">
+                            🗳️ 升遷投票
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#" class="nav-link" data-section="store-management">
                             🏪 分店管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="maintenance-management">
+                            🔧 維修管理
                         </a>
                     </li>
                     <li class="nav-item">
@@ -487,18 +512,322 @@
                     </div>
                 </div>
 
+                <!-- 庫存管理 -->
+                <div id="inventory-management" class="section">
+                    <h2>📦 庫存管理</h2>
+                    
+                    <div class="filter-bar">
+                        <select id="inventory-category-filter">
+                            <option value="">所有分類</option>
+                            <option value="食材">食材</option>
+                            <option value="用品">用品</option>
+                            <option value="設備">設備</option>
+                        </select>
+                        
+                        <select id="inventory-status-filter">
+                            <option value="">所有狀態</option>
+                            <option value="正常">正常</option>
+                            <option value="低庫存">低庫存</option>
+                            <option value="缺貨">缺貨</option>
+                        </select>
+                        
+                        <button class="btn btn-primary" onclick="loadInventory()">
+                            🔍 查詢庫存
+                        </button>
+                        
+                        <button class="btn btn-success" onclick="addInventoryItem()">
+                            ➕ 新增商品
+                        </button>
+                        
+                        <button class="btn btn-secondary" onclick="generateInventoryReport()">
+                            📊 庫存報表
+                        </button>
+                    </div>
+                    
+                    <div id="inventory-table-container">
+                        <div class="loading">載入庫存資料中...</div>
+                    </div>
+                </div>
+
+                <!-- 營收管理 -->
+                <div id="revenue-management" class="section">
+                    <h2>💰 營收管理</h2>
+                    
+                    <div class="filter-bar">
+                        <input type="date" id="revenue-start-date" placeholder="開始日期">
+                        <input type="date" id="revenue-end-date" placeholder="結束日期">
+                        
+                        <select id="revenue-store-filter">
+                            <option value="">所有分店</option>
+                        </select>
+                        
+                        <button class="btn btn-primary" onclick="loadRevenue()">
+                            🔍 查詢營收
+                        </button>
+                        
+                        <button class="btn btn-success" onclick="addRevenueRecord()">
+                            ➕ 新增記錄
+                        </button>
+                        
+                        <button class="btn btn-secondary" onclick="exportRevenueData()">
+                            📊 匯出數據
+                        </button>
+                    </div>
+                    
+                    <div class="stats-grid" style="margin-bottom: 2rem;">
+                        <div class="stat-card">
+                            <div class="stat-number" id="total-revenue">-</div>
+                            <div class="stat-label">總營收</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="monthly-revenue">-</div>
+                            <div class="stat-label">本月營收</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="daily-average">-</div>
+                            <div class="stat-label">日均營收</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="growth-rate">-</div>
+                            <div class="stat-label">成長率</div>
+                        </div>
+                    </div>
+                    
+                    <div id="revenue-chart-container">
+                        <canvas id="revenue-chart" width="400" height="200"></canvas>
+                    </div>
+                    
+                    <div id="revenue-table-container">
+                        <div class="loading">載入營收資料中...</div>
+                    </div>
+                </div>
+
+                <!-- 排班系統 -->
+                <div id="schedule-management" class="section">
+                    <h2>📅 排班系統管理</h2>
+                    
+                    <div class="filter-bar">
+                        <input type="date" id="schedule-date" placeholder="排班日期">
+                        
+                        <select id="schedule-store-filter">
+                            <option value="">所有分店</option>
+                        </select>
+                        
+                        <button class="btn btn-primary" onclick="loadSchedules()">
+                            🔍 查看排班
+                        </button>
+                        
+                        <button class="btn btn-success" onclick="createSchedule()">
+                            ➕ 建立排班
+                        </button>
+                        
+                        <button class="btn btn-secondary" onclick="autoGenerateSchedule()">
+                            🤖 智慧排班
+                        </button>
+                    </div>
+                    
+                    <div id="schedule-rules-info" style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; border-left: 4px solid #3b82f6;">
+                        <h4>📋 智慧排班6重規則引擎</h4>
+                        <ul style="margin: 0; padding-left: 1.5rem;">
+                            <li>✅ 基本時段檢查 - 時間邏輯驗證</li>
+                            <li>✅ 員工可用性檢查 - 請假狀態檢查</li>
+                            <li>✅ 最低人力要求 - 每時段人力配置</li>
+                            <li>✅ 連續工作限制 - 防止過度勞累</li>
+                            <li>✅ 公平性分配 - 工時均衡算法</li>
+                            <li>✅ 特殊需求處理 - 調班請假處理</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="schedule-calendar-container">
+                        <div class="loading">載入排班表中...</div>
+                    </div>
+                </div>
+
+                <!-- 升遷投票管理 -->
+                <div id="promotion-management" class="section">
+                    <h2>🗳️ 升遷投票管理</h2>
+                    
+                    <div class="filter-bar">
+                        <select id="promotion-status-filter">
+                            <option value="">所有狀態</option>
+                            <option value="進行中">進行中</option>
+                            <option value="已結束">已結束</option>
+                            <option value="待開始">待開始</option>
+                        </select>
+                        
+                        <button class="btn btn-primary" onclick="loadPromotionCampaigns()">
+                            🔍 查看投票活動
+                        </button>
+                        
+                        <button class="btn btn-success" onclick="createPromotionCampaign()">
+                            ➕ 建立投票
+                        </button>
+                        
+                        <button class="btn btn-secondary" onclick="viewVotingStatistics()">
+                            📊 投票統計
+                        </button>
+                    </div>
+                    
+                    <div id="promotion-encryption-info" style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; border-left: 4px solid #10b981;">
+                        <h4>🔒 匿名投票安全機制</h4>
+                        <ul style="margin: 0; padding-left: 1.5rem;">
+                            <li>🛡️ SHA-256 投票加密</li>
+                            <li>🎭 候選人匿名化 (CANDIDATE_X_001格式)</li>
+                            <li>📝 投票修改機制 (3次修改機會)</li>
+                            <li>⚡ 自動投票觸發 (新人轉正/降職懲罰)</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="promotion-campaigns-container">
+                        <div class="loading">載入投票活動中...</div>
+                    </div>
+                </div>
+
                 <!-- 分店管理 -->
                 <div id="store-management" class="section">
-                    <h2>分店管理</h2>
+                    <h2>🏪 分店管理</h2>
+                    
+                    <div class="filter-bar">
+                        <select id="store-status-filter">
+                            <option value="">所有狀態</option>
+                            <option value="營業中">營業中</option>
+                            <option value="暫停營業">暫停營業</option>
+                            <option value="裝修中">裝修中</option>
+                        </select>
+                        
+                        <button class="btn btn-primary" onclick="loadStoresDetailed()">
+                            🔍 查看分店
+                        </button>
+                        
+                        <button class="btn btn-success" onclick="addStore()">
+                            ➕ 新增分店
+                        </button>
+                        
+                        <button class="btn btn-secondary" onclick="generateStoreReport()">
+                            📊 分店報表
+                        </button>
+                    </div>
+                    
                     <div id="store-content">
                         <div class="loading">載入分店資料中...</div>
                     </div>
                 </div>
 
+                <!-- 維修管理 -->
+                <div id="maintenance-management" class="section">
+                    <h2>🔧 維修管理</h2>
+                    
+                    <div class="filter-bar">
+                        <select id="maintenance-status-filter">
+                            <option value="">所有狀態</option>
+                            <option value="待處理">待處理</option>
+                            <option value="處理中">處理中</option>
+                            <option value="已完成">已完成</option>
+                        </select>
+                        
+                        <select id="maintenance-priority-filter">
+                            <option value="">所有優先級</option>
+                            <option value="緊急">緊急</option>
+                            <option value="高">高</option>
+                            <option value="中">中</option>
+                            <option value="低">低</option>
+                        </select>
+                        
+                        <button class="btn btn-primary" onclick="loadMaintenanceRequests()">
+                            🔍 查看維修
+                        </button>
+                        
+                        <button class="btn btn-success" onclick="assignMaintenance()">
+                            👷 指派維修
+                        </button>
+                    </div>
+                    
+                    <div id="maintenance-table-container">
+                        <div class="loading">載入維修資料中...</div>
+                    </div>
+                </div>
+
                 <!-- 系統設定 -->
                 <div id="system-settings" class="section">
-                    <h2>系統設定</h2>
-                    <div>系統設定功能開發中...</div>
+                    <h2>⚙️ 系統設定</h2>
+                    
+                    <div class="settings-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem;">
+                        
+                        <!-- Telegram設定 -->
+                        <div class="stat-card">
+                            <h4>📱 Telegram通知設定</h4>
+                            <div style="text-align: left; margin-top: 1rem;">
+                                <label>Bot Token:</label>
+                                <input type="text" id="telegram-bot-token" class="form-control" style="margin: 0.5rem 0; padding: 0.5rem; width: 100%; border: 1px solid rgba(75, 85, 99, 0.5); border-radius: 0.375rem; background: rgba(17, 24, 39, 0.5); color: #f9fafb;" placeholder="Telegram Bot Token">
+                                
+                                <label>群組 ID:</label>
+                                <input type="text" id="telegram-group-id" class="form-control" style="margin: 0.5rem 0; padding: 0.5rem; width: 100%; border: 1px solid rgba(75, 85, 99, 0.5); border-radius: 0.375rem; background: rgba(17, 24, 39, 0.5); color: #f9fafb;" placeholder="群組 ID">
+                                
+                                <button class="btn btn-primary" onclick="testTelegramConnection()" style="margin-top: 1rem;">
+                                    🧪 測試連接
+                                </button>
+                                <button class="btn btn-success" onclick="saveTelegramSettings()" style="margin-top: 1rem;">
+                                    💾 儲存設定
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 系統參數設定 -->
+                        <div class="stat-card">
+                            <h4>⚙️ 系統參數</h4>
+                            <div style="text-align: left; margin-top: 1rem;">
+                                <label>打卡GPS限制範圍(米):</label>
+                                <input type="number" id="gps-range" class="form-control" style="margin: 0.5rem 0; padding: 0.5rem; width: 100%; border: 1px solid rgba(75, 85, 99, 0.5); border-radius: 0.375rem; background: rgba(17, 24, 39, 0.5); color: #f9fafb;" placeholder="100" value="100">
+                                
+                                <label>遲到懲罰閾值(次):</label>
+                                <input type="number" id="late-threshold" class="form-control" style="margin: 0.5rem 0; padding: 0.5rem; width: 100%; border: 1px solid rgba(75, 85, 99, 0.5); border-radius: 0.375rem; background: rgba(17, 24, 39, 0.5); color: #f9fafb;" placeholder="5" value="5">
+                                
+                                <label>新人轉正天數:</label>
+                                <input type="number" id="probation-days" class="form-control" style="margin: 0.5rem 0; padding: 0.5rem; width: 100%; border: 1px solid rgba(75, 85, 99, 0.5); border-radius: 0.375rem; background: rgba(17, 24, 39, 0.5); color: #f9fafb;" placeholder="20" value="20">
+                                
+                                <button class="btn btn-success" onclick="saveSystemSettings()" style="margin-top: 1rem;">
+                                    💾 儲存參數
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 系統監控 -->
+                        <div class="stat-card">
+                            <h4>📊 系統監控</h4>
+                            <div id="system-status-info">
+                                <p>🟢 系統狀態: <span id="system-status">正常</span></p>
+                                <p>💾 資料庫連線: <span id="db-status">正常</span></p>
+                                <p>📱 Telegram連線: <span id="telegram-status">正常</span></p>
+                                <p>⏰ 定時任務: <span id="cron-status">運行中</span></p>
+                                
+                                <button class="btn btn-primary" onclick="checkSystemHealth()" style="margin-top: 1rem;">
+                                    🔍 健康檢查
+                                </button>
+                                <button class="btn btn-secondary" onclick="viewSystemLogs()" style="margin-top: 1rem;">
+                                    📋 查看日誌
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 資料備份 -->
+                        <div class="stat-card">
+                            <h4>🗃️ 資料備份</h4>
+                            <div style="text-align: left; margin-top: 1rem;">
+                                <p>最後備份時間: <span id="last-backup-time">載入中...</span></p>
+                                <p>備份檔案大小: <span id="backup-size">載入中...</span></p>
+                                
+                                <button class="btn btn-primary" onclick="createBackup()" style="margin-top: 1rem;">
+                                    💾 立即備份
+                                </button>
+                                <button class="btn btn-secondary" onclick="restoreBackup()" style="margin-top: 1rem;">
+                                    🔄 還原備份
+                                </button>
+                                <button class="btn btn-success" onclick="downloadBackup()" style="margin-top: 1rem;">
+                                    📥 下載備份
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -863,6 +1192,357 @@
                 window.location.href = '/login';
             }
         }
+
+        // ========================= 庫存管理功能 =========================
+        async function loadInventory() {
+            try {
+                showLoading('inventory-table-container');
+                
+                const category = document.getElementById('inventory-category-filter').value;
+                const status = document.getElementById('inventory-status-filter').value;
+                
+                const params = new URLSearchParams({
+                    category,
+                    status
+                });
+                
+                const response = await fetch(`/api/admin/inventory?${params}`);
+                if (!response.ok) throw new Error('Failed to load inventory');
+                
+                const result = await response.json();
+                renderInventoryTable(result.data);
+            } catch (error) {
+                console.error('Load inventory failed:', error);
+                showMessage('載入庫存資料失敗', 'error');
+            }
+        }
+
+        function renderInventoryTable(inventoryData) {
+            const container = document.getElementById('inventory-table-container');
+            
+            let html = `
+                <table class="employee-table">
+                    <thead>
+                        <tr>
+                            <th>商品名稱</th>
+                            <th>分類</th>
+                            <th>現有庫存</th>
+                            <th>最低庫存</th>
+                            <th>狀態</th>
+                            <th>最後更新</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            if (inventoryData && inventoryData.length > 0) {
+                inventoryData.forEach(item => {
+                    const statusClass = item.quantity > item.minQuantity ? 'status-active' : 
+                                      item.quantity > 0 ? 'status-pending' : 'status-inactive';
+                    const statusText = item.quantity > item.minQuantity ? '正常' :
+                                     item.quantity > 0 ? '低庫存' : '缺貨';
+                    
+                    html += `
+                        <tr>
+                            <td>${item.name}</td>
+                            <td>${item.category}</td>
+                            <td>${item.quantity}</td>
+                            <td>${item.minQuantity}</td>
+                            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+                            <td>${new Date(item.updatedAt).toLocaleDateString()}</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn btn-primary" onclick="editInventoryItem(${item.id})">
+                                        ✏️ 編輯
+                                    </button>
+                                    <button class="btn btn-secondary" onclick="viewInventoryHistory(${item.id})">
+                                        📋 歷史
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                html += '<tr><td colspan="7" style="text-align: center; color: #9ca3af;">暫無庫存資料</td></tr>';
+            }
+            
+            html += `
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = html;
+        }
+
+        function addInventoryItem() {
+            const name = prompt('請輸入商品名稱：');
+            if (!name) return;
+            
+            const category = prompt('請輸入商品分類：');
+            if (!category) return;
+            
+            const quantity = prompt('請輸入初始庫存數量：');
+            if (!quantity || isNaN(quantity)) return;
+            
+            const minQuantity = prompt('請輸入最低庫存警戒值：');
+            if (!minQuantity || isNaN(minQuantity)) return;
+            
+            // 發送到後端API
+            fetch('/api/admin/inventory', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name,
+                    category,
+                    quantity: parseInt(quantity),
+                    minQuantity: parseInt(minQuantity)
+                })
+            }).then(response => {
+                if (response.ok) {
+                    showMessage('商品新增成功', 'success');
+                    loadInventory();
+                } else {
+                    showMessage('商品新增失敗', 'error');
+                }
+            }).catch(error => {
+                console.error('Add inventory item failed:', error);
+                showMessage('商品新增失敗', 'error');
+            });
+        }
+
+        // ========================= 營收管理功能 =========================
+        async function loadRevenue() {
+            try {
+                const startDate = document.getElementById('revenue-start-date').value;
+                const endDate = document.getElementById('revenue-end-date').value;
+                const storeId = document.getElementById('revenue-store-filter').value;
+                
+                const params = new URLSearchParams({
+                    startDate,
+                    endDate,
+                    storeId
+                });
+                
+                const response = await fetch(`/api/admin/revenue?${params}`);
+                if (!response.ok) throw new Error('Failed to load revenue');
+                
+                const result = await response.json();
+                updateRevenueStats(result.data);
+                renderRevenueChart(result.data.chartData);
+                renderRevenueTable(result.data.records);
+            } catch (error) {
+                console.error('Load revenue failed:', error);
+                showMessage('載入營收資料失敗', 'error');
+            }
+        }
+
+        function updateRevenueStats(data) {
+            document.getElementById('total-revenue').textContent = data.total ? `$${data.total.toLocaleString()}` : '-';
+            document.getElementById('monthly-revenue').textContent = data.monthly ? `$${data.monthly.toLocaleString()}` : '-';
+            document.getElementById('daily-average').textContent = data.dailyAverage ? `$${data.dailyAverage.toLocaleString()}` : '-';
+            document.getElementById('growth-rate').textContent = data.growthRate ? `${data.growthRate}%` : '-';
+        }
+
+        // ========================= 排班管理功能 =========================
+        async function loadSchedules() {
+            try {
+                const date = document.getElementById('schedule-date').value;
+                const storeId = document.getElementById('schedule-store-filter').value;
+                
+                const params = new URLSearchParams({ date, storeId });
+                const response = await fetch(`/api/admin/schedules?${params}`);
+                
+                if (!response.ok) throw new Error('Failed to load schedules');
+                
+                const result = await response.json();
+                renderScheduleCalendar(result.data);
+            } catch (error) {
+                console.error('Load schedules failed:', error);
+                showMessage('載入排班資料失敗', 'error');
+            }
+        }
+
+        function autoGenerateSchedule() {
+            if (!confirm('確定要執行智慧排班？此操作將根據6重規則引擎自動生成排班表。')) return;
+            
+            fetch('/api/admin/schedules/auto-generate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    date: document.getElementById('schedule-date').value,
+                    storeId: document.getElementById('schedule-store-filter').value
+                })
+            }).then(response => {
+                if (response.ok) {
+                    showMessage('智慧排班生成成功', 'success');
+                    loadSchedules();
+                } else {
+                    showMessage('智慧排班生成失敗', 'error');
+                }
+            }).catch(error => {
+                console.error('Auto generate schedule failed:', error);
+                showMessage('智慧排班生成失敗', 'error');
+            });
+        }
+
+        // ========================= 升遷投票管理功能 =========================
+        async function loadPromotionCampaigns() {
+            try {
+                const status = document.getElementById('promotion-status-filter').value;
+                const params = new URLSearchParams({ status });
+                
+                const response = await fetch(`/api/admin/promotions?${params}`);
+                if (!response.ok) throw new Error('Failed to load promotion campaigns');
+                
+                const result = await response.json();
+                renderPromotionCampaigns(result.data);
+            } catch (error) {
+                console.error('Load promotion campaigns failed:', error);
+                showMessage('載入投票活動失敗', 'error');
+            }
+        }
+
+        function createPromotionCampaign() {
+            const title = prompt('請輸入投票活動標題：');
+            if (!title) return;
+            
+            const description = prompt('請輸入投票說明：');
+            if (!description) return;
+            
+            const endDate = prompt('請輸入結束日期 (YYYY-MM-DD)：');
+            if (!endDate) return;
+            
+            fetch('/api/admin/promotions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    title,
+                    description,
+                    endDate,
+                    encryptionEnabled: true // 啟用SHA-256加密
+                })
+            }).then(response => {
+                if (response.ok) {
+                    showMessage('投票活動建立成功', 'success');
+                    loadPromotionCampaigns();
+                } else {
+                    showMessage('投票活動建立失敗', 'error');
+                }
+            });
+        }
+
+        // ========================= 維修管理功能 =========================
+        async function loadMaintenanceRequests() {
+            try {
+                const status = document.getElementById('maintenance-status-filter').value;
+                const priority = document.getElementById('maintenance-priority-filter').value;
+                
+                const params = new URLSearchParams({ status, priority });
+                const response = await fetch(`/api/admin/maintenance?${params}`);
+                
+                if (!response.ok) throw new Error('Failed to load maintenance requests');
+                
+                const result = await response.json();
+                renderMaintenanceTable(result.data);
+            } catch (error) {
+                console.error('Load maintenance requests failed:', error);
+                showMessage('載入維修資料失敗', 'error');
+            }
+        }
+
+        function assignMaintenance() {
+            const requestId = prompt('請輸入維修申請ID：');
+            if (!requestId) return;
+            
+            const assignee = prompt('請輸入負責人姓名：');
+            if (!assignee) return;
+            
+            fetch(`/api/admin/maintenance/${requestId}/assign`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ assignee })
+            }).then(response => {
+                if (response.ok) {
+                    showMessage('維修任務指派成功', 'success');
+                    loadMaintenanceRequests();
+                } else {
+                    showMessage('維修任務指派失敗', 'error');
+                }
+            });
+        }
+
+        // ========================= 系統設定功能 =========================
+        function testTelegramConnection() {
+            const botToken = document.getElementById('telegram-bot-token').value;
+            const groupId = document.getElementById('telegram-group-id').value;
+            
+            if (!botToken || !groupId) {
+                showMessage('請填入完整的Telegram設定', 'error');
+                return;
+            }
+            
+            fetch('/api/admin/telegram/test', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ botToken, groupId })
+            }).then(response => {
+                if (response.ok) {
+                    showMessage('Telegram連接測試成功！', 'success');
+                } else {
+                    showMessage('Telegram連接測試失敗', 'error');
+                }
+            }).catch(error => {
+                console.error('Telegram test failed:', error);
+                showMessage('Telegram連接測試失敗', 'error');
+            });
+        }
+
+        function saveTelegramSettings() {
+            const botToken = document.getElementById('telegram-bot-token').value;
+            const groupId = document.getElementById('telegram-group-id').value;
+            
+            fetch('/api/admin/settings/telegram', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ botToken, groupId })
+            }).then(response => {
+                if (response.ok) {
+                    showMessage('Telegram設定儲存成功', 'success');
+                } else {
+                    showMessage('Telegram設定儲存失敗', 'error');
+                }
+            });
+        }
+
+        function checkSystemHealth() {
+            fetch('/api/admin/system/health')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('system-status').textContent = data.system;
+                    document.getElementById('db-status').textContent = data.database;
+                    document.getElementById('telegram-status').textContent = data.telegram;
+                    document.getElementById('cron-status').textContent = data.cronJobs;
+                    showMessage('系統健康檢查完成', 'success');
+                })
+                .catch(error => {
+                    console.error('System health check failed:', error);
+                    showMessage('系統健康檢查失敗', 'error');
+                });
+        }
+
+        // 在頁面載入時自動載入各模組的初始資料
+        document.addEventListener('DOMContentLoaded', function() {
+            // 預載各功能模組數據
+            setTimeout(() => {
+                loadInventory();
+                loadRevenue();
+                loadSchedules();
+                loadPromotionCampaigns();
+                loadMaintenanceRequests();
+            }, 1000);
+        });
     </script>
 </body>
 </html>
