@@ -212,6 +212,9 @@
                     <p class="mb-0">管理您的個人資訊和考勤記錄</p>
                 </div>
                 <div class="col-md-4 text-end">
+                    <button class="btn btn-primary me-2" onclick="switchToAdminView()" style="background: #3b82f6;">
+                        👑 切換到管理員視圖
+                    </button>
                     <span class="status-badge status-active" id="employeeStatus">
                         <i class="bi bi-check-circle me-1"></i>在職中
                     </span>
@@ -1119,6 +1122,24 @@
             } else {
                 spinner.style.display = 'none';
                 if (content) content.style.display = 'block';
+            }
+        }
+
+        // 切換到管理員視圖（需要權限檢查）
+        function switchToAdminView() {
+            // 檢查用戶權限
+            const employee = JSON.parse(localStorage.getItem('employee') || '{}');
+            const isAdmin = employee.position === '管理員' || 
+                           employee.position === '系統管理員' || 
+                           employee.position === '店長';
+            
+            if (!isAdmin) {
+                showAlert('您沒有管理員權限，無法切換到管理員視圖', 'error');
+                return;
+            }
+            
+            if (confirm('確定要切換到管理員視圖嗎？')) {
+                window.location.href = '/public/admin-enhanced.html';
             }
         }
     </script>

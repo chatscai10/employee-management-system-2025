@@ -395,6 +395,9 @@
             <h1>👑 管理員後台</h1>
             <div class="user-info">
                 <span id="admin-name">載入中...</span>
+                <button class="btn btn-secondary" onclick="switchToEmployeeView()" style="background: #10b981; margin-right: 0.5rem;">
+                    👤 切換到員工視圖
+                </button>
                 <button class="logout-btn" onclick="logout()">登出</button>
             </div>
         </div>
@@ -1530,6 +1533,13 @@
                     console.error('System health check failed:', error);
                     showMessage('系統健康檢查失敗', 'error');
                 });
+        }
+
+        // 切換到員工視圖
+        function switchToEmployeeView() {
+            if (confirm('確定要切換到員工視圖嗎？')) {
+                window.location.href = '/public/profile-enhanced.html';
+            }
         }
 
         // 在頁面載入時自動載入各模組的初始資料

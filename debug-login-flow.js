@@ -35,7 +35,7 @@ class LoginFlowDebug {
         
         const page = await browser.newPage();
         
-        // 監聽網路請求
+        // 監聽所有網路活動
         page.on('request', request => {
             if (request.url().includes('/api/')) {
                 console.log(`📡 API請求: ${request.method()} ${request.url()}`);
@@ -44,15 +44,30 @@ class LoginFlowDebug {
         });
 
         page.on('response', async response => {
-            if (response.url().includes('/api/auth/login')) {
-                console.log(`📥 登入API回應: ${response.status()}`);
+            if (response.url().includes('/api/')) {
+                console.log(`📥 API回應: ${response.status()} - ${response.url()}`);
                 try {
                     const responseData = await response.json();
                     console.log('📋 回應數據:', JSON.stringify(responseData, null, 2));
                 } catch (error) {
-                    console.log('❌ 無法解析回應數據');
+                    console.log('❌ 無法解析回應數據:', error.message);
                 }
             }
+        });
+
+        // 監聽瀏覽器console訊息
+        page.on('console', msg => {
+            console.log(`🖥️  瀏覽器Console [${msg.type()}]: ${msg.text()}`);
+        });
+
+        // 監聽JavaScript錯誤
+        page.on('pageerror', error => {
+            console.log(`❌ 頁面JavaScript錯誤: ${error.message}`);
+        });
+
+        // 監聽請求失敗
+        page.on('requestfailed', request => {
+            console.log(`❌ 請求失敗: ${request.url()} - ${request.failure().errorText}`);
         });
 
         // 監聽頁面跳轉
@@ -93,12 +108,12 @@ class LoginFlowDebug {
             
             console.log('📋 登入表單檢查:', formElements);
             
-            // 填寫員工資料
+            // 填寫員工資料 - 使用正確的員工名字
             const nameInput = await page.$('#login-name, input[name="name"]');
             const idInput = await page.$('#login-id, input[name="idNumber"]');
             
             if (nameInput && idInput) {
-                await nameInput.type('一般員工');
+                await nameInput.type('張三');
                 await idInput.type('C123456789');
                 
                 console.log('📝 已填寫員工登入資料');
