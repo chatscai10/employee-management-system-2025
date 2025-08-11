@@ -20,7 +20,7 @@ async function inspectPage() {
         // 訪問admin-enhanced頁面
         console.log('🌐 訪問 admin-enhanced.html...');
         await page.goto('https://employee-management-system-intermediate.onrender.com/admin-enhanced.html');
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        await new Promise(resolve => setTimeout(resolve, 10000));
         
         // 檢查頁面標題
         const title = await page.title();
