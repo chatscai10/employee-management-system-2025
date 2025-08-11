@@ -1049,6 +1049,81 @@ app.post('/api/work-assignments', (req, res) => {
     });
 });
 
+// ========================= 🎯 增強版API系統整合 =========================
+
+// 設置增強版API端點 - 提供admin-enhanced.html完整後端支援
+const { setupEnhancedAPIs } = require('./server-enhanced-apis');
+const enhancedDataAccessors = setupEnhancedAPIs(app);
+console.log('🎯 增強版API系統已整合到主服務器');
+
+// 增強版管理介面數據統計API - 支援動態視窗界面
+app.get('/api/admin/enhanced/stats', async (req, res) => {
+    try {
+        // 使用增強版API的數據訪問器
+        const employees = enhancedDataAccessors.employees();
+        const inventory = enhancedDataAccessors.inventory();
+        const revenue = enhancedDataAccessors.revenue();
+        const maintenance = enhancedDataAccessors.maintenance();
+        const votings = enhancedDataAccessors.votings();
+        
+        const enhancedStats = {
+            // 員工統計
+            employees: {
+                total: employees.length,
+                active: employees.filter(emp => emp.status === 'active').length,
+                pending: employees.filter(emp => emp.status === 'pending').length
+            },
+            // 庫存統計
+            inventory: {
+                total: inventory.length,
+                lowStock: inventory.filter(item => item.quantity <= item.minQuantity).length,
+                outOfStock: inventory.filter(item => item.quantity === 0).length
+            },
+            // 營收統計
+            revenue: {
+                totalIncome: revenue.filter(r => r.type === 'income').reduce((sum, r) => sum + r.amount, 0),
+                totalExpense: revenue.filter(r => r.type === 'expense').reduce((sum, r) => sum + r.amount, 0),
+                monthlyRevenue: revenue.filter(r => new Date(r.date).getMonth() === new Date().getMonth()).reduce((sum, r) => sum + r.amount, 0)
+            },
+            // 維修統計
+            maintenance: {
+                pending: maintenance.filter(m => m.status === 'pending').length,
+                urgent: maintenance.filter(m => m.priority === 'high').length
+            },
+            // 投票統計
+            voting: {
+                active: votings.filter(v => v.status === 'active').length,
+                total: votings.length
+            }
+        };
+        
+        res.json({
+            success: true,
+            message: '增強版統計數據載入成功',
+            data: enhancedStats,
+            timestamp: new Date().toISOString()
+        });
+        
+    } catch (error) {
+        console.error('增強版統計數據載入失敗:', error);
+        res.status(500).json({
+            success: false,
+            message: '增強版統計數據載入失敗',
+            error: error.message
+        });
+    }
+});
+
+// 增強版界面專用API - 檢查是否為增強版請求
+app.use('/api/admin/*', (req, res, next) => {
+    // 為增強版界面請求添加特殊標頭
+    if (req.headers['x-enhanced-admin'] === 'true') {
+        res.setHeader('X-Enhanced-Response', 'true');
+        console.log(`🎯 增強版管理界面API請求: ${req.originalUrl}`);
+    }
+    next();
+});
+
 // 打卡執行API (修復404錯誤)
 app.post('/api/attendance/clock', (req, res) => {
     const { employeeId, clockType, location, coordinates } = req.body;
