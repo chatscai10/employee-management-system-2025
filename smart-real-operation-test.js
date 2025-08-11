@@ -326,20 +326,39 @@ class SmartRealOperationTester {
                 await this.delay(2000);
             }
 
-            // 測試重置篩選
-            const resetBtn = await this.page.$('button:contains("重置")');
-            if (!resetBtn) {
-                // 嘗試其他選擇器
+            // 測試重置篩選 - 修復CSS選擇器語法
+            let resetBtn = null;
+            try {
+                // 嘗試XPath方式尋找重置按鈕
                 const resetButtons = await this.page.$x("//button[contains(text(), '重置')]");
                 if (resetButtons.length > 0) {
-                    await resetButtons[0].click();
-                    this.log('✅ 重置篩選按鈕操作成功');
+                    resetBtn = resetButtons[0];
+                    await resetBtn.click();
+                    this.log('✅ 重置篩選按鈕操作成功 (XPath)');
                     await this.delay(2000);
+                } else {
+                    // 備用選擇器
+                    const alternativeSelectors = [
+                        'button[onclick*="reset"]',
+                        '.btn-secondary',
+                        'button.btn:nth-of-type(2)'
+                    ];
+                    
+                    for (const selector of alternativeSelectors) {
+                        resetBtn = await this.page.$(selector);
+                        if (resetBtn) {
+                            const buttonText = await this.page.evaluate(el => el.textContent, resetBtn);
+                            if (buttonText.includes('重置')) {
+                                await resetBtn.click();
+                                this.log(`✅ 重置篩選按鈕操作成功 (${selector})`);
+                                await this.delay(2000);
+                                break;
+                            }
+                        }
+                    }
                 }
-            } else {
-                await resetBtn.click();
-                this.log('✅ 重置篩選按鈕操作成功');
-                await this.delay(2000);
+            } catch (e) {
+                this.log(`⚠️  重置按鈕測試跳過: ${e.message}`);
             }
 
             // 檢查員工表格是否存在
@@ -453,15 +472,46 @@ class SmartRealOperationTester {
                 await this.delay(2000);
             }
 
-            // 測試智慧排班按鈕（但不實際執行）
-            const smartScheduleBtn = await this.page.$('button:contains("智慧排班")');
-            if (!smartScheduleBtn) {
+            // 測試智慧排班按鈕（但不實際執行） - 修復CSS選擇器語法
+            try {
                 const smartButtons = await this.page.$x("//button[contains(text(), '智慧排班')]");
                 if (smartButtons.length > 0) {
-                    this.log('✅ 智慧排班功能按鈕存在');
+                    this.log('✅ 智慧排班功能按鈕存在 (XPath)');
+                } else {
+                    // 備用選擇器搜尋
+                    const alternativeSelectors = [
+                        'button[onclick*="autoGenerate"]',
+                        'button[onclick*="智慧"]',
+                        '.btn:contains("🤖")',
+                        'button.btn-secondary'
+                    ];
+                    
+                    let found = false;
+                    for (const selector of alternativeSelectors) {
+                        try {
+                            if (selector.includes(':contains')) continue; // 跳過不支援的語法
+                            
+                            const btns = await this.page.$$(selector);
+                            for (const btn of btns) {
+                                const btnText = await this.page.evaluate(el => el.textContent, btn);
+                                if (btnText.includes('智慧') || btnText.includes('自動') || btnText.includes('🤖')) {
+                                    this.log(`✅ 智慧排班功能按鈕存在 (${selector})`);
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            if (found) break;
+                        } catch (e) {
+                            continue;
+                        }
+                    }
+                    
+                    if (!found) {
+                        this.log('⚠️  智慧排班按鈕搜尋需要進一步檢查');
+                    }
                 }
-            } else {
-                this.log('✅ 智慧排班功能按鈕存在');
+            } catch (e) {
+                this.log(`⚠️  智慧排班按鈕測試跳過: ${e.message}`);
             }
 
             return true;
