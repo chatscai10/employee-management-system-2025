@@ -331,6 +331,82 @@ app.post('/api/auth/verify', (req, res) => {
     }
 });
 
+// 管理員統計API
+app.get('/api/admin/stats', (req, res) => {
+    res.json({
+        success: true,
+        message: '統計數據獲取成功',
+        data: {
+            totalEmployees: 15,
+            activeEmployees: 12,
+            pendingEmployees: 3,
+            totalRevenue: 2580000,
+            monthlyRevenue: 450000,
+            totalAttendance: 347,
+            monthlyAttendance: 89,
+            averageAttendance: 92.5,
+            stores: 3,
+            activeStores: 3
+        },
+        timestamp: new Date().toISOString()
+    });
+});
+
+// 管理員店鋪API
+app.get('/api/admin/stores', (req, res) => {
+    res.json({
+        success: true,
+        message: '店鋪列表獲取成功',
+        data: [
+            { id: 1, name: '台北總店', address: '台北市信義區信義路五段7號', phone: '02-2723-4567', status: 'active', employees: 8 },
+            { id: 2, name: '台中分店', address: '台中市西屯區台灣大道四段925號', phone: '04-2461-2345', status: 'active', employees: 4 },
+            { id: 3, name: '高雄分店', address: '高雄市前鎮區中山四路100號', phone: '07-536-7890', status: 'active', employees: 3 }
+        ],
+        count: 3,
+        timestamp: new Date().toISOString()
+    });
+});
+
+// 管理員員工列表API
+app.get('/api/admin/employees', (req, res) => {
+    const { page = 1, limit = 20, status = '', storeId = '', position = '' } = req.query;
+    
+    const employees = [
+        { id: 1, name: '系統管理員', position: '管理員', store: '台北總店', status: 'active', phone: '0912-345-678', email: 'admin@company.com', hireDate: '2024-01-01' },
+        { id: 2, name: '店長', position: '店長', store: '台北總店', status: 'active', phone: '0912-345-679', email: 'manager@company.com', hireDate: '2024-01-15' },
+        { id: 3, name: '張三', position: '員工', store: '台北總店', status: 'active', phone: '0912-345-680', email: 'zhang@company.com', hireDate: '2024-02-01' },
+        { id: 4, name: '李四', position: '員工', store: '台北總店', status: 'active', phone: '0912-345-681', email: 'li@company.com', hireDate: '2024-02-15' },
+        { id: 5, name: '王五', position: '員工', store: '台中分店', status: 'active', phone: '0912-345-682', email: 'wang@company.com', hireDate: '2024-03-01' },
+        { id: 6, name: '陳六', position: '員工', store: '台中分店', status: 'pending', phone: '0912-345-683', email: 'chen@company.com', hireDate: '2024-03-15' },
+        { id: 7, name: '林七', position: '員工', store: '高雄分店', status: 'active', phone: '0912-345-684', email: 'lin@company.com', hireDate: '2024-04-01' },
+        { id: 8, name: '黃八', position: '員工', store: '高雄分店', status: 'pending', phone: '0912-345-685', email: 'huang@company.com', hireDate: '2024-04-15' }
+    ];
+    
+    // 過濾條件
+    let filtered = employees;
+    if (status) filtered = filtered.filter(emp => emp.status === status);
+    if (storeId) filtered = filtered.filter(emp => emp.store === `店鋪${storeId}`);
+    if (position) filtered = filtered.filter(emp => emp.position === position);
+    
+    // 分頁
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + parseInt(limit);
+    const paginatedEmployees = filtered.slice(startIndex, endIndex);
+    
+    res.json({
+        success: true,
+        message: '員工列表獲取成功',
+        data: paginatedEmployees,
+        pagination: {
+            currentPage: parseInt(page),
+            totalPages: Math.ceil(filtered.length / limit),
+            totalItems: filtered.length,
+            itemsPerPage: parseInt(limit)
+        },
+        timestamp: new Date().toISOString()
+    });
+});
+
 // 員工API
 app.get('/api/employees', (req, res) => {
     res.json({
