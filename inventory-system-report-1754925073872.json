@@ -1,0 +1,484 @@
+{
+  "title": "企業叫貨系統分析報告",
+  "generated_at": "2025-08-11T15:11:13.872Z",
+  "summary": {
+    "total_categories": 23,
+    "total_items": 10,
+    "total_orders": 3,
+    "total_order_value": 279250,
+    "stores_count": 4
+  },
+  "category_analysis": [
+    {
+      "id": 1,
+      "name": "辦公設備",
+      "parent_id": null,
+      "level": 1,
+      "sort_order": 1,
+      "children": [
+        {
+          "id": 2,
+          "name": "電腦設備",
+          "parent_id": 1,
+          "level": 2,
+          "sort_order": 1,
+          "children": [
+            {
+              "id": 3,
+              "name": "筆記型電腦",
+              "parent_id": 2,
+              "level": 3,
+              "sort_order": 1
+            },
+            {
+              "id": 4,
+              "name": "桌上型電腦",
+              "parent_id": 2,
+              "level": 3,
+              "sort_order": 2
+            },
+            {
+              "id": 5,
+              "name": "平板電腦",
+              "parent_id": 2,
+              "level": 3,
+              "sort_order": 3
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "週邊設備",
+          "parent_id": 1,
+          "level": 2,
+          "sort_order": 2,
+          "children": [
+            {
+              "id": 7,
+              "name": "鍵盤滑鼠",
+              "parent_id": 6,
+              "level": 3,
+              "sort_order": 1
+            },
+            {
+              "id": 8,
+              "name": "顯示器",
+              "parent_id": 6,
+              "level": 3,
+              "sort_order": 2
+            },
+            {
+              "id": 9,
+              "name": "印表機",
+              "parent_id": 6,
+              "level": 3,
+              "sort_order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "辦公家具",
+      "parent_id": null,
+      "level": 1,
+      "sort_order": 2,
+      "children": [
+        {
+          "id": 11,
+          "name": "座椅",
+          "parent_id": 10,
+          "level": 2,
+          "sort_order": 1,
+          "children": [
+            {
+              "id": 12,
+              "name": "辦公椅",
+              "parent_id": 11,
+              "level": 3,
+              "sort_order": 1
+            },
+            {
+              "id": 13,
+              "name": "主管椅",
+              "parent_id": 11,
+              "level": 3,
+              "sort_order": 2
+            },
+            {
+              "id": 14,
+              "name": "會議椅",
+              "parent_id": 11,
+              "level": 3,
+              "sort_order": 3
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "name": "桌子",
+          "parent_id": 10,
+          "level": 2,
+          "sort_order": 2,
+          "children": [
+            {
+              "id": 16,
+              "name": "辦公桌",
+              "parent_id": 15,
+              "level": 3,
+              "sort_order": 1
+            },
+            {
+              "id": 17,
+              "name": "會議桌",
+              "parent_id": 15,
+              "level": 3,
+              "sort_order": 2
+            },
+            {
+              "id": 18,
+              "name": "工作台",
+              "parent_id": 15,
+              "level": 3,
+              "sort_order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "文具用品",
+      "parent_id": null,
+      "level": 1,
+      "sort_order": 3,
+      "children": [
+        {
+          "id": 20,
+          "name": "書寫用具",
+          "parent_id": 19,
+          "level": 2,
+          "sort_order": 1,
+          "children": [
+            {
+              "id": 21,
+              "name": "原子筆",
+              "parent_id": 20,
+              "level": 3,
+              "sort_order": 1
+            },
+            {
+              "id": 22,
+              "name": "鉛筆",
+              "parent_id": 20,
+              "level": 3,
+              "sort_order": 2
+            },
+            {
+              "id": 23,
+              "name": "螢光筆",
+              "parent_id": 20,
+              "level": 3,
+              "sort_order": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "item_analysis": [
+    {
+      "id": 1,
+      "name": "ASUS VivoBook 15",
+      "category_id": 3,
+      "subcategory_name": "筆記型電腦",
+      "sku": "LAP001",
+      "price": 25000,
+      "unit": "台",
+      "supplier": "華碩科技",
+      "description": "15.6吋 i5處理器 8GB記憶體 512GB SSD",
+      "min_stock": 5,
+      "max_stock": 50,
+      "specifications": {
+        "cpu": "Intel i5",
+        "ram": "8GB",
+        "storage": "512GB SSD",
+        "screen": "15.6\""
+      }
+    },
+    {
+      "id": 2,
+      "name": "MacBook Air M2",
+      "category_id": 3,
+      "subcategory_name": "筆記型電腦",
+      "sku": "LAP002",
+      "price": 38000,
+      "unit": "台",
+      "supplier": "蘋果台灣",
+      "description": "M2晶片 13.6吋 8GB 256GB",
+      "min_stock": 3,
+      "max_stock": 20,
+      "specifications": {
+        "cpu": "Apple M2",
+        "ram": "8GB",
+        "storage": "256GB SSD",
+        "screen": "13.6\""
+      }
+    },
+    {
+      "id": 3,
+      "name": "Dell OptiPlex 7000",
+      "category_id": 4,
+      "subcategory_name": "桌上型電腦",
+      "sku": "DES001",
+      "price": 32000,
+      "unit": "台",
+      "supplier": "戴爾科技",
+      "description": "i7處理器 16GB記憶體 1TB SSD",
+      "min_stock": 3,
+      "max_stock": 25,
+      "specifications": {
+        "cpu": "Intel i7",
+        "ram": "16GB",
+        "storage": "1TB SSD"
+      }
+    },
+    {
+      "id": 4,
+      "name": "iPad Air 10.9",
+      "category_id": 5,
+      "subcategory_name": "平板電腦",
+      "sku": "TAB001",
+      "price": 19000,
+      "unit": "台",
+      "supplier": "蘋果台灣",
+      "description": "10.9吋 Wi-Fi 64GB 太空灰",
+      "min_stock": 10,
+      "max_stock": 30,
+      "specifications": {
+        "screen": "10.9\"",
+        "storage": "64GB",
+        "connectivity": "Wi-Fi"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Logitech MX Master 3",
+      "category_id": 7,
+      "subcategory_name": "鍵盤滑鼠",
+      "sku": "MOU001",
+      "price": 3200,
+      "unit": "組",
+      "supplier": "羅技科技",
+      "description": "無線進階鍵鼠組 人體工學設計",
+      "min_stock": 20,
+      "max_stock": 100,
+      "specifications": {
+        "type": "無線",
+        "connection": "USB-C + Bluetooth"
+      }
+    },
+    {
+      "id": 6,
+      "name": "LG 27UP850-W",
+      "category_id": 8,
+      "subcategory_name": "顯示器",
+      "sku": "MON001",
+      "price": 15000,
+      "unit": "台",
+      "supplier": "LG電子",
+      "description": "27吋 4K UHD USB-C 顯示器",
+      "min_stock": 8,
+      "max_stock": 40,
+      "specifications": {
+        "size": "27\"",
+        "resolution": "4K UHD",
+        "ports": "USB-C, HDMI, DP"
+      }
+    },
+    {
+      "id": 7,
+      "name": "HP LaserJet Pro M404n",
+      "category_id": 9,
+      "subcategory_name": "印表機",
+      "sku": "PRI001",
+      "price": 8500,
+      "unit": "台",
+      "supplier": "惠普科技",
+      "description": "雷射印表機 網路功能 38ppm",
+      "min_stock": 5,
+      "max_stock": 20,
+      "specifications": {
+        "type": "雷射",
+        "speed": "38ppm",
+        "connectivity": "網路"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Herman Miller Aeron",
+      "category_id": 12,
+      "subcategory_name": "辦公椅",
+      "sku": "CHA001",
+      "price": 45000,
+      "unit": "張",
+      "supplier": "赫曼米勒",
+      "description": "人體工學辦公椅 網布材質 12年保固",
+      "min_stock": 2,
+      "max_stock": 15,
+      "specifications": {
+        "material": "網布",
+        "warranty": "12年",
+        "adjustable": "全方位調整"
+      }
+    },
+    {
+      "id": 9,
+      "name": "IKEA BEKANT",
+      "category_id": 16,
+      "subcategory_name": "辦公桌",
+      "sku": "DES002",
+      "price": 3500,
+      "unit": "張",
+      "supplier": "宜家家居",
+      "description": "160x80cm 白色辦公桌",
+      "min_stock": 10,
+      "max_stock": 50,
+      "specifications": {
+        "size": "160x80cm",
+        "color": "白色",
+        "material": "刨花板"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Pilot G-2 原子筆",
+      "category_id": 21,
+      "subcategory_name": "原子筆",
+      "sku": "PEN001",
+      "price": 25,
+      "unit": "支",
+      "supplier": "百樂文具",
+      "description": "0.7mm 藍色 滑順書寫",
+      "min_stock": 200,
+      "max_stock": 1000,
+      "specifications": {
+        "tip_size": "0.7mm",
+        "color": "藍色",
+        "ink_type": "凝膠墨水"
+      }
+    }
+  ],
+  "order_analysis": [
+    {
+      "id": 1,
+      "order_number": "PO-2025080001",
+      "store_id": 1,
+      "store_name": "台北總店",
+      "order_date": "2025-08-01",
+      "status": "approved",
+      "total_amount": 125000,
+      "created_by": 1,
+      "approved_by": 1,
+      "notes": "月初補貨計劃",
+      "items": [
+        {
+          "item_id": 1,
+          "item_name": "ASUS VivoBook 15",
+          "quantity": 3,
+          "unit_price": 25000,
+          "subtotal": 75000
+        },
+        {
+          "item_id": 5,
+          "item_name": "Logitech MX Master 3",
+          "quantity": 10,
+          "unit_price": 3200,
+          "subtotal": 32000
+        },
+        {
+          "item_id": 10,
+          "item_name": "Pilot G-2 原子筆",
+          "quantity": 100,
+          "unit_price": 25,
+          "subtotal": 2500
+        }
+      ],
+      "created_at": "2025-08-01T09:00:00Z",
+      "updated_at": "2025-08-11T15:11:13.872Z",
+      "approved_at": "2025-08-11T15:11:13.872Z"
+    },
+    {
+      "id": 2,
+      "order_number": "PO-2025080002",
+      "store_id": 2,
+      "store_name": "台北分店",
+      "order_date": "2025-08-02",
+      "status": "approved",
+      "total_amount": 87000,
+      "created_by": 2,
+      "approved_by": 1,
+      "notes": "辦公家具更新",
+      "items": [
+        {
+          "item_id": 8,
+          "item_name": "Herman Miller Aeron",
+          "quantity": 1,
+          "unit_price": 45000,
+          "subtotal": 45000
+        },
+        {
+          "item_id": 9,
+          "item_name": "IKEA BEKANT",
+          "quantity": 12,
+          "unit_price": 3500,
+          "subtotal": 42000
+        }
+      ],
+      "created_at": "2025-08-02T10:30:00Z"
+    },
+    {
+      "id": 3,
+      "order_number": "PO-202508110003",
+      "store_id": 3,
+      "store_name": "台中分店",
+      "order_date": "2025-08-05",
+      "status": "pending",
+      "total_amount": 67250,
+      "created_by": 3,
+      "approved_by": null,
+      "notes": "台中分店緊急補貨",
+      "items": [
+        {
+          "item_id": 1,
+          "item_name": "ASUS VivoBook 15",
+          "quantity": 2,
+          "unit_price": 25000,
+          "subtotal": 50000
+        },
+        {
+          "item_id": 5,
+          "item_name": "Logitech MX Master 3",
+          "quantity": 5,
+          "unit_price": 3200,
+          "subtotal": 16000
+        },
+        {
+          "item_id": 10,
+          "item_name": "Pilot G-2 原子筆",
+          "quantity": 50,
+          "unit_price": 25,
+          "subtotal": 1250
+        }
+      ],
+      "created_at": "2025-08-11T15:11:13.872Z"
+    }
+  ],
+  "recommendations": [
+    "建議對低庫存商品進行自動補貨設定",
+    "可考慮建立供應商評級系統",
+    "建議實施叫貨單自動核准流程",
+    "可增加庫存成本分析功能"
+  ]
+}

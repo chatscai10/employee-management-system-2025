@@ -1,0 +1,203 @@
+{
+  "title": "企業營收分析報告",
+  "generated_at": "2025-08-11T15:08:03.915Z",
+  "period": {
+    "start_date": "2025-08-01",
+    "end_date": "2025-08-31",
+    "store_filter": "所有分店"
+  },
+  "executive_summary": {
+    "total_income": 373000,
+    "total_expense": 106500,
+    "net_profit": 266500,
+    "profit_margin": 71,
+    "total_bonus_distributed": 26650,
+    "number_of_stores": 3
+  },
+  "detailed_records": [
+    {
+      "id": 1,
+      "date": "2025-08-01",
+      "store_id": 1,
+      "store_name": "台北總店",
+      "income_amount": 85000,
+      "expense_amount": 23000,
+      "income_category": "產品銷售",
+      "expense_category": "原料採購",
+      "net_profit": 62000,
+      "description": "8月1日營收記錄 - 新產品銷售表現良好",
+      "created_by": 1,
+      "bonus_calculated": 6200,
+      "performance_target": 80000,
+      "created_at": "2025-08-01T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "date": "2025-08-02",
+      "store_id": 2,
+      "store_name": "台北分店",
+      "income_amount": 67000,
+      "expense_amount": 18500,
+      "income_category": "服務收入",
+      "expense_category": "人事費用",
+      "net_profit": 48500,
+      "description": "8月2日營收 - 服務項目收入增加",
+      "created_by": 2,
+      "bonus_calculated": 4850,
+      "performance_target": 60000,
+      "created_at": "2025-08-02T11:15:00Z"
+    },
+    {
+      "id": 3,
+      "date": "2025-08-03",
+      "store_id": 1,
+      "store_name": "台北總店",
+      "income_amount": 92000,
+      "expense_amount": 27000,
+      "income_category": "產品銷售",
+      "expense_category": "行銷費用",
+      "net_profit": 65000,
+      "description": "8月3日營收 - 促銷活動帶動銷售",
+      "created_by": 1,
+      "bonus_calculated": 6500,
+      "performance_target": 80000,
+      "created_at": "2025-08-03T09:45:00Z"
+    },
+    {
+      "id": 4,
+      "date": "2025-08-04",
+      "store_id": 3,
+      "store_name": "台中分店",
+      "income_amount": 54000,
+      "expense_amount": 16000,
+      "income_category": "產品銷售",
+      "expense_category": "房租費用",
+      "net_profit": 38000,
+      "description": "8月4日台中分店營收記錄",
+      "created_by": 3,
+      "bonus_calculated": 3800,
+      "performance_target": 50000,
+      "created_at": "2025-08-04T14:20:00Z"
+    },
+    {
+      "id": 5,
+      "date": "2025-08-05",
+      "store_id": 2,
+      "store_name": "台北分店",
+      "income_amount": 75000,
+      "expense_amount": 22000,
+      "income_category": "產品銷售",
+      "expense_category": "行銷費用",
+      "net_profit": 53000,
+      "description": "測試新增營收記錄 - 8月5日台北分店",
+      "created_by": 2,
+      "bonus_calculated": 5300,
+      "performance_target": 50000,
+      "created_at": "2025-08-11T15:08:03.905Z"
+    }
+  ],
+  "store_performance": [
+    {
+      "store_id": 1,
+      "store_name": "台北總店",
+      "total_income": 177000,
+      "total_expense": 50000,
+      "net_profit": 127000,
+      "record_count": 2,
+      "total_bonus": 12700,
+      "average_daily_profit": 63500
+    },
+    {
+      "store_id": 2,
+      "store_name": "台北分店",
+      "total_income": 142000,
+      "total_expense": 40500,
+      "net_profit": 101500,
+      "record_count": 2,
+      "total_bonus": 10150,
+      "average_daily_profit": 50750
+    },
+    {
+      "store_id": 3,
+      "store_name": "台中分店",
+      "total_income": 54000,
+      "total_expense": 16000,
+      "net_profit": 38000,
+      "record_count": 1,
+      "total_bonus": 3800,
+      "average_daily_profit": 38000
+    }
+  ],
+  "daily_trends": [
+    {
+      "date": "2025-08-01",
+      "total_income": 85000,
+      "total_expense": 23000,
+      "net_profit": 62000,
+      "stores": {
+        "1": {
+          "store_name": "台北總店",
+          "income": 85000,
+          "expense": 23000,
+          "profit": 62000
+        }
+      }
+    },
+    {
+      "date": "2025-08-02",
+      "total_income": 67000,
+      "total_expense": 18500,
+      "net_profit": 48500,
+      "stores": {
+        "2": {
+          "store_name": "台北分店",
+          "income": 67000,
+          "expense": 18500,
+          "profit": 48500
+        }
+      }
+    },
+    {
+      "date": "2025-08-03",
+      "total_income": 92000,
+      "total_expense": 27000,
+      "net_profit": 65000,
+      "stores": {
+        "1": {
+          "store_name": "台北總店",
+          "income": 92000,
+          "expense": 27000,
+          "profit": 65000
+        }
+      }
+    },
+    {
+      "date": "2025-08-04",
+      "total_income": 54000,
+      "total_expense": 16000,
+      "net_profit": 38000,
+      "stores": {
+        "3": {
+          "store_name": "台中分店",
+          "income": 54000,
+          "expense": 16000,
+          "profit": 38000
+        }
+      }
+    },
+    {
+      "date": "2025-08-05",
+      "total_income": 75000,
+      "total_expense": 22000,
+      "net_profit": 53000,
+      "stores": {
+        "2": {
+          "store_name": "台北分店",
+          "income": 75000,
+          "expense": 22000,
+          "profit": 53000
+        }
+      }
+    }
+  ]
+}
