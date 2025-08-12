@@ -191,12 +191,8 @@ module.exports = (sequelize) => {
             });
         }
         
-        if (models.VoteRecord) {
-            Employee.hasMany(models.VoteRecord, {
-                foreignKey: 'voterId',
-                as: 'voteRecords'
-            });
-        }
+        // 注意：由於PromotionVote使用匿名化設計，不直接關聯到Employee
+        // 如需查詢員工投票記錄，請使用PromotionVote.generateVoterFingerprint()方法
         
         // 員工與維修申請關聯 (條件性關聯)
         if (models.MaintenanceRequest) {

@@ -178,19 +178,20 @@ router.post('/submit', async (req, res) => {
             );
         }
         
-        // 創建營收記錄
+        // 計算總訂單數和營收數據
+        const totalOrders = (parseInt(cashOrders) || 0) + (parseInt(pandaOrders) || 0) + (parseInt(uberOrders) || 0);
+        const totalExpense = (bonusCalculation.pandaRevenue * 0.35) + (bonusCalculation.uberRevenue * 0.35);
+        const netIncome = bonusCalculation.totalIncome - totalExpense;
+        const orderAverage = totalOrders > 0 ? bonusCalculation.totalIncome / totalOrders : 0;
+        
+        // 創建營收記錄 (符合RevenueRecord模型欄位)
         const revenueRecord = await models.RevenueRecord.create({
             employeeId: employeeId,
             employeeName: employee.name,
             storeName: storeName,
             date: date,
             bonusType: bonusType,
-            
-            // 營收數據
-            cashRevenue: bonusCalculation.cashRevenue,
-            pandaRevenue: bonusCalculation.pandaRevenue,
-            uberRevenue: bonusCalculation.uberRevenue,
-            totalIncome: bonusCalculation.totalIncome,
+            orderCount: totalOrders,
             
             // 收入詳細 (必填JSON欄位)
             incomeDetails: {
@@ -198,8 +199,12 @@ router.post('/submit', async (req, res) => {
                 panda: bonusCalculation.pandaRevenue,
                 uber: bonusCalculation.uberRevenue,
                 pandaEffective: bonusCalculation.pandaEffective,
-                uberEffective: bonusCalculation.uberEffective
+                uberEffective: bonusCalculation.uberEffective,
+                cashOrders: parseInt(cashOrders) || 0,
+                pandaOrders: parseInt(pandaOrders) || 0,
+                uberOrders: parseInt(uberOrders) || 0
             },
+            totalIncome: bonusCalculation.totalIncome,
             
             // 支出詳細 (必填JSON欄位)
             expenseDetails: {
@@ -207,21 +212,14 @@ router.post('/submit', async (req, res) => {
                 uberFee: bonusCalculation.uberRevenue * 0.35,
                 otherExpenses: 0
             },
+            totalExpense: totalExpense,
             
-            // 訂單數量
-            cashOrders: parseInt(cashOrders) || 0,
-            pandaOrders: parseInt(pandaOrders) || 0,
-            uberOrders: parseInt(uberOrders) || 0,
-            totalOrders: (parseInt(cashOrders) || 0) + (parseInt(pandaOrders) || 0) + (parseInt(uberOrders) || 0),
-            
-            // 獎金計算結果
-            effectiveRevenue: bonusCalculation.totalEffective,
+            // 淨收入和獎金計算
+            netIncome: netIncome,
             bonusAmount: bonusCalculation.bonusAmount,
-            bonusQualified: bonusCalculation.qualified,
             bonusStatus: bonusCalculation.qualified ? '達標' : '未達標',
-            bonusShortfall: bonusCalculation.shortfall,
-            bonusThreshold: bonusCalculation.threshold,
-            bonusRate: bonusCalculation.bonusRate,
+            targetGap: bonusCalculation.shortfall > 0 ? bonusCalculation.shortfall : null,
+            orderAverage: orderAverage,
             
             notes: notes || null,
             isDeleted: false
