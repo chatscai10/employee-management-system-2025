@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https://api.telegram.org;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#3b82f6">
@@ -14,7 +15,61 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js">
+        // 安全輸入驗證函數
+        function validateInput(input, type = 'text') {
+            if (!input || typeof input !== 'string') return false;
+            
+            // 移除潛在危險字符
+            input = input.trim();
+            
+            switch (type) {
+                case 'email':
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input);
+                case 'phone':
+                    return /^[0-9\-\+\(\)\s]+$/.test(input);
+                case 'id':
+                    return /^[A-Z0-9]+$/.test(input);
+                case 'name':
+                    return /^[\u4e00-\u9fff\u3400-\u4dbf\w\s]+$/.test(input) && input.length <= 50;
+                case 'alphanumeric':
+                    return /^[a-zA-Z0-9]+$/.test(input);
+                default:
+                    // 基本XSS防護
+                    return !/<script|javascript:|on\w+=/i.test(input);
+            }
+        }
+
+        // 安全的API請求函數
+        function secureApiRequest(url, options = {}) {
+            // 添加安全標頭
+            options.headers = {
+                ...options.headers,
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-Client-Version': '1.0.0'
+            };
+
+            // 添加請求時間戳（防重放攻擊）
+            if (options.body && typeof options.body === 'string') {
+                const data = JSON.parse(options.body);
+                data._timestamp = Date.now();
+                data._nonce = Math.random().toString(36).substr(2, 9);
+                options.body = JSON.stringify(data);
+            }
+
+            return fetch(url, options);
+        }
+
+        // 替換所有 fetch 調用
+        const originalFetch = window.fetch;
+        window.fetch = function(url, options = {}) {
+            if (url.startsWith('/api/')) {
+                return secureApiRequest(url, options);
+            }
+            return originalFetch(url, options);
+        };
+
+</script>
     
     <style>
         :root {
@@ -716,6 +771,7 @@
             }
         }
         </style>
+    <meta http-equiv="X-Frame-Options" content="DENY">
 </head>
 <body>
     <!-- 側邊欄 -->

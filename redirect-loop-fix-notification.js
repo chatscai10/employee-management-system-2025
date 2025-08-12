@@ -1,3 +1,30 @@
+
+// 添加頻率限制機制 - 性能優化
+const rateLimiter = {
+    lastSent: {},
+    minInterval: 5000, // 5秒最小間隔
+    
+    canSend(key) {
+        const now = Date.now();
+        if (!this.lastSent[key] || now - this.lastSent[key] > this.minInterval) {
+            this.lastSent[key] = now;
+            return true;
+        }
+        return false;
+    }
+};
+
+// 包裝原始發送函數
+const originalSendFunction = global.sendTelegramNotification || function(){};
+global.sendTelegramNotification = function(message, key = 'default') {
+    if (rateLimiter.canSend(key)) {
+        return originalSendFunction(message);
+    } else {
+        console.log('⚡ Telegram 頻率限制: 跳過發送');
+        return Promise.resolve();
+    }
+};
+
 /**
  * 🔄 無限重定向循環修復完成通知
  */

@@ -1,3 +1,76 @@
+
+// 登入嘗試追蹤
+const loginAttempts = new Map();
+const MAX_LOGIN_ATTEMPTS = 5;
+const LOCKOUT_TIME = 30 * 60 * 1000; // 30分鐘
+
+function isAccountLocked(identifier) {
+    if (!loginAttempts.has(identifier)) return false;
+    
+    const attempts = loginAttempts.get(identifier);
+    if (attempts.count >= MAX_LOGIN_ATTEMPTS) {
+        if (Date.now() - attempts.lastAttempt < LOCKOUT_TIME) {
+            return true;
+        } else {
+            // 鎖定時間已過，重置
+            loginAttempts.delete(identifier);
+            return false;
+        }
+    }
+    return false;
+}
+
+function recordLoginAttempt(identifier, success) {
+    if (success) {
+        loginAttempts.delete(identifier);
+        return;
+    }
+    
+    if (!loginAttempts.has(identifier)) {
+        loginAttempts.set(identifier, { count: 1, lastAttempt: Date.now() });
+    } else {
+        const attempts = loginAttempts.get(identifier);
+        attempts.count++;
+        attempts.lastAttempt = Date.now();
+    }
+}
+
+
+// 添加速率限制機制
+const rateLimitMap = new Map();
+const RATE_LIMIT = {
+    login: { max: 5, window: 15 * 60 * 1000 }, // 15分鐘5次
+    register: { max: 3, window: 60 * 60 * 1000 }, // 1小時3次
+    verify: { max: 10, window: 60 * 1000 } // 1分鐘10次
+};
+
+function checkRateLimit(req, action) {
+    const key = `${req.ip}_${action}`;
+    const now = Date.now();
+    const limit = RATE_LIMIT[action];
+    
+    if (!rateLimitMap.has(key)) {
+        rateLimitMap.set(key, { count: 1, firstRequest: now });
+        return true;
+    }
+    
+    const data = rateLimitMap.get(key);
+    
+    // 重置窗口
+    if (now - data.firstRequest > limit.window) {
+        rateLimitMap.set(key, { count: 1, firstRequest: now });
+        return true;
+    }
+    
+    // 檢查限制
+    if (data.count >= limit.max) {
+        return false;
+    }
+    
+    data.count++;
+    return true;
+}
+
 /**
  * 認證相關路由
  */
