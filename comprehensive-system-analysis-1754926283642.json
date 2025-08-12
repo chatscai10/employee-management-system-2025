@@ -1,0 +1,631 @@
+{
+  "title": "🔍 企業級系統深度比對分析報告",
+  "analysisDate": "2025-08-11T15:31:23.641Z",
+  "executiveSummary": {
+    "totalGapsFound": 22,
+    "criticalGaps": 6,
+    "highGaps": 8,
+    "mediumGaps": 7,
+    "lowGaps": 1,
+    "complianceLevel": {
+      "systemLogic": "36%",
+      "notificationTemplates": "-100%",
+      "overallCompliance": "73%"
+    }
+  },
+  "gapsByModule": {
+    "Employee System": [
+      {
+        "module": "Employee System",
+        "category": "員工註冊",
+        "severity": "HIGH",
+        "description": "缺少11個必填欄位的完整註冊系統",
+        "required": 11,
+        "current": 2,
+        "missing": [
+          "birthDate",
+          "gender",
+          "hasDriverLicense",
+          "phone",
+          "address",
+          "emergencyContactName",
+          "emergencyContactRelation",
+          "emergencyContactPhone",
+          "hireDate"
+        ]
+      },
+      {
+        "module": "Employee System",
+        "category": "職位階級",
+        "severity": "MEDIUM",
+        "description": "缺少完整的5級職位階級系統",
+        "required": [
+          "實習生",
+          "員工",
+          "副店長",
+          "店長",
+          "區域經理"
+        ],
+        "current": [
+          "基礎職位"
+        ],
+        "missing": [
+          "實習生",
+          "員工",
+          "副店長",
+          "店長",
+          "區域經理"
+        ]
+      },
+      {
+        "module": "Employee System",
+        "category": "員工狀態",
+        "severity": "MEDIUM",
+        "description": "缺少完整的員工狀態管理系統",
+        "required": [
+          "在職",
+          "離職",
+          "留職停薪",
+          "審核中"
+        ],
+        "current": [
+          "基礎狀態"
+        ],
+        "missing": [
+          "在職",
+          "離職",
+          "留職停薪",
+          "審核中"
+        ]
+      }
+    ],
+    "GPS Attendance System": [
+      {
+        "module": "GPS Attendance System",
+        "category": "GPS打卡核心",
+        "severity": "CRITICAL",
+        "description": "完全缺失GPS定位打卡系統",
+        "required": {
+          "geoFence": "50公尺限制",
+          "workingHours": "09:00-18:00",
+          "checkinTypes": [
+            "上班打卡",
+            "下班打卡"
+          ],
+          "deviceDetection": "防多裝置同時打卡"
+        },
+        "current": null,
+        "implementation": "REQUIRED"
+      },
+      {
+        "module": "GPS Attendance System",
+        "category": "遲到統計",
+        "severity": "HIGH",
+        "description": "缺少自動遲到統計和懲罰觸發系統",
+        "required": {
+          "monthlyReset": true,
+          "punishmentTrigger": {
+            "maxLateTimes": 3,
+            "maxLateMinutes": 10
+          }
+        },
+        "current": null,
+        "implementation": "REQUIRED"
+      },
+      {
+        "module": "GPS Attendance System",
+        "category": "設備安全",
+        "severity": "HIGH",
+        "description": "缺少設備指紋識別和異常檢測",
+        "required": {
+          "fingerprinting": true,
+          "anomalyDetection": true,
+          "detailedLogging": true
+        },
+        "current": null,
+        "implementation": "REQUIRED"
+      }
+    ],
+    "Revenue System": [
+      {
+        "module": "Revenue System",
+        "category": "獎金計算",
+        "severity": "MEDIUM",
+        "description": "需要完善獎金計算邏輯（平日/假日區分）",
+        "required": {
+          "bonusCategories": [
+            "平日獎金",
+            "假日獎金"
+          ],
+          "autoCalculation": true,
+          "targetComparison": true
+        },
+        "current": "基礎計算",
+        "enhancement": "NEEDED"
+      },
+      {
+        "module": "Revenue System",
+        "category": "績效分析",
+        "severity": "MEDIUM",
+        "description": "缺少月度、季度績效報告系統",
+        "required": {
+          "monthlyReports": true,
+          "quarterlyReports": true,
+          "targetTracking": true
+        },
+        "current": null,
+        "implementation": "NEEDED"
+      },
+      {
+        "module": "Revenue System",
+        "category": "目標管理",
+        "severity": "LOW",
+        "description": "缺少營收目標設定與追蹤功能",
+        "required": {
+          "targetSetting": true,
+          "progressTracking": true,
+          "achievementAnalysis": true
+        },
+        "current": null,
+        "implementation": "OPTIONAL"
+      }
+    ],
+    "Inventory System": [
+      {
+        "module": "Inventory System",
+        "category": "異常分析",
+        "severity": "HIGH",
+        "description": "缺少品項異常天數追蹤和警報系統",
+        "required": {
+          "perItemTracking": true,
+          "customDaysPerItem": true,
+          "automaticAlerts": true,
+          "lastOrderTracking": true
+        },
+        "current": null,
+        "implementation": "CRITICAL"
+      },
+      {
+        "module": "Inventory System",
+        "category": "供應商分組",
+        "severity": "MEDIUM",
+        "description": "通知模板需要依供應商分類顯示叫貨項目",
+        "required": {
+          "supplierGrouping": true,
+          "brandItemDisplay": true,
+          "sortedDisplay": true
+        },
+        "current": "基礎分類",
+        "enhancement": "NEEDED"
+      }
+    ],
+    "Scheduling System": [
+      {
+        "module": "Scheduling System",
+        "category": "智慧排班引擎",
+        "severity": "CRITICAL",
+        "description": "完全缺失6重規則引擎的智慧排班系統",
+        "required": {
+          "basicTimeValidation": true,
+          "employeeAvailability": true,
+          "minimumStaffing": true,
+          "consecutiveWorkLimit": true,
+          "fairnessDistribution": true,
+          "specialRequirements": true
+        },
+        "current": null,
+        "implementation": "CRITICAL"
+      },
+      {
+        "module": "Scheduling System",
+        "category": "排班通知",
+        "severity": "HIGH",
+        "description": "缺少完整的排班通知系統",
+        "required": {
+          "settingReminder": "開啟前5天通知設定公休日",
+          "openingWarning": "開啟前1小時通知",
+          "closingWarning": "關閉前1小時通知",
+          "dailyReminder": "每日18:00值班提醒",
+          "completionNotification": "排班完成通知"
+        },
+        "current": null,
+        "implementation": "HIGH"
+      }
+    ],
+    "Promotion Voting System": [
+      {
+        "module": "Promotion Voting System",
+        "category": "升遷投票核心",
+        "severity": "CRITICAL",
+        "description": "完全缺失升遷投票系統（系統邏輯核心功能）",
+        "required": {
+          "anonymousVoting": true,
+          "candidateAnonymization": "CANDIDATE_X_001格式",
+          "voteModification": "3次修改機會",
+          "modificationHistory": "完整修改記錄",
+          "sha256Encryption": "投票加密保護"
+        },
+        "current": null,
+        "implementation": "CRITICAL"
+      },
+      {
+        "module": "Promotion Voting System",
+        "category": "自動投票觸發",
+        "severity": "CRITICAL",
+        "description": "缺少自動投票觸發機制（新人轉正、降職懲罰）",
+        "required": {
+          "newEmployeePromotion": "到職20天自動觸發",
+          "disciplinaryDemotion": "遲到統計觸發",
+          "automaticScheduling": "每日00:00檢查",
+          "multipleVotingManagement": "並發投票管理"
+        },
+        "current": null,
+        "implementation": "CRITICAL"
+      }
+    ],
+    "Maintenance System": [
+      {
+        "module": "Maintenance System",
+        "category": "維修管理",
+        "severity": "HIGH",
+        "description": "缺少完整的維修申請和管理流程",
+        "required": {
+          "requestCreation": true,
+          "priorityAssessment": "高/中/低優先級",
+          "workAssignment": "自動或手動派工",
+          "progressTracking": "即時進度更新",
+          "completionConfirmation": "申請人確認",
+          "photoUpload": "支援照片上傳"
+        },
+        "current": null,
+        "implementation": "HIGH"
+      }
+    ],
+    "Telegram Notification System": [
+      {
+        "module": "Telegram Notification System",
+        "category": "Telegram通知核心",
+        "severity": "CRITICAL",
+        "description": "完全缺失Telegram通知系統（29種通知模板）",
+        "required": {
+          "basicNotifications": 8,
+          "newEmployeeNotifications": 7,
+          "disciplinaryNotifications": 8,
+          "adminNotifications": 6,
+          "totalTemplates": 29
+        },
+        "current": 0,
+        "implementation": "CRITICAL"
+      },
+      {
+        "module": "Telegram Notification System",
+        "category": "自動通知觸發",
+        "severity": "CRITICAL",
+        "description": "缺少自動通知觸發機制",
+        "required": {
+          "dataSubmissionTrigger": "所有數據提交都要通知",
+          "systemEventTrigger": "系統事件自動通知",
+          "scheduledNotifications": "定時通知（生日、排班等）",
+          "anomalyAlerts": "異常情況警報"
+        },
+        "current": null,
+        "implementation": "CRITICAL"
+      }
+    ],
+    "Automation Features": [
+      {
+        "module": "Automation Features",
+        "category": "定時任務",
+        "severity": "HIGH",
+        "description": "缺少定時任務自動執行系統",
+        "required": {
+          "dailyTasks": "每日00:00執行5個任務",
+          "monthlyTasks": "每月1號00:00執行4個任務",
+          "taskList": [
+            "檢查新人轉正條件",
+            "檢查投票活動到期",
+            "檢查遲到懲罰條件",
+            "發送投票提醒通知",
+            "系統健康檢查"
+          ]
+        },
+        "current": null,
+        "implementation": "HIGH"
+      },
+      {
+        "module": "Automation Features",
+        "category": "生日提醒",
+        "severity": "MEDIUM",
+        "description": "缺少員工生日自動提醒系統",
+        "required": {
+          "monthlyReminder": "每月1號10:00",
+          "weeklyReminder": "每週一08:00",
+          "templates": "完整生日通知模板"
+        },
+        "current": null,
+        "implementation": "MEDIUM"
+      }
+    ],
+    "Data Management": [
+      {
+        "module": "Data Management",
+        "category": "數據作廢",
+        "severity": "HIGH",
+        "description": "缺少數據作廢功能和通知系統",
+        "required": {
+          "voidingCapability": "所有數據都可作廢",
+          "reasonTracking": "作廢原因記錄",
+          "notificationSystem": "作廢通知老闆和員工",
+          "auditTrail": "完整的審計追蹤"
+        },
+        "current": null,
+        "implementation": "HIGH"
+      },
+      {
+        "module": "Data Management",
+        "category": "系統日誌",
+        "severity": "MEDIUM",
+        "description": "需要完善的系統日誌記錄",
+        "required": {
+          "systemLogs": "system_logs表",
+          "auditLogs": "所有操作記錄",
+          "performanceMonitoring": "效能監控",
+          "errorTracking": "錯誤追蹤"
+        },
+        "current": "基礎日誌",
+        "enhancement": "NEEDED"
+      }
+    ]
+  },
+  "implementationPriority": {
+    "phase1_Critical": [
+      {
+        "module": "GPS Attendance System",
+        "category": "GPS打卡核心",
+        "description": "完全缺失GPS定位打卡系統",
+        "estimatedEffort": "5-7天",
+        "dependencies": []
+      },
+      {
+        "module": "Scheduling System",
+        "category": "智慧排班引擎",
+        "description": "完全缺失6重規則引擎的智慧排班系統",
+        "estimatedEffort": "7-10天",
+        "dependencies": []
+      },
+      {
+        "module": "Promotion Voting System",
+        "category": "升遷投票核心",
+        "description": "完全缺失升遷投票系統（系統邏輯核心功能）",
+        "estimatedEffort": "6-8天",
+        "dependencies": []
+      },
+      {
+        "module": "Promotion Voting System",
+        "category": "自動投票觸發",
+        "description": "缺少自動投票觸發機制（新人轉正、降職懲罰）",
+        "estimatedEffort": "3-5天",
+        "dependencies": [
+          "GPS打卡核心",
+          "升遷投票核心"
+        ]
+      },
+      {
+        "module": "Telegram Notification System",
+        "category": "Telegram通知核心",
+        "description": "完全缺失Telegram通知系統（29種通知模板）",
+        "estimatedEffort": "4-6天",
+        "dependencies": []
+      },
+      {
+        "module": "Telegram Notification System",
+        "category": "自動通知觸發",
+        "description": "缺少自動通知觸發機制",
+        "estimatedEffort": "估算中",
+        "dependencies": []
+      }
+    ],
+    "phase2_High": [
+      {
+        "module": "Employee System",
+        "category": "員工註冊",
+        "description": "缺少11個必填欄位的完整註冊系統",
+        "estimatedEffort": "估算中",
+        "dependencies": []
+      },
+      {
+        "module": "GPS Attendance System",
+        "category": "遲到統計",
+        "description": "缺少自動遲到統計和懲罰觸發系統",
+        "estimatedEffort": "估算中",
+        "dependencies": []
+      },
+      {
+        "module": "GPS Attendance System",
+        "category": "設備安全",
+        "description": "缺少設備指紋識別和異常檢測",
+        "estimatedEffort": "估算中",
+        "dependencies": []
+      },
+      {
+        "module": "Inventory System",
+        "category": "異常分析",
+        "description": "缺少品項異常天數追蹤和警報系統",
+        "estimatedEffort": "2-3天",
+        "dependencies": [
+          "Telegram通知核心"
+        ]
+      },
+      {
+        "module": "Scheduling System",
+        "category": "排班通知",
+        "description": "缺少完整的排班通知系統",
+        "estimatedEffort": "1-2天",
+        "dependencies": [
+          "智慧排班引擎",
+          "Telegram通知核心"
+        ]
+      },
+      {
+        "module": "Maintenance System",
+        "category": "維修管理",
+        "description": "缺少完整的維修申請和管理流程",
+        "estimatedEffort": "3-4天",
+        "dependencies": []
+      },
+      {
+        "module": "Automation Features",
+        "category": "定時任務",
+        "description": "缺少定時任務自動執行系統",
+        "estimatedEffort": "2-4天",
+        "dependencies": []
+      },
+      {
+        "module": "Data Management",
+        "category": "數據作廢",
+        "description": "缺少數據作廢功能和通知系統",
+        "estimatedEffort": "2-3天",
+        "dependencies": [
+          "Telegram通知核心"
+        ]
+      }
+    ],
+    "phase3_Medium": [
+      {
+        "module": "Employee System",
+        "category": "職位階級",
+        "description": "缺少完整的5級職位階級系統",
+        "estimatedEffort": "估算中",
+        "dependencies": []
+      },
+      {
+        "module": "Employee System",
+        "category": "員工狀態",
+        "description": "缺少完整的員工狀態管理系統",
+        "estimatedEffort": "估算中",
+        "dependencies": []
+      },
+      {
+        "module": "Revenue System",
+        "category": "獎金計算",
+        "description": "需要完善獎金計算邏輯（平日/假日區分）",
+        "estimatedEffort": "1-2天",
+        "dependencies": []
+      },
+      {
+        "module": "Revenue System",
+        "category": "績效分析",
+        "description": "缺少月度、季度績效報告系統",
+        "estimatedEffort": "估算中",
+        "dependencies": []
+      },
+      {
+        "module": "Inventory System",
+        "category": "供應商分組",
+        "description": "通知模板需要依供應商分類顯示叫貨項目",
+        "estimatedEffort": "1天",
+        "dependencies": []
+      },
+      {
+        "module": "Automation Features",
+        "category": "生日提醒",
+        "description": "缺少員工生日自動提醒系統",
+        "estimatedEffort": "1天",
+        "dependencies": []
+      },
+      {
+        "module": "Data Management",
+        "category": "系統日誌",
+        "description": "需要完善的系統日誌記錄",
+        "estimatedEffort": "1-2天",
+        "dependencies": []
+      }
+    ]
+  },
+  "recommendedImplementationOrder": [
+    {
+      "order": 1,
+      "title": "GPS打卡系統建置",
+      "reason": "基礎功能，其他系統依賴",
+      "duration": "5-7天"
+    },
+    {
+      "order": 2,
+      "title": "Telegram通知系統",
+      "reason": "業務關鍵，所有功能都需要",
+      "duration": "4-6天"
+    },
+    {
+      "order": 3,
+      "title": "升遷投票系統",
+      "reason": "系統邏輯核心功能",
+      "duration": "6-8天"
+    },
+    {
+      "order": 4,
+      "title": "智慧排班系統",
+      "reason": "複雜業務邏輯",
+      "duration": "7-10天"
+    },
+    {
+      "order": 5,
+      "title": "維修管理系統",
+      "reason": "獨立模組，可並行開發",
+      "duration": "3-4天"
+    },
+    {
+      "order": 6,
+      "title": "自動化功能完善",
+      "reason": "系統穩定性提升",
+      "duration": "3-5天"
+    }
+  ],
+  "riskAssessment": {
+    "businessImpact": {
+      "high": [
+        "GPS打卡系統",
+        "Telegram通知系統",
+        "升遷投票系統"
+      ],
+      "medium": [
+        "智慧排班系統",
+        "維修管理系統"
+      ],
+      "low": [
+        "生日提醒",
+        "系統日誌完善"
+      ]
+    },
+    "technicalComplexity": {
+      "complex": [
+        "GPS打卡系統",
+        "智慧排班系統",
+        "升遷投票系統"
+      ],
+      "moderate": [
+        "Telegram通知系統",
+        "維修管理系統",
+        "自動化功能"
+      ],
+      "simple": [
+        "生日提醒",
+        "數據作廢功能"
+      ]
+    },
+    "resourceRequirements": {
+      "backend": "70%工作量",
+      "frontend": "20%工作量",
+      "integration": "10%工作量",
+      "estimatedTotalTime": "30-45天",
+      "recommendedTeamSize": "1-2名開發者"
+    }
+  },
+  "nextSteps": [
+    "1. 立即開始Phase 1 Critical功能實現",
+    "2. 建立GPS打卡系統（最高優先級）",
+    "3. 實現Telegram通知系統（業務關鍵）",
+    "4. 開發升遷投票系統（系統邏輯核心）",
+    "5. 建置智慧排班系統",
+    "6. 完善自動化功能"
+  ]
+}
