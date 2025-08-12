@@ -937,6 +937,7 @@
                                             <th>上班</th>
                                             <th>下班</th>
                                             <th>狀態</th>
+                                            <th>操作</th>
                                         </tr>
                                     </thead>
                                     <tbody id="recentAttendance">
@@ -945,18 +946,42 @@
                                             <td>08:30</td>
                                             <td>-</td>
                                             <td><span class="badge bg-success">進行中</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editAttendanceRecord('today')" title="編輯打卡記錄">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger" onclick="voidAttendanceRecord('today')" title="作廢打卡記錄">
+                                                    <i class="bi bi-x-circle"></i>
+                                                </button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>昨天</td>
                                             <td>08:25</td>
                                             <td>17:30</td>
                                             <td><span class="badge bg-success">正常</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editAttendanceRecord('yesterday')" title="編輯打卡記錄">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger" onclick="voidAttendanceRecord('yesterday')" title="作廢打卡記錄">
+                                                    <i class="bi bi-x-circle"></i>
+                                                </button>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>08/10</td>
                                             <td>08:35</td>
                                             <td>17:25</td>
                                             <td><span class="badge bg-warning">遲到</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editAttendanceRecord('08-10')" title="編輯打卡記錄">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger" onclick="voidAttendanceRecord('08-10')" title="作廢打卡記錄">
+                                                    <i class="bi bi-x-circle"></i>
+                                                </button>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1959,6 +1984,7 @@
                                         <th>下班時間</th>
                                         <th>工作時數</th>
                                         <th>狀態</th>
+                                        <th>操作</th>
                                     </tr>
                                 </thead>
                                 <tbody id="attendanceRecords">
@@ -1968,6 +1994,14 @@
                                         <td>進行中</td>
                                         <td>-</td>
                                         <td><span class="badge bg-success">正常</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary me-1" onclick="editAttendanceRecord('2025-08-12')" title="編輯打卡記錄">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" onclick="voidAttendanceRecord('2025-08-12')" title="作廢打卡記錄">
+                                                <i class="bi bi-x-circle"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>2025-08-11</td>
@@ -1975,6 +2009,14 @@
                                         <td>17:30</td>
                                         <td>9.0小時</td>
                                         <td><span class="badge bg-success">正常</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary me-1" onclick="editAttendanceRecord('2025-08-11')" title="編輯打卡記錄">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" onclick="voidAttendanceRecord('2025-08-11')" title="作廢打卡記錄">
+                                                <i class="bi bi-x-circle"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>2025-08-10</td>
@@ -1982,6 +2024,14 @@
                                         <td>17:25</td>
                                         <td>8.8小時</td>
                                         <td><span class="badge bg-warning">遲到</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary me-1" onclick="editAttendanceRecord('2025-08-10')" title="編輯打卡記錄">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" onclick="voidAttendanceRecord('2025-08-10')" title="作廢打卡記錄">
+                                                <i class="bi bi-x-circle"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -2947,9 +2997,124 @@
         }
         
         // 個人資料功能
-        function editProfile() {
-            console.log('編輯個人資料');
-            showNotification('個人資料編輯功能開發中...', 'warning');
+        async function editProfile() {
+            try {
+                // 先獲取當前用戶資料
+                const response = await fetch('/api/auth/me', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('employeeToken')}`
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('無法獲取用戶資料');
+                }
+                
+                const result = await response.json();
+                if (!result.success) {
+                    throw new Error(result.message || '獲取用戶資料失敗');
+                }
+                
+                const user = result.data.user;
+                
+                // 創建編輯表單模態框
+                const modal = document.createElement('div');
+                modal.className = 'modal fade';
+                modal.innerHTML = `
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">編輯個人資料</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editProfileForm">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">姓名</label>
+                                            <input type="text" class="form-control" name="name" value="${user.name || ''}" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">員工編號</label>
+                                            <input type="text" class="form-control" value="${user.employeeId || ''}" readonly>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">聯絡電話</label>
+                                            <input type="tel" class="form-control" name="phone" value="${user.phone || ''}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">電子信箱</label>
+                                            <input type="email" class="form-control" name="email" value="${user.email || ''}">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">職位</label>
+                                            <input type="text" class="form-control" value="${user.position || ''}" readonly>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" onclick="saveProfileChanges()">儲存變更</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                const bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+                
+                modal.addEventListener('hidden.bs.modal', () => {
+                    modal.remove();
+                });
+                
+            } catch (error) {
+                console.error('編輯個人資料錯誤:', error);
+                showNotification('無法開啟編輯功能: ' + error.message, 'error');
+            }
+        }
+        
+        // 儲存個人資料變更
+        async function saveProfileChanges() {
+            try {
+                const form = document.getElementById('editProfileForm');
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+                
+                showNotification('正在儲存資料...', 'info');
+                
+                const response = await fetch('/api/employees/profile', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('employeeToken')}`
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification('個人資料已成功更新', 'success');
+                    
+                    // 關閉模態框
+                    const modal = bootstrap.Modal.getInstance(document.querySelector('.modal.show'));
+                    if (modal) modal.hide();
+                    
+                    // 刷新頁面資料
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1500);
+                } else {
+                    throw new Error(result.message || '儲存失敗');
+                }
+                
+            } catch (error) {
+                console.error('儲存個人資料錯誤:', error);
+                showNotification('儲存失敗: ' + error.message, 'error');
+            }
         }
         
         // 薪資查詢功能
@@ -3163,6 +3328,7 @@
                                 <th>班別</th>
                                 <th>時間</th>
                                 <th>狀態</th>
+                                <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -3189,6 +3355,20 @@
                                 `<span class="badge bg-${getScheduleStatusColor(daySchedule.status)}">${daySchedule.status}</span>` : 
                                 '<span class="text-muted">-</span>'
                             }
+                        </td>
+                        <td>
+                            ${daySchedule ? `
+                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editScheduleRecord('${dateStr}')" title="修改排班">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" onclick="cancelScheduleRecord('${dateStr}')" title="取消排班">
+                                    <i class="bi bi-x-circle"></i>
+                                </button>
+                            ` : `
+                                <button class="btn btn-sm btn-outline-success" onclick="addScheduleRecord('${dateStr}')" title="新增排班">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button>
+                            `}
                         </td>
                     </tr>
                 `;
@@ -3458,7 +3638,7 @@
                             </div>
                         </div>
                         ${vote.status === 'active' ? `
-                            <div class="d-flex gap-2">
+                            <div class="d-flex gap-2 mb-2">
                                 <button class="btn btn-success" onclick="submitVote('${vote.id}', 'for')">
                                     <i class="bi bi-hand-thumbs-up"></i> 贊成
                                 </button>
@@ -3466,7 +3646,21 @@
                                     <i class="bi bi-hand-thumbs-down"></i> 反對
                                 </button>
                             </div>
-                        ` : ''}
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary" onclick="editVoteRecord('${vote.id}')" title="修改投票">
+                                    <i class="bi bi-pencil"></i> 修改
+                                </button>
+                                <button class="btn btn-sm btn-outline-warning" onclick="withdrawVote('${vote.id}')" title="撤銷投票">
+                                    <i class="bi bi-arrow-counterclockwise"></i> 撤銷
+                                </button>
+                            </div>
+                        ` : `
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-info" onclick="viewVoteDetails('${vote.id}')" title="查看詳情">
+                                    <i class="bi bi-eye"></i> 查看詳情
+                                </button>
+                            </div>
+                        `}
                     </div>
                 </div>
             `).join('');
@@ -3663,6 +3857,448 @@
         function initializeAllCharts() {
             // 這裡可以添加各種圖表的初始化代碼
             console.log('初始化圖表組件');
+        }
+        
+        // ==============================================
+        // 編輯作廢功能的JavaScript函數 - 新增修復
+        // ==============================================
+        
+        // 考勤記錄編輯功能
+        async function editAttendanceRecord(recordId) {
+            try {
+                // 顯示確認對話框
+                if (!confirm('確定要編輯這筆打卡記錄嗎？編輯後需要主管審核。')) {
+                    return;
+                }
+                
+                showNotification('正在處理編輯請求...', 'info');
+                
+                const response = await fetch(`/api/attendance/edit/${recordId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('employeeToken')}`
+                    },
+                    body: JSON.stringify({
+                        action: 'edit_request',
+                        reason: '員工申請編輯打卡記錄',
+                        timestamp: new Date().toISOString()
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification('編輯申請已提交，等待主管審核', 'success');
+                    // 重新載入考勤記錄
+                    await loadAttendanceRecords();
+                } else {
+                    throw new Error(result.message || '編輯申請失敗');
+                }
+                
+            } catch (error) {
+                console.error('編輯考勤記錄失敗:', error);
+                showNotification('編輯申請失敗: ' + error.message, 'error');
+            }
+        }
+        
+        // 考勤記錄作廢功能
+        async function voidAttendanceRecord(recordId) {
+            try {
+                // 顯示確認對話框
+                if (!confirm('確定要作廢這筆打卡記錄嗎？此操作需要主管審核且無法撤銷。')) {
+                    return;
+                }
+                
+                const reason = prompt('請輸入作廢原因：');
+                if (!reason) {
+                    showNotification('請輸入作廢原因', 'warning');
+                    return;
+                }
+                
+                showNotification('正在處理作廢請求...', 'info');
+                
+                const response = await fetch(`/api/attendance/void/${recordId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('employeeToken')}`
+                    },
+                    body: JSON.stringify({
+                        action: 'void_request',
+                        reason: reason,
+                        timestamp: new Date().toISOString()
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification('作廢申請已提交，等待主管審核', 'success');
+                    // 重新載入考勤記錄
+                    await loadAttendanceRecords();
+                } else {
+                    throw new Error(result.message || '作廢申請失敗');
+                }
+                
+            } catch (error) {
+                console.error('作廢考勤記錄失敗:', error);
+                showNotification('作廢申請失敗: ' + error.message, 'error');
+            }
+        }
+        
+        // 排班記錄編輯功能
+        async function editScheduleRecord(date) {
+            try {
+                // 顯示確認對話框
+                if (!confirm(`確定要修改 ${date} 的排班嗎？修改後需要主管審核。`)) {
+                    return;
+                }
+                
+                showNotification('正在處理排班修改請求...', 'info');
+                
+                const response = await fetch(`/api/schedule/edit`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('employeeToken')}`
+                    },
+                    body: JSON.stringify({
+                        date: date,
+                        action: 'edit_request',
+                        reason: '員工申請修改排班',
+                        timestamp: new Date().toISOString()
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification('排班修改申請已提交，等待主管審核', 'success');
+                    // 重新載入排班數據
+                    await loadScheduleData();
+                } else {
+                    throw new Error(result.message || '排班修改申請失敗');
+                }
+                
+            } catch (error) {
+                console.error('修改排班記錄失敗:', error);
+                showNotification('排班修改申請失敗: ' + error.message, 'error');
+            }
+        }
+        
+        // 排班記錄取消功能
+        async function cancelScheduleRecord(date) {
+            try {
+                // 顯示確認對話框
+                if (!confirm(`確定要取消 ${date} 的排班嗎？取消後需要主管審核。`)) {
+                    return;
+                }
+                
+                const reason = prompt('請輸入取消原因：');
+                if (!reason) {
+                    showNotification('請輸入取消原因', 'warning');
+                    return;
+                }
+                
+                showNotification('正在處理排班取消請求...', 'info');
+                
+                const response = await fetch(`/api/schedule/cancel`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('employeeToken')}`
+                    },
+                    body: JSON.stringify({
+                        date: date,
+                        action: 'cancel_request',
+                        reason: reason,
+                        timestamp: new Date().toISOString()
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification('排班取消申請已提交，等待主管審核', 'success');
+                    // 重新載入排班數據
+                    await loadScheduleData();
+                } else {
+                    throw new Error(result.message || '排班取消申請失敗');
+                }
+                
+            } catch (error) {
+                console.error('取消排班記錄失敗:', error);
+                showNotification('排班取消申請失敗: ' + error.message, 'error');
+            }
+        }
+        
+        // 新增排班記錄功能
+        async function addScheduleRecord(date) {
+            try {
+                // 創建新增排班表單模態框
+                const modal = document.createElement('div');
+                modal.className = 'modal fade';
+                modal.innerHTML = `
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">新增排班 - ${date}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="addScheduleForm">
+                                    <div class="mb-3">
+                                        <label class="form-label">班別</label>
+                                        <select class="form-select" name="shift" required>
+                                            <option value="">請選擇班別</option>
+                                            <option value="早班">早班 (09:00-17:00)</option>
+                                            <option value="晚班">晚班 (14:00-22:00)</option>
+                                            <option value="大夜班">大夜班 (22:00-06:00)</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">申請原因</label>
+                                        <textarea class="form-control" name="reason" rows="3" required placeholder="請說明新增排班的原因"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" onclick="submitAddSchedule('${date}')">提交申請</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                const bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+                
+                modal.addEventListener('hidden.bs.modal', () => {
+                    modal.remove();
+                });
+                
+            } catch (error) {
+                console.error('開啟新增排班表單失敗:', error);
+                showNotification('無法開啟新增排班功能: ' + error.message, 'error');
+            }
+        }
+        
+        // 提交新增排班申請
+        async function submitAddSchedule(date) {
+            try {
+                const form = document.getElementById('addScheduleForm');
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+                
+                if (!data.shift || !data.reason) {
+                    showNotification('請填寫完整資料', 'warning');
+                    return;
+                }
+                
+                showNotification('正在提交新增排班申請...', 'info');
+                
+                const response = await fetch(`/api/schedule/add`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('employeeToken')}`
+                    },
+                    body: JSON.stringify({
+                        date: date,
+                        shift: data.shift,
+                        reason: data.reason,
+                        action: 'add_request',
+                        timestamp: new Date().toISOString()
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification('新增排班申請已提交，等待主管審核', 'success');
+                    
+                    // 關閉模態框
+                    const modal = bootstrap.Modal.getInstance(document.querySelector('.modal.show'));
+                    if (modal) modal.hide();
+                    
+                    // 重新載入排班數據
+                    await loadScheduleData();
+                } else {
+                    throw new Error(result.message || '新增排班申請失敗');
+                }
+                
+            } catch (error) {
+                console.error('提交新增排班申請失敗:', error);
+                showNotification('新增排班申請失敗: ' + error.message, 'error');
+            }
+        }
+        
+        // 投票記錄編輯功能
+        async function editVoteRecord(voteId) {
+            try {
+                // 顯示確認對話框
+                if (!confirm('確定要修改投票嗎？修改後將清除之前的投票記錄。')) {
+                    return;
+                }
+                
+                showNotification('正在處理投票修改請求...', 'info');
+                
+                const response = await fetch(`/api/voting/${voteId}/edit`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('employeeToken')}`
+                    },
+                    body: JSON.stringify({
+                        action: 'edit_request',
+                        reason: '員工申請修改投票',
+                        timestamp: new Date().toISOString()
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification('投票修改成功，可以重新投票', 'success');
+                    // 重新載入投票數據
+                    await loadVotingData();
+                } else {
+                    throw new Error(result.message || '投票修改失敗');
+                }
+                
+            } catch (error) {
+                console.error('修改投票記錄失敗:', error);
+                showNotification('投票修改失敗: ' + error.message, 'error');
+            }
+        }
+        
+        // 投票撤銷功能
+        async function withdrawVote(voteId) {
+            try {
+                // 顯示確認對話框
+                if (!confirm('確定要撤銷投票嗎？撤銷後您的投票將被清除。')) {
+                    return;
+                }
+                
+                showNotification('正在處理投票撤銷請求...', 'info');
+                
+                const response = await fetch(`/api/voting/${voteId}/withdraw`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('employeeToken')}`
+                    },
+                    body: JSON.stringify({
+                        action: 'withdraw_vote',
+                        reason: '員工撤銷投票',
+                        timestamp: new Date().toISOString()
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showNotification('投票已成功撤銷', 'success');
+                    // 重新載入投票數據
+                    await loadVotingData();
+                } else {
+                    throw new Error(result.message || '投票撤銷失敗');
+                }
+                
+            } catch (error) {
+                console.error('撤銷投票失敗:', error);
+                showNotification('投票撤銷失敗: ' + error.message, 'error');
+            }
+        }
+        
+        // 查看投票詳情功能
+        async function viewVoteDetails(voteId) {
+            try {
+                showNotification('正在載入投票詳情...', 'info');
+                
+                const response = await fetch(`/api/voting/${voteId}/details`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('employeeToken')}`
+                    }
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    const vote = result.data;
+                    
+                    // 創建詳情模態框
+                    const modal = document.createElement('div');
+                    modal.className = 'modal fade';
+                    modal.innerHTML = `
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">投票詳情</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <h6>投票標題</h6>
+                                            <p>${vote.title}</p>
+                                        </div>
+                                        <div class="col-12">
+                                            <h6>投票說明</h6>
+                                            <p>${vote.description}</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>候選人</h6>
+                                            <p>${vote.candidate}</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>申請職位</h6>
+                                            <p>${vote.position}</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>贊成票數</h6>
+                                            <p class="text-success">${vote.votes_for || 0} 票</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>反對票數</h6>
+                                            <p class="text-danger">${vote.votes_against || 0} 票</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>投票狀態</h6>
+                                            <span class="badge bg-${vote.status === 'active' ? 'success' : 'secondary'}">${vote.status === 'active' ? '進行中' : '已結束'}</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>截止時間</h6>
+                                            <p>${new Date(vote.end_date).toLocaleString('zh-TW')}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(modal);
+                    const bsModal = new bootstrap.Modal(modal);
+                    bsModal.show();
+                    
+                    modal.addEventListener('hidden.bs.modal', () => {
+                        modal.remove();
+                    });
+                    
+                } else {
+                    throw new Error(result.message || '無法載入投票詳情');
+                }
+                
+            } catch (error) {
+                console.error('查看投票詳情失敗:', error);
+                showNotification('無法載入投票詳情: ' + error.message, 'error');
+            }
         }
         
     </script>
