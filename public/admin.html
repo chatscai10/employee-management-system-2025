@@ -945,13 +945,13 @@
                     ...currentFilters
                 });
                 
-                const response = await fetch(`/api/admin/employees?${params}`);
+                const response = await fetch(`/api/employees/?${params}`);
                 if (!response.ok) throw new Error('Failed to load employees');
                 
                 const result = await response.json();
-                employees = result.data.employees;
+                employees = result.data || result.employees || [];
                 
-                renderEmployeeTable(employees, result.data.pagination);
+                renderEmployeeTable(employees, result.pagination || { current: 1, total: 1, count: employees.length });
             } catch (error) {
                 console.error('Load employees failed:', error);
                 showMessage('載入員工資料失敗', 'error');

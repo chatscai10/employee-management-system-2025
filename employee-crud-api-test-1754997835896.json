@@ -1,0 +1,117 @@
+{
+  "timestamp": "2025-08-12T11:23:55.895Z",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "successRate": "100.0%"
+  },
+  "tests": [
+    {
+      "name": "員工列表API測試",
+      "status": "PASSED",
+      "duration": 16,
+      "details": {
+        "status": 200,
+        "employeeCount": 2,
+        "hasEmployeeData": true,
+        "apiMessage": "員工API端點正常工作"
+      },
+      "timestamp": "2025-08-12T11:23:55.830Z"
+    },
+    {
+      "name": "用戶登入API測試",
+      "status": "PASSED",
+      "duration": 4,
+      "details": {
+        "status": 200,
+        "loginSuccess": true,
+        "hasToken": true,
+        "userInfo": {
+          "id": 1,
+          "name": "測試員工",
+          "position": "實習生"
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Iua4rOippuWToeW3pSIsInBvc2l0aW9uIjoi5a-m57-S55SfIiwicm9sZSI6IuWvpue_kueUnyIsImlhdCI6MTc1NDk5NzgzNSwiZXhwIjoxNzU1NjAyNjM1fQ.qbwBt3rXb5RDNEQVjcG3Oo7aqRJ-w_5LC1OGmS0QJHg"
+      },
+      "timestamp": "2025-08-12T11:23:55.835Z"
+    },
+    {
+      "name": "員工註冊API測試",
+      "status": "PASSED",
+      "duration": 15,
+      "details": {
+        "status": 201,
+        "registrationSuccess": true,
+        "newEmployeeId": 2,
+        "message": "註冊成功！請等待審核通過後即可登入",
+        "testData": {
+          "name": "API測試員工_1754997835835",
+          "idNumber": "C742592689",
+          "birthDate": "1990-01-01",
+          "gender": "男",
+          "hasDriverLicense": false,
+          "phone": "0912345678",
+          "address": "台北市測試區測試路123號",
+          "emergencyContactName": "測試聯絡人",
+          "emergencyContactRelation": "父親",
+          "emergencyContactPhone": "0987654321",
+          "hireDate": "2025-08-12"
+        }
+      },
+      "timestamp": "2025-08-12T11:23:55.850Z"
+    },
+    {
+      "name": "系統邏輯.txt合規性檢查",
+      "status": "PASSED",
+      "duration": 40,
+      "details": {
+        "requiredFieldsSupported": 11,
+        "totalRequiredFields": 11,
+        "registrationResponse": {
+          "status": 201,
+          "success": true,
+          "message": "註冊成功！請等待審核通過後即可登入"
+        },
+        "positionHierarchy": {
+          "defined": [
+            "實習生",
+            "員工",
+            "副店長",
+            "店長",
+            "區域經理"
+          ],
+          "defaultPosition": "實習生"
+        },
+        "complianceScore": 100
+      },
+      "timestamp": "2025-08-12T11:23:55.890Z"
+    },
+    {
+      "name": "API錯誤處理測試",
+      "status": "PASSED",
+      "duration": 4,
+      "details": {
+        "invalidDataHandling": {
+          "status": 400,
+          "hasErrorMessage": true,
+          "errorMessage": "請填寫所有必填欄位: name, idNumber, birthDate, gender, hasDriverLicense, phone, address, emergencyContactName, emergencyContactRelation, emergencyContactPhone, hireDate"
+        },
+        "notFoundHandling": {
+          "status": 404,
+          "handlesNotFound": true
+        },
+        "errorHandlingWorking": true
+      },
+      "timestamp": "2025-08-12T11:23:55.895Z"
+    }
+  ],
+  "crudAssessment": {
+    "create": true,
+    "read": true,
+    "update": true,
+    "delete": true
+  },
+  "systemCompliance": 100,
+  "apiStability": true
+}

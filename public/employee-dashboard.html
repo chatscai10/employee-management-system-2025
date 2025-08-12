@@ -111,21 +111,22 @@
                 document.body.style.transition = 'opacity 0.3s ease';
             }
             
-            // DOM載入完成後執行認證檢查
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', function() {
-                    hidePageContent();
-                    
+            // DOM載入完成後執行認證檢查 (添加小延遲確保localStorage同步)
+            function delayedAuthCheck() {
+                hidePageContent();
+                
+                // 延遲500ms確保localStorage完全同步
+                setTimeout(() => {
                     if (checkAuthentication()) {
                         showPageContent();
                     }
-                });
+                }, 500);
+            }
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', delayedAuthCheck);
             } else {
-                hidePageContent();
-                
-                if (checkAuthentication()) {
-                    showPageContent();
-                }
+                delayedAuthCheck();
             }
             
             // 定期檢查認證狀態 (每30秒)

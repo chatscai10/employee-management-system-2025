@@ -393,8 +393,8 @@
                 
                 if (result.success) {
                     // 保存Token和員工資料
-                    localStorage.setItem('token', result.data.token);
-                    localStorage.setItem('employee', JSON.stringify(result.data.employee));
+                    localStorage.setItem('employeeToken', result.data.token);
+                    localStorage.setItem('employeeData', JSON.stringify(result.data.employee));
                     
                     showMessage('登入成功！正在跳轉...', 'success');
                     
@@ -476,7 +476,7 @@
         // 初始化
         document.addEventListener('DOMContentLoaded', function() {
             // 檢查是否已登入
-            const token = localStorage.getItem('token');
+            const token = localStorage.getItem('employeeToken');
             if (token) {
                 // 驗證Token
                 fetch('/api/auth/verify', {

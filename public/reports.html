@@ -6,6 +6,7 @@
     <title>報表儀表板 - 企業員工管理系統</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -106,46 +107,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function showStats() {
-            alert('統計功能開發中，敬請期待！');
-        }
-        
-        function generateReport(type) {
-            const reportContent = document.getElementById('reportContent');
-            const reportTitle = document.getElementById('reportTitle');
-            const reportData = document.getElementById('reportData');
-            
-            reportTitle.textContent = type === 'daily' ? '日報表' : 
-                                    type === 'weekly' ? '週報表' : '月報表';
-            
-            reportData.innerHTML = `
-                <div class="alert alert-info">
-                    <h6>${reportTitle.textContent} - 模擬數據</h6>
-                    <ul>
-                        <li>總營收: NT$ 50,000</li>
-                        <li>出勤率: 95%</li>
-                        <li>完成任務: 48/50</li>
-                        <li>客戶滿意度: 4.8/5.0</li>
-                    </ul>
-                    <small class="text-muted">
-                        注意：這是示範數據，實際功能需要連接後端API
-                    </small>
-                </div>
-            `;
-            
-            reportContent.style.display = 'block';
-        }
-        
-        function exportReport() {
-            alert('報表匯出功能開發中！');
-        }
-        
-        function logout() {
-            if (confirm('確定要登出嗎？')) {
-                window.location.href = 'login.html';
-            }
-        }
-    </script>
+    <script src="js/reports.js"></script>
 </body>
 </html>

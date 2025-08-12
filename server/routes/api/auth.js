@@ -323,19 +323,20 @@ router.post('/verify', async (req, res) => {
     try {
         const token = req.headers.authorization?.replace('Bearer ', '');
         
-        if (!token) {
-            return responseHelper.error(res, 'Token不存在', 401);
+        if (!token || token === 'null' || token === 'undefined') {
+            return responseHelper.error(res, '無效的認證Token', 'NO_TOKEN', 401);
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'default-secret');
+        let decoded;
+        try {
+            decoded = jwt.verify(token, process.env.JWT_SECRET || 'default-secret');
+        } catch (jwtError) {
+            logger.error('❌ Token驗證失敗:', jwtError);
+            return responseHelper.error(res, 'Token格式錯誤或已過期', 'INVALID_TOKEN', 401);
+        }
         
         await initializeModels();
-        const employee = await models.Employee.findByPk(decoded.id, {
-            include: [{
-                model: models.Store,
-                attributes: ['name', 'address']
-            }]
-        });
+        const employee = await models.Employee.findByPk(decoded.id);
 
         if (!employee || employee.status !== '在職') {
             return responseHelper.error(res, 'Token無效', 401);
@@ -346,8 +347,7 @@ router.post('/verify', async (req, res) => {
                 id: employee.id,
                 name: employee.name,
                 position: employee.position,
-                storeId: employee.storeId,
-                store: employee.Store
+                storeId: employee.currentStore || 1
             }
         }, 'Token有效');
 

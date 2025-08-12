@@ -41,6 +41,7 @@ const appealsRoutes = require('./routes/appeals');
 const monitoringRoutes = require('./routes/api/monitoring');
 const alertsRoutes = require('./routes/api/alerts');
 const employeesRoutes = require('./routes/api/employees');
+const reportsRoutes = require('./routes/api/reports');
 const inventoryAdvancedRoutes = require('./routes/inventory-advanced');
 const scheduledJobsRoutes = require('./routes/api/scheduled-jobs');
 const adminVotingRoutes = require('./routes/api/admin-voting');
@@ -78,14 +79,15 @@ class EmployeeManagementServer {
     initializeMiddleware() {
         logger.info('🔧 初始化中間件...');
 
-        // 基礎安全中間件
+        // 基礎安全中間件 - 允許CDN資源
         this.app.use(helmet({
             contentSecurityPolicy: {
                 directives: {
                     defaultSrc: ["'self'"],
-                    scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-hashes'"],
+                    scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-hashes'", "https://cdn.jsdelivr.net", "https://cdnjs.cloudflare.com"],
                     scriptSrcAttr: ["'unsafe-inline'"],
-                    styleSrc: ["'self'", "'unsafe-inline'"],
+                    styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net", "https://cdnjs.cloudflare.com"],
+                    fontSrc: ["'self'", "https://cdn.jsdelivr.net", "https://cdnjs.cloudflare.com"],
                     imgSrc: ["'self'", "data:", "https:"],
                     connectSrc: ["'self'", "wss:", "https:"]
                 }
@@ -249,42 +251,7 @@ class EmployeeManagementServer {
             });
         });
 
-        this.app.post('/api/auth/login', async (req, res) => {
-            try {
-                const { employeeId, password, name, idNumber } = req.body;
-                
-                // 基本驗證邏輯
-                if (!employeeId && !name) {
-                    return res.status(400).json({
-                        success: false,
-                        error: '請提供有效的登入憑證',
-                        code: 'INVALID_CREDENTIALS'
-                    });
-                }
-                
-                // 模擬登入成功回應
-                res.json({
-                    success: true,
-                    message: '登入API端點正常工作',
-                    data: { 
-                        token: 'test-token-' + Date.now(),
-                        employee: {
-                            id: 1,
-                            name: employeeId || name || 'Test User',
-                            position: '員工'
-                        }
-                    },
-                    timestamp: new Date().toISOString(),
-                    server: 'Railway Production'
-                });
-            } catch (error) {
-                res.status(500).json({
-                    success: false,
-                    error: '登入處理錯誤',
-                    message: error.message
-                });
-            }
-        });
+        // 登入API已經在真正的路由文件中處理，移除內聯版本以避免衝突
 
         // 內聯員工API端點 - 完整功能
         this.app.get('/api/employees', (req, res) => {
@@ -397,7 +364,7 @@ class EmployeeManagementServer {
         // 登入頁面路由
         this.app.get('/login', (req, res) => {
             try {
-                res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+                res.sendFile(path.join(__dirname, '..', 'public', 'login.html'));
             } catch (error) {
                 logger.error('❌ 登入頁面載入失敗:', error);
                 res.json({
@@ -412,8 +379,13 @@ class EmployeeManagementServer {
             res.sendFile(path.join(__dirname, '..', 'public', 'register.html'));
         });
 
-        // 員工工作台路由
+        // 員工工作台路由 - 企業級版本
         this.app.get('/employee', (req, res) => {
+            res.sendFile(path.join(__dirname, '..', 'public', 'employee-enterprise.html'));
+        });
+
+        // 簡易版員工頁面路由 (備用)
+        this.app.get('/employee-simple', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'employee-dashboard.html'));
         });
 
@@ -501,7 +473,8 @@ class EmployeeManagementServer {
             { path: '/api/appeals', handler: appealsRoutes, name: '申訴API' },
             { path: '/api/monitoring', handler: monitoringRoutes, name: '監控API' },
             { path: '/api/alerts', handler: alertsRoutes, name: '警報API' },
-            { path: '/api/employees', handler: employeesRoutes, name: '員工API' }
+            { path: '/api/employees', handler: employeesRoutes, name: '員工API' },
+            { path: '/api/reports', handler: reportsRoutes, name: '報表API' }
         ];
 
         let successCount = 0;

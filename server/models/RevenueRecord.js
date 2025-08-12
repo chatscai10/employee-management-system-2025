@@ -20,11 +20,7 @@ module.exports = (sequelize) => {
         employeeId: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            comment: '提交員工ID',
-            references: {
-                model: 'employees',
-                key: 'id'
-            }
+            comment: '提交員工ID'
         },
         employeeName: {
             type: DataTypes.STRING(50),
@@ -180,13 +176,7 @@ module.exports = (sequelize) => {
         ]
     });
 
-    // 模型關聯
-    RevenueRecord.associate = (models) => {
-        RevenueRecord.belongsTo(models.Employee, {
-            foreignKey: 'employeeId',
-            as: 'revenueEmployee'
-        });
-    };
+    // 模型關聯 - 已禁用以解決外鍵約束問題
 
     // 實例方法 - 計算平日獎金 (系統邏輯.txt line 201-203)
     RevenueRecord.prototype.calculateWeekdayBonus = function() {
@@ -293,12 +283,12 @@ module.exports = (sequelize) => {
                 isDeleted: false
             },
             order: [['date', 'DESC'], ['createdAt', 'DESC']],
-            limit: limit,
-            include: [{
-                model: sequelize.models.Employee,
-                as: 'revenueEmployee',
-                attributes: ['name']
-            }]
+            limit: limit
+            // include: [{
+            //     model: sequelize.models.Employee,
+            //     as: 'revenueEmployee',
+            //     attributes: ['name']
+            // }] // 禁用關聯以解決外鍵約束
         });
     };
 
@@ -311,12 +301,12 @@ module.exports = (sequelize) => {
                 },
                 isDeleted: false
             },
-            order: [['date', 'ASC']],
-            include: [{
-                model: sequelize.models.Employee,
-                as: 'revenueEmployee',
-                attributes: ['name']
-            }]
+            order: [['date', 'ASC']]
+            // include: [{
+            //     model: sequelize.models.Employee,
+            //     as: 'revenueEmployee',
+            //     attributes: ['name']
+            // }] // 禁用關聯以解決外鍵約束
         });
     };
 

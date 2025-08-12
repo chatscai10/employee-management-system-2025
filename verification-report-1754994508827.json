@@ -1,0 +1,344 @@
+{
+  "timestamp": "2025-08-12T10:28:28.827Z",
+  "summary": {
+    "totalTests": 12,
+    "passedTests": 5,
+    "failedTests": 7,
+    "successRate": "41.67%",
+    "overallStatus": "NEEDS_ATTENTION"
+  },
+  "testDetails": [
+    {
+      "test": "系統連接性測試",
+      "success": true,
+      "duration": 1315,
+      "details": {
+        "httpStatus": 200,
+        "pageTitle": "員工登入 - 企業員工管理系統",
+        "loadTime": 1315
+      }
+    },
+    {
+      "test": "登入頁面功能驗證",
+      "success": false,
+      "duration": 1291,
+      "details": {
+        "hasEmployeeIdField": false,
+        "hasPasswordField": false,
+        "hasLoginButton": true,
+        "hasRegisterLink": false,
+        "formCount": 2
+      }
+    },
+    {
+      "test": "多角色認證測試",
+      "success": false,
+      "duration": 2365,
+      "details": {
+        "totalRoles": 3,
+        "successfulLogins": 0,
+        "authResults": {
+          "admin": {
+            "attempted": false,
+            "error": "找不到登入表單欄位"
+          },
+          "manager": {
+            "attempted": false,
+            "error": "找不到登入表單欄位"
+          },
+          "employee": {
+            "attempted": false,
+            "error": "找不到登入表單欄位"
+          }
+        }
+      }
+    },
+    {
+      "test": "員工管理CRUD操作",
+      "success": false,
+      "duration": 1754,
+      "details": {
+        "hasEmployeeList": false,
+        "hasAddButton": false,
+        "hasEditButtons": 0,
+        "hasDeleteButtons": 0,
+        "hasSearchField": false,
+        "employeeTableExists": false,
+        "addFunctionTest": false
+      }
+    },
+    {
+      "test": "考勤系統功能測試",
+      "success": true,
+      "duration": 995,
+      "details": {
+        "hasClockInButton": true,
+        "hasClockOutButton": true,
+        "hasLocationDisplay": false,
+        "hasTimeDisplay": false,
+        "hasAttendanceHistory": false,
+        "hasStatusIndicator": false,
+        "clockInTest": false
+      }
+    },
+    {
+      "test": "營收管理功能驗證",
+      "success": false,
+      "duration": 659,
+      "details": {
+        "hasRevenueForm": false,
+        "hasAmountField": false,
+        "hasDateField": false,
+        "hasStoreSelector": false,
+        "hasSubmitButton": false,
+        "hasRevenueList": false,
+        "hasSummaryCards": 0,
+        "addRevenueTest": false
+      }
+    },
+    {
+      "test": "報表生成功能測試",
+      "success": false,
+      "duration": 713,
+      "details": {
+        "hasReportOptions": false,
+        "hasDateRangePicker": false,
+        "hasGenerateButton": false,
+        "hasExportButton": false,
+        "hasChartContainer": false,
+        "hasDataTable": false,
+        "reportTypeCount": 0,
+        "generateTest": false
+      }
+    },
+    {
+      "test": "排程管理系統驗證",
+      "success": false,
+      "duration": 1711,
+      "details": {
+        "hasScheduleCalendar": false,
+        "hasTimeSlots": false,
+        "hasEmployeeAssignment": false,
+        "hasAddShiftButton": false,
+        "hasWeeklyView": false,
+        "hasShiftList": false
+      }
+    },
+    {
+      "test": "升遷投票系統測試",
+      "success": false,
+      "duration": 1177,
+      "details": {
+        "hasPromotionSection": false,
+        "hasVotingSystem": false,
+        "hasCandidateList": false,
+        "hasVoteButtons": 0,
+        "hasResultsDisplay": false,
+        "hasEncryptionIndicator": false
+      }
+    },
+    {
+      "test": "響應式設計驗證",
+      "success": true,
+      "duration": 5104,
+      "details": {
+        "Desktop": {
+          "hasResponsiveNav": false,
+          "elementsVisible": 104,
+          "hasBootstrapClasses": true,
+          "viewportWidth": 1920,
+          "viewportHeight": 1080
+        },
+        "Laptop": {
+          "hasResponsiveNav": false,
+          "elementsVisible": 104,
+          "hasBootstrapClasses": true,
+          "viewportWidth": 1366,
+          "viewportHeight": 768
+        },
+        "Tablet": {
+          "hasResponsiveNav": false,
+          "elementsVisible": 104,
+          "hasBootstrapClasses": true,
+          "viewportWidth": 768,
+          "viewportHeight": 1024
+        },
+        "Mobile": {
+          "hasResponsiveNav": false,
+          "elementsVisible": 104,
+          "hasBootstrapClasses": true,
+          "viewportWidth": 375,
+          "viewportHeight": 667
+        },
+        "Mobile-Large": {
+          "hasResponsiveNav": false,
+          "elementsVisible": 104,
+          "hasBootstrapClasses": true,
+          "viewportWidth": 414,
+          "viewportHeight": 896
+        }
+      }
+    },
+    {
+      "test": "安全性功能檢查",
+      "success": true,
+      "duration": 687,
+      "details": {
+        "hasCSRFProtection": false,
+        "hasSecureHeaders": false,
+        "hasXSSProtection": false,
+        "formHasValidation": true,
+        "hasPasswordField": false,
+        "localStorageCleared": true
+      }
+    },
+    {
+      "test": "效能基準測試",
+      "success": true,
+      "duration": 3919,
+      "details": {
+        "totalPages": 5,
+        "successfulPages": 4,
+        "results": {
+          "/login.html": {
+            "loadTime": 778,
+            "httpStatus": 200,
+            "contentLength": "unknown",
+            "jsExecutionTime": 0.001916,
+            "domNodes": 8471,
+            "success": true
+          },
+          "/admin.html": {
+            "loadTime": 1000,
+            "httpStatus": 304,
+            "contentLength": "unknown",
+            "jsExecutionTime": 0.002854,
+            "domNodes": 9975,
+            "success": false
+          },
+          "/employee-dashboard.html": {
+            "loadTime": 578,
+            "httpStatus": 200,
+            "contentLength": "unknown",
+            "jsExecutionTime": 0.003386,
+            "domNodes": 10271,
+            "success": true
+          },
+          "/attendance.html": {
+            "loadTime": 540,
+            "httpStatus": 200,
+            "contentLength": "unknown",
+            "jsExecutionTime": 0.001082,
+            "domNodes": 10469,
+            "success": true
+          },
+          "/revenue.html": {
+            "loadTime": 896,
+            "httpStatus": 200,
+            "contentLength": "814",
+            "jsExecutionTime": 0.001303,
+            "domNodes": 10527,
+            "success": true
+          }
+        }
+      }
+    }
+  ],
+  "errors": [
+    {
+      "test": "登入頁面功能驗證",
+      "details": {
+        "hasEmployeeIdField": false,
+        "hasPasswordField": false,
+        "hasLoginButton": true,
+        "hasRegisterLink": false,
+        "formCount": 2
+      }
+    },
+    {
+      "test": "多角色認證測試",
+      "details": {
+        "totalRoles": 3,
+        "successfulLogins": 0,
+        "authResults": {
+          "admin": {
+            "attempted": false,
+            "error": "找不到登入表單欄位"
+          },
+          "manager": {
+            "attempted": false,
+            "error": "找不到登入表單欄位"
+          },
+          "employee": {
+            "attempted": false,
+            "error": "找不到登入表單欄位"
+          }
+        }
+      }
+    },
+    {
+      "test": "員工管理CRUD操作",
+      "details": {
+        "hasEmployeeList": false,
+        "hasAddButton": false,
+        "hasEditButtons": 0,
+        "hasDeleteButtons": 0,
+        "hasSearchField": false,
+        "employeeTableExists": false,
+        "addFunctionTest": false
+      }
+    },
+    {
+      "test": "營收管理功能驗證",
+      "details": {
+        "hasRevenueForm": false,
+        "hasAmountField": false,
+        "hasDateField": false,
+        "hasStoreSelector": false,
+        "hasSubmitButton": false,
+        "hasRevenueList": false,
+        "hasSummaryCards": 0,
+        "addRevenueTest": false
+      }
+    },
+    {
+      "test": "報表生成功能測試",
+      "details": {
+        "hasReportOptions": false,
+        "hasDateRangePicker": false,
+        "hasGenerateButton": false,
+        "hasExportButton": false,
+        "hasChartContainer": false,
+        "hasDataTable": false,
+        "reportTypeCount": 0,
+        "generateTest": false
+      }
+    },
+    {
+      "test": "排程管理系統驗證",
+      "details": {
+        "hasScheduleCalendar": false,
+        "hasTimeSlots": false,
+        "hasEmployeeAssignment": false,
+        "hasAddShiftButton": false,
+        "hasWeeklyView": false,
+        "hasShiftList": false
+      }
+    },
+    {
+      "test": "升遷投票系統測試",
+      "details": {
+        "hasPromotionSection": false,
+        "hasVotingSystem": false,
+        "hasCandidateList": false,
+        "hasVoteButtons": 0,
+        "hasResultsDisplay": false,
+        "hasEncryptionIndicator": false
+      }
+    }
+  ],
+  "recommendations": [
+    "🔐 驗證認證系統配置，檢查測試用戶資料"
+  ],
+  "screenshotDirectory": "./verification-screenshots-2025-08-12T10-28-06-532Z"
+}

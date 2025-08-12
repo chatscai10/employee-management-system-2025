@@ -1,0 +1,316 @@
+{
+  "timestamp": "2025-08-12T11:35:55.540Z",
+  "summary": {
+    "total": 7,
+    "passed": 5,
+    "failed": 2,
+    "successRate": "71.4%"
+  },
+  "tests": [
+    {
+      "name": "獎金計算器API測試",
+      "status": "PASSED",
+      "duration": 19,
+      "details": {
+        "weekdayCalculation": {
+          "input": {
+            "cashRevenue": 15000,
+            "pandaRevenue": 5000,
+            "uberRevenue": 3000,
+            "bonusType": "平日獎金"
+          },
+          "result": {
+            "qualified": true,
+            "bonusAmount": 6060,
+            "shortfall": 0,
+            "threshold": 13000,
+            "bonusRate": 0.3,
+            "bonusType": "平日獎金",
+            "cashRevenue": 15000,
+            "pandaRevenue": 5000,
+            "pandaEffective": 3250,
+            "uberRevenue": 3000,
+            "uberEffective": 1950,
+            "totalEffective": 20200,
+            "totalIncome": 23000
+          },
+          "expectedEffective": 20200,
+          "actualEffective": 20200,
+          "expectedBonus": 6060,
+          "actualBonus": 6060,
+          "qualified": true
+        },
+        "holidayCalculation": {
+          "input": {
+            "cashRevenue": 10000,
+            "pandaRevenue": 4000,
+            "uberRevenue": 2000,
+            "bonusType": "假日獎金"
+          },
+          "result": {
+            "qualified": true,
+            "bonusAmount": 5282,
+            "shortfall": 0,
+            "threshold": 0,
+            "bonusRate": 0.38,
+            "bonusType": "假日獎金",
+            "cashRevenue": 10000,
+            "pandaRevenue": 4000,
+            "pandaEffective": 2600,
+            "uberRevenue": 2000,
+            "uberEffective": 1300,
+            "totalEffective": 13900,
+            "totalIncome": 16000
+          },
+          "expectedEffective": 13900,
+          "actualEffective": 13900,
+          "expectedBonus": 5282,
+          "actualBonus": 5282,
+          "qualified": true
+        },
+        "calculationAccuracy": {
+          "weekdayCorrect": true,
+          "holidayCorrect": true
+        }
+      },
+      "timestamp": "2025-08-12T11:35:55.508Z"
+    },
+    {
+      "name": "營收記錄提交API測試",
+      "status": "FAILED",
+      "duration": 4,
+      "error": "平日營收提交失敗: 500 - {\"success\":false,\"message\":\"系統錯誤，請稍後再試\"}",
+      "timestamp": "2025-08-12T11:35:55.513Z"
+    },
+    {
+      "name": "營收記錄查詢API測試",
+      "status": "PASSED",
+      "duration": 9,
+      "details": {
+        "allRecordsQuery": {
+          "recordCount": 0,
+          "pagination": {
+            "total": 0,
+            "page": 1,
+            "limit": 50,
+            "totalPages": 0
+          },
+          "hasRecords": false
+        },
+        "dateFiltering": {
+          "todayRecordCount": 0,
+          "filterWorking": true
+        },
+        "storeFiltering": {
+          "storeRecordCount": 0,
+          "filterWorking": true
+        },
+        "bonusTypeFiltering": {
+          "bonusRecordCount": 0,
+          "filterWorking": true
+        },
+        "queryFunctionsWorking": true
+      },
+      "timestamp": "2025-08-12T11:35:55.522Z"
+    },
+    {
+      "name": "分店摘要API測試",
+      "status": "PASSED",
+      "duration": 7,
+      "details": {
+        "storeCount": 3,
+        "validStores": 3,
+        "totalMonthlyIncome": 0,
+        "totalMonthlyBonus": 0,
+        "sampleStore": {
+          "storeName": "中壢龍崗店",
+          "recentRecords": [],
+          "statistics": {
+            "totalRecords": 0,
+            "monthlyIncome": 0,
+            "monthlyBonus": 0,
+            "monthlyCount": 0
+          }
+        },
+        "dataStructureValid": true,
+        "summaryWorking": true
+      },
+      "timestamp": "2025-08-12T11:35:55.529Z"
+    },
+    {
+      "name": "營收記錄作廢API測試",
+      "status": "FAILED",
+      "duration": 0,
+      "error": "沒有可作廢的記錄",
+      "timestamp": "2025-08-12T11:35:55.529Z"
+    },
+    {
+      "name": "錯誤處理測試",
+      "status": "PASSED",
+      "duration": 5,
+      "details": {
+        "errorTests": [
+          {
+            "test": "invalid_submission",
+            "status": 400,
+            "handlesError": true,
+            "message": "缺少必要參數：員工ID、分店名稱、日期、獎金類別"
+          },
+          {
+            "test": "non_existent_void",
+            "status": 404,
+            "handlesError": true
+          },
+          {
+            "test": "invalid_bonus_calculation",
+            "status": 400,
+            "handlesError": true
+          }
+        ],
+        "allErrorsHandled": true,
+        "errorHandlingWorking": true
+      },
+      "timestamp": "2025-08-12T11:35:55.534Z"
+    },
+    {
+      "name": "系統邏輯.txt合規性檢查",
+      "status": "PASSED",
+      "duration": 5,
+      "details": {
+        "complianceTests": [
+          {
+            "testName": "平日獎金門檻測試",
+            "input": {
+              "cashRevenue": 13001,
+              "pandaRevenue": 0,
+              "uberRevenue": 0,
+              "bonusType": "平日獎金"
+            },
+            "result": {
+              "qualified": true,
+              "bonusAmount": 3900,
+              "shortfall": 0,
+              "threshold": 13000,
+              "bonusRate": 0.3,
+              "bonusType": "平日獎金",
+              "cashRevenue": 13001,
+              "pandaRevenue": 0,
+              "pandaEffective": 0,
+              "uberRevenue": 0,
+              "uberEffective": 0,
+              "totalEffective": 13001,
+              "totalIncome": 13001
+            },
+            "qualifiedMatch": true,
+            "bonusRateMatch": true,
+            "effectiveRevenueMatch": true,
+            "passed": true
+          },
+          {
+            "testName": "平日獎金未達標測試",
+            "input": {
+              "cashRevenue": 12999,
+              "pandaRevenue": 0,
+              "uberRevenue": 0,
+              "bonusType": "平日獎金"
+            },
+            "result": {
+              "qualified": false,
+              "bonusAmount": 0,
+              "shortfall": 1,
+              "threshold": 13000,
+              "bonusRate": 0.3,
+              "bonusType": "平日獎金",
+              "cashRevenue": 12999,
+              "pandaRevenue": 0,
+              "pandaEffective": 0,
+              "uberRevenue": 0,
+              "uberEffective": 0,
+              "totalEffective": 12999,
+              "totalIncome": 12999
+            },
+            "qualifiedMatch": true,
+            "bonusRateMatch": true,
+            "effectiveRevenueMatch": true,
+            "passed": true
+          },
+          {
+            "testName": "假日獎金測試",
+            "input": {
+              "cashRevenue": 1000,
+              "pandaRevenue": 0,
+              "uberRevenue": 0,
+              "bonusType": "假日獎金"
+            },
+            "result": {
+              "qualified": true,
+              "bonusAmount": 380,
+              "shortfall": 0,
+              "threshold": 0,
+              "bonusRate": 0.38,
+              "bonusType": "假日獎金",
+              "cashRevenue": 1000,
+              "pandaRevenue": 0,
+              "pandaEffective": 0,
+              "uberRevenue": 0,
+              "uberEffective": 0,
+              "totalEffective": 1000,
+              "totalIncome": 1000
+            },
+            "qualifiedMatch": true,
+            "bonusRateMatch": true,
+            "effectiveRevenueMatch": true,
+            "passed": true
+          },
+          {
+            "testName": "服務費計算測試",
+            "input": {
+              "cashRevenue": 0,
+              "pandaRevenue": 1000,
+              "uberRevenue": 1000,
+              "bonusType": "假日獎金"
+            },
+            "result": {
+              "qualified": true,
+              "bonusAmount": 494,
+              "shortfall": 0,
+              "threshold": 0,
+              "bonusRate": 0.38,
+              "bonusType": "假日獎金",
+              "cashRevenue": 0,
+              "pandaRevenue": 1000,
+              "pandaEffective": 650,
+              "uberRevenue": 1000,
+              "uberEffective": 650,
+              "totalEffective": 1300,
+              "totalIncome": 2000
+            },
+            "qualifiedMatch": true,
+            "bonusRateMatch": true,
+            "effectiveRevenueMatch": true,
+            "passed": true
+          }
+        ],
+        "allCompliant": true,
+        "complianceScore": 100,
+        "systemLogicCompliance": true
+      },
+      "timestamp": "2025-08-12T11:35:55.540Z"
+    }
+  ],
+  "revenueManagementAssessment": {
+    "bonusCalculation": true,
+    "revenueSubmission": false,
+    "recordsQuery": true,
+    "storesSummary": true,
+    "recordVoid": false,
+    "errorHandling": true,
+    "systemCompliance": true
+  },
+  "systemStability": false,
+  "apiIntegration": {
+    "complete": false,
+    "functionalModules": 5,
+    "totalModules": 7
+  }
+}

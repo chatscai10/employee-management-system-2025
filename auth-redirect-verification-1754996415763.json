@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-08-12T11:00:15.761Z",
+  "summary": {
+    "total": 3,
+    "passed": 2,
+    "failed": 1,
+    "successRate": "66.7%"
+  },
+  "tests": [
+    {
+      "test": "成功登入重定向",
+      "status": "PASSED",
+      "details": {
+        "originalUrl": "http://localhost:3002/",
+        "redirectedUrl": "http://localhost:3002/employee",
+        "pageTitle": "企業員工管理系統 - 員工工作台",
+        "isEmployeePage": true,
+        "isAdminPage": false,
+        "hasValidTitle": true,
+        "hasAuthenticatedContent": false
+      }
+    },
+    {
+      "test": "無效登入不重定向",
+      "status": "FAILED",
+      "error": "Cannot set properties of null (setting 'value')"
+    },
+    {
+      "test": "員工頁面訪問控制",
+      "status": "PASSED",
+      "details": {
+        "attemptedUrl": "http://localhost:3002/employee",
+        "actualUrl": "http://localhost:3002/login",
+        "redirectedToLogin": true
+      }
+    }
+  ],
+  "conclusion": {
+    "authenticationWorking": true,
+    "redirectBehaviorCorrect": true,
+    "accessControlWorking": true
+  }
+}

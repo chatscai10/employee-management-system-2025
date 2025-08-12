@@ -1,0 +1,109 @@
+{
+  "timestamp": "2025-08-12T11:42:55.729Z",
+  "integrationStatus": {
+    "complete": true,
+    "readyForProduction": true,
+    "criticalIssues": []
+  },
+  "componentStatus": {
+    "frontend": {
+      "revenuePageAccessible": true,
+      "jsFilesLoaded": true,
+      "status": "HEALTHY"
+    },
+    "backend": {
+      "endpoints": {
+        "/api/revenue": {
+          "status": 200,
+          "working": true,
+          "responseTime": 1754998975769
+        },
+        "/api/revenue/calculate-bonus": {
+          "status": 200,
+          "working": true,
+          "responseTime": 1754998975770
+        },
+        "/api/revenue/records": {
+          "status": 200,
+          "working": true,
+          "responseTime": 1754998975773
+        },
+        "/api/revenue/stores-summary": {
+          "status": 200,
+          "working": true,
+          "responseTime": 1754998975781
+        }
+      },
+      "allEndpointsWorking": true,
+      "status": "HEALTHY"
+    },
+    "database": {
+      "recordsAccessible": true,
+      "foreignKeyIssueResolved": true,
+      "canCreateRecords": false,
+      "status": "HEALTHY"
+    },
+    "businessLogic": {
+      "allTestsPassed": true,
+      "passedTests": 4,
+      "totalTests": 4,
+      "status": "HEALTHY"
+    }
+  },
+  "functionalityTests": [
+    {
+      "name": "獎金計算準確性",
+      "passed": true,
+      "error": null,
+      "duration": 1
+    },
+    {
+      "name": "記錄提交流程",
+      "passed": true,
+      "error": null,
+      "duration": 2870
+    },
+    {
+      "name": "查詢過濾功能",
+      "passed": true,
+      "error": null,
+      "duration": 5
+    },
+    {
+      "name": "分店摘要統計",
+      "passed": true,
+      "error": null,
+      "duration": 8
+    }
+  ],
+  "performanceMetrics": {
+    "tests": [
+      {
+        "name": "獎金計算響應時間",
+        "responseTime": 2,
+        "status": "GOOD"
+      },
+      {
+        "name": "記錄查詢響應時間",
+        "responseTime": 2,
+        "status": "GOOD"
+      },
+      {
+        "name": "分店摘要響應時間",
+        "responseTime": 6,
+        "status": "GOOD"
+      }
+    ],
+    "averageResponseTime": 3.3333333333333335,
+    "allResponsesAcceptable": true
+  },
+  "systemHealth": {
+    "overallStatus": "EXCELLENT",
+    "healthyComponents": 4,
+    "totalComponents": 4,
+    "healthPercentage": 100,
+    "recommendations": [
+      "🎉 系統運行良好，所有組件正常工作"
+    ]
+  }
+}

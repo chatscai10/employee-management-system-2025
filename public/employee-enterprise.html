@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>企業員工管理系統 - 員工工作台</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #1d4ed8;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --info-color: #06b6d4;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+            --sidebar-width: 280px;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            color: #374151;
+        }
+
+        /* 側邊欄樣式 */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+            border-right: 1px solid #374151;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .sidebar.collapsed {
+            transform: translateX(-100%);
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #374151;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .sidebar-header h2 {
+            color: #f9fafb;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-header .user-info {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        .sidebar-nav {
+            padding: 1rem 0;
+        }
+
+        .nav-item {
+            margin-bottom: 0.25rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            color: #d1d5db;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: #f9fafb;
+            border-left-color: var(--primary-color);
+        }
+
+        .nav-link.active {
+            background: rgba(59, 130, 246, 0.2);
+            color: #f9fafb;
+            border-left-color: var(--primary-color);
+        }
+
+        .nav-link i {
+            margin-right: 0.75rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .nav-category {
+            padding: 1rem 1.5rem 0.5rem;
+            color: #6b7280;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* 主內容區域 */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            transition: margin-left 0.3s ease;
+            min-height: 100vh;
+        }
+
+        .main-content.expanded {
+            margin-left: 0;
+        }
+
+        /* 頂部標題欄 */
+        .top-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            color: #6b7280;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            transition: all 0.2s ease;
+        }
+
+        .menu-toggle:hover {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .notification-btn, .user-menu-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .notification-btn:hover, .user-menu-btn:hover {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: 0.25rem;
+            right: 0.25rem;
+            background: var(--danger-color);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.625rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 內容區域 */
+        .content-area {
+            padding: 2rem;
+            background: var(--light-color);
+            min-height: calc(100vh - 80px);
+        }
+
+        /* 卡片樣式 */
+        .dashboard-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s ease;
+            height: 100%;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+        }
+
+        .stat-card.success {
+            background: linear-gradient(135deg, var(--success-color), #059669);
+        }
+
+        .stat-card.warning {
+            background: linear-gradient(135deg, var(--warning-color), #d97706);
+        }
+
+        .stat-card.info {
+            background: linear-gradient(135deg, var(--info-color), #0891b2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        /* 功能按鈕 */
+        .action-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.2s ease;
+            min-height: 120px;
+            justify-content: center;
+        }
+
+        .action-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .action-btn i {
+            font-size: 2rem;
+        }
+
+        .action-btn span {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        /* 表格樣式 */
+        .data-table {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        /* 圖表容器 */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 1rem;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .content-area {
+                padding: 1rem;
+            }
+
+            .top-header {
+                padding: 1rem;
+            }
+        }
+
+        /* 載入動畫 */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f4f6;
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* 通知樣式 */
+        .notification-item {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .notification-item:hover {
+            background: #f9fafb;
+        }
+
+        .notification-item.unread {
+            background: #eff6ff;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        /* 隱藏/顯示內容區域 */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 狀態指示器 */
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        .status-indicator.online {
+            background: var(--success-color);
+        }
+
+        .status-indicator.offline {
+            background: #6b7280;
+        }
+
+        .status-indicator.busy {
+            background: var(--warning-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- 側邊欄 -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="bi bi-building"></i> 企業系統</h2>
+            <div class="user-info">
+                <span class="status-indicator online"></span>
+                <span id="userName">載入中...</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-category">主要功能</div>
+            <a href="#" class="nav-link active" data-section="dashboard">
+                <i class="bi bi-speedometer2"></i>
+                工作台概覽
+            </a>
+            
+            <div class="nav-category">考勤管理</div>
+            <a href="#" class="nav-link" data-section="attendance">
+                <i class="bi bi-clock"></i>
+                打卡考勤
+            </a>
+            <a href="#" class="nav-link" data-section="schedule">
+                <i class="bi bi-calendar3"></i>
+                班表查詢
+            </a>
+            <a href="#" class="nav-link" data-section="leave">
+                <i class="bi bi-calendar-x"></i>
+                請假申請
+            </a>
+            
+            <div class="nav-category">營收管理</div>
+            <a href="#" class="nav-link" data-section="revenue">
+                <i class="bi bi-graph-up"></i>
+                營收記錄
+            </a>
+            <a href="#" class="nav-link" data-section="performance">
+                <i class="bi bi-trophy"></i>
+                業績分析
+            </a>
+            <a href="#" class="nav-link" data-section="commission">
+                <i class="bi bi-currency-dollar"></i>
+                獎金查詢
+            </a>
+            
+            <div class="nav-category">個人管理</div>
+            <a href="#" class="nav-link" data-section="profile">
+                <i class="bi bi-person"></i>
+                個人資料
+            </a>
+            <a href="#" class="nav-link" data-section="salary">
+                <i class="bi bi-wallet2"></i>
+                薪資查詢
+            </a>
+            <a href="#" class="nav-link" data-section="training">
+                <i class="bi bi-mortarboard"></i>
+                教育訓練
+            </a>
+            
+            <div class="nav-category">報表分析</div>
+            <a href="#" class="nav-link" data-section="reports">
+                <i class="bi bi-file-earmark-bar-graph"></i>
+                數據報表
+            </a>
+            <a href="#" class="nav-link" data-section="analytics">
+                <i class="bi bi-pie-chart"></i>
+                分析中心
+            </a>
+            
+            <div class="nav-category">系統</div>
+            <a href="#" class="nav-link" data-section="notifications">
+                <i class="bi bi-bell"></i>
+                通知中心
+            </a>
+            <a href="#" class="nav-link" data-section="settings">
+                <i class="bi bi-gear"></i>
+                系統設定
+            </a>
+            <a href="#" class="nav-link" onclick="logout()">
+                <i class="bi bi-box-arrow-right"></i>
+                登出系統
+            </a>
+        </nav>
+    </div>
+
+    <!-- 主內容區域 -->
+    <div class="main-content" id="mainContent">
+        <!-- 頂部標題欄 -->
+        <div class="top-header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h1 class="page-title" id="pageTitle">工作台概覽</h1>
+            </div>
+            <div class="header-right">
+                <button class="notification-btn" id="notificationBtn">
+                    <i class="bi bi-bell"></i>
+                    <span class="notification-badge" id="notificationBadge">3</span>
+                </button>
+                <button class="user-menu-btn" id="userMenuBtn">
+                    <i class="bi bi-person-circle"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 內容區域 -->
+        <div class="content-area">
+            <!-- 工作台概覽 -->
+            <div class="content-section active" id="dashboard">
+                <div class="row g-4">
+                    <!-- 統計卡片 -->
+                    <div class="col-md-3">
+                        <div class="dashboard-card stat-card position-relative">
+                            <div class="stat-number" id="todayAttendance">8.5</div>
+                            <div class="stat-label">今日工時 (小時)</div>
+                            <i class="bi bi-clock stat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dashboard-card stat-card success position-relative">
+                            <div class="stat-number" id="monthRevenue">125,000</div>
+                            <div class="stat-label">本月營收 (元)</div>
+                            <i class="bi bi-graph-up stat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dashboard-card stat-card warning position-relative">
+                            <div class="stat-number" id="leaveBalance">15</div>
+                            <div class="stat-label">特休餘額 (天)</div>
+                            <i class="bi bi-calendar-check stat-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dashboard-card stat-card info position-relative">
+                            <div class="stat-number" id="performanceScore">92%</div>
+                            <div class="stat-label">績效達成率</div>
+                            <i class="bi bi-trophy stat-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 mt-4">
+                    <!-- 快速功能 -->
+                    <div class="col-md-8">
+                        <div class="dashboard-card">
+                            <h5 class="mb-4"><i class="bi bi-lightning"></i> 快速功能</h5>
+                            <div class="row g-3">
+                                <div class="col-md-3 col-6">
+                                    <a href="#" class="action-btn" onclick="showSection('attendance')">
+                                        <i class="bi bi-clock"></i>
+                                        <span>上下班打卡</span>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <a href="#" class="action-btn" onclick="showSection('revenue')">
+                                        <i class="bi bi-plus-circle"></i>
+                                        <span>新增營收</span>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <a href="#" class="action-btn" onclick="showSection('leave')">
+                                        <i class="bi bi-calendar-x"></i>
+                                        <span>請假申請</span>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <a href="#" class="action-btn" onclick="showSection('reports')">
+                                        <i class="bi bi-file-earmark-text"></i>
+                                        <span>查看報表</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 今日待辦 -->
+                    <div class="col-md-4">
+                        <div class="dashboard-card">
+                            <h5 class="mb-4"><i class="bi bi-check2-square"></i> 今日待辦</h5>
+                            <div id="todoList">
+                                <div class="notification-item">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>完成月度營收報表</span>
+                                        <small class="text-muted">今天</small>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>參加團隊會議</span>
+                                        <small class="text-muted">14:00</small>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>提交考勤異常說明</span>
+                                        <small class="text-muted">明天</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 mt-4">
+                    <!-- 近期考勤 -->
+                    <div class="col-md-6">
+                        <div class="data-table">
+                            <div class="table-header">
+                                <i class="bi bi-clock-history"></i> 近期考勤記錄
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>日期</th>
+                                            <th>上班</th>
+                                            <th>下班</th>
+                                            <th>狀態</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="recentAttendance">
+                                        <tr>
+                                            <td>今天</td>
+                                            <td>08:30</td>
+                                            <td>-</td>
+                                            <td><span class="badge bg-success">進行中</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>昨天</td>
+                                            <td>08:25</td>
+                                            <td>17:30</td>
+                                            <td><span class="badge bg-success">正常</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>08/10</td>
+                                            <td>08:35</td>
+                                            <td>17:25</td>
+                                            <td><span class="badge bg-warning">遲到</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 營收趨勢 -->
+                    <div class="col-md-6">
+                        <div class="dashboard-card">
+                            <h5 class="mb-3"><i class="bi bi-graph-up"></i> 營收趨勢</h5>
+                            <div class="chart-container">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 其他內容區域將在接下來實現 -->
+            <div class="content-section" id="attendance">
+                <div class="dashboard-card">
+                    <h4>打卡考勤系統</h4>
+                    <p class="text-muted">完整的考勤打卡功能即將推出...</p>
+                </div>
+            </div>
+
+            <div class="content-section" id="revenue">
+                <div class="dashboard-card">
+                    <h4>營收記錄系統</h4>
+                    <p class="text-muted">完整的營收管理功能即將推出...</p>
+                </div>
+            </div>
+
+            <!-- 更多內容區域... -->
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // 🔐 認證檢查系統
+        (function() {
+            'use strict';
+            
+            console.log('🔐 啟動企業員工系統認證檢查...');
+            
+            function checkAuthentication() {
+                const token = localStorage.getItem('employeeToken');
+                const employeeData = localStorage.getItem('employeeData');
+                
+                if (!token || !employeeData) {
+                    console.log('❌ 認證失敗: 未找到有效的登入憑證');
+                    window.location.href = '/login';
+                    return false;
+                }
+                
+                // 載入員工資料
+                try {
+                    const employee = JSON.parse(employeeData);
+                    document.getElementById('userName').textContent = employee.name || '員工';
+                } catch (error) {
+                    console.error('員工資料解析失敗:', error);
+                }
+                
+                console.log('✅ 認證成功: 企業員工系統已載入');
+                return true;
+            }
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(checkAuthentication, 300);
+                });
+            } else {
+                setTimeout(checkAuthentication, 300);
+            }
+        })();
+
+        // 主要系統功能
+        class EnterpriseEmployeeSystem {
+            constructor() {
+                this.currentSection = 'dashboard';
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.initializeCharts();
+                this.loadDashboardData();
+            }
+
+            setupEventListeners() {
+                // 側邊欄切換
+                const menuToggle = document.getElementById('menuToggle');
+                const sidebar = document.getElementById('sidebar');
+                const mainContent = document.getElementById('mainContent');
+
+                menuToggle.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.toggle('show');
+                    } else {
+                        sidebar.classList.toggle('collapsed');
+                        mainContent.classList.toggle('expanded');
+                    }
+                });
+
+                // 導航連結
+                document.querySelectorAll('.nav-link[data-section]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const section = e.target.closest('[data-section]').dataset.section;
+                        this.showSection(section);
+                    });
+                });
+
+                // 響應式處理
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        sidebar.classList.remove('show');
+                    }
+                });
+            }
+
+            showSection(sectionName) {
+                // 隱藏所有內容區域
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // 顯示目標區域
+                const targetSection = document.getElementById(sectionName);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+
+                // 更新導航狀態
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                const activeLink = document.querySelector(`[data-section="${sectionName}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+
+                // 更新頁面標題
+                const titles = {
+                    'dashboard': '工作台概覽',
+                    'attendance': '打卡考勤',
+                    'schedule': '班表查詢',
+                    'leave': '請假申請',
+                    'revenue': '營收記錄',
+                    'performance': '業績分析',
+                    'commission': '獎金查詢',
+                    'profile': '個人資料',
+                    'salary': '薪資查詢',
+                    'training': '教育訓練',
+                    'reports': '數據報表',
+                    'analytics': '分析中心',
+                    'notifications': '通知中心',
+                    'settings': '系統設定'
+                };
+
+                document.getElementById('pageTitle').textContent = titles[sectionName] || '企業系統';
+                this.currentSection = sectionName;
+
+                // 在手機版本關閉側邊欄
+                if (window.innerWidth <= 768) {
+                    document.getElementById('sidebar').classList.remove('show');
+                }
+            }
+
+            initializeCharts() {
+                // 營收趨勢圖表
+                const ctx = document.getElementById('revenueChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月'],
+                        datasets: [{
+                            label: '營收金額',
+                            data: [85000, 92000, 108000, 95000, 115000, 125000, 130000, 125000],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value.toLocaleString() + '元';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            loadDashboardData() {
+                // 載入儀表板數據 (模擬 API 呼叫)
+                setTimeout(() => {
+                    this.updateStatistics();
+                    this.loadRecentAttendance();
+                }, 1000);
+            }
+
+            updateStatistics() {
+                // 更新統計數據
+                const stats = {
+                    todayAttendance: '8.5',
+                    monthRevenue: '125,000',
+                    leaveBalance: '15',
+                    performanceScore: '92%'
+                };
+
+                Object.keys(stats).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        element.textContent = stats[key];
+                    }
+                });
+            }
+
+            loadRecentAttendance() {
+                // 載入近期考勤記錄
+                const attendanceData = [
+                    { date: '今天', in: '08:30', out: '-', status: '進行中', statusClass: 'success' },
+                    { date: '昨天', in: '08:25', out: '17:30', status: '正常', statusClass: 'success' },
+                    { date: '08/10', in: '08:35', out: '17:25', status: '遲到', statusClass: 'warning' },
+                    { date: '08/09', in: '08:20', out: '17:35', status: '正常', statusClass: 'success' },
+                    { date: '08/08', in: '08:45', out: '17:20', status: '遲到', statusClass: 'warning' }
+                ];
+
+                const tbody = document.getElementById('recentAttendance');
+                if (tbody) {
+                    tbody.innerHTML = attendanceData.map(record => `
+                        <tr>
+                            <td>${record.date}</td>
+                            <td>${record.in}</td>
+                            <td>${record.out}</td>
+                            <td><span class="badge bg-${record.statusClass}">${record.status}</span></td>
+                        </tr>
+                    `).join('');
+                }
+            }
+        }
+
+        // 全域函數
+        function showSection(sectionName) {
+            if (window.employeeSystem) {
+                window.employeeSystem.showSection(sectionName);
+            }
+        }
+
+        function logout() {
+            if (confirm('確定要登出系統嗎？')) {
+                localStorage.removeItem('employeeToken');
+                localStorage.removeItem('employeeData');
+                window.location.href = '/login';
+            }
+        }
+
+        // 初始化系統
+        document.addEventListener('DOMContentLoaded', function() {
+            window.employeeSystem = new EnterpriseEmployeeSystem();
+        });
+    </script>
+</body>
+</html>
