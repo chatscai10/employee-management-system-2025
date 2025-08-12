@@ -14,7 +14,9 @@
     "build": "echo 'No build step required'",
     "test": "node system-test.js",
     "deploy": "railway deploy",
-    "render-postbuild": "echo 'Render build completed'"
+    "render-postbuild": "echo 'Render build completed'",
+    "gcp-build": "npm install --production",
+    "deploy-gcp": "gcloud app deploy"
   },
   "keywords": [
     "employee-management",

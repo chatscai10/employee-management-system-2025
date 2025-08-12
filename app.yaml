@@ -1,0 +1,79 @@
+# Google App Engine 配置檔案
+# 企業員工管理系統
+
+runtime: nodejs18
+
+# 自動縮放配置
+automatic_scaling:
+  min_instances: 1
+  max_instances: 10
+  target_cpu_utilization: 0.6
+  target_throughput_utilization: 0.6
+
+# 環境變數
+env_variables:
+  NODE_ENV: "production"
+  JWT_SECRET: "your-super-secret-jwt-key-change-this"
+  CORS_ORIGIN: "*"
+  RATE_LIMIT_WINDOW: "900000"
+  RATE_LIMIT_MAX: "100"
+  RATE_LIMIT_LOGIN_MAX: "5"
+  
+# 可選 - Telegram通知設定
+  # TELEGRAM_BOT_TOKEN: "your-bot-token"
+  # TELEGRAM_CHAT_ID: "your-chat-id"
+
+# 實例配置
+instance_class: F1
+
+# 網路配置
+network:
+  session_affinity: true
+
+# 靜態檔案處理
+handlers:
+  # 靜態資源
+  - url: /public
+    static_dir: public
+    secure: always
+
+  - url: /css
+    static_dir: public/css
+    secure: always
+
+  - url: /js
+    static_dir: public/js
+    secure: always
+
+  - url: /images
+    static_dir: public/images
+    secure: always
+
+  # API和動態路由
+  - url: /.*
+    script: auto
+    secure: always
+
+# 跳過上傳的檔案
+skip_files:
+  - ^(.*/)?#.*#$
+  - ^(.*/)?.*~$
+  - ^(.*/)?.*.py[co]$
+  - ^(.*/)?.*/RCS/.*$
+  - ^(.*/)?..*$
+  - ^(.*/)?node_modules/(.*/)?.*$
+  - ^(.*/)?logs/(.*/)?.*$
+  - ^(.*/)?.git/(.*/)?.*$
+  - .*.backup..*$
+  - .*-test-.*$
+  - .*-temp.*$
+  - cleanup-.*$
+  - final-.*$
+  - multi-role-.*$
+  - .*.png$
+  - .*.jpg$
+  - .*.md$
+  - railway.json$
+  - .railwayignore$
+  - deploy-.*.sh$
+  - deploy-.*.bat$

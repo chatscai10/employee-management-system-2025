@@ -1,0 +1,61 @@
+# Google Cloud 部署忽略檔案
+# 企業員工管理系統
+
+# 依賴檔案
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+
+# 環境檔案
+.env
+.env.*
+
+# 日誌檔案
+logs/
+*.log
+
+# 資料庫檔案
+*.sqlite
+database.sqlite
+
+# 測試和開發檔案
+test-*
+temp-*
+cleanup-*
+final-*
+multi-role-*
+
+# 圖片檔案
+*.png
+*.jpg
+*.jpeg
+
+# 備份檔案
+*.backup.*
+
+# 部署相關
+railway.json
+.railwayignore
+deploy-railway.*
+deploy-github-render.*
+
+# 報告檔案
+*-report-*.md
+*-report-*.txt
+
+# IDE設定
+.vscode/
+.idea/
+
+# Git檔案
+.git/
+.gitignore
+
+# 作業系統
+.DS_Store
+Thumbs.db
+
+# 文檔檔案 (可選 - 如果不想部署文檔)
+*.md
+deployment-guide.md
+deployment-checklist.md
