@@ -1,14 +1,50 @@
+# 依賴檔案
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-
-# 🛡️ 安全相關文件
+# 環境變數
 .env
 .env.local
-.env.production
-.env.development
-*.key
-*.pem
-*.cert
-ssl/
-secrets/
-config/database.json
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 日誌
+logs
 *.log
+
+# 資料庫檔案 (生產環境會重新生成)
+*.sqlite
+database.sqlite
+
+# 臨時檔案
+*.tmp
+*.temp
+temp-*
+test-*
+cleanup-*
+final-*
+multi-role-*
+
+# 圖片快照
+*.png
+*.jpg
+*.jpeg
+
+# 備份檔案
+*.backup.*
+
+# IDE
+.vscode/
+.idea/
+
+# 作業系統
+.DS_Store
+Thumbs.db
+
+# 部署相關
+railway-deployment-report-*.md
+cleanup-report-*.txt
+final-integrity-report-*.md

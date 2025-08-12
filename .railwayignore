@@ -1,9 +1,15 @@
-# 強制忽略舊版本檔案
-*.old
-*.backup
-*minimal*
-*test*
+# Railway部署忽略檔案
+node_modules/
+*.log
+.env.local
+.env.development
+*.backup.*
+test-*
+temp-*
+cleanup-*
+final-*
+multi-role-*
+*.png
+*.md
+logs/
 .git/
-coverage/
-tests/
-docs/
