@@ -1,0 +1,3026 @@
+{
+  "timestamp": "2025-08-12T16:29:23.871Z",
+  "testDuration": 36318,
+  "summary": {
+    "totalTests": 10,
+    "successfulTests": 0,
+    "roleTests": 4,
+    "successfulLogins": 0,
+    "systemHealthy": 7,
+    "totalPorts": 7
+  },
+  "detailedResults": {
+    "roleTests": {
+      "superAdmin": {
+        "error": "Waiting for selector `#loginForm` failed: Waiting failed: 5000ms exceeded",
+        "role": "超級管理員"
+      },
+      "storeAdmin": {
+        "error": "Waiting for selector `#loginForm` failed: Waiting failed: 5000ms exceeded",
+        "role": "分店管理員"
+      },
+      "employee": {
+        "error": "Waiting for selector `#loginForm` failed: Waiting failed: 5000ms exceeded",
+        "role": "一般員工"
+      },
+      "intern": {
+        "error": "Waiting for selector `#loginForm` failed: Waiting failed: 5000ms exceeded",
+        "role": "實習生"
+      }
+    },
+    "functionalityTests": {
+      "GPS打卡系統": {
+        "elementFound": false,
+        "error": "找不到選擇器: #clockInBtn"
+      },
+      "下班打卡": {
+        "elementFound": false,
+        "error": "找不到選擇器: #clockOutBtn"
+      },
+      "營收查看": {
+        "elementFound": false,
+        "error": "找不到選擇器: #viewRevenueBtn"
+      },
+      "營收編輯": {
+        "elementFound": false,
+        "error": "找不到選擇器: #editRevenueBtn"
+      },
+      "個人排程查看": {
+        "elementFound": false,
+        "error": "找不到選擇器: #viewScheduleBtn"
+      },
+      "排程變更申請": {
+        "elementFound": false,
+        "error": "找不到選擇器: #requestScheduleChangeBtn"
+      },
+      "庫存查看": {
+        "elementFound": false,
+        "error": "找不到選擇器: #viewInventoryBtn"
+      },
+      "叫貨申請": {
+        "elementFound": false,
+        "error": "找不到選擇器: #requestSupplyBtn"
+      },
+      "投票參與": {
+        "elementFound": false,
+        "error": "找不到選擇器: #participateVoteBtn"
+      },
+      "維修申請": {
+        "elementFound": false,
+        "error": "找不到選擇器: #requestMaintenanceBtn"
+      }
+    },
+    "consoleMessages": [
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+        "timestamp": "2025-08-12T16:28:59.047Z"
+      },
+      {
+        "type": "log",
+        "text": "🔐 啟動企業員工系統認證檢查...",
+        "timestamp": "2025-08-12T16:28:59.324Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ 員工系統完整功能模組已載入",
+        "timestamp": "2025-08-12T16:28:59.600Z"
+      },
+      {
+        "type": "log",
+        "text": "初始化圖表組件",
+        "timestamp": "2025-08-12T16:28:59.600Z"
+      },
+      {
+        "type": "log",
+        "text": "❌ 認證失敗: 未找到有效的登入憑證",
+        "timestamp": "2025-08-12T16:28:59.709Z"
+      },
+      {
+        "type": "log",
+        "text": "🔐 啟動企業員工系統認證檢查...",
+        "timestamp": "2025-08-12T16:29:05.796Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ 員工系統完整功能模組已載入",
+        "timestamp": "2025-08-12T16:29:05.809Z"
+      },
+      {
+        "type": "log",
+        "text": "初始化圖表組件",
+        "timestamp": "2025-08-12T16:29:05.809Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+        "timestamp": "2025-08-12T16:29:05.817Z"
+      },
+      {
+        "type": "log",
+        "text": "❌ 認證失敗: 未找到有效的登入憑證",
+        "timestamp": "2025-08-12T16:29:06.104Z"
+      },
+      {
+        "type": "log",
+        "text": "🔐 啟動企業員工系統認證檢查...",
+        "timestamp": "2025-08-12T16:29:11.825Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ 員工系統完整功能模組已載入",
+        "timestamp": "2025-08-12T16:29:11.837Z"
+      },
+      {
+        "type": "log",
+        "text": "初始化圖表組件",
+        "timestamp": "2025-08-12T16:29:11.837Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+        "timestamp": "2025-08-12T16:29:11.846Z"
+      },
+      {
+        "type": "log",
+        "text": "❌ 認證失敗: 未找到有效的登入憑證",
+        "timestamp": "2025-08-12T16:29:12.134Z"
+      },
+      {
+        "type": "log",
+        "text": "🔐 啟動企業員工系統認證檢查...",
+        "timestamp": "2025-08-12T16:29:17.860Z"
+      },
+      {
+        "type": "log",
+        "text": "✅ 員工系統完整功能模組已載入",
+        "timestamp": "2025-08-12T16:29:17.871Z"
+      },
+      {
+        "type": "log",
+        "text": "初始化圖表組件",
+        "timestamp": "2025-08-12T16:29:17.871Z"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+        "timestamp": "2025-08-12T16:29:17.889Z"
+      },
+      {
+        "type": "log",
+        "text": "❌ 認證失敗: 未找到有效的登入憑證",
+        "timestamp": "2025-08-12T16:29:18.170Z"
+      }
+    ],
+    "networkRequests": [
+      {
+        "url": "http://localhost:3001/",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:28:47.916Z"
+      },
+      {
+        "url": "http://localhost:3001/",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:48 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:48.245Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:48.264Z"
+      },
+      {
+        "url": "http://localhost:3001/css/style.css",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/css; charset=utf-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:48 GMT",
+          "etag": "W/\"13c7-19895acf791\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:48.265Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:48.319Z"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:48 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:48.323Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3002/",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:28:49.234Z"
+      },
+      {
+        "url": "http://localhost:3002/",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:49 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:49.503Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3002/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:49.523Z"
+      },
+      {
+        "url": "http://localhost:3002/css/style.css",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/css; charset=utf-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:49 GMT",
+          "etag": "W/\"13c7-19895acf791\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:49.523Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3002/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:49.569Z"
+      },
+      {
+        "url": "http://localhost:3002/favicon.ico",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:49 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:49.574Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3003/",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:28:50.803Z"
+      },
+      {
+        "url": "http://localhost:3003/",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:51 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:51.070Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3003/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:51.086Z"
+      },
+      {
+        "url": "http://localhost:3003/css/style.css",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/css; charset=utf-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:51 GMT",
+          "etag": "W/\"13c7-19895acf791\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:51.087Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3003/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:51.134Z"
+      },
+      {
+        "url": "http://localhost:3003/favicon.ico",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:51 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:51.139Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3005/",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:28:52.390Z"
+      },
+      {
+        "url": "http://localhost:3005/",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:52 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:52.667Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3005/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:52.685Z"
+      },
+      {
+        "url": "http://localhost:3005/css/style.css",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/css; charset=utf-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:52 GMT",
+          "etag": "W/\"13c7-19895acf791\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:52.689Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3005/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:52.732Z"
+      },
+      {
+        "url": "http://localhost:3005/favicon.ico",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:52 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:52.736Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3006/",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:28:53.972Z"
+      },
+      {
+        "url": "http://localhost:3006/",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:54 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:54.253Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3006/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:54.271Z"
+      },
+      {
+        "url": "http://localhost:3006/css/style.css",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/css; charset=utf-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:54 GMT",
+          "etag": "W/\"13c7-19895acf791\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:54.272Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3006/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:54.320Z"
+      },
+      {
+        "url": "http://localhost:3006/favicon.ico",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:54 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:54.324Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3007/",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:28:55.578Z"
+      },
+      {
+        "url": "http://localhost:3007/",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:55 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:55.848Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3007/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:55.864Z"
+      },
+      {
+        "url": "http://localhost:3007/css/style.css",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/css; charset=utf-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:55 GMT",
+          "etag": "W/\"13c7-19895acf791\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:55.865Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3007/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:55.912Z"
+      },
+      {
+        "url": "http://localhost:3007/favicon.ico",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:55 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:55.916Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3008/",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:28:57.156Z"
+      },
+      {
+        "url": "http://localhost:3008/",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:57 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:57.420Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3008/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:57.439Z"
+      },
+      {
+        "url": "http://localhost:3008/css/style.css",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/css; charset=utf-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:57 GMT",
+          "etag": "W/\"13c7-19895acf791\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:57.440Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3008/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:57.488Z"
+      },
+      {
+        "url": "http://localhost:3008/favicon.ico",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:57 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:57.490Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/employee-enterprise.html",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:28:58.727Z"
+      },
+      {
+        "url": "http://localhost:3001/employee-enterprise.html",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:58 GMT",
+          "etag": "W/\"2668a-1989ee2122d\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 15:24:32 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:58.987Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:59.004Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:59.004Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/chart.js",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:59.004Z"
+      },
+      {
+        "url": "https://via.placeholder.com/150",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:59.004Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:59.004Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "access-control-expose-headers": "*",
+          "age": "1006193",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "content-encoding": "br",
+          "content-length": "33205",
+          "content-type": "text/css; charset=utf-8",
+          "cross-origin-resource-policy": "cross-origin",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "etag": "W/\"38dd2-sjFlHg/Wi72HWBifvTZCxGLTT6Y\"",
+          "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+          "timing-allow-origin": "*",
+          "vary": "Accept-Encoding",
+          "x-cache": "HIT, HIT",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version": "5.3.0",
+          "x-jsd-version-type": "version",
+          "x-served-by": "cache-fra-eddf8230088-FRA, cache-nrt-rjtt7900057-NRT"
+        },
+        "timestamp": "2025-08-12T16:28:59.200Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "access-control-expose-headers": "*",
+          "age": "1837999",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "content-encoding": "br",
+          "content-length": "12938",
+          "content-type": "text/css; charset=utf-8",
+          "cross-origin-resource-policy": "cross-origin",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "etag": "W/\"17579-mPNe8XkflZ+wVkS6/P0WaW+OABQ\"",
+          "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+          "timing-allow-origin": "*",
+          "vary": "Accept-Encoding",
+          "x-cache": "HIT, HIT",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version": "1.10.0",
+          "x-jsd-version-type": "version",
+          "x-served-by": "cache-fra-eddf8230027-FRA, cache-nrt-rjtt7900057-NRT"
+        },
+        "timestamp": "2025-08-12T16:28:59.230Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "access-control-expose-headers": "*",
+          "age": "2479642",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "content-encoding": "br",
+          "content-length": "23984",
+          "content-type": "application/javascript; charset=utf-8",
+          "cross-origin-resource-policy": "cross-origin",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "etag": "W/\"13a25-1yL6mYLaiqSN+IJRuxiX8Twds7k\"",
+          "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+          "timing-allow-origin": "*",
+          "vary": "Accept-Encoding",
+          "x-cache": "HIT, HIT",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version": "5.3.0",
+          "x-jsd-version-type": "version",
+          "x-served-by": "cache-fra-etou8220038-FRA, cache-nrt-rjtt7900057-NRT"
+        },
+        "timestamp": "2025-08-12T16:28:59.315Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/chart.js",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "access-control-expose-headers": "*",
+          "age": "42208",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "cache-control": "public, max-age=604800, s-maxage=43200",
+          "content-encoding": "br",
+          "content-length": "71652",
+          "content-type": "application/javascript; charset=utf-8",
+          "cross-origin-resource-policy": "cross-origin",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "etag": "W/\"32dd5-Z992c4Z/9fKU6qjx8etYybhr1nM\"",
+          "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+          "timing-allow-origin": "*",
+          "vary": "Accept-Encoding",
+          "x-cache": "HIT, HIT",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version": "4.5.0",
+          "x-jsd-version-type": "version",
+          "x-served-by": "cache-fra-eddf8230122-FRA, cache-nrt-rjtt7900057-NRT"
+        },
+        "timestamp": "2025-08-12T16:28:59.316Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/fonts/bootstrap-icons.woff2?2ab2cbbe07fcebb53bdaa7313bb290f2",
+        "method": "GET",
+        "headers": {
+          "origin": "http://localhost:3001",
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:59.408Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/fonts/bootstrap-icons.woff2?2ab2cbbe07fcebb53bdaa7313bb290f2",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "access-control-expose-headers": "*",
+          "age": "1881176",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "content-length": "121084",
+          "content-type": "font/woff2",
+          "cross-origin-resource-policy": "cross-origin",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "etag": "W/\"1d8fc-hkihUf3j8mTBWWwTVFMOJgfZAQk\"",
+          "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+          "timing-allow-origin": "*",
+          "vary": "Accept-Encoding",
+          "x-cache": "HIT, HIT",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version": "1.10.0",
+          "x-jsd-version-type": "version",
+          "x-served-by": "cache-fra-etou8220039-FRA, cache-nrt-rjtt7900057-NRT"
+        },
+        "timestamp": "2025-08-12T16:28:59.602Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:59.619Z"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:59 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:59.621Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/login",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:28:59.713Z"
+      },
+      {
+        "url": "http://localhost:3001/login",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:59 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:59.722Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:59.737Z"
+      },
+      {
+        "url": "http://localhost:3001/css/style.css",
+        "status": 200,
+        "headers": {
+          "content-encoding": "br",
+          "etag": "W/\"13c7-19895acf791\"",
+          "x-permitted-cross-domain-policies": "none",
+          "x-content-type-options": "nosniff",
+          "date": "Tue, 12 Aug 2025 16:28:48 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "vary": "Origin, Accept-Encoding",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "x-frame-options": "SAMEORIGIN",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cache-control": "public, max-age=86400",
+          "x-dns-prefetch-control": "off",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "access-control-allow-credentials": "true",
+          "referrer-policy": "no-referrer",
+          "x-download-options": "noopen",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "http://localhost:3001",
+          "x-xss-protection": "0",
+          "origin-agent-cluster": "?1"
+        },
+        "timestamp": "2025-08-12T16:28:59.738Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:28:59.841Z"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:59 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:28:59.843Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/employee-enterprise.html",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:29:05.762Z"
+      },
+      {
+        "url": "http://localhost:3001/employee-enterprise.html",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:58 GMT",
+          "etag": "W/\"2668a-1989ee2122d\"",
+          "last-modified": "Tue, 12 Aug 2025 15:24:32 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:05.766Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:05.779Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:05.779Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/chart.js",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:05.779Z"
+      },
+      {
+        "url": "https://via.placeholder.com/150",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:05.779Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:05.779Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"38dd2-sjFlHg/Wi72HWBifvTZCxGLTT6Y\"",
+          "age": "1006193",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "x-served-by": "cache-fra-eddf8230088-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "33205",
+          "x-jsd-version": "5.3.0"
+        },
+        "timestamp": "2025-08-12T16:29:05.780Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"17579-mPNe8XkflZ+wVkS6/P0WaW+OABQ\"",
+          "age": "1837999",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "x-served-by": "cache-fra-eddf8230027-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "12938",
+          "x-jsd-version": "1.10.0"
+        },
+        "timestamp": "2025-08-12T16:29:05.780Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"13a25-1yL6mYLaiqSN+IJRuxiX8Twds7k\"",
+          "age": "2479642",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "application/javascript; charset=utf-8",
+          "x-served-by": "cache-fra-etou8220038-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "23984",
+          "x-jsd-version": "5.3.0"
+        },
+        "timestamp": "2025-08-12T16:29:05.786Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/chart.js",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"32dd5-Z992c4Z/9fKU6qjx8etYybhr1nM\"",
+          "age": "42208",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "application/javascript; charset=utf-8",
+          "x-served-by": "cache-fra-eddf8230122-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=604800, s-maxage=43200",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "71652",
+          "x-jsd-version": "4.5.0"
+        },
+        "timestamp": "2025-08-12T16:29:05.786Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/fonts/bootstrap-icons.woff2?2ab2cbbe07fcebb53bdaa7313bb290f2",
+        "method": "GET",
+        "headers": {
+          "origin": "http://localhost:3001",
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:05.803Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/fonts/bootstrap-icons.woff2?2ab2cbbe07fcebb53bdaa7313bb290f2",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "etag": "W/\"1d8fc-hkihUf3j8mTBWWwTVFMOJgfZAQk\"",
+          "age": "1881176",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "font/woff2",
+          "x-served-by": "cache-fra-etou8220039-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "121084",
+          "x-jsd-version": "1.10.0"
+        },
+        "timestamp": "2025-08-12T16:29:05.810Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:05.828Z"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:29:05 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:05.830Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/login",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:29:06.107Z"
+      },
+      {
+        "url": "http://localhost:3001/login",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:29:06 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:06.116Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:06.124Z"
+      },
+      {
+        "url": "http://localhost:3001/css/style.css",
+        "status": 200,
+        "headers": {
+          "content-encoding": "br",
+          "etag": "W/\"13c7-19895acf791\"",
+          "x-permitted-cross-domain-policies": "none",
+          "x-content-type-options": "nosniff",
+          "date": "Tue, 12 Aug 2025 16:28:48 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "vary": "Origin, Accept-Encoding",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "x-frame-options": "SAMEORIGIN",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cache-control": "public, max-age=86400",
+          "x-dns-prefetch-control": "off",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "access-control-allow-credentials": "true",
+          "referrer-policy": "no-referrer",
+          "x-download-options": "noopen",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "http://localhost:3001",
+          "x-xss-protection": "0",
+          "origin-agent-cluster": "?1"
+        },
+        "timestamp": "2025-08-12T16:29:06.124Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:06.186Z"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:29:06 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:06.188Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/employee-enterprise.html",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:29:11.795Z"
+      },
+      {
+        "url": "http://localhost:3001/employee-enterprise.html",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:58 GMT",
+          "etag": "W/\"2668a-1989ee2122d\"",
+          "last-modified": "Tue, 12 Aug 2025 15:24:32 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:11.802Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:11.815Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:11.815Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/chart.js",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:11.815Z"
+      },
+      {
+        "url": "https://via.placeholder.com/150",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:11.815Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:11.815Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"38dd2-sjFlHg/Wi72HWBifvTZCxGLTT6Y\"",
+          "age": "1006193",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "x-served-by": "cache-fra-eddf8230088-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "33205",
+          "x-jsd-version": "5.3.0"
+        },
+        "timestamp": "2025-08-12T16:29:11.815Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"17579-mPNe8XkflZ+wVkS6/P0WaW+OABQ\"",
+          "age": "1837999",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "x-served-by": "cache-fra-eddf8230027-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "12938",
+          "x-jsd-version": "1.10.0"
+        },
+        "timestamp": "2025-08-12T16:29:11.816Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"13a25-1yL6mYLaiqSN+IJRuxiX8Twds7k\"",
+          "age": "2479642",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "application/javascript; charset=utf-8",
+          "x-served-by": "cache-fra-etou8220038-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "23984",
+          "x-jsd-version": "5.3.0"
+        },
+        "timestamp": "2025-08-12T16:29:11.820Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/chart.js",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"32dd5-Z992c4Z/9fKU6qjx8etYybhr1nM\"",
+          "age": "42208",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "application/javascript; charset=utf-8",
+          "x-served-by": "cache-fra-eddf8230122-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=604800, s-maxage=43200",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "71652",
+          "x-jsd-version": "4.5.0"
+        },
+        "timestamp": "2025-08-12T16:29:11.820Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/fonts/bootstrap-icons.woff2?2ab2cbbe07fcebb53bdaa7313bb290f2",
+        "method": "GET",
+        "headers": {
+          "origin": "http://localhost:3001",
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:11.831Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/fonts/bootstrap-icons.woff2?2ab2cbbe07fcebb53bdaa7313bb290f2",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "etag": "W/\"1d8fc-hkihUf3j8mTBWWwTVFMOJgfZAQk\"",
+          "age": "1881176",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "font/woff2",
+          "x-served-by": "cache-fra-etou8220039-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "121084",
+          "x-jsd-version": "1.10.0"
+        },
+        "timestamp": "2025-08-12T16:29:11.837Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:11.857Z"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:29:11 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:11.859Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/login",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:29:12.136Z"
+      },
+      {
+        "url": "http://localhost:3001/login",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:29:12 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:12.142Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:12.152Z"
+      },
+      {
+        "url": "http://localhost:3001/css/style.css",
+        "status": 200,
+        "headers": {
+          "content-encoding": "br",
+          "etag": "W/\"13c7-19895acf791\"",
+          "x-permitted-cross-domain-policies": "none",
+          "x-content-type-options": "nosniff",
+          "date": "Tue, 12 Aug 2025 16:28:48 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "vary": "Origin, Accept-Encoding",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "x-frame-options": "SAMEORIGIN",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cache-control": "public, max-age=86400",
+          "x-dns-prefetch-control": "off",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "access-control-allow-credentials": "true",
+          "referrer-policy": "no-referrer",
+          "x-download-options": "noopen",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "http://localhost:3001",
+          "x-xss-protection": "0",
+          "origin-agent-cluster": "?1"
+        },
+        "timestamp": "2025-08-12T16:29:12.152Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:12.219Z"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:29:12 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:12.221Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/employee-enterprise.html",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:29:17.830Z"
+      },
+      {
+        "url": "http://localhost:3001/employee-enterprise.html",
+        "status": 200,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=86400",
+          "content-encoding": "br",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "content-type": "text/html; charset=UTF-8",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:28:58 GMT",
+          "etag": "W/\"2668a-1989ee2122d\"",
+          "last-modified": "Tue, 12 Aug 2025 15:24:32 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "vary": "Origin, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:17.837Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:17.851Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:17.851Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/chart.js",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:17.851Z"
+      },
+      {
+        "url": "https://via.placeholder.com/150",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:17.851Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:17.852Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"38dd2-sjFlHg/Wi72HWBifvTZCxGLTT6Y\"",
+          "age": "1006193",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "x-served-by": "cache-fra-eddf8230088-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "33205",
+          "x-jsd-version": "5.3.0"
+        },
+        "timestamp": "2025-08-12T16:29:17.852Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"17579-mPNe8XkflZ+wVkS6/P0WaW+OABQ\"",
+          "age": "1837999",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "x-served-by": "cache-fra-eddf8230027-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "12938",
+          "x-jsd-version": "1.10.0"
+        },
+        "timestamp": "2025-08-12T16:29:17.852Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"13a25-1yL6mYLaiqSN+IJRuxiX8Twds7k\"",
+          "age": "2479642",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "application/javascript; charset=utf-8",
+          "x-served-by": "cache-fra-etou8220038-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "23984",
+          "x-jsd-version": "5.3.0"
+        },
+        "timestamp": "2025-08-12T16:29:17.856Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/chart.js",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "content-encoding": "br",
+          "etag": "W/\"32dd5-Z992c4Z/9fKU6qjx8etYybhr1nM\"",
+          "age": "42208",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "application/javascript; charset=utf-8",
+          "x-served-by": "cache-fra-eddf8230122-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=604800, s-maxage=43200",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "71652",
+          "x-jsd-version": "4.5.0"
+        },
+        "timestamp": "2025-08-12T16:29:17.856Z",
+        "type": "response"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/fonts/bootstrap-icons.woff2?2ab2cbbe07fcebb53bdaa7313bb290f2",
+        "method": "GET",
+        "headers": {
+          "origin": "http://localhost:3001",
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:17.865Z"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/fonts/bootstrap-icons.woff2?2ab2cbbe07fcebb53bdaa7313bb290f2",
+        "status": 200,
+        "headers": {
+          "access-control-expose-headers": "*",
+          "etag": "W/\"1d8fc-hkihUf3j8mTBWWwTVFMOJgfZAQk\"",
+          "age": "1881176",
+          "x-content-type-options": "nosniff",
+          "x-jsd-version-type": "version",
+          "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400",
+          "x-cache": "HIT, HIT",
+          "date": "Tue, 12 Aug 2025 16:29:01 GMT",
+          "content-type": "font/woff2",
+          "x-served-by": "cache-fra-etou8220039-FRA, cache-nrt-rjtt7900057-NRT",
+          "vary": "Accept-Encoding",
+          "cache-control": "public, max-age=31536000, s-maxage=31536000, immutable",
+          "timing-allow-origin": "*",
+          "cross-origin-resource-policy": "cross-origin",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "*",
+          "content-length": "121084",
+          "x-jsd-version": "1.10.0"
+        },
+        "timestamp": "2025-08-12T16:29:17.872Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:17.902Z"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:29:17 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:17.905Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/login",
+        "method": "GET",
+        "headers": {
+          "accept-language": "zh-TW,zh;q=0.9",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "timestamp": "2025-08-12T16:29:18.173Z"
+      },
+      {
+        "url": "http://localhost:3001/login",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:29:18 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:18.178Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/css/style.css",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:18.189Z"
+      },
+      {
+        "url": "http://localhost:3001/css/style.css",
+        "status": 200,
+        "headers": {
+          "content-encoding": "br",
+          "etag": "W/\"13c7-19895acf791\"",
+          "x-permitted-cross-domain-policies": "none",
+          "x-content-type-options": "nosniff",
+          "date": "Tue, 12 Aug 2025 16:28:48 GMT",
+          "content-type": "text/css; charset=utf-8",
+          "vary": "Origin, Accept-Encoding",
+          "last-modified": "Sun, 10 Aug 2025 20:29:57 GMT",
+          "x-frame-options": "SAMEORIGIN",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cache-control": "public, max-age=86400",
+          "x-dns-prefetch-control": "off",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "access-control-allow-credentials": "true",
+          "referrer-policy": "no-referrer",
+          "x-download-options": "noopen",
+          "accept-ranges": "bytes",
+          "access-control-allow-origin": "http://localhost:3001",
+          "x-xss-protection": "0",
+          "origin-agent-cluster": "?1"
+        },
+        "timestamp": "2025-08-12T16:29:18.189Z",
+        "type": "response"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "method": "GET",
+        "headers": {
+          "sec-ch-ua-platform": "\"Windows\"",
+          "referer": "",
+          "accept-language": "zh-TW,zh;q=0.9",
+          "sec-ch-ua": "\"Chromium\";v=\"139\", \"Not;A=Brand\";v=\"99\"",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+          "sec-ch-ua-mobile": "?0"
+        },
+        "timestamp": "2025-08-12T16:29:18.288Z"
+      },
+      {
+        "url": "http://localhost:3001/favicon.ico",
+        "status": 304,
+        "headers": {
+          "accept-ranges": "bytes",
+          "access-control-allow-credentials": "true",
+          "access-control-allow-origin": "http://localhost:3001",
+          "cache-control": "public, max-age=0",
+          "connection": "keep-alive",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;script-src-attr 'unsafe-inline';style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;img-src 'self' data: https:;connect-src 'self' wss: https:;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "date": "Tue, 12 Aug 2025 16:29:18 GMT",
+          "etag": "W/\"50e7-1989c6d46a9\"",
+          "keep-alive": "timeout=5",
+          "last-modified": "Tue, 12 Aug 2025 03:57:43 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Origin",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-xss-protection": "0"
+        },
+        "timestamp": "2025-08-12T16:29:18.290Z",
+        "type": "response"
+      }
+    ],
+    "notifications": [],
+    "systemHealth": {
+      "3001": {
+        "accessible": true,
+        "title": "員工登入 - 企業員工管理系統",
+        "hasContent": true,
+        "loadTime": 1755016129231
+      },
+      "3002": {
+        "accessible": true,
+        "title": "員工登入 - 企業員工管理系統",
+        "hasContent": true,
+        "loadTime": 1755016130801
+      },
+      "3003": {
+        "accessible": true,
+        "title": "員工登入 - 企業員工管理系統",
+        "hasContent": true,
+        "loadTime": 1755016132388
+      },
+      "3005": {
+        "accessible": true,
+        "title": "員工登入 - 企業員工管理系統",
+        "hasContent": true,
+        "loadTime": 1755016133970
+      },
+      "3006": {
+        "accessible": true,
+        "title": "員工登入 - 企業員工管理系統",
+        "hasContent": true,
+        "loadTime": 1755016135576
+      },
+      "3007": {
+        "accessible": true,
+        "title": "員工登入 - 企業員工管理系統",
+        "hasContent": true,
+        "loadTime": 1755016137153
+      },
+      "3008": {
+        "accessible": true,
+        "title": "員工登入 - 企業員工管理系統",
+        "hasContent": true,
+        "loadTime": 1755016138724
+      }
+    },
+    "screenshots": [
+      {
+        "port": 3001,
+        "path": "D:/0809/system-availability-port-3001-1755016127553.png",
+        "description": "埠 3001 系統狀態"
+      },
+      {
+        "port": 3002,
+        "path": "D:/0809/system-availability-port-3002-1755016127553.png",
+        "description": "埠 3002 系統狀態"
+      },
+      {
+        "port": 3003,
+        "path": "D:/0809/system-availability-port-3003-1755016127553.png",
+        "description": "埠 3003 系統狀態"
+      },
+      {
+        "port": 3005,
+        "path": "D:/0809/system-availability-port-3005-1755016127553.png",
+        "description": "埠 3005 系統狀態"
+      },
+      {
+        "port": 3006,
+        "path": "D:/0809/system-availability-port-3006-1755016127553.png",
+        "description": "埠 3006 系統狀態"
+      },
+      {
+        "port": 3007,
+        "path": "D:/0809/system-availability-port-3007-1755016127553.png",
+        "description": "埠 3007 系統狀態"
+      },
+      {
+        "port": 3008,
+        "path": "D:/0809/system-availability-port-3008-1755016127553.png",
+        "description": "埠 3008 系統狀態"
+      }
+    ],
+    "analysis": {
+      "console": {
+        "total": 20,
+        "errors": 4,
+        "warnings": 0,
+        "errorDetails": [
+          {
+            "type": "error",
+            "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+            "timestamp": "2025-08-12T16:28:59.047Z"
+          },
+          {
+            "type": "error",
+            "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+            "timestamp": "2025-08-12T16:29:05.817Z"
+          },
+          {
+            "type": "error",
+            "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+            "timestamp": "2025-08-12T16:29:11.846Z"
+          },
+          {
+            "type": "error",
+            "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+            "timestamp": "2025-08-12T16:29:17.889Z"
+          }
+        ]
+      },
+      "network": {
+        "totalRequests": 126,
+        "apiRequests": 61,
+        "failedRequests": 0,
+        "failedDetails": []
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "port": 3001,
+      "path": "D:/0809/system-availability-port-3001-1755016127553.png",
+      "description": "埠 3001 系統狀態"
+    },
+    {
+      "port": 3002,
+      "path": "D:/0809/system-availability-port-3002-1755016127553.png",
+      "description": "埠 3002 系統狀態"
+    },
+    {
+      "port": 3003,
+      "path": "D:/0809/system-availability-port-3003-1755016127553.png",
+      "description": "埠 3003 系統狀態"
+    },
+    {
+      "port": 3005,
+      "path": "D:/0809/system-availability-port-3005-1755016127553.png",
+      "description": "埠 3005 系統狀態"
+    },
+    {
+      "port": 3006,
+      "path": "D:/0809/system-availability-port-3006-1755016127553.png",
+      "description": "埠 3006 系統狀態"
+    },
+    {
+      "port": 3007,
+      "path": "D:/0809/system-availability-port-3007-1755016127553.png",
+      "description": "埠 3007 系統狀態"
+    },
+    {
+      "port": 3008,
+      "path": "D:/0809/system-availability-port-3008-1755016127553.png",
+      "description": "埠 3008 系統狀態"
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "JavaScript錯誤修復",
+      "priority": "high",
+      "description": "發現 4 個JavaScript錯誤，建議優先修復"
+    },
+    {
+      "type": "功能修復",
+      "priority": "medium",
+      "description": "功能 GPS打卡系統, 下班打卡, 營收查看, 營收編輯, 個人排程查看, 排程變更申請, 庫存查看, 叫貨申請, 投票參與, 維修申請 測試失敗，建議檢查UI元素"
+    }
+  ]
+}

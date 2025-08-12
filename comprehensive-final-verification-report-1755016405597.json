@@ -1,0 +1,75 @@
+{
+  "reportMetadata": {
+    "generatedAt": "2025-08-12T16:33:25.605Z",
+    "reportVersion": "3.0",
+    "verificationSystem": "智慧瀏覽器驗證系統",
+    "totalExecutionTime": 1755016405597
+  },
+  "executionSummary": {
+    "total": 21,
+    "passed": 10,
+    "failed": 11,
+    "warnings": 0,
+    "successRate": "41.67%",
+    "avgResponseTime": 1,
+    "totalTests": 12,
+    "passedTests": 5,
+    "failedTests": 7,
+    "overallStatus": "NEEDS_ATTENTION"
+  },
+  "performanceMetrics": {
+    "systemAvailability": 0,
+    "functionalitySuccessRate": 0,
+    "totalScreenshots": 0,
+    "totalNotifications": 0,
+    "averageResponseTime": 358.05287740655905
+  },
+  "securityAnalysis": {
+    "authenticationTested": false,
+    "permissionValidation": false,
+    "dataEncryption": false,
+    "inputSanitization": false
+  },
+  "systemHealth": {},
+  "functionalityResults": {},
+  "recommendations": [
+    {
+      "priority": "high",
+      "category": "系統可用性",
+      "description": "系統可用性 0% 需要提升",
+      "action": "檢查並修復無法訪問的服務埠"
+    },
+    {
+      "priority": "high",
+      "category": "功能完整性",
+      "description": "功能測試成功率 0% 過低",
+      "action": "修復失敗的功能按鈕和互動元素"
+    },
+    {
+      "priority": "medium",
+      "category": "Telegram通知",
+      "description": "未檢測到Telegram通知觸發",
+      "action": "確保後端API正確配置並觸發通知"
+    },
+    {
+      "priority": "high",
+      "category": "安全性",
+      "description": "用戶認證機制未充分測試",
+      "action": "加強登入驗證和權限控制測試"
+    },
+    {
+      "priority": "medium",
+      "category": "效能優化",
+      "description": "建議進行前端效能優化",
+      "action": "優化JavaScript載入、CSS壓縮、圖片優化"
+    },
+    {
+      "priority": "low",
+      "category": "用戶體驗",
+      "description": "加強用戶介面互動體驗",
+      "action": "添加載入動畫、操作回饋、錯誤提示優化"
+    }
+  ],
+  "screenshots": [],
+  "telegramNotifications": []
+}

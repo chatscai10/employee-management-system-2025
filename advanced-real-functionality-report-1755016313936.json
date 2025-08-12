@@ -1,0 +1,940 @@
+{
+  "timestamp": "2025-08-12T16:32:00.842Z",
+  "testDuration": 6906,
+  "summary": {
+    "pagesAnalyzed": 3,
+    "totalClickableElements": 37,
+    "functionalitiesTested": 10,
+    "functionalitiesSuccessful": 0,
+    "deepInteractionsSuccessful": 3,
+    "totalScreenshots": 3,
+    "totalErrors": 1,
+    "telegramNotifications": 0
+  },
+  "results": {
+    "pageStructures": {
+      "登入頁面": {
+        "title": "員工登入 - 企業員工管理系統",
+        "url": "http://localhost:3001/login.html",
+        "clickableElements": [
+          {
+            "tagName": "BUTTON",
+            "selector": "button",
+            "text": "登入",
+            "id": "login-btn",
+            "className": "btn",
+            "onclick": "",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 792,
+              "y": 711.2000122070312,
+              "width": 336,
+              "height": 51.20000076293945
+            }
+          },
+          {
+            "tagName": "DIV",
+            "selector": "[onclick]",
+            "text": "登入",
+            "id": "",
+            "className": "tab active",
+            "onclick": "switchTab('login', this)",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 796,
+              "y": 422.3999938964844,
+              "width": 164,
+              "height": 49.60000228881836
+            }
+          },
+          {
+            "tagName": "DIV",
+            "selector": "[onclick]",
+            "text": "註冊",
+            "id": "",
+            "className": "tab",
+            "onclick": "switchTab('register', this)",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 960,
+              "y": 422.3999938964844,
+              "width": 164,
+              "height": 49.60000228881836
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": ".btn",
+            "text": "登入",
+            "id": "login-btn",
+            "className": "btn",
+            "onclick": "",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 792,
+              "y": 711.2000122070312,
+              "width": 336,
+              "height": 51.20000076293945
+            }
+          }
+        ],
+        "formElements": [
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "name",
+            "id": "login-name",
+            "placeholder": "請輸入您的姓名",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "idNumber",
+            "id": "login-id",
+            "placeholder": "請輸入身分證號碼",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "name",
+            "id": "reg-name",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "idNumber",
+            "id": "reg-id",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "date",
+            "name": "birthday",
+            "id": "reg-birthday",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "SELECT",
+            "type": "select-one",
+            "name": "gender",
+            "id": "reg-gender",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "SELECT",
+            "type": "select-one",
+            "name": "hasLicense",
+            "id": "reg-license",
+            "placeholder": "",
+            "required": false
+          },
+          {
+            "tagName": "INPUT",
+            "type": "tel",
+            "name": "phone",
+            "id": "reg-phone",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "address",
+            "id": "reg-address",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "emergencyContact",
+            "id": "reg-emergency",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "SELECT",
+            "type": "select-one",
+            "name": "relationship",
+            "id": "reg-relationship",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "tel",
+            "name": "emergencyPhone",
+            "id": "reg-emergency-phone",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "date",
+            "name": "startDate",
+            "id": "reg-start",
+            "placeholder": "",
+            "required": true
+          }
+        ],
+        "bodyText": "\n    \n        \n            🏢 員工管理系統\n            歡迎使用企業員工管理系統\n        \n        \n        \n        \n            登入\n            註冊\n        \n        \n        \n        \n        \n        \n        \n            \n                \n                    姓名 *\n                    \n                \n                \n                \n                    身分證號碼 *\n                    \n                \n                \n                \n                    登入\n                    \n                \n            \n        "
+      },
+      "員工工作台": {
+        "title": "員工工作台 - 企業員工管理系統",
+        "url": "http://localhost:3001/employee-dashboard.html",
+        "clickableElements": [
+          {
+            "tagName": "BUTTON",
+            "selector": "button",
+            "text": "快速打卡",
+            "id": "",
+            "className": "btn btn-primary w-100 mb-2",
+            "onclick": "quickClockIn()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1207.987548828125,
+              "y": 433.20001220703125,
+              "width": 383.9875183105469,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": "button",
+            "text": "新增營收",
+            "id": "",
+            "className": "btn btn-success w-100 mb-2",
+            "onclick": "addRevenue()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1207.987548828125,
+              "y": 481.20001220703125,
+              "width": 383.9875183105469,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": "button",
+            "text": "查看資料",
+            "id": "",
+            "className": "btn btn-info w-100",
+            "onclick": "viewProfile()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1207.987548828125,
+              "y": 529.2000122070312,
+              "width": 383.9875183105469,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": "button",
+            "text": "",
+            "id": "",
+            "className": "btn-close",
+            "onclick": "this.parentElement.remove()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1851.2000732421875,
+              "y": 20.80000114440918,
+              "width": 48,
+              "height": 56
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": "button",
+            "text": "立即登入",
+            "id": "",
+            "className": "",
+            "onclick": "window.location.href='/login'",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 907.9874877929688,
+              "y": 590.4000244140625,
+              "width": 104,
+              "height": 45.60000228881836
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": "a[href]",
+            "text": "員工管理系統",
+            "id": "",
+            "className": "navbar-brand",
+            "onclick": "",
+            "href": "index.html",
+            "visible": true,
+            "position": {
+              "x": 312,
+              "y": 8,
+              "width": 144,
+              "height": 48.400001525878906
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": "a[href]",
+            "text": "個人資料",
+            "id": "",
+            "className": "nav-link",
+            "onclick": "",
+            "href": "profile.html",
+            "visible": true,
+            "position": {
+              "x": 1400,
+              "y": 11.40000057220459,
+              "width": 80,
+              "height": 41.60000228881836
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": "a[href]",
+            "text": "考勤打卡",
+            "id": "",
+            "className": "nav-link",
+            "onclick": "",
+            "href": "attendance.html",
+            "visible": true,
+            "position": {
+              "x": 1480,
+              "y": 11.40000057220459,
+              "width": 80,
+              "height": 41.60000228881836
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": "a[href]",
+            "text": "登出",
+            "id": "",
+            "className": "nav-link",
+            "onclick": "logout()",
+            "href": "#",
+            "visible": true,
+            "position": {
+              "x": 1560,
+              "y": 11.40000057220459,
+              "width": 48,
+              "height": 41.60000228881836
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": "a[href]",
+            "text": "前往打卡",
+            "id": "",
+            "className": "btn btn-light",
+            "onclick": "",
+            "href": "attendance.html",
+            "visible": true,
+            "position": {
+              "x": 328,
+              "y": 240.40000915527344,
+              "width": 112,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": "a[href]",
+            "text": "查看記錄",
+            "id": "",
+            "className": "btn btn-light",
+            "onclick": "",
+            "href": "revenue.html",
+            "visible": true,
+            "position": {
+              "x": 658,
+              "y": 240.40000915527344,
+              "width": 112,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": "a[href]",
+            "text": "編輯資料",
+            "id": "",
+            "className": "btn btn-light",
+            "onclick": "",
+            "href": "profile.html",
+            "visible": true,
+            "position": {
+              "x": 988,
+              "y": 240.40000915527344,
+              "width": 112,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": "a[href]",
+            "text": "查看報表",
+            "id": "",
+            "className": "btn btn-light",
+            "onclick": "",
+            "href": "revenue.html",
+            "visible": true,
+            "position": {
+              "x": 1318,
+              "y": 240.40000915527344,
+              "width": 112,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": "[onclick]",
+            "text": "登出",
+            "id": "",
+            "className": "nav-link",
+            "onclick": "logout()",
+            "href": "#",
+            "visible": true,
+            "position": {
+              "x": 1560,
+              "y": 11.40000057220459,
+              "width": 48,
+              "height": 41.60000228881836
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": "[onclick]",
+            "text": "快速打卡",
+            "id": "",
+            "className": "btn btn-primary w-100 mb-2",
+            "onclick": "quickClockIn()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1207.987548828125,
+              "y": 433.20001220703125,
+              "width": 383.9875183105469,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": "[onclick]",
+            "text": "新增營收",
+            "id": "",
+            "className": "btn btn-success w-100 mb-2",
+            "onclick": "addRevenue()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1207.987548828125,
+              "y": 481.20001220703125,
+              "width": 383.9875183105469,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": "[onclick]",
+            "text": "查看資料",
+            "id": "",
+            "className": "btn btn-info w-100",
+            "onclick": "viewProfile()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1207.987548828125,
+              "y": 529.2000122070312,
+              "width": 383.9875183105469,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": "[onclick]",
+            "text": "",
+            "id": "",
+            "className": "btn-close",
+            "onclick": "this.parentElement.remove()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1851.2000732421875,
+              "y": 20.80000114440918,
+              "width": 48,
+              "height": 56
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": "[onclick]",
+            "text": "立即登入",
+            "id": "",
+            "className": "",
+            "onclick": "window.location.href='/login'",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 907.9874877929688,
+              "y": 590.4000244140625,
+              "width": 104,
+              "height": 45.60000228881836
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": ".btn",
+            "text": "前往打卡",
+            "id": "",
+            "className": "btn btn-light",
+            "onclick": "",
+            "href": "attendance.html",
+            "visible": true,
+            "position": {
+              "x": 328,
+              "y": 240.40000915527344,
+              "width": 112,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": ".btn",
+            "text": "查看記錄",
+            "id": "",
+            "className": "btn btn-light",
+            "onclick": "",
+            "href": "revenue.html",
+            "visible": true,
+            "position": {
+              "x": 658,
+              "y": 240.40000915527344,
+              "width": 112,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": ".btn",
+            "text": "編輯資料",
+            "id": "",
+            "className": "btn btn-light",
+            "onclick": "",
+            "href": "profile.html",
+            "visible": true,
+            "position": {
+              "x": 988,
+              "y": 240.40000915527344,
+              "width": 112,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": ".btn",
+            "text": "查看報表",
+            "id": "",
+            "className": "btn btn-light",
+            "onclick": "",
+            "href": "revenue.html",
+            "visible": true,
+            "position": {
+              "x": 1318,
+              "y": 240.40000915527344,
+              "width": 112,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": ".btn",
+            "text": "快速打卡",
+            "id": "",
+            "className": "btn btn-primary w-100 mb-2",
+            "onclick": "quickClockIn()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1207.987548828125,
+              "y": 433.20001220703125,
+              "width": 383.9875183105469,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": ".btn",
+            "text": "新增營收",
+            "id": "",
+            "className": "btn btn-success w-100 mb-2",
+            "onclick": "addRevenue()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1207.987548828125,
+              "y": 481.20001220703125,
+              "width": 383.9875183105469,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": ".btn",
+            "text": "查看資料",
+            "id": "",
+            "className": "btn btn-info w-100",
+            "onclick": "viewProfile()",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 1207.987548828125,
+              "y": 529.2000122070312,
+              "width": 383.9875183105469,
+              "height": 40
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": ".nav-link",
+            "text": "個人資料",
+            "id": "",
+            "className": "nav-link",
+            "onclick": "",
+            "href": "profile.html",
+            "visible": true,
+            "position": {
+              "x": 1400,
+              "y": 11.40000057220459,
+              "width": 80,
+              "height": 41.60000228881836
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": ".nav-link",
+            "text": "考勤打卡",
+            "id": "",
+            "className": "nav-link",
+            "onclick": "",
+            "href": "attendance.html",
+            "visible": true,
+            "position": {
+              "x": 1480,
+              "y": 11.40000057220459,
+              "width": 80,
+              "height": 41.60000228881836
+            }
+          },
+          {
+            "tagName": "A",
+            "selector": ".nav-link",
+            "text": "登出",
+            "id": "",
+            "className": "nav-link",
+            "onclick": "logout()",
+            "href": "#",
+            "visible": true,
+            "position": {
+              "x": 1560,
+              "y": 11.40000057220459,
+              "width": 48,
+              "height": 41.60000228881836
+            }
+          }
+        ],
+        "formElements": [],
+        "bodyText": "\n    \n        \n            員工管理系統\n            \n                個人資料\n                考勤打卡\n                登出\n            \n        \n    \n\n    \n        \n            \n                員工工作台\n                \n                    \n                        \n                            \n                                今日考勤\n                                點擊進行打卡\n                                前往打卡\n                            \n                        \n                    \n                    \n              "
+      },
+      "企業員工頁面": {
+        "title": "員工登入 - 企業員工管理系統",
+        "url": "http://localhost:3001/login",
+        "clickableElements": [
+          {
+            "tagName": "BUTTON",
+            "selector": "button",
+            "text": "登入",
+            "id": "login-btn",
+            "className": "btn",
+            "onclick": "",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 792,
+              "y": 711.2000122070312,
+              "width": 336,
+              "height": 51.20000076293945
+            }
+          },
+          {
+            "tagName": "DIV",
+            "selector": "[onclick]",
+            "text": "登入",
+            "id": "",
+            "className": "tab active",
+            "onclick": "switchTab('login', this)",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 796,
+              "y": 422.3999938964844,
+              "width": 164,
+              "height": 49.60000228881836
+            }
+          },
+          {
+            "tagName": "DIV",
+            "selector": "[onclick]",
+            "text": "註冊",
+            "id": "",
+            "className": "tab",
+            "onclick": "switchTab('register', this)",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 960,
+              "y": 422.3999938964844,
+              "width": 164,
+              "height": 49.60000228881836
+            }
+          },
+          {
+            "tagName": "BUTTON",
+            "selector": ".btn",
+            "text": "登入",
+            "id": "login-btn",
+            "className": "btn",
+            "onclick": "",
+            "href": "",
+            "visible": true,
+            "position": {
+              "x": 792,
+              "y": 711.2000122070312,
+              "width": 336,
+              "height": 51.20000076293945
+            }
+          }
+        ],
+        "formElements": [
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "name",
+            "id": "login-name",
+            "placeholder": "請輸入您的姓名",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "idNumber",
+            "id": "login-id",
+            "placeholder": "請輸入身分證號碼",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "name",
+            "id": "reg-name",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "idNumber",
+            "id": "reg-id",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "date",
+            "name": "birthday",
+            "id": "reg-birthday",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "SELECT",
+            "type": "select-one",
+            "name": "gender",
+            "id": "reg-gender",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "SELECT",
+            "type": "select-one",
+            "name": "hasLicense",
+            "id": "reg-license",
+            "placeholder": "",
+            "required": false
+          },
+          {
+            "tagName": "INPUT",
+            "type": "tel",
+            "name": "phone",
+            "id": "reg-phone",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "address",
+            "id": "reg-address",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "text",
+            "name": "emergencyContact",
+            "id": "reg-emergency",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "SELECT",
+            "type": "select-one",
+            "name": "relationship",
+            "id": "reg-relationship",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "tel",
+            "name": "emergencyPhone",
+            "id": "reg-emergency-phone",
+            "placeholder": "",
+            "required": true
+          },
+          {
+            "tagName": "INPUT",
+            "type": "date",
+            "name": "startDate",
+            "id": "reg-start",
+            "placeholder": "",
+            "required": true
+          }
+        ],
+        "bodyText": "\n    \n        \n            🏢 員工管理系統\n            歡迎使用企業員工管理系統\n        \n        \n        \n        \n            登入\n            註冊\n        \n        \n        \n        \n        \n        \n        \n            \n                \n                    姓名 *\n                    \n                \n                \n                \n                    身分證號碼 *\n                    \n                \n                \n                \n                    登入\n                    \n                \n            \n        "
+      }
+    },
+    "realFunctionalities": {
+      "快速打卡": {
+        "clicked": false,
+        "error": "this.page.waitForTimeout is not a function"
+      },
+      "新增營收": {
+        "clicked": false,
+        "error": "this.page.waitForTimeout is not a function"
+      },
+      "查看資料": {
+        "clicked": false,
+        "error": "this.page.waitForTimeout is not a function"
+      },
+      "立即登入": {
+        "clicked": false,
+        "error": "this.page.waitForTimeout is not a function"
+      },
+      "員工管理系統": {
+        "clicked": false,
+        "error": "this.page.waitForTimeout is not a function"
+      },
+      "考勤打卡": {
+        "clicked": false,
+        "error": "this.page.waitForTimeout is not a function"
+      },
+      "登出": {
+        "clicked": false,
+        "error": "this.page.waitForTimeout is not a function"
+      },
+      "前往打卡": {
+        "clicked": false,
+        "error": "this.page.waitForTimeout is not a function"
+      },
+      "查看記錄": {
+        "clicked": false,
+        "error": "this.page.waitForTimeout is not a function"
+      },
+      "編輯資料": {
+        "clicked": false,
+        "error": "this.page.waitForTimeout is not a function"
+      }
+    },
+    "telegramNotifications": [],
+    "userFlows": {
+      "登入流程": {
+        "successful": false,
+        "error": "this.page.waitForTimeout is not a function"
+      }
+    },
+    "deepInteractions": {
+      "表單填寫測試": {
+        "successful": true,
+        "result": {
+          "filled": 0,
+          "forms": 0
+        },
+        "timestamp": "2025-08-12T16:32:00.441Z"
+      },
+      "下拉選單測試": {
+        "successful": true,
+        "result": {
+          "changed": 0,
+          "selects": 0
+        },
+        "timestamp": "2025-08-12T16:32:00.557Z"
+      },
+      "標籤頁切換測試": {
+        "successful": true,
+        "result": {
+          "switched": 0,
+          "tabs": 3
+        },
+        "timestamp": "2025-08-12T16:32:00.723Z"
+      }
+    },
+    "screenshots": [
+      {
+        "description": "登入頁面 結構分析",
+        "path": "D:/0809/page-analysis------1755016313936.png"
+      },
+      {
+        "description": "員工工作台 結構分析",
+        "path": "D:/0809/page-analysis-------1755016313936.png"
+      },
+      {
+        "description": "企業員工頁面 結構分析",
+        "path": "D:/0809/page-analysis--------1755016313936.png"
+      }
+    ],
+    "errors": [
+      {
+        "type": "console",
+        "message": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+        "timestamp": "2025-08-12T16:31:57.083Z"
+      }
+    ]
+  }
+}

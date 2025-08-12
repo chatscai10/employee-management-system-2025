@@ -467,6 +467,8 @@ class EmployeeManagementServer {
             { path: '/api/inventory', handler: inventoryRoutes, name: '庫存API' },
             { path: '/api/orders', handler: orderRoutes, name: '訂單API' },
             { path: '/api/schedule', handler: scheduleRoutes, name: '排班API' },
+            { path: '/api/announcements', handler: announcementsRoutes, name: '公告API' },
+            { path: '/api/voting', handler: votingRoutes, name: '投票API' },
             { path: '/api/work-assignments', handler: workAssignmentRoutes, name: '工作分配API' },
             { path: '/api/promotion', handler: promotionRoutes, name: '升職API' },
             { path: '/api/maintenance', handler: maintenanceRoutes, name: '維修API' },
