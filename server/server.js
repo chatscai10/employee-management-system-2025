@@ -344,32 +344,12 @@ class EmployeeManagementServer {
         // API 路由 - 安全載入與容錯處理
         this.initializeAPIRoutes();
 
-        // 主頁面路由 - 修復版本
+        // 主頁面路由 - 緊急修復版本 (強制使用內建HTML)
         this.app.get('/', (req, res) => {
             try {
-                // 嘗試多個可能的路徑
-                const fs = require('fs');
-                const possiblePaths = [
-                    path.join(__dirname, '..', 'public', 'login.html'),
-                    path.join(process.cwd(), 'public', 'login.html'),
-                    path.resolve('./public/login.html')
-                ];
-                
-                let loginFilePath = null;
-                for (const p of possiblePaths) {
-                    if (fs.existsSync(p)) {
-                        loginFilePath = p;
-                        break;
-                    }
-                }
-                
-                if (loginFilePath) {
-                    logger.info(`✅ 找到登入頁面: ${loginFilePath}`);
-                    res.sendFile(path.resolve(loginFilePath));
-                } else {
-                    // 如果找不到檔案，返回內建登入頁面
-                    logger.warn('⚠️ 找不到login.html，返回內建登入頁面');
-                    res.send(`<!DOCTYPE html>
+                logger.info('🔍 收到首頁請求，強制提供內建登入頁面');
+                // 直接返回內建登入頁面，不依賴外部檔案
+                res.send(`<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
