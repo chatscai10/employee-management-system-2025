@@ -250,9 +250,9 @@ router.post('/employees/:id/edit', async (req, res) => {
 // 實現 /utils/telegram-notification-engine.js
 class TelegramNotificationEngine {
   constructor() {
-    this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-    this.bossGroupId = '-1002658082392';
-    this.employeeGroupId = '-1002658082392';
+    this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+    this.bossGroupId = 'process.env.TELEGRAM_GROUP_ID';
+    this.employeeGroupId = 'process.env.TELEGRAM_GROUP_ID';
   }
   
   // 16種老闆群組詳細通知
@@ -1119,9 +1119,9 @@ body.mobile-first {
 // /utils/telegram-notification-engine.js
 class TelegramNotificationEngine {
   constructor() {
-    this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-    this.bossGroupId = '-1002658082392';
-    this.employeeGroupId = '-1002658082392';
+    this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+    this.bossGroupId = 'process.env.TELEGRAM_GROUP_ID';
+    this.employeeGroupId = 'process.env.TELEGRAM_GROUP_ID';
     this.apiUrl = `https://api.telegram.org/bot${this.botToken}`;
   }
 

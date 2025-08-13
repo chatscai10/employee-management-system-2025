@@ -4,8 +4,8 @@
 
 const https = require('https');
 
-const TELEGRAM_BOT_TOKEN = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-const TELEGRAM_CHAT_ID = '-1002658082392';
+const TELEGRAM_BOT_TOKEN = 'process.env.TELEGRAM_BOT_TOKEN';
+const TELEGRAM_CHAT_ID = 'process.env.TELEGRAM_GROUP_ID';
 
 const message = `
 🚨 *API端點緊急修復完成報告*

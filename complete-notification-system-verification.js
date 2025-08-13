@@ -10,8 +10,8 @@ const TelegramNotificationService = require('./server/services/TelegramNotificat
 
 class NotificationSystemVerifier {
     constructor() {
-        this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        this.testGroupId = '-1002658082392';
+        this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        this.testGroupId = 'process.env.TELEGRAM_GROUP_ID';
         this.baseUrl = `https://api.telegram.org/bot${this.botToken}`;
         
         this.testResults = {
@@ -504,8 +504,8 @@ ${Object.entries(this.testResults.flightReports).map(([name, status]) =>
 
 ## 測試概述
 - **測試時間**: ${timestamp}
-- **Bot Token**: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-- **測試群組**: -1002658082392
+- **Bot Token**: process.env.TELEGRAM_BOT_TOKEN
+- **測試群組**: process.env.TELEGRAM_GROUP_ID
 - **測試範圍**: 29種通知模板 + 7大功能模組 + 飛機彙報系統
 
 ## 驗證結果

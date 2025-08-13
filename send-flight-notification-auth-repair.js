@@ -6,8 +6,8 @@ const https = require('https');
 const fs = require('fs');
 
 // Telegram Bot 配置
-const TELEGRAM_BOT_TOKEN = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-const TELEGRAM_CHAT_ID = '-1002658082392';
+const TELEGRAM_BOT_TOKEN = 'process.env.TELEGRAM_BOT_TOKEN';
+const TELEGRAM_CHAT_ID = 'process.env.TELEGRAM_GROUP_ID';
 
 async function sendTelegramNotification(message) {
     return new Promise((resolve, reject) => {

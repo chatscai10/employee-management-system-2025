@@ -134,9 +134,9 @@
 │ • complete-browser-verification-summary.md  │
 │                                           │
 │ ✈️ 飛機彙報通知狀態:                          │
-│ 🤖 Telegram Bot: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc │
-│ 📱 老闆群組: -1002658082392 ✅ 已發送       │
-│ 📱 員工群組: -1002658082392 ✅ 已發送       │
+│ 🤖 Telegram Bot: process.env.TELEGRAM_BOT_TOKEN │
+│ 📱 老闆群組: process.env.TELEGRAM_GROUP_ID ✅ 已發送       │
+│ 📱 員工群組: process.env.TELEGRAM_GROUP_ID ✅ 已發送       │
 │ 💾 Git提交: ✅ 自動版本控制完成              │
 │                                           │
 │ 🏁 最終結論:                                │

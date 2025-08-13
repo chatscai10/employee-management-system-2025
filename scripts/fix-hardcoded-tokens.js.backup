@@ -1,0 +1,182 @@
+/**
+ * 批量修復硬編碼Token腳本
+ * Claude Code安全相容性修復工具
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+class TokenReplacer {
+    constructor() {
+        this.hardcodedToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
+        this.hardcodedGroupId = '-1002658082392';
+        
+        this.replacements = [
+            {
+                search: /7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/g,
+                replace: 'process.env.TELEGRAM_BOT_TOKEN',
+                description: 'Telegram Bot Token'
+            },
+            {
+                search: /-1002658082392/g,
+                replace: 'process.env.TELEGRAM_GROUP_ID',
+                description: 'Telegram Group ID'
+            }
+        ];
+
+        this.affectedFiles = [];
+        this.stats = {
+            scanned: 0,
+            modified: 0,
+            errors: 0
+        };
+    }
+
+    async scanAndFix() {
+        console.log('🔍 開始掃描和修復硬編碼Token...');
+        
+        // 獲取所有受影響的檔案
+        await this.findAffectedFiles();
+        
+        console.log(`📊 找到 ${this.affectedFiles.length} 個受影響的檔案`);
+        
+        // 批量修復
+        for (const filePath of this.affectedFiles) {
+            await this.replaceInFile(filePath);
+        }
+
+        this.generateReport();
+    }
+
+    async findAffectedFiles() {
+        const { execSync } = require('child_process');
+        
+        try {
+            // 使用grep找到所有包含硬編碼token的檔案
+            const result = execSync('grep -r -l "7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc" . --exclude-dir=node_modules --exclude-dir=.git', 
+                { encoding: 'utf8', cwd: process.cwd() });
+            
+            this.affectedFiles = result.trim().split('\n').filter(file => file && file.length > 0);
+        } catch (error) {
+            console.warn('⚠️ grep掃描失敗，使用手動方式');
+            // 備用方式：手動掃描部分重要檔案
+            this.affectedFiles = [
+                './public/login.html',
+                './server/middleware/auditLogger.js',
+                './telegram-notifier.js'
+            ].filter(file => fs.existsSync(file));
+        }
+    }
+
+    async replaceInFile(filePath) {
+        try {
+            this.stats.scanned++;
+            
+            if (!fs.existsSync(filePath)) {
+                console.warn(`⚠️ 檔案不存在: ${filePath}`);
+                return false;
+            }
+
+            let content = fs.readFileSync(filePath, 'utf8');
+            let modified = false;
+            let changes = [];
+
+            this.replacements.forEach(({ search, replace, description }) => {
+                const matches = content.match(search);
+                if (matches) {
+                    content = content.replace(search, replace);
+                    modified = true;
+                    changes.push(`${description}: ${matches.length} 處`);
+                }
+            });
+
+            if (modified) {
+                // 檢查是否需要添加dotenv配置
+                if (!content.includes("require('dotenv')") && 
+                    !content.includes('process.env.TELEGRAM') &&
+                    filePath.endsWith('.js')) {
+                    
+                    // 如果是JS檔案且使用了環境變數，添加dotenv
+                    if (content.includes('process.env.TELEGRAM_BOT_TOKEN')) {
+                        content = "require('dotenv').config();\n" + content;
+                        changes.push('添加 dotenv 配置');
+                    }
+                }
+
+                // 備份原始檔案
+                const backupPath = `${filePath}.backup`;
+                if (!fs.existsSync(backupPath)) {
+                    fs.copyFileSync(filePath, backupPath);
+                }
+
+                fs.writeFileSync(filePath, content, 'utf8');
+                console.log(`✅ 修復: ${filePath}`);
+                console.log(`   變更: ${changes.join(', ')}`);
+                
+                this.stats.modified++;
+                return true;
+            } else {
+                console.log(`ℹ️ 跳過: ${filePath} (無需修復)`);
+                return false;
+            }
+        } catch (error) {
+            console.error(`❌ 錯誤修復 ${filePath}:`, error.message);
+            this.stats.errors++;
+            return false;
+        }
+    }
+
+    generateReport() {
+        const report = {
+            timestamp: new Date().toISOString(),
+            stats: this.stats,
+            summary: {
+                totalFiles: this.affectedFiles.length,
+                modifiedFiles: this.stats.modified,
+                successRate: `${((this.stats.modified / this.stats.scanned) * 100).toFixed(1)}%`
+            }
+        };
+
+        // 保存報告
+        fs.writeFileSync('token-fix-report.json', JSON.stringify(report, null, 2));
+
+        console.log('\n📊 修復完成報告:');
+        console.log(`   掃描檔案: ${this.stats.scanned}`);
+        console.log(`   修復檔案: ${this.stats.modified}`);
+        console.log(`   錯誤數量: ${this.stats.errors}`);
+        console.log(`   成功率: ${report.summary.successRate}`);
+        console.log('\n🎉 硬編碼Token修復完成！');
+        console.log('💡 請確認.env檔案包含正確的TELEGRAM_BOT_TOKEN和TELEGRAM_GROUP_ID');
+    }
+
+    async rollback() {
+        console.log('🔄 開始回滾修復...');
+        let rolledBack = 0;
+
+        for (const filePath of this.affectedFiles) {
+            const backupPath = `${filePath}.backup`;
+            if (fs.existsSync(backupPath)) {
+                fs.copyFileSync(backupPath, filePath);
+                fs.unlinkSync(backupPath);
+                console.log(`↩️ 回滾: ${filePath}`);
+                rolledBack++;
+            }
+        }
+
+        console.log(`✅ 回滾完成: ${rolledBack} 個檔案`);
+    }
+}
+
+// CLI執行
+if (require.main === module) {
+    const args = process.argv.slice(2);
+    const replacer = new TokenReplacer();
+
+    if (args.includes('--rollback')) {
+        replacer.rollback();
+    } else {
+        replacer.scanAndFix();
+    }
+}
+
+module.exports = TokenReplacer;

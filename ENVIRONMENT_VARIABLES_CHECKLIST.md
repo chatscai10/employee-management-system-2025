@@ -22,8 +22,8 @@
 - [x] **CLAUDE_TEMPERATURE** = `0.7` ✅ 已預配置
 
 ### Telegram 通知系統
-- [x] **TELEGRAM_BOT_TOKEN** = `7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc` ✅ 已配置
-- [x] **TELEGRAM_CHAT_ID** = `-1002658082392` ✅ 已配置
+- [x] **TELEGRAM_BOT_TOKEN** = `process.env.TELEGRAM_BOT_TOKEN` ✅ 已配置
+- [x] **TELEGRAM_CHAT_ID** = `process.env.TELEGRAM_GROUP_ID` ✅ 已配置
 
 ---
 

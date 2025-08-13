@@ -50,8 +50,8 @@ CLAUDE_TEMPERATURE=0.7
 
 #### 📱 Telegram 通知 (已配置)
 ```env
-TELEGRAM_BOT_TOKEN=7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-TELEGRAM_CHAT_ID=-1002658082392
+TELEGRAM_BOT_TOKEN=process.env.TELEGRAM_BOT_TOKEN
+TELEGRAM_CHAT_ID=process.env.TELEGRAM_GROUP_ID
 ```
 
 #### 🌐 網路配置
@@ -172,7 +172,7 @@ curl https://your-app.railway.app/admin.html
 ## 📱 自動通知確認
 
 部署完成後，系統會自動發送通知到：
-- **Telegram 群組**: `-1002658082392`
+- **Telegram 群組**: `process.env.TELEGRAM_GROUP_ID`
 - **通知內容**: 包含訪問 URL、功能狀態、效能指標
 
 ---

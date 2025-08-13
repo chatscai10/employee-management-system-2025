@@ -370,11 +370,11 @@ GPS打卡           2個       85%     ✅ 通過
 ```
 
 ### 通知群組配置
-- **智慧彙報群組**: `-1002658082392` (主要彙報)
+- **智慧彙報群組**: `process.env.TELEGRAM_GROUP_ID` (主要彙報)
 - **管理員群組**: 管理相關通知
 - **員工群組**: 一般員工通知  
 - **系統監控群組**: 系統狀態通知
-- **Bot Token**: `7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc`
+- **Bot Token**: `process.env.TELEGRAM_BOT_TOKEN`
 
 ### 自動通知觸發
 - **新員工註冊**: 管理員群組通知

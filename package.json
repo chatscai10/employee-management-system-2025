@@ -13,10 +13,15 @@
     "dev": "NODE_ENV=development nodemon server/server.js",
     "build": "echo 'No build step required'",
     "test": "node system-test.js",
-    "deploy": "railway deploy",
+    "security-check": "node scripts/security-check.js",
+    "claude-check": "node scripts/security-check.js --claude-code",
+    "fix-tokens": "node scripts/fix-hardcoded-tokens.js",
+    "deploy": "npm run claude-check && railway deploy",
+    "deploy-gcp": "npm run claude-check && gcloud app deploy",
     "render-postbuild": "echo 'Render build completed'",
     "gcp-build": "npm install --production",
-    "deploy-gcp": "gcloud app deploy"
+    "prebuild": "npm run security-check",
+    "pretest": "npm run claude-check"
   },
   "keywords": [
     "employee-management",

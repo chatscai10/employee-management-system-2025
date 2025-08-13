@@ -48,8 +48,8 @@
 - **系統設定**: ✅ 模組存在，參數配置功能完整
 
 #### 3. 📱 Telegram通知系統
-- **Bot配置**: ✅ Bot Token: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-- **群組ID**: ✅ -1002658082392
+- **Bot配置**: ✅ Bot Token: process.env.TELEGRAM_BOT_TOKEN
+- **群組ID**: ✅ process.env.TELEGRAM_GROUP_ID
 - **登入通知**: ✅ 2次成功通知 (狀態碼: 204, 200)
 - **通知觸發**: ✅ 自動觸發機制正常運作
 

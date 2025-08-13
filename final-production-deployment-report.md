@@ -168,8 +168,8 @@
 
 ### ✅ 生產環境飛機彙報確認:
 **Bot配置** (生產就緒):
-- **Bot Token**: `7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc` ✅ 已驗證
-- **群組ID**: `-1002658082392` ✅ 已確認  
+- **Bot Token**: `process.env.TELEGRAM_BOT_TOKEN` ✅ 已驗證
+- **群組ID**: `process.env.TELEGRAM_GROUP_ID` ✅ 已確認  
 - **通知狀態**: 全系統通知觸發正常運行
 - **模板使用**: 29種模板在生產環境正常使用
 

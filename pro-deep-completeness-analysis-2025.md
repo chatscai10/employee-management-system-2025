@@ -36,9 +36,9 @@
 ### 📱 通知模板.txt 完整要求解析 (301行)
 
 #### 🤖 Telegram 通知系統配置
-- **Bot Token**: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc ✅
-- **老闆群組**: -1002658082392 ✅  
-- **員工群組**: -1002658082392 ✅
+- **Bot Token**: process.env.TELEGRAM_BOT_TOKEN ✅
+- **老闆群組**: process.env.TELEGRAM_GROUP_ID ✅  
+- **員工群組**: process.env.TELEGRAM_GROUP_ID ✅
 
 #### 📨 29種不同通知模板要求
 **老闆群組通知 (16種)**:

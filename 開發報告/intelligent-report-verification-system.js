@@ -146,7 +146,7 @@ class IntelligentReportVerificationSystem {
         const consistencyChecks = [
             {
                 name: 'Telegram Bot Token一致性',
-                pattern: /7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/g,
+                pattern: /process.env.TELEGRAM_BOT_TOKEN/g,
                 expectedCount: 5 // 應該在多個文檔中出現
             },
             {

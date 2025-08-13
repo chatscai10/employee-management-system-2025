@@ -124,9 +124,9 @@ const promotionLevels = [
 // 通知配置 (系統邏輯.txt 第113-119行)
 const notificationConfig = {
   telegramBot: {
-    token: "7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc",
-    bossGroupId: "-1002658082392",
-    employeeGroupId: "-1002658082392"
+    token: "process.env.TELEGRAM_BOT_TOKEN",
+    bossGroupId: "process.env.TELEGRAM_GROUP_ID",
+    employeeGroupId: "process.env.TELEGRAM_GROUP_ID"
   },
   lineBot: {
     channelAccessToken: "", // 待設定

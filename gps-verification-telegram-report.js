@@ -7,8 +7,8 @@ const fs = require('fs');
 
 class GPSVerificationTelegramReporter {
     constructor() {
-        this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        this.groupId = '-1002658082392';
+        this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        this.groupId = 'process.env.TELEGRAM_GROUP_ID';
         this.bot = new TelegramBot(this.botToken, { polling: false });
     }
 

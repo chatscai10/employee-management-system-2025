@@ -1,7 +1,7 @@
 const https = require('https');
 
-const BOT_TOKEN = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-const CHAT_ID = '-1002658082392';
+const BOT_TOKEN = 'process.env.TELEGRAM_BOT_TOKEN';
+const CHAT_ID = 'process.env.TELEGRAM_GROUP_ID';
 
 const message = "企業員工管理系統 - 完整深度驗證飛機彙報\n\n" +
 "驗證結果摘要:\n" +

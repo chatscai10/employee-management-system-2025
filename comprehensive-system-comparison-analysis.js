@@ -94,10 +94,10 @@ class ComprehensiveSystemComparisonAnalysis {
         
         this.notificationRequirements = {
             // 從通知模板.txt解析的通知需求
-            botToken: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
+            botToken: 'process.env.TELEGRAM_BOT_TOKEN',
             groups: {
-                boss: '-1002658082392',
-                employee: '-1002658082392'
+                boss: 'process.env.TELEGRAM_GROUP_ID',
+                employee: 'process.env.TELEGRAM_GROUP_ID'
             },
             
             revenueNotifications: {

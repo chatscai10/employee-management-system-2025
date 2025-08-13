@@ -9,8 +9,8 @@ const axios = require('axios');
 
 class OptimizedNotificationVerifier {
     constructor() {
-        this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        this.testGroupId = '-1002658082392';
+        this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        this.testGroupId = 'process.env.TELEGRAM_GROUP_ID';
         this.baseUrl = `https://api.telegram.org/bot${this.botToken}`;
         
         // 頻率限制配置
@@ -286,8 +286,8 @@ ${this.testResults.failedNotifications.map(item => `• ${item.name}`).join('\n'
 
 ## 測試概述
 - **測試時間**: ${timestamp}
-- **Bot Token**: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc (已驗證有效)
-- **測試群組**: -1002658082392
+- **Bot Token**: process.env.TELEGRAM_BOT_TOKEN (已驗證有效)
+- **測試群組**: process.env.TELEGRAM_GROUP_ID
 - **驗證方式**: 漸進式測試避免頻率限制
 
 ## 驗證結果

@@ -1,7 +1,7 @@
 const https = require('https');
 
-const botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-const chatId = '-1002658082392';
+const botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+const chatId = 'process.env.TELEGRAM_GROUP_ID';
 
 const currentTime = new Date().toLocaleString('zh-TW');
 
@@ -71,7 +71,7 @@ const req = https.request(options, (res) => {
     
     if (res.statusCode === 200) {
       console.log('🎉 彙報成功發送到Telegram群組');
-      console.log('📱 群組ID: -1002658082392'); 
+      console.log('📱 群組ID: process.env.TELEGRAM_GROUP_ID'); 
       console.log('🤖 Bot Token: 7659...已驗證');
     } else {
       console.log('⚠️ 發送過程中出現問題，狀態碼:', res.statusCode);

@@ -110,9 +110,9 @@ name:店名 people:排班系統使用的各分店每日最少職班人數 latitu
 
 通知設定
 預設
-Telegram Bot API Token :7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-Telegram 老闆群組 Chat ID :-1002658082392
-Telegram 員工群組 Chat ID :-1002658082392
+Telegram Bot API Token :process.env.TELEGRAM_BOT_TOKEN
+Telegram 老闆群組 Chat ID :process.env.TELEGRAM_GROUP_ID
+Telegram 員工群組 Chat ID :process.env.TELEGRAM_GROUP_ID
 LINE Bot Channel Access Token:
 LINE Notify 權杖 (老闆群組):
 LINE Notify 權杖 (員工群組):
@@ -274,9 +274,9 @@ LINE Notify 權杖 (員工群組):
 管理員頁:員工名單管理和編輯修改
 
 管理員頁:通知功能
-飛機BOT:7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-老闆ID:-1002658082392
-員工ID-1002658082392
+飛機BOT:process.env.TELEGRAM_BOT_TOKEN
+老闆ID:process.env.TELEGRAM_GROUP_ID
+員工IDprocess.env.TELEGRAM_GROUP_ID
 前端頁面的所有數據提交修改都必須要通知管理員群組和員工群組
 營業額 老闆要詳細的通知各項數據 員工只需要通知日期分店 和今日獎金類別是平日還是假日(輸入時用選單選擇的)和今日獎金是多少或是未達標差距多少
 
@@ -317,9 +317,9 @@ LINE Notify 權杖 (員工群組):
 
 
 管理員頁:通知功能
-飛機BOT:7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-老闆ID:-1002658082392
-員工ID-1002658082392
+飛機BOT:process.env.TELEGRAM_BOT_TOKEN
+老闆ID:process.env.TELEGRAM_GROUP_ID
+員工IDprocess.env.TELEGRAM_GROUP_ID
 前端頁面的所有數據提交修改都必須要通知管理員群組和員工群組
 營業額 老闆要詳細的通知各項數據 員工只需要通知日期分店 和今日獎金類別是平日還是假日(輸入時用選單選擇的)和今日獎金是多少或是未達標差距多少
 

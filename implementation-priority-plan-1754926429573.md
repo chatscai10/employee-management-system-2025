@@ -27,7 +27,7 @@
 - **開發時間**: 4-6天
 - **複雜度**: MEDIUM
 - **依賴關係**: 無
-- **核心需求**: botIntegration: Bot Token: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc, groupManagement: 老闆群組 + 員工群組, templates: 29種通知模板, autoTriggers: 所有數據提交自動通知, scheduledNotifications: 生日提醒、排班提醒等
+- **核心需求**: botIntegration: Bot Token: process.env.TELEGRAM_BOT_TOKEN, groupManagement: 老闆群組 + 員工群組, templates: 29種通知模板, autoTriggers: 所有數據提交自動通知, scheduledNotifications: 生日提醒、排班提醒等
 - **交付檔案**: telegram-notification-system.js, notification-templates.js, auto-trigger-handlers.js, scheduled-notifications.js
 
 #### 升遷投票系統

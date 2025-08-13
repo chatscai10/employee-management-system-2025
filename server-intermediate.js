@@ -994,7 +994,7 @@ app.get('/api/system/settings', (req, res) => {
                 punishmentThreshold: { lateMinutes: 10, lateCount: 3 }
             },
             notifications: {
-                telegram: { enabled: true, chatId: '-1002658082392' },
+                telegram: { enabled: true, chatId: 'process.env.TELEGRAM_GROUP_ID' },
                 email: { enabled: false }
             },
             features: {
@@ -1207,8 +1207,8 @@ console.log('🗄️ 持久化資料庫系統已載入');
 // Telegram通知功能
 async function sendTelegramNotification(message, type = 'info') {
     try {
-        const botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        const chatId = '-1002658082392';
+        const botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        const chatId = 'process.env.TELEGRAM_GROUP_ID';
         
         const icon = type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️';
         const fullMessage = `${icon} ${message}\\n\\n⏰ ${new Date().toLocaleString('zh-TW')}`;

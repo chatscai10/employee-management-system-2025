@@ -9,11 +9,11 @@
 ## 📱 系統業務通知監控
 
 ### 1. 系統自動通知
-- **通知URL**: https://api.telegram.org/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage
+- **通知URL**: https://api.telegram.org/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage
 - **狀態碼**: 204  
 - **通知時間**: 2025/8/11 下午4:22:07
 - **通知類型**: 系統自動通知\n### 2. 系統自動通知
-- **通知URL**: https://api.telegram.org/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage
+- **通知URL**: https://api.telegram.org/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage
 - **狀態碼**: 200  
 - **通知時間**: 2025/8/11 下午4:22:08
 - **通知類型**: 系統自動通知

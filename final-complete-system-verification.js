@@ -310,7 +310,7 @@ async function main() {
     try {
         const https = require('https');
         const telegramData = {
-            chat_id: '-1002658082392',
+            chat_id: 'process.env.TELEGRAM_GROUP_ID',
             text: `🏆 最終系統驗證完成\n\n總體評分: ${results.overallScore}/100\n\nAPI版本: ${results.apiVersion}\n員工模組: ${results.employeeModules}/8\nAPI端點: ${results.workingAPIs}/${results.totalAPIs}\n註冊欄位: ${results.registrationFields}/11`
         };
         
@@ -318,7 +318,7 @@ async function main() {
         const options = {
             hostname: 'api.telegram.org',
             port: 443,
-            path: '/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage',
+            path: '/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

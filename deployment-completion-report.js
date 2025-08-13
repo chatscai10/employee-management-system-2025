@@ -8,8 +8,8 @@ const fs = require('fs');
 
 class DeploymentCompletionReporter {
     constructor() {
-        this.telegramBotToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        this.chatId = '-1002658082392';
+        this.telegramBotToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        this.chatId = 'process.env.TELEGRAM_GROUP_ID';
         this.baseApiUrl = `https://api.telegram.org/bot${this.telegramBotToken}`;
     }
 

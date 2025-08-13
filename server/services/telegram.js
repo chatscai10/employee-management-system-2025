@@ -11,9 +11,9 @@ const logger = require('../utils/logger');
 class TelegramService {
     constructor() {
         // 基於系統邏輯.txt的設定
-        this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        this.bossGroupId = '-1002658082392';
-        this.employeeGroupId = '-1002658082392';
+        this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        this.bossGroupId = 'process.env.TELEGRAM_GROUP_ID';
+        this.employeeGroupId = 'process.env.TELEGRAM_GROUP_ID';
         this.baseUrl = `https://api.telegram.org/bot${this.botToken}`;
     }
 

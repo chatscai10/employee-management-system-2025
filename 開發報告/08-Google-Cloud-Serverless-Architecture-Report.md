@@ -209,9 +209,9 @@
   id: "自動生成",
   category: "telegram",
   settings: {
-    botToken: "7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc",
-    bossGroupId: "-1002658082392", // 可從管理頁面修改
-    employeeGroupId: "-1002658082392", // 暫時相同，之後修改
+    botToken: "process.env.TELEGRAM_BOT_TOKEN",
+    bossGroupId: "process.env.TELEGRAM_GROUP_ID", // 可從管理頁面修改
+    employeeGroupId: "process.env.TELEGRAM_GROUP_ID", // 暫時相同，之後修改
     notificationEnabled: true
   },
   updatedBy: "ADMIN001",

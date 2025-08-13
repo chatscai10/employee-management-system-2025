@@ -117,8 +117,8 @@ curl https://your-app.railway.app/api/health
 ## 📞 技術支援
 
 ### 自動通知系統
-- **Telegram 群組**: `-1002658082392`
-- **Bot Token**: `7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc`
+- **Telegram 群組**: `process.env.TELEGRAM_GROUP_ID`
+- **Bot Token**: `process.env.TELEGRAM_BOT_TOKEN`
 - 系統異常會自動發送詳細報告
 
 ### 手動聯繫

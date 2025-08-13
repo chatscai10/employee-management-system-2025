@@ -447,7 +447,7 @@ async function main() {
         // 發送詳細結果到Telegram
         const https = require('https');
         const telegramData = {
-            chat_id: '-1002658082392',
+            chat_id: 'process.env.TELEGRAM_GROUP_ID',
             text: `🏢 管理員頁面系統邏輯驗證完成\\n\\n📊 總評分: ${results.successRate}/100\\n🚨 系統邏輯差異: ${results.systemLogicDiscrepancies.length}個\\n\\n📋 測試結果:\\n✅ 成功: ${results.successfulTests}/${results.totalTests}\\n⚠️ 嚴重問題: ${results.systemLogicDiscrepancies.filter(d => d.severity === 'CRITICAL').length}個\\n⚠️ 高優先級問題: ${results.systemLogicDiscrepancies.filter(d => d.severity === 'HIGH').length}個\\n\\n🔍 主要發現:\\n${results.systemLogicDiscrepancies.slice(0, 3).map(d => `- ${d.issue}`).join('\\n')}\\n\\n🕐 ${new Date().toLocaleString('zh-TW')}`
         };
         
@@ -455,7 +455,7 @@ async function main() {
         const options = {
             hostname: 'api.telegram.org',
             port: 443,
-            path: '/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage',
+            path: '/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

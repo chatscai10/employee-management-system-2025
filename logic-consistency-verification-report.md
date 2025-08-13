@@ -414,9 +414,9 @@ const complexPromotionLogic = {
 ### 🎯 系統邏輯.txt第276-341行通知要求：
 
 #### 關鍵通知配置：
-- **Bot Token**: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc ✅
-- **老闆群組**: -1002658082392 ✅
-- **員工群組**: -1002658082392 ✅
+- **Bot Token**: process.env.TELEGRAM_BOT_TOKEN ✅
+- **老闆群組**: process.env.TELEGRAM_GROUP_ID ✅
+- **員工群組**: process.env.TELEGRAM_GROUP_ID ✅
 
 #### 通知邏輯驗證：
 - **營業額通知**: 老闆詳細數據 vs 員工簡化版 ✅

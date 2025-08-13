@@ -51,7 +51,7 @@ NODE_ENV=production
 DATABASE_URL=[剛才複製的資料庫URL]
 JWT_SECRET=your-super-secret-jwt-key-2024-enterprise
 HOST=0.0.0.0
-TELEGRAM_BOT_TOKEN=7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
+TELEGRAM_BOT_TOKEN=process.env.TELEGRAM_BOT_TOKEN
 ```
 
 ### Step 4: 高級設置

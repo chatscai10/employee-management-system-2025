@@ -255,8 +255,8 @@ class InventoryNotificationService {
     static async sendTelegramNotification(message) {
         try {
             // Telegram Bot 配置
-            const botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-            const chatId = '-1002658082392';
+            const botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+            const chatId = 'process.env.TELEGRAM_GROUP_ID';
             
             const axios = require('axios');
             const telegramAPI = `https://api.telegram.org/bot${botToken}/sendMessage`;
@@ -296,8 +296,8 @@ class InventoryNotificationService {
      */
     static async sendTelegramNotificationPlain(message) {
         try {
-            const botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-            const chatId = '-1002658082392';
+            const botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+            const chatId = 'process.env.TELEGRAM_GROUP_ID';
             
             const axios = require('axios');
             const telegramAPI = `https://api.telegram.org/bot${botToken}/sendMessage`;

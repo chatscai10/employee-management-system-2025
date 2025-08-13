@@ -30,8 +30,8 @@ echo.
 echo 步驟5: 設定環境變數
 railway variables:set NODE_ENV=production
 railway variables:set JWT_SECRET=enterprise-management-system-jwt-secret-2025
-railway variables:set TELEGRAM_BOT_TOKEN=7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-railway variables:set TELEGRAM_CHAT_ID=-1002658082392
+railway variables:set TELEGRAM_BOT_TOKEN=process.env.TELEGRAM_BOT_TOKEN
+railway variables:set TELEGRAM_CHAT_ID=process.env.TELEGRAM_GROUP_ID
 railway variables:set CORS_ORIGIN=*
 railway variables:set RATE_LIMIT_WINDOW=900000
 railway variables:set RATE_LIMIT_MAX=100

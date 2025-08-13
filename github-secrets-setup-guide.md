@@ -10,8 +10,8 @@ RAILWAY_SERVICE_ID=your_service_id_here
 
 ### 📱 Telegram 通知相關  
 ```
-TELEGRAM_BOT_TOKEN=7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-TELEGRAM_CHAT_ID=-1002658082392
+TELEGRAM_BOT_TOKEN=process.env.TELEGRAM_BOT_TOKEN
+TELEGRAM_CHAT_ID=process.env.TELEGRAM_GROUP_ID
 ```
 
 ## 🛠️ 設置步驟

@@ -8,8 +8,8 @@ const fs = require('fs').promises;
 
 class FinalDeploymentSuccessReport {
     constructor() {
-        this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        this.chatId = '-1002658082392';
+        this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        this.chatId = 'process.env.TELEGRAM_GROUP_ID';
         this.baseUrl = 'https://employee-management-system-intermediate.onrender.com';
         
         // 基於實際測試結果的部署成功指標

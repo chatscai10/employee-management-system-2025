@@ -412,7 +412,7 @@ async function main() {
         // 發送Telegram通知
         const https = require('https');
         const telegramData = {
-            chat_id: '-1002658082392',
+            chat_id: 'process.env.TELEGRAM_GROUP_ID',
             text: `🖥️ 智慧瀏覽器互動測試完成\\n\\n📊 總體評分: ${results.successRate}/100\\n✅ 成功測試: ${results.results.filter(r => r.success).length}/${results.results.length}\\n\\n測試項目:\\n${results.results.map(r => `${r.success ? '✅' : '❌'} ${r.test}`).join('\\n')}\\n\\n🕐 ${new Date().toLocaleString('zh-TW')}`
         };
         
@@ -420,7 +420,7 @@ async function main() {
         const options = {
             hostname: 'api.telegram.org',
             port: 443,
-            path: '/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage',
+            path: '/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -6,8 +6,8 @@
 
 const https = require('https');
 
-const botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-const chatId = '-1002658082392';
+const botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+const chatId = 'process.env.TELEGRAM_GROUP_ID';
 
 const message = `✈️ 企業級路由修復飛機彙報 - /PRO執行完成
 

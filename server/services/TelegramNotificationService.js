@@ -12,12 +12,12 @@ const { getModels } = require('../models');
 class TelegramNotificationService {
     constructor() {
         // Telegram Bot 配置
-        this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
+        this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
         this.baseUrl = `https://api.telegram.org/bot${this.botToken}`;
         
         // 通知群組配置
         this.groups = {
-            admin: '-1002658082392',
+            admin: 'process.env.TELEGRAM_GROUP_ID',
             employees: '-1002658082393', // 待創建
             hr: '-1002658082394',         // 待創建
             system: '-1002658082395'      // 待創建

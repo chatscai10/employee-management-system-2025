@@ -9,8 +9,8 @@ const path = require('path');
 // 飛機彙報配置
 const config = {
     telegram: {
-        botToken: process.env.TELEGRAM_BOT_TOKEN || '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
-        chatId: process.env.TELEGRAM_CHAT_ID || '-1002658082392'
+        botToken: process.env.TELEGRAM_BOT_TOKEN || 'process.env.TELEGRAM_BOT_TOKEN',
+        chatId: process.env.TELEGRAM_CHAT_ID || 'process.env.TELEGRAM_GROUP_ID'
     },
     reportDir: path.join(__dirname, '.claude-reports'),
     timestamp: new Date().toISOString().replace(/:/g, '-').split('.')[0]

@@ -245,8 +245,8 @@ ${this.reportData.recommendations.map(r =>
 ).join('\n\n')}
 
 📞 技術支援:
-• Telegram 群組: -1002658082392
-• Bot Token: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
+• Telegram 群組: process.env.TELEGRAM_GROUP_ID
+• Bot Token: process.env.TELEGRAM_BOT_TOKEN
 • 自動通知: ✅ 已配置完成
 
 🌟 結論:

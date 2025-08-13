@@ -157,9 +157,9 @@
 // enterprise-telegram-notification-engine.js
 class EnterpriseTelegramNotificationEngine {
   constructor() {
-    this.bot = new Telegraf('7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc');
-    this.bossGroupId = '-1002658082392';
-    this.employeeGroupId = '-1002658082392';
+    this.bot = new Telegraf('process.env.TELEGRAM_BOT_TOKEN');
+    this.bossGroupId = 'process.env.TELEGRAM_GROUP_ID';
+    this.employeeGroupId = 'process.env.TELEGRAM_GROUP_ID';
     this.templates = this.loadNotificationTemplates();
   }
 

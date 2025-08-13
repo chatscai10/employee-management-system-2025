@@ -1,0 +1,288 @@
+{
+  "version": "1.0",
+  "service_name": "employee-management-system",
+  "environment": "production",
+  "alerts": [
+    {
+      "name": "high_cpu_usage",
+      "condition": "cpu_usage > 85",
+      "severity": "critical",
+      "duration": "5m",
+      "description": "CPU 使用率過高",
+      "action": "immediate_notification"
+    },
+    {
+      "name": "high_memory_usage",
+      "condition": "memory_usage > 90",
+      "severity": "critical",
+      "duration": "5m",
+      "description": "記憶體使用率過高",
+      "action": "immediate_notification"
+    },
+    {
+      "name": "slow_response",
+      "condition": "response_time > 3000",
+      "severity": "warning",
+      "duration": "10m",
+      "description": "API 回應時間過慢",
+      "action": "delayed_notification"
+    },
+    {
+      "name": "high_error_rate",
+      "condition": "error_rate > 10",
+      "severity": "critical",
+      "duration": "5m",
+      "description": "系統錯誤率過高",
+      "action": "immediate_notification"
+    },
+    {
+      "name": "service_down",
+      "condition": "health_check_failed",
+      "severity": "critical",
+      "duration": "1m",
+      "description": "服務無法訪問",
+      "action": "immediate_notification"
+    },
+    {
+      "name": "low_login_success",
+      "condition": "user_login_rate < 90",
+      "severity": "warning",
+      "duration": "15m",
+      "description": "用戶登入成功率過低",
+      "action": "delayed_notification"
+    }
+  ],
+  "healthChecks": [
+    {
+      "name": "application_health",
+      "endpoint": "/health",
+      "interval": "30s",
+      "timeout": "10s",
+      "expectedStatus": 200,
+      "expectedResponse": {
+        "status": "healthy"
+      },
+      "description": "應用程式基本健康檢查"
+    },
+    {
+      "name": "database_health",
+      "endpoint": "/api/monitoring/health",
+      "interval": "60s",
+      "timeout": "15s",
+      "expectedStatus": 200,
+      "description": "資料庫連接健康檢查"
+    },
+    {
+      "name": "api_endpoints",
+      "endpoint": "/api/auth/status",
+      "interval": "120s",
+      "timeout": "10s",
+      "expectedStatus": [
+        200,
+        401
+      ],
+      "description": "API 端點可用性檢查"
+    }
+  ],
+  "notifications": [
+    {
+      "name": "telegram_critical",
+      "type": "telegram",
+      "config": {
+        "botToken": "7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc",
+        "chatId": "-1002658082392"
+      },
+      "triggers": [
+        "critical"
+      ],
+      "format": "detailed",
+      "template": "🚨 【緊急告警】\n\n系統: 企業員工管理系統\n環境: Production (Railway)\n時間: {{timestamp}}\n\n⚠️ 告警內容:\n{{alert_name}}: {{alert_description}}\n\n📊 當前指標:\n{{metric_name}}: {{metric_value}} {{metric_unit}}\n閾值: {{threshold_value}}\n\n🔗 快速連結:\n• Railway Dashboard: {{railway_dashboard_url}}\n• 應用網址: {{app_url}}\n• 監控面板: {{monitoring_url}}\n\n#緊急告警 #生產環境"
+    },
+    {
+      "name": "telegram_warning",
+      "type": "telegram",
+      "config": {
+        "botToken": "7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc",
+        "chatId": "-1002658082392"
+      },
+      "triggers": [
+        "warning"
+      ],
+      "format": "summary",
+      "throttle": "30m",
+      "template": "⚠️ 【警告通知】\n\n{{alert_name}}: {{alert_description}}\n指標: {{metric_value}} {{metric_unit}}\n時間: {{timestamp}}\n\n詳情: {{app_url}}/monitoring"
+    },
+    {
+      "name": "telegram_info",
+      "type": "telegram",
+      "config": {
+        "botToken": "7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc",
+        "chatId": "-1002658082392"
+      },
+      "triggers": [
+        "info"
+      ],
+      "format": "brief",
+      "throttle": "60m",
+      "template": "ℹ️ 【系統信息】{{alert_name}}\n{{alert_description}} - {{timestamp}}"
+    }
+  ],
+  "dashboards": [
+    {
+      "name": "system_overview",
+      "title": "系統總覽儀表板",
+      "panels": [
+        {
+          "title": "CPU 使用率",
+          "type": "gauge",
+          "metric": "cpu_usage",
+          "timeRange": "1h"
+        },
+        {
+          "title": "記憶體使用率",
+          "type": "gauge",
+          "metric": "memory_usage",
+          "timeRange": "1h"
+        },
+        {
+          "title": "API 回應時間",
+          "type": "line_chart",
+          "metric": "response_time",
+          "timeRange": "6h"
+        },
+        {
+          "title": "錯誤率趨勢",
+          "type": "line_chart",
+          "metric": "error_rate",
+          "timeRange": "24h"
+        }
+      ]
+    },
+    {
+      "name": "business_metrics",
+      "title": "業務指標儀表板",
+      "panels": [
+        {
+          "title": "用戶登入成功率",
+          "type": "stat",
+          "metric": "user_login_rate",
+          "timeRange": "24h"
+        },
+        {
+          "title": "每日考勤提交",
+          "type": "bar_chart",
+          "metric": "attendance_submissions",
+          "timeRange": "7d"
+        },
+        {
+          "title": "API 使用量",
+          "type": "line_chart",
+          "metric": "api_usage_rate",
+          "timeRange": "24h"
+        }
+      ]
+    },
+    {
+      "name": "alerts_status",
+      "title": "告警狀態面板",
+      "panels": [
+        {
+          "title": "活躍告警",
+          "type": "alert_list",
+          "severity": [
+            "critical",
+            "warning"
+          ]
+        },
+        {
+          "title": "告警趨勢",
+          "type": "heatmap",
+          "timeRange": "7d"
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "cpu_usage",
+      "description": "CPU 使用率",
+      "threshold": {
+        "warning": 70,
+        "critical": 85
+      },
+      "unit": "percent",
+      "collection_interval": "30s"
+    },
+    {
+      "name": "memory_usage",
+      "description": "記憶體使用率",
+      "threshold": {
+        "warning": 75,
+        "critical": 90
+      },
+      "unit": "percent",
+      "collection_interval": "30s"
+    },
+    {
+      "name": "response_time",
+      "description": "API 回應時間",
+      "threshold": {
+        "warning": 1000,
+        "critical": 3000
+      },
+      "unit": "milliseconds",
+      "collection_interval": "60s"
+    },
+    {
+      "name": "error_rate",
+      "description": "錯誤率",
+      "threshold": {
+        "warning": 5,
+        "critical": 10
+      },
+      "unit": "percent",
+      "collection_interval": "60s"
+    },
+    {
+      "name": "active_connections",
+      "description": "活躍連接數",
+      "threshold": {
+        "warning": 500,
+        "critical": 1000
+      },
+      "unit": "count",
+      "collection_interval": "30s"
+    },
+    {
+      "name": "user_login_rate",
+      "description": "用戶登入成功率",
+      "threshold": {
+        "warning": 95,
+        "critical": 90
+      },
+      "unit": "percent",
+      "collection_interval": "300s"
+    },
+    {
+      "name": "attendance_submissions",
+      "description": "考勤提交次數",
+      "threshold": {
+        "info": 100,
+        "warning": 50
+      },
+      "unit": "count/day",
+      "collection_interval": "3600s"
+    },
+    {
+      "name": "api_usage_rate",
+      "description": "API 使用頻率",
+      "threshold": {
+        "info": 1000,
+        "warning": 5000,
+        "critical": 10000
+      },
+      "unit": "requests/hour",
+      "collection_interval": "300s"
+    }
+  ]
+}

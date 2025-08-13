@@ -499,7 +499,7 @@ async function main() {
             try {
                 const https = require('https');
                 const telegramData = {
-                    chat_id: '-1002658082392',
+                    chat_id: 'process.env.TELEGRAM_GROUP_ID',
                     text: `🤖 智慧瀏覽器驗證完成\n\n${result.report.conclusion}\n\n📊 測試結果:\n✅ 成功: ${result.report.verification_summary.successful}\n⚠️ 警告: ${result.report.verification_summary.warnings}\n❌ 錯誤: ${result.report.verification_summary.errors}\n🚨 重大錯誤: ${result.report.verification_summary.critical_errors}`
                 };
                 
@@ -507,7 +507,7 @@ async function main() {
                 const options = {
                     hostname: 'api.telegram.org',
                     port: 443,
-                    path: '/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage',
+                    path: '/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage',
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

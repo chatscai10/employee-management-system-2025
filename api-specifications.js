@@ -925,9 +925,9 @@ const adminConfigAPI = {
       revenueCategories: [/* 營收類別 */],
       products: [/* 商品清單 */],
       notifications: {
-        telegramBotToken: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
-        bossChatId: '-1002658082392',
-        employeeChatId: '-1002658082392'
+        telegramBotToken: 'process.env.TELEGRAM_BOT_TOKEN',
+        bossChatId: 'process.env.TELEGRAM_GROUP_ID',
+        employeeChatId: 'process.env.TELEGRAM_GROUP_ID'
       },
       scheduleSettings: {/* 排班設定 */},
       backupSettings: {/* 備份設定 */}

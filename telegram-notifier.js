@@ -3,8 +3,8 @@ const axios = require('axios');
 class TelegramNotifier {
     constructor() {
         // Telegram Bot配置
-        this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        this.chatId = '-1002658082392';
+        this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        this.chatId = 'process.env.TELEGRAM_GROUP_ID';
         this.baseUrl = `https://api.telegram.org/bot${this.botToken}`;
     }
 

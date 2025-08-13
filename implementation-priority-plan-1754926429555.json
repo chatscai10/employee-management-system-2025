@@ -53,7 +53,7 @@
           "complexity": "MEDIUM",
           "dependencies": [],
           "requirements": {
-            "botIntegration": "Bot Token: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc",
+            "botIntegration": "Bot Token: process.env.TELEGRAM_BOT_TOKEN",
             "groupManagement": "老闆群組 + 員工群組",
             "templates": "29種通知模板",
             "autoTriggers": "所有數據提交自動通知",

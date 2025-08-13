@@ -1,0 +1,1110 @@
+# 🚀 企業員工管理系統 - 系統整合與部署指南
+
+## 📋 文檔概述
+
+本指南提供完整的系統整合與部署流程，包含：
+- 開發環境設置
+- 系統整合步驟
+- 部署流程詳解
+- 測試驗證方案
+- 維護升級策略
+
+---
+
+## 🛠️ 開發環境設置
+
+### 1. 基礎環境要求
+
+| 組件 | 最低版本 | 推薦版本 | 說明 |
+|------|----------|----------|------|
+| Node.js | 16.x | 20.x | JavaScript運行環境 |
+| npm | 8.x | 10.x | 套件管理器 |
+| Git | 2.30 | Latest | 版本控制 |
+| PostgreSQL | 12 | 15 | 生產資料庫 |
+| Redis | 6.0 | 7.0 | 快取服務 |
+| Docker | 20.10 | Latest | 容器化部署 |
+
+### 2. 開發工具推薦
+
+```bash
+# VS Code 擴展
+- ESLint
+- Prettier
+- GitLens
+- Docker
+- Thunder Client (API測試)
+- PostgreSQL Explorer
+
+# Chrome 擴展
+- React Developer Tools
+- Redux DevTools
+- Lighthouse
+```
+
+### 3. 環境變數配置
+
+創建 `.env.development` 文件：
+```env
+# 伺服器配置
+NODE_ENV=development
+PORT=3000
+HOST=localhost
+
+# 資料庫配置
+DB_TYPE=memory  # memory | postgres | mysql
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=employee_management_dev
+DB_USER=dev_user
+DB_PASSWORD=dev_password
+
+# Redis配置
+REDIS_URL=redis://localhost:6379
+
+# JWT配置
+JWT_SECRET=your-super-secret-jwt-key-for-development
+JWT_EXPIRES_IN=7d
+JWT_REFRESH_EXPIRES_IN=30d
+
+# Telegram配置
+TELEGRAM_BOT_TOKEN=7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
+TELEGRAM_BOSS_GROUP_ID=-1002658082392
+TELEGRAM_EMPLOYEE_GROUP_ID=-1002658082393
+
+# Google配置（如果使用）
+GOOGLE_SHEETS_ID=your-sheets-id
+GOOGLE_CREDENTIALS={"type":"service_account",...}
+
+# 系統配置
+GPS_RADIUS=100
+LATE_GRACE_MINUTES=10
+MAX_LOGIN_ATTEMPTS=5
+SESSION_TIMEOUT=3600000
+
+# 日誌配置
+LOG_LEVEL=debug
+LOG_FORMAT=json
+LOG_MAX_SIZE=20m
+LOG_MAX_FILES=14d
+
+# 開發配置
+ENABLE_SWAGGER=true
+ENABLE_GRAPHQL=false
+MOCK_GPS=true
+MOCK_TELEGRAM=true
+```
+
+---
+
+## 🔄 系統整合步驟
+
+### Phase 1: 專案初始化
+
+```bash
+# 1. 克隆專案
+git clone https://github.com/your-org/employee-management.git
+cd employee-management
+
+# 2. 安裝依賴
+npm install
+
+# 3. 初始化資料庫
+npm run db:init
+npm run db:migrate
+npm run db:seed
+
+# 4. 啟動開發服務
+npm run dev
+```
+
+### Phase 2: 前後端整合
+
+#### 2.1 API整合配置
+```javascript
+// frontend/js/config.js
+const API_CONFIG = {
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:3000/api',
+  timeout: 30000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+};
+
+// API請求攔截器
+axios.interceptors.request.use(
+  config => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  error => Promise.reject(error)
+);
+
+// API回應攔截器
+axios.interceptors.response.use(
+  response => response,
+  error => {
+    if (error.response?.status === 401) {
+      // Token過期，嘗試刷新
+      return refreshToken().then(() => {
+        return axios.request(error.config);
+      });
+    }
+    return Promise.reject(error);
+  }
+);
+```
+
+#### 2.2 狀態管理整合
+```javascript
+// frontend/js/store/index.js
+class AppStore {
+  constructor() {
+    this.state = {
+      user: null,
+      isAuthenticated: false,
+      notifications: [],
+      loading: false
+    };
+    this.subscribers = [];
+  }
+
+  setState(updates) {
+    this.state = { ...this.state, ...updates };
+    this.notify();
+  }
+
+  subscribe(callback) {
+    this.subscribers.push(callback);
+    return () => {
+      this.subscribers = this.subscribers.filter(cb => cb !== callback);
+    };
+  }
+
+  notify() {
+    this.subscribers.forEach(callback => callback(this.state));
+  }
+}
+
+const store = new AppStore();
+export default store;
+```
+
+### Phase 3: 第三方服務整合
+
+#### 3.1 Telegram Bot整合
+```javascript
+// backend/services/telegram.js
+const TelegramBot = require('node-telegram-bot-api');
+
+class TelegramService {
+  constructor() {
+    this.bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {
+      polling: false // 使用Webhook而非輪詢
+    });
+    
+    this.setupWebhook();
+    this.setupCommands();
+  }
+
+  async setupWebhook() {
+    const webhookUrl = `${process.env.APP_URL}/api/telegram/webhook`;
+    await this.bot.setWebHook(webhookUrl);
+  }
+
+  setupCommands() {
+    this.bot.setMyCommands([
+      { command: '/status', description: '查看系統狀態' },
+      { command: '/revenue', description: '查看今日營收' },
+      { command: '/attendance', description: '查看出勤狀況' }
+    ]);
+  }
+
+  async sendNotification(groupId, message, options = {}) {
+    try {
+      const defaultOptions = {
+        parse_mode: 'HTML',
+        disable_web_page_preview: true
+      };
+      
+      await this.bot.sendMessage(
+        groupId, 
+        message, 
+        { ...defaultOptions, ...options }
+      );
+    } catch (error) {
+      console.error('Telegram通知發送失敗:', error);
+    }
+  }
+}
+```
+
+#### 3.2 Google Sheets整合（可選）
+```javascript
+// backend/services/googleSheets.js
+const { google } = require('googleapis');
+
+class GoogleSheetsService {
+  constructor() {
+    this.auth = new google.auth.GoogleAuth({
+      credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
+      scopes: ['https://www.googleapis.com/auth/spreadsheets']
+    });
+    
+    this.sheets = google.sheets({ version: 'v4', auth: this.auth });
+    this.spreadsheetId = process.env.GOOGLE_SHEETS_ID;
+  }
+
+  async readData(range) {
+    const response = await this.sheets.spreadsheets.values.get({
+      spreadsheetId: this.spreadsheetId,
+      range
+    });
+    return response.data.values;
+  }
+
+  async writeData(range, values) {
+    await this.sheets.spreadsheets.values.update({
+      spreadsheetId: this.spreadsheetId,
+      range,
+      valueInputOption: 'USER_ENTERED',
+      requestBody: { values }
+    });
+  }
+
+  async appendData(range, values) {
+    await this.sheets.spreadsheets.values.append({
+      spreadsheetId: this.spreadsheetId,
+      range,
+      valueInputOption: 'USER_ENTERED',
+      insertDataOption: 'INSERT_ROWS',
+      requestBody: { values }
+    });
+  }
+}
+```
+
+### Phase 4: 資料庫遷移
+
+#### 4.1 從記憶體到PostgreSQL
+```javascript
+// scripts/migrate-to-postgres.js
+const { Pool } = require('pg');
+const memoryData = require('../app.js').database;
+
+async function migrate() {
+  const pool = new Pool({
+    connectionString: process.env.DATABASE_URL
+  });
+
+  const client = await pool.connect();
+  
+  try {
+    await client.query('BEGIN');
+    
+    // 遷移員工資料
+    for (const employee of memoryData.employees) {
+      await client.query(`
+        INSERT INTO employees (
+          username, password_hash, name, id_number,
+          department, position, role, store_name, hire_date
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+        ON CONFLICT (username) DO NOTHING
+      `, [
+        employee.username,
+        employee.password, // 需要先進行hash處理
+        employee.name,
+        employee.idNumber,
+        employee.department,
+        employee.position,
+        employee.role,
+        'defaultStore',
+        employee.hireDate || new Date()
+      ]);
+    }
+    
+    // 遷移其他資料表...
+    console.log('✅ 資料遷移成功');
+    
+    await client.query('COMMIT');
+  } catch (error) {
+    await client.query('ROLLBACK');
+    console.error('❌ 資料遷移失敗:', error);
+    throw error;
+  } finally {
+    client.release();
+  }
+}
+
+migrate().catch(console.error);
+```
+
+---
+
+## 🚢 部署流程詳解
+
+### 1. Docker容器化部署
+
+#### 1.1 Dockerfile優化
+```dockerfile
+# 多階段構建優化映像大小
+FROM node:20-alpine AS builder
+
+# 安裝構建依賴
+RUN apk add --no-cache python3 make g++
+
+WORKDIR /app
+
+# 複製套件文件
+COPY package*.json ./
+
+# 安裝依賴
+RUN npm ci --only=production
+
+# 複製源碼
+COPY . .
+
+# 構建前端資源
+RUN npm run build
+
+# 生產階段
+FROM node:20-alpine
+
+# 安裝運行時依賴
+RUN apk add --no-cache dumb-init
+
+# 創建非root用戶
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+WORKDIR /app
+
+# 複製構建結果
+COPY --from=builder --chown=nodejs:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=nodejs:nodejs /app/dist ./dist
+COPY --from=builder --chown=nodejs:nodejs /app/public ./public
+COPY --chown=nodejs:nodejs package*.json ./
+
+# 切換用戶
+USER nodejs
+
+# 暴露端口
+EXPOSE 3000
+
+# 健康檢查
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+  CMD node healthcheck.js
+
+# 使用dumb-init處理信號
+ENTRYPOINT ["dumb-init", "--"]
+
+# 啟動應用
+CMD ["node", "dist/app.js"]
+```
+
+#### 1.2 Docker Compose配置
+```yaml
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: employee-management:latest
+    container_name: employee-management-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgres://user:pass@postgres:5432/employee_db
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - app-network
+    volumes:
+      - ./logs:/app/logs
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: employee-management-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: employee_db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: employee-management-cache
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: employee-management-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./public:/usr/share/nginx/html
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  redis-data:
+```
+
+### 2. Kubernetes部署
+
+#### 2.1 部署配置
+```yaml
+# k8s/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employee-management
+  labels:
+    app: employee-management
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: employee-management
+  template:
+    metadata:
+      labels:
+        app: employee-management
+    spec:
+      containers:
+      - name: app
+        image: your-registry/employee-management:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: database-url
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: jwt-secret
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+```
+
+#### 2.2 服務配置
+```yaml
+# k8s/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: employee-management-service
+spec:
+  selector:
+    app: employee-management
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: employee-management-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  tls:
+  - hosts:
+    - api.company.com
+    secretName: employee-management-tls
+  rules:
+  - host: api.company.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: employee-management-service
+            port:
+              number: 80
+```
+
+### 3. CI/CD Pipeline
+
+#### 3.1 GitHub Actions
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run tests
+      run: npm test
+    
+    - name: Run linter
+      run: npm run lint
+    
+    - name: Build application
+      run: npm run build
+
+  build-and-push:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    
+    - name: Build and push
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        push: true
+        tags: |
+          ${{ secrets.DOCKER_USERNAME }}/employee-management:latest
+          ${{ secrets.DOCKER_USERNAME }}/employee-management:${{ github.sha }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Deploy to Kubernetes
+      uses: azure/k8s-deploy@v4
+      with:
+        manifests: |
+          k8s/deployment.yaml
+          k8s/service.yaml
+        images: |
+          ${{ secrets.DOCKER_USERNAME }}/employee-management:${{ github.sha }}
+```
+
+---
+
+## 🧪 測試驗證方案
+
+### 1. 單元測試
+
+```javascript
+// tests/unit/auth.test.js
+describe('Authentication Service', () => {
+  let authService;
+  
+  beforeEach(() => {
+    authService = new AuthService();
+  });
+  
+  describe('login', () => {
+    it('should return token for valid credentials', async () => {
+      const result = await authService.login('john.doe', 'password123');
+      
+      expect(result).toHaveProperty('token');
+      expect(result).toHaveProperty('user');
+      expect(result.user.username).toBe('john.doe');
+    });
+    
+    it('should throw error for invalid credentials', async () => {
+      await expect(
+        authService.login('john.doe', 'wrongpassword')
+      ).rejects.toThrow('Invalid credentials');
+    });
+  });
+  
+  describe('validateToken', () => {
+    it('should return user for valid token', async () => {
+      const token = 'valid.jwt.token';
+      const user = await authService.validateToken(token);
+      
+      expect(user).toHaveProperty('id');
+      expect(user).toHaveProperty('username');
+    });
+  });
+});
+```
+
+### 2. 整合測試
+
+```javascript
+// tests/integration/api.test.js
+describe('API Integration Tests', () => {
+  let app;
+  let token;
+  
+  beforeAll(async () => {
+    app = await createApp();
+    
+    // 獲取測試token
+    const response = await request(app)
+      .post('/api/auth/login')
+      .send({
+        username: 'test.user',
+        password: 'test123'
+      });
+    
+    token = response.body.data.token;
+  });
+  
+  describe('POST /api/attendance/clock-in', () => {
+    it('should record clock-in successfully', async () => {
+      const response = await request(app)
+        .post('/api/attendance/clock-in')
+        .set('Authorization', `Bearer ${token}`)
+        .send({
+          storeName: '測試店',
+          gpsCoordinates: {
+            latitude: 24.9748412,
+            longitude: 121.2556713
+          }
+        });
+      
+      expect(response.status).toBe(200);
+      expect(response.body.success).toBe(true);
+      expect(response.body.data).toHaveProperty('clockTime');
+    });
+  });
+});
+```
+
+### 3. E2E測試
+
+```javascript
+// tests/e2e/login-flow.test.js
+describe('Login Flow E2E', () => {
+  beforeEach(async () => {
+    await page.goto('http://localhost:3000');
+  });
+  
+  it('should login successfully with valid credentials', async () => {
+    // 輸入帳號密碼
+    await page.type('#username', 'john.doe');
+    await page.type('#password', 'password123');
+    
+    // 點擊登入
+    await page.click('#login-button');
+    
+    // 等待跳轉
+    await page.waitForNavigation();
+    
+    // 驗證登入成功
+    const url = page.url();
+    expect(url).toBe('http://localhost:3000/dashboard');
+    
+    const welcomeText = await page.$eval('.welcome-message', el => el.textContent);
+    expect(welcomeText).toContain('歡迎, 約翰·多伊');
+  });
+});
+```
+
+### 4. 效能測試
+
+```javascript
+// tests/performance/load-test.js
+import http from 'k6/http';
+import { check, sleep } from 'k6';
+
+export const options = {
+  stages: [
+    { duration: '2m', target: 100 }, // 漸增到100用戶
+    { duration: '5m', target: 100 }, // 維持100用戶
+    { duration: '2m', target: 0 },   // 漸減到0
+  ],
+  thresholds: {
+    http_req_duration: ['p(95)<500'], // 95%請求在500ms內
+    http_req_failed: ['rate<0.1'],    // 錯誤率低於10%
+  },
+};
+
+export default function () {
+  // 登入
+  const loginRes = http.post('http://localhost:3000/api/auth/login', {
+    username: 'test.user',
+    password: 'test123',
+  });
+  
+  check(loginRes, {
+    'login successful': (r) => r.status === 200,
+  });
+  
+  const token = loginRes.json('data.token');
+  
+  // 打卡
+  const clockInRes = http.post(
+    'http://localhost:3000/api/attendance/clock-in',
+    {
+      storeName: '測試店',
+      gpsCoordinates: {
+        latitude: 24.9748412,
+        longitude: 121.2556713,
+      },
+    },
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+  
+  check(clockInRes, {
+    'clock-in successful': (r) => r.status === 200,
+  });
+  
+  sleep(1);
+}
+```
+
+---
+
+## 🔧 維護升級策略
+
+### 1. 資料庫維護
+
+```sql
+-- 定期維護腳本
+-- daily-maintenance.sql
+
+-- 清理過期會話
+DELETE FROM sessions WHERE expires_at < NOW();
+
+-- 更新統計資訊
+ANALYZE;
+
+-- 清理審計日誌（保留90天）
+DELETE FROM audit_logs WHERE created_at < NOW() - INTERVAL '90 days';
+
+-- 更新員工工作天數
+UPDATE employees e
+SET total_work_days = (
+    SELECT COUNT(DISTINCT DATE(clock_time))
+    FROM attendance_records
+    WHERE employee_id = e.id
+    AND clock_type = '上班'
+);
+
+-- 檢查並修復索引
+REINDEX TABLE employees;
+REINDEX TABLE attendance_records;
+```
+
+### 2. 版本升級流程
+
+```bash
+#!/bin/bash
+# upgrade.sh
+
+# 1. 備份現有資料
+echo "📦 備份資料庫..."
+pg_dump $DATABASE_URL > backup-$(date +%Y%m%d-%H%M%S).sql
+
+# 2. 通知維護模式
+echo "🔧 啟用維護模式..."
+kubectl scale deployment employee-management --replicas=0
+
+# 3. 執行資料庫遷移
+echo "🔄 執行資料庫遷移..."
+npm run db:migrate
+
+# 4. 更新應用
+echo "🚀 部署新版本..."
+kubectl set image deployment/employee-management \
+  app=your-registry/employee-management:$NEW_VERSION
+
+# 5. 等待部署完成
+kubectl rollout status deployment/employee-management
+
+# 6. 執行健康檢查
+echo "🏥 執行健康檢查..."
+./scripts/health-check.sh
+
+# 7. 恢復服務
+echo "✅ 恢復服務..."
+kubectl scale deployment employee-management --replicas=3
+```
+
+### 3. 監控告警設置
+
+```yaml
+# prometheus-rules.yaml
+groups:
+  - name: employee-management
+    rules:
+    - alert: HighErrorRate
+      expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.05
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        summary: "高錯誤率告警"
+        description: "5xx錯誤率超過5%"
+    
+    - alert: HighResponseTime
+      expr: histogram_quantile(0.95, http_request_duration_seconds_bucket) > 1
+      for: 10m
+      labels:
+        severity: warning
+      annotations:
+        summary: "響應時間過長"
+        description: "95%請求響應時間超過1秒"
+    
+    - alert: LowDiskSpace
+      expr: node_filesystem_avail_bytes / node_filesystem_size_bytes < 0.1
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        summary: "磁碟空間不足"
+        description: "可用磁碟空間低於10%"
+```
+
+### 4. 災難恢復計劃
+
+```markdown
+## 災難恢復程序
+
+### 1. 資料庫崩潰恢復
+1. 停止應用服務防止資料寫入
+2. 從最近的備份恢復資料庫
+3. 應用增量日誌（如果有）
+4. 驗證資料完整性
+5. 重啟應用服務
+
+### 2. 服務完全中斷恢復
+1. 啟動備用環境
+2. 更新DNS指向備用環境
+3. 恢復主環境
+4. 資料同步
+5. 切換回主環境
+
+### 3. 資料洩露應急響應
+1. 立即隔離受影響系統
+2. 重置所有密碼和金鑰
+3. 審查訪問日誌
+4. 通知相關人員
+5. 進行安全審計
+```
+
+---
+
+## 📈 效能優化建議
+
+### 1. 前端優化
+
+```javascript
+// 圖片懶加載
+const imageObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.src = img.dataset.src;
+      observer.unobserve(img);
+    }
+  });
+});
+
+document.querySelectorAll('img[data-src]').forEach(img => {
+  imageObserver.observe(img);
+});
+
+// 程式碼分割
+const routes = {
+  '/dashboard': () => import('./modules/dashboard.js'),
+  '/attendance': () => import('./modules/attendance.js'),
+  '/revenue': () => import('./modules/revenue.js')
+};
+
+// Service Worker快取
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open('v1').then(cache => {
+      return cache.addAll([
+        '/',
+        '/css/style.css',
+        '/js/app.js',
+        '/images/logo.png'
+      ]);
+    })
+  );
+});
+```
+
+### 2. 後端優化
+
+```javascript
+// 資料庫查詢優化
+class EmployeeRepository {
+  async getEmployeesWithPagination(page, limit) {
+    const offset = (page - 1) * limit;
+    
+    const query = `
+      SELECT 
+        e.*,
+        COUNT(*) OVER() as total_count
+      FROM employees e
+      WHERE e.status = 'active'
+      ORDER BY e.name
+      LIMIT $1 OFFSET $2
+    `;
+    
+    const result = await db.query(query, [limit, offset]);
+    
+    return {
+      data: result.rows,
+      total: result.rows[0]?.total_count || 0,
+      page,
+      limit
+    };
+  }
+}
+
+// Redis快取層
+class CacheService {
+  async get(key) {
+    const cached = await redis.get(key);
+    return cached ? JSON.parse(cached) : null;
+  }
+  
+  async set(key, value, ttl = 300) {
+    await redis.setex(key, ttl, JSON.stringify(value));
+  }
+  
+  async invalidate(pattern) {
+    const keys = await redis.keys(pattern);
+    if (keys.length > 0) {
+      await redis.del(...keys);
+    }
+  }
+}
+
+// 使用快取裝飾器
+function Cacheable(ttl = 300) {
+  return function(target, propertyKey, descriptor) {
+    const originalMethod = descriptor.value;
+    
+    descriptor.value = async function(...args) {
+      const cacheKey = `${target.constructor.name}:${propertyKey}:${JSON.stringify(args)}`;
+      
+      const cached = await cacheService.get(cacheKey);
+      if (cached) return cached;
+      
+      const result = await originalMethod.apply(this, args);
+      await cacheService.set(cacheKey, result, ttl);
+      
+      return result;
+    };
+  };
+}
+```
+
+---
+
+## 🎯 總結
+
+本部署指南涵蓋了從開發到生產的完整流程：
+
+1. **環境設置**：詳細的開發環境配置
+2. **系統整合**：前後端及第三方服務整合
+3. **部署方案**：Docker、Kubernetes等多種部署選擇
+4. **測試策略**：完整的測試金字塔
+5. **維護計劃**：持續的系統維護和優化
+
+遵循本指南可以確保系統穩定、高效地運行在生產環境中。
+
+---
+
+**文檔版本**: v1.0  
+**更新日期**: 2025-01-10  
+**DevOps團隊**: AI開發小組

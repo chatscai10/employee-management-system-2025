@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 // Telegram Bot配置
-const BOT_TOKEN = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-const CHAT_ID = '-1002658082392';
+const BOT_TOKEN = 'process.env.TELEGRAM_BOT_TOKEN';
+const CHAT_ID = 'process.env.TELEGRAM_GROUP_ID';
 
 // 飛機彙報內容
 const flightReport = `✈️ 飛機彙報 - 報表系統API測試驗證完成報告

@@ -73,7 +73,7 @@ async function forceCompleteSystemDeploy() {
 // 發送Telegram通知
 function sendTelegramNotification(message) {
     const telegramData = {
-        chat_id: '-1002658082392',
+        chat_id: 'process.env.TELEGRAM_GROUP_ID',
         text: `🚀 完整版系統部署狀態通知\n\n${message}\n\n時間: ${new Date().toLocaleString('zh-TW')}`
     };
     
@@ -81,7 +81,7 @@ function sendTelegramNotification(message) {
     const options = {
         hostname: 'api.telegram.org',
         port: 443,
-        path: '/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage',
+        path: '/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

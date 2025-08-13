@@ -159,8 +159,8 @@
 ... (共29種模板，全部實現並測試)
 
 ### ✅ Telegram Bot整合驗證  
-- **Bot Token**: `7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc` ✅
-- **群組ID**: `-1002658082392` ✅  
+- **Bot Token**: `process.env.TELEGRAM_BOT_TOKEN` ✅
+- **群組ID**: `process.env.TELEGRAM_GROUP_ID` ✅  
 - **自動發送**: 12次通知全部觸發 ✅
 - **分群管理**: 老闆/員工不同內容 ✅
 

@@ -213,13 +213,13 @@ class DatabasePersistentSystem {
             system_settings: [
                 {
                     key: 'telegram_bot_token',
-                    value: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
+                    value: 'process.env.TELEGRAM_BOT_TOKEN',
                     description: 'Telegram機器人Token',
                     updatedAt: new Date().toISOString()
                 },
                 {
                     key: 'telegram_chat_id',
-                    value: '-1002658082392',
+                    value: 'process.env.TELEGRAM_GROUP_ID',
                     description: 'Telegram群組ID',
                     updatedAt: new Date().toISOString()
                 },

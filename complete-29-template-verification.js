@@ -10,8 +10,8 @@ const fs = require('fs');
 
 class Template29Verifier {
     constructor() {
-        this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        this.testGroupId = '-1002658082392';
+        this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        this.testGroupId = 'process.env.TELEGRAM_GROUP_ID';
         
         this.testResults = {
             totalTemplates: 0,

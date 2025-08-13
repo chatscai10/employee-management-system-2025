@@ -10,8 +10,8 @@ const axios = require('axios');
 class IntelligentBrowserVerificationFlightReport {
     constructor() {
         this.telegramConfig = {
-            botToken: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
-            chatId: '-1002658082392'
+            botToken: 'process.env.TELEGRAM_BOT_TOKEN',
+            chatId: 'process.env.TELEGRAM_GROUP_ID'
         };
         this.reportPath = 'D:\\0809';
     }

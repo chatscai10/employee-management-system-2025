@@ -35,14 +35,14 @@ console.log('📝 準備發送的訊息長度:', message.length);
 console.log('📝 訊息內容預覽:', message.substring(0, 100) + '...');
 
 const data = JSON.stringify({
-  chat_id: '-1002658082392',
+  chat_id: 'process.env.TELEGRAM_GROUP_ID',
   text: message
 });
 
 const options = {
   hostname: 'api.telegram.org',
   port: 443,
-  path: '/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage',
+  path: '/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage',
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',

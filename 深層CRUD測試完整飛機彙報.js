@@ -12,8 +12,8 @@ const path = require('path');
 class DeepCRUDTestFlightReport {
     constructor() {
         this.telegramConfig = {
-            botToken: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
-            groupId: '-1002658082392'
+            botToken: 'process.env.TELEGRAM_BOT_TOKEN',
+            groupId: 'process.env.TELEGRAM_GROUP_ID'
         };
         
         this.reportTime = new Date().toLocaleString('zh-TW');

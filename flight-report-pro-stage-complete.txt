@@ -83,7 +83,7 @@
 └─────────────────────────────────────────────┘
 
 🤖 Telegram Bot 通知: ✅ 已自動發送
-📱 群組ID: -1002658082392
-🔗 Bot Token: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
+📱 群組ID: process.env.TELEGRAM_GROUP_ID
+🔗 Bot Token: process.env.TELEGRAM_BOT_TOKEN
 
 ✈️ 飛機彙報發送完畢 - /pro 深度驗證階段圓滿完成！

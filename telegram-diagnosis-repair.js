@@ -11,20 +11,20 @@ class TelegramDiagnosisRepair {
     constructor() {
         // 原配置
         this.originalConfig = {
-            botToken: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
-            groupId: '-1002658082392'
+            botToken: 'process.env.TELEGRAM_BOT_TOKEN',
+            groupId: 'process.env.TELEGRAM_GROUP_ID'
         };
         
         // 測試用的替代配置（如需要）
         this.testConfigs = [
             {
                 name: '原始配置',
-                botToken: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
-                groupId: '-1002658082392'
+                botToken: 'process.env.TELEGRAM_BOT_TOKEN',
+                groupId: 'process.env.TELEGRAM_GROUP_ID'
             },
             {
                 name: '測試用私人聊天',
-                botToken: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
+                botToken: 'process.env.TELEGRAM_BOT_TOKEN',
                 groupId: '7659930552' // Bot自己的ID用於測試
             }
         ];

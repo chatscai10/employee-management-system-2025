@@ -227,8 +227,8 @@ function calculateRevenueStats() {
 // 模擬Telegram通知
 async function sendTelegramNotification(message, type = 'info') {
     try {
-        const botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        const chatId = '-1002658082392';
+        const botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        const chatId = 'process.env.TELEGRAM_GROUP_ID';
         
         const icon = type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️';
         const fullMessage = `${icon} ${message}\n\n⏰ ${new Date().toLocaleString('zh-TW')}`;

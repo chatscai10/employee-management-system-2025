@@ -16,10 +16,10 @@ const fs = require('fs').promises;
 class TelegramNotificationSystem {
     constructor() {
         // Bot配置（從通知模板.txt獲取）
-        this.botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
+        this.botToken = 'process.env.TELEGRAM_BOT_TOKEN';
         this.chatIds = {
-            boss: '-1002658082392',      // 老闆群組
-            employee: '-1002658082392'   // 員工群組
+            boss: 'process.env.TELEGRAM_GROUP_ID',      // 老闆群組
+            employee: 'process.env.TELEGRAM_GROUP_ID'   // 員工群組
         };
         
         // 通知佇列
@@ -789,8 +789,8 @@ ${data.errors ? `❌ 錯誤信息: ${data.errors}` : ''}`,
 - **使用模板**: ${Object.keys(testResults.stats?.templates || {}).length} 個
 
 ### 🎯 通知模板.txt合規度檢查
-- ✅ Bot Token配置: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-- ✅ 群組ID配置: -1002658082392 (老闆群組 + 員工群組)
+- ✅ Bot Token配置: process.env.TELEGRAM_BOT_TOKEN
+- ✅ 群組ID配置: process.env.TELEGRAM_GROUP_ID (老闆群組 + 員工群組)
 - ✅ 所有數據提交觸發通知: 完全支援
 - ✅ 營業額詳細通知格式: 完全符合模板
 - ✅ 叫貨依供應商分類顯示: 完全符合模板

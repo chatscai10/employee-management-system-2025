@@ -15,10 +15,10 @@
 
 ### 📱 系統通知監控
 1. **通知請求**
-   - URL: https://api.telegram.org/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage
+   - URL: https://api.telegram.org/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage
    - 狀態碼: 204
    - 時間: 2025/8/11 下午4:47:57\n2. **通知請求**
-   - URL: https://api.telegram.org/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage
+   - URL: https://api.telegram.org/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage
    - 狀態碼: 200
    - 時間: 2025/8/11 下午4:47:58
 

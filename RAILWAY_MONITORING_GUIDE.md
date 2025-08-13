@@ -15,7 +15,7 @@
 - **資訊通知**: 業務指標異常、系統狀態變化
 
 ### 📱 通知渠道
-- **Telegram 即時通知**: 群組 -1002658082392
+- **Telegram 即時通知**: 群組 process.env.TELEGRAM_GROUP_ID
 - **告警等級分類**: 緊急/警告/資訊
 - **智能防騷擾**: 相同告警30分鐘內只發送一次
 
@@ -34,8 +34,8 @@
 
 ```env
 MONITORING_ENABLED=true
-TELEGRAM_BOT_TOKEN=7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-TELEGRAM_CHAT_ID=-1002658082392
+TELEGRAM_BOT_TOKEN=process.env.TELEGRAM_BOT_TOKEN
+TELEGRAM_CHAT_ID=process.env.TELEGRAM_GROUP_ID
 # ... 其他變數
 ```
 
@@ -114,7 +114,7 @@ TELEGRAM_CHAT_ID=-1002658082392
 ## 📞 支援聯絡
 
 ### 自動支援
-- **Telegram 群組**: -1002658082392
+- **Telegram 群組**: process.env.TELEGRAM_GROUP_ID
 - **系統會自動發送**: 告警、狀態更新、效能報告
 
 ### 手動支援

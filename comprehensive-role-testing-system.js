@@ -1007,8 +1007,8 @@ ${report.recommendations.map(rec => `
 
     async sendTelegramReport() {
         try {
-            const botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-            const chatId = '-1002658082392';
+            const botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+            const chatId = 'process.env.TELEGRAM_GROUP_ID';
             
             const successRate = Math.round((this.testResults.passed / this.testResults.totalTests) * 100) || 0;
             

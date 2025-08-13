@@ -11,8 +11,8 @@ const { Telegraf } = require('telegraf');
 
 class ProAnalysisFlightReporter {
     constructor() {
-        this.bot = new Telegraf('7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc');
-        this.groupId = '-1002658082392';
+        this.bot = new Telegraf('process.env.TELEGRAM_BOT_TOKEN');
+        this.groupId = 'process.env.TELEGRAM_GROUP_ID';
         this.analysisData = {
             executionTime: new Date().toLocaleString('zh-TW'),
             analysisMode: '/pro 智慧自適應強化模式',

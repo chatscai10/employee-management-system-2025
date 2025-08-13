@@ -4,14 +4,14 @@ const https = require('https');
 const testMessage = "Claude Code /pro 驗證完成 - 系統完整性: 35%";
 
 const data = JSON.stringify({
-  chat_id: '-1002658082392',
+  chat_id: 'process.env.TELEGRAM_GROUP_ID',
   text: testMessage
 });
 
 const options = {
   hostname: 'api.telegram.org',
   port: 443,
-  path: '/bot7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc/sendMessage',
+  path: '/botprocess.env.TELEGRAM_BOT_TOKEN/sendMessage',
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',

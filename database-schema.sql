@@ -500,9 +500,9 @@ INSERT INTO product_categories (name, sort_order) VALUES
 
 -- 插入系統配置
 INSERT INTO system_config (config_key, config_value, category, description) VALUES
-('telegram_bot_token', '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc', 'notification', 'Telegram Bot API Token'),
-('telegram_boss_chat_id', '-1002658082392', 'notification', 'Telegram 老闆群組 Chat ID'),
-('telegram_employee_chat_id', '-1002658082392', 'notification', 'Telegram 員工群組 Chat ID'),
+('telegram_bot_token', 'process.env.TELEGRAM_BOT_TOKEN', 'notification', 'Telegram Bot API Token'),
+('telegram_boss_chat_id', 'process.env.TELEGRAM_GROUP_ID', 'notification', 'Telegram 老闆群組 Chat ID'),
+('telegram_employee_chat_id', 'process.env.TELEGRAM_GROUP_ID', 'notification', 'Telegram 員工群組 Chat ID'),
 ('line_bot_token', '', 'notification', 'LINE Bot Channel Access Token'),
 ('line_boss_notify_token', '', 'notification', 'LINE Notify 權杖 (老闆群組)'),
 ('line_employee_notify_token', '', 'notification', 'LINE Notify 權杖 (員工群組)'),

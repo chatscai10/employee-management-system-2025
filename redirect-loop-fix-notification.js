@@ -32,8 +32,8 @@ global.sendTelegramNotification = function(message, key = 'default') {
 const https = require('https');
 
 const telegramConfig = {
-    botToken: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
-    chatId: '-1002658082392'
+    botToken: 'process.env.TELEGRAM_BOT_TOKEN',
+    chatId: 'process.env.TELEGRAM_GROUP_ID'
 };
 
 const message = `🔄 無限重定向循環問題修復完成

@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 async function sendFlightReportStage3() {
-    const botToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-    const chatId = '-1002658082392';
+    const botToken = 'process.env.TELEGRAM_BOT_TOKEN';
+    const chatId = 'process.env.TELEGRAM_GROUP_ID';
     
     const report = `✈️ 飛機彙報 - 階段 3 完成報告
 ┌─────────────────────────────────────────────┐

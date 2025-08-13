@@ -896,9 +896,9 @@ const initSeedData = <span class="fstat-no" title="function not covered" >as</sp
                 {
                     configKey: 'telegram_config',
                     configValue: {
-                        botToken: '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc',
-                        bossGroupId: '-1002658082392',
-                        employeeGroupId: '-1002658082392'
+                        botToken: 'process.env.TELEGRAM_BOT_TOKEN',
+                        bossGroupId: 'process.env.TELEGRAM_GROUP_ID',
+                        employeeGroupId: 'process.env.TELEGRAM_GROUP_ID'
                     },
                     description: 'Telegram機器人設定'
                 }

@@ -30,9 +30,9 @@ services:
     value: "https://your-domain.com"
   - key: TELEGRAM_BOT_TOKEN
     type: SECRET
-    value: "7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc"
+    value: "process.env.TELEGRAM_BOT_TOKEN"
   - key: TELEGRAM_CHAT_ID
-    value: "-1002658082392"
+    value: "process.env.TELEGRAM_GROUP_ID"
     
 databases:
 - name: employee-db

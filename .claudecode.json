@@ -1,0 +1,50 @@
+{
+    "version": "1.0",
+    "projectName": "企業員工管理系統",
+    "compatibility": {
+        "requiredEnvVars": [
+            "TELEGRAM_BOT_TOKEN",
+            "TELEGRAM_GROUP_ID",
+            "NODE_ENV",
+            "PORT",
+            "JWT_SECRET"
+        ],
+        "allowedExternalAPIs": [
+            "api.telegram.org"
+        ],
+        "safeCommands": [
+            "npm start",
+            "npm test",
+            "npm run build",
+            "npm run security-check",
+            "npm run claude-check",
+            "npm run fix-tokens"
+        ],
+        "restrictedCommands": [
+            "rm -rf",
+            "curl",
+            "wget"
+        ]
+    },
+    "security": {
+        "scanForSecrets": true,
+        "allowHardcodedSecrets": false,
+        "requireEnvValidation": true,
+        "tokenPatterns": [
+            "\\d+:[A-Za-z0-9_-]+",
+            "-\\d{13}"
+        ]
+    },
+    "deployment": {
+        "platforms": ["railway", "render", "gcp"],
+        "preDeployChecks": [
+            "security-check",
+            "claude-check"
+        ]
+    },
+    "monitoring": {
+        "telegramNotifications": true,
+        "errorReporting": true,
+        "performanceMetrics": true
+    }
+}

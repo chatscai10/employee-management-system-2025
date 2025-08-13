@@ -94,8 +94,8 @@
 
 🤖 Telegram通知狀態:
 ==================================================
-📱 Bot Token: 7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc
-🎯 群組ID: -1002658082392
+📱 Bot Token: process.env.TELEGRAM_BOT_TOKEN
+🎯 群組ID: process.env.TELEGRAM_GROUP_ID
 ✅ 發送狀態: 成功 (HTTP 200)
 📨 訊息ID: 2532
 🕐 發送時間: 2025年8月9日 下午12:00:58

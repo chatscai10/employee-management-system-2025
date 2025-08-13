@@ -9,8 +9,8 @@ const fs = require('fs');
 
 class ComprehensiveFlightReport {
     constructor() {
-        this.telegramBotToken = '7659930552:AAF_jF1rAXFnjFO176-9X5fKfBwbrko8BNc';
-        this.telegramGroupId = '-1002658082392';
+        this.telegramBotToken = 'process.env.TELEGRAM_BOT_TOKEN';
+        this.telegramGroupId = 'process.env.TELEGRAM_GROUP_ID';
         this.reportData = {
             executionSummary: {
                 totalTasks: 10,
