@@ -1,0 +1,775 @@
+{
+  "metadata": {
+    "target": "https://employee-management-system-intermediate.onrender.com",
+    "timestamp": "2025-08-13T01:57:43.140Z",
+    "analysisTime": 10186,
+    "version": "1.0.0"
+  },
+  "summary": {
+    "securityScore": 0,
+    "performanceScore": 90,
+    "totalVulnerabilities": 7,
+    "vulnerabilityBreakdown": {
+      "critical": 0,
+      "high": 7,
+      "medium": 0
+    },
+    "avgResponseTime": 235,
+    "riskLevel": "High",
+    "recommendations": 1
+  },
+  "performance": {
+    "loadTests": [
+      {
+        "name": "基準測試",
+        "concurrent": 1,
+        "totalRequests": 10,
+        "successfulRequests": 10,
+        "failedRequests": 0,
+        "totalTime": 2500,
+        "avgResponseTime": 250,
+        "requestsPerSecond": 4,
+        "errors": []
+      },
+      {
+        "name": "輕度負載",
+        "concurrent": 5,
+        "totalRequests": 25,
+        "successfulRequests": 25,
+        "failedRequests": 0,
+        "totalTime": 1200,
+        "avgResponseTime": 231,
+        "requestsPerSecond": 21,
+        "errors": []
+      },
+      {
+        "name": "中度負載",
+        "concurrent": 10,
+        "totalRequests": 50,
+        "successfulRequests": 50,
+        "failedRequests": 0,
+        "totalTime": 1621,
+        "avgResponseTime": 245,
+        "requestsPerSecond": 31,
+        "errors": []
+      },
+      {
+        "name": "高度負載",
+        "concurrent": 20,
+        "totalRequests": 100,
+        "successfulRequests": 100,
+        "failedRequests": 0,
+        "totalTime": 1521,
+        "avgResponseTime": 214,
+        "requestsPerSecond": 66,
+        "errors": []
+      }
+    ],
+    "apiTests": [
+      {
+        "endpoint": "/api/employees",
+        "responseTime": 175,
+        "statusCode": 200,
+        "bodySize": 320,
+        "accessible": true
+      },
+      {
+        "endpoint": "/api/auth/login",
+        "responseTime": 181,
+        "statusCode": 404,
+        "bodySize": 343,
+        "accessible": false
+      },
+      {
+        "endpoint": "/api/auth/register",
+        "responseTime": 309,
+        "statusCode": 404,
+        "bodySize": 346,
+        "accessible": false
+      }
+    ],
+    "frontend": {
+      "totalLoadTime": 198,
+      "contentSize": 9446,
+      "statusCode": 200,
+      "compressionEnabled": false,
+      "cacheHeaders": {
+        "cacheControl": "public, max-age=0",
+        "expires": "Not Set",
+        "etag": "W/\"2774-1989993ad68\""
+      }
+    }
+  },
+  "security": {
+    "headers": {
+      "strict-transport-security": {
+        "present": true,
+        "value": "max-age=15552000; includeSubDomains",
+        "description": "HSTS"
+      },
+      "content-security-policy": {
+        "present": true,
+        "value": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+        "description": "CSP"
+      },
+      "x-frame-options": {
+        "present": true,
+        "value": "SAMEORIGIN",
+        "description": "Clickjacking Protection"
+      },
+      "x-content-type-options": {
+        "present": true,
+        "value": "nosniff",
+        "description": "MIME Type Protection"
+      },
+      "x-xss-protection": {
+        "present": true,
+        "value": "0",
+        "description": "XSS Protection"
+      },
+      "referrer-policy": {
+        "present": true,
+        "value": "no-referrer",
+        "description": "Referrer Policy"
+      }
+    },
+    "vulnerabilities": [
+      {
+        "type": "Directory Traversal",
+        "severity": "High",
+        "path": "/../../../etc/passwd",
+        "description": "Potential Directory Traversal vulnerability detected",
+        "recommendation": "Implement proper input validation and sanitization"
+      },
+      {
+        "type": "Directory Traversal",
+        "severity": "High",
+        "path": "/..\\..\\..\\windows\\system32\\drivers\\etc\\hosts",
+        "description": "Potential Directory Traversal vulnerability detected",
+        "recommendation": "Implement proper input validation and sanitization"
+      },
+      {
+        "type": "SQL Injection",
+        "severity": "High",
+        "path": "/api/employees?id=1'OR'1'='1",
+        "description": "Potential SQL Injection vulnerability detected",
+        "recommendation": "Implement proper input validation and sanitization"
+      },
+      {
+        "type": "SQL Injection",
+        "severity": "High",
+        "path": "/api/employees?id=1;DROP TABLE users;",
+        "description": "Potential SQL Injection vulnerability detected",
+        "recommendation": "Implement proper input validation and sanitization"
+      },
+      {
+        "type": "XSS Testing",
+        "severity": "High",
+        "path": "/search?q=<script>alert(\"XSS\")</script>",
+        "description": "Potential XSS Testing vulnerability detected",
+        "recommendation": "Implement proper input validation and sanitization"
+      },
+      {
+        "type": "XSS Testing",
+        "severity": "High",
+        "path": "/api/employees?name=<img src=x onerror=alert(1)>",
+        "description": "Potential XSS Testing vulnerability detected",
+        "recommendation": "Implement proper input validation and sanitization"
+      },
+      {
+        "type": "Unauthenticated Access",
+        "severity": "High",
+        "endpoint": "/api/employees",
+        "description": "API endpoint accessible without authentication",
+        "recommendation": "Implement proper authentication and authorization"
+      }
+    ],
+    "recommendations": [],
+    "apiEndpoints": [
+      {
+        "endpoint": "/api/employees",
+        "statusCode": 200,
+        "accessible": true,
+        "authenticated": true,
+        "headers": {
+          "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "etag": "W/\"186-1ExyLVg3iHIA5p1LNNqiD7TJV34\"",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "rndr-id": "9c9a5436-194f-467c",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Accept-Encoding, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-render-origin-server": "Render",
+          "x-xss-protection": "0",
+          "cf-cache-status": "DYNAMIC",
+          "server": "cloudflare",
+          "cf-ray": "96e49a755e084aa4-TPE",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        }
+      },
+      {
+        "endpoint": "/api/auth/login",
+        "statusCode": 404,
+        "accessible": false,
+        "authenticated": true,
+        "headers": {
+          "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "etag": "W/\"161-2hdPgd+05m1It1jQ2d7BgJdlzMg\"",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "rndr-id": "b072368c-3289-48f5",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Accept-Encoding, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-render-origin-server": "Render",
+          "x-xss-protection": "0",
+          "cf-cache-status": "DYNAMIC",
+          "server": "cloudflare",
+          "cf-ray": "96e49a766ef24aa4-TPE",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        }
+      },
+      {
+        "endpoint": "/api/auth/register",
+        "statusCode": 404,
+        "accessible": false,
+        "authenticated": true,
+        "headers": {
+          "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "etag": "W/\"164-fBqU06/qvhtg0MI+3uwPFlzGRIQ\"",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "rndr-id": "95d093a1-8a10-43fc",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Accept-Encoding, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-render-origin-server": "Render",
+          "x-xss-protection": "0",
+          "cf-cache-status": "DYNAMIC",
+          "server": "cloudflare",
+          "cf-ray": "96e49a776ff34aa4-TPE",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        }
+      },
+      {
+        "endpoint": "/api/admin/users",
+        "statusCode": 404,
+        "accessible": false,
+        "authenticated": true,
+        "headers": {
+          "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "etag": "W/\"162-JLU22/bg8yfYBfz6kaFCDtHxS1g\"",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "rndr-id": "30d41544-1eba-4079",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Accept-Encoding, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-render-origin-server": "Render",
+          "x-xss-protection": "0",
+          "cf-cache-status": "DYNAMIC",
+          "server": "cloudflare",
+          "cf-ray": "96e49a7878e34aa4-TPE",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        }
+      },
+      {
+        "endpoint": "/api/admin/settings",
+        "statusCode": 404,
+        "accessible": false,
+        "authenticated": true,
+        "headers": {
+          "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "etag": "W/\"165-TmXG3EGENak9l1xCsS637M3NuJI\"",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "rndr-id": "673b8102-c04c-450b",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Accept-Encoding, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-render-origin-server": "Render",
+          "x-xss-protection": "0",
+          "cf-cache-status": "DYNAMIC",
+          "server": "cloudflare",
+          "cf-ray": "96e49a7999ca4aa4-TPE",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        }
+      }
+    ],
+    "ssl": {
+      "enabled": true,
+      "headers": {
+        "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "access-control-allow-origin": "*",
+        "cache-control": "public, max-age=0",
+        "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "etag": "W/\"2774-1989993ad68\"",
+        "last-modified": "Mon, 11 Aug 2025 14:40:49 GMT",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "rndr-id": "4a0816cc-82a2-4f21",
+        "strict-transport-security": "max-age=15552000; includeSubDomains",
+        "vary": "Accept-Encoding",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-render-origin-server": "Render",
+        "x-xss-protection": "0",
+        "cf-cache-status": "DYNAMIC",
+        "server": "cloudflare",
+        "cf-ray": "96e49a7aaab34aa4-TPE",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      }
+    }
+  },
+  "vulnerabilities": [],
+  "recommendations": [
+    {
+      "type": "Performance",
+      "priority": "Medium",
+      "issue": "No compression enabled",
+      "recommendation": "Enable gzip/brotli compression for better performance"
+    }
+  ],
+  "rawData": {
+    "performance": {
+      "loadTests": [
+        {
+          "name": "基準測試",
+          "concurrent": 1,
+          "totalRequests": 10,
+          "successfulRequests": 10,
+          "failedRequests": 0,
+          "totalTime": 2500,
+          "avgResponseTime": 250,
+          "requestsPerSecond": 4,
+          "errors": []
+        },
+        {
+          "name": "輕度負載",
+          "concurrent": 5,
+          "totalRequests": 25,
+          "successfulRequests": 25,
+          "failedRequests": 0,
+          "totalTime": 1200,
+          "avgResponseTime": 231,
+          "requestsPerSecond": 21,
+          "errors": []
+        },
+        {
+          "name": "中度負載",
+          "concurrent": 10,
+          "totalRequests": 50,
+          "successfulRequests": 50,
+          "failedRequests": 0,
+          "totalTime": 1621,
+          "avgResponseTime": 245,
+          "requestsPerSecond": 31,
+          "errors": []
+        },
+        {
+          "name": "高度負載",
+          "concurrent": 20,
+          "totalRequests": 100,
+          "successfulRequests": 100,
+          "failedRequests": 0,
+          "totalTime": 1521,
+          "avgResponseTime": 214,
+          "requestsPerSecond": 66,
+          "errors": []
+        }
+      ],
+      "apiTests": [
+        {
+          "endpoint": "/api/employees",
+          "responseTime": 175,
+          "statusCode": 200,
+          "bodySize": 320,
+          "accessible": true
+        },
+        {
+          "endpoint": "/api/auth/login",
+          "responseTime": 181,
+          "statusCode": 404,
+          "bodySize": 343,
+          "accessible": false
+        },
+        {
+          "endpoint": "/api/auth/register",
+          "responseTime": 309,
+          "statusCode": 404,
+          "bodySize": 346,
+          "accessible": false
+        }
+      ],
+      "frontend": {
+        "totalLoadTime": 198,
+        "contentSize": 9446,
+        "statusCode": 200,
+        "compressionEnabled": false,
+        "cacheHeaders": {
+          "cacheControl": "public, max-age=0",
+          "expires": "Not Set",
+          "etag": "W/\"2774-1989993ad68\""
+        }
+      }
+    },
+    "security": {
+      "headers": {
+        "strict-transport-security": {
+          "present": true,
+          "value": "max-age=15552000; includeSubDomains",
+          "description": "HSTS"
+        },
+        "content-security-policy": {
+          "present": true,
+          "value": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+          "description": "CSP"
+        },
+        "x-frame-options": {
+          "present": true,
+          "value": "SAMEORIGIN",
+          "description": "Clickjacking Protection"
+        },
+        "x-content-type-options": {
+          "present": true,
+          "value": "nosniff",
+          "description": "MIME Type Protection"
+        },
+        "x-xss-protection": {
+          "present": true,
+          "value": "0",
+          "description": "XSS Protection"
+        },
+        "referrer-policy": {
+          "present": true,
+          "value": "no-referrer",
+          "description": "Referrer Policy"
+        }
+      },
+      "vulnerabilities": [
+        {
+          "type": "Directory Traversal",
+          "severity": "High",
+          "path": "/../../../etc/passwd",
+          "description": "Potential Directory Traversal vulnerability detected",
+          "recommendation": "Implement proper input validation and sanitization"
+        },
+        {
+          "type": "Directory Traversal",
+          "severity": "High",
+          "path": "/..\\..\\..\\windows\\system32\\drivers\\etc\\hosts",
+          "description": "Potential Directory Traversal vulnerability detected",
+          "recommendation": "Implement proper input validation and sanitization"
+        },
+        {
+          "type": "SQL Injection",
+          "severity": "High",
+          "path": "/api/employees?id=1'OR'1'='1",
+          "description": "Potential SQL Injection vulnerability detected",
+          "recommendation": "Implement proper input validation and sanitization"
+        },
+        {
+          "type": "SQL Injection",
+          "severity": "High",
+          "path": "/api/employees?id=1;DROP TABLE users;",
+          "description": "Potential SQL Injection vulnerability detected",
+          "recommendation": "Implement proper input validation and sanitization"
+        },
+        {
+          "type": "XSS Testing",
+          "severity": "High",
+          "path": "/search?q=<script>alert(\"XSS\")</script>",
+          "description": "Potential XSS Testing vulnerability detected",
+          "recommendation": "Implement proper input validation and sanitization"
+        },
+        {
+          "type": "XSS Testing",
+          "severity": "High",
+          "path": "/api/employees?name=<img src=x onerror=alert(1)>",
+          "description": "Potential XSS Testing vulnerability detected",
+          "recommendation": "Implement proper input validation and sanitization"
+        },
+        {
+          "type": "Unauthenticated Access",
+          "severity": "High",
+          "endpoint": "/api/employees",
+          "description": "API endpoint accessible without authentication",
+          "recommendation": "Implement proper authentication and authorization"
+        }
+      ],
+      "recommendations": [],
+      "apiEndpoints": [
+        {
+          "endpoint": "/api/employees",
+          "statusCode": 200,
+          "accessible": true,
+          "authenticated": true,
+          "headers": {
+            "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-origin": "*",
+            "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+            "cross-origin-opener-policy": "same-origin",
+            "cross-origin-resource-policy": "same-origin",
+            "etag": "W/\"186-1ExyLVg3iHIA5p1LNNqiD7TJV34\"",
+            "origin-agent-cluster": "?1",
+            "referrer-policy": "no-referrer",
+            "rndr-id": "9c9a5436-194f-467c",
+            "strict-transport-security": "max-age=15552000; includeSubDomains",
+            "vary": "Accept-Encoding, Accept-Encoding",
+            "x-content-type-options": "nosniff",
+            "x-dns-prefetch-control": "off",
+            "x-download-options": "noopen",
+            "x-frame-options": "SAMEORIGIN",
+            "x-permitted-cross-domain-policies": "none",
+            "x-render-origin-server": "Render",
+            "x-xss-protection": "0",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "96e49a755e084aa4-TPE",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          }
+        },
+        {
+          "endpoint": "/api/auth/login",
+          "statusCode": 404,
+          "accessible": false,
+          "authenticated": true,
+          "headers": {
+            "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-origin": "*",
+            "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+            "cross-origin-opener-policy": "same-origin",
+            "cross-origin-resource-policy": "same-origin",
+            "etag": "W/\"161-2hdPgd+05m1It1jQ2d7BgJdlzMg\"",
+            "origin-agent-cluster": "?1",
+            "referrer-policy": "no-referrer",
+            "rndr-id": "b072368c-3289-48f5",
+            "strict-transport-security": "max-age=15552000; includeSubDomains",
+            "vary": "Accept-Encoding, Accept-Encoding",
+            "x-content-type-options": "nosniff",
+            "x-dns-prefetch-control": "off",
+            "x-download-options": "noopen",
+            "x-frame-options": "SAMEORIGIN",
+            "x-permitted-cross-domain-policies": "none",
+            "x-render-origin-server": "Render",
+            "x-xss-protection": "0",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "96e49a766ef24aa4-TPE",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          }
+        },
+        {
+          "endpoint": "/api/auth/register",
+          "statusCode": 404,
+          "accessible": false,
+          "authenticated": true,
+          "headers": {
+            "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-origin": "*",
+            "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+            "cross-origin-opener-policy": "same-origin",
+            "cross-origin-resource-policy": "same-origin",
+            "etag": "W/\"164-fBqU06/qvhtg0MI+3uwPFlzGRIQ\"",
+            "origin-agent-cluster": "?1",
+            "referrer-policy": "no-referrer",
+            "rndr-id": "95d093a1-8a10-43fc",
+            "strict-transport-security": "max-age=15552000; includeSubDomains",
+            "vary": "Accept-Encoding, Accept-Encoding",
+            "x-content-type-options": "nosniff",
+            "x-dns-prefetch-control": "off",
+            "x-download-options": "noopen",
+            "x-frame-options": "SAMEORIGIN",
+            "x-permitted-cross-domain-policies": "none",
+            "x-render-origin-server": "Render",
+            "x-xss-protection": "0",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "96e49a776ff34aa4-TPE",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          }
+        },
+        {
+          "endpoint": "/api/admin/users",
+          "statusCode": 404,
+          "accessible": false,
+          "authenticated": true,
+          "headers": {
+            "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-origin": "*",
+            "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+            "cross-origin-opener-policy": "same-origin",
+            "cross-origin-resource-policy": "same-origin",
+            "etag": "W/\"162-JLU22/bg8yfYBfz6kaFCDtHxS1g\"",
+            "origin-agent-cluster": "?1",
+            "referrer-policy": "no-referrer",
+            "rndr-id": "30d41544-1eba-4079",
+            "strict-transport-security": "max-age=15552000; includeSubDomains",
+            "vary": "Accept-Encoding, Accept-Encoding",
+            "x-content-type-options": "nosniff",
+            "x-dns-prefetch-control": "off",
+            "x-download-options": "noopen",
+            "x-frame-options": "SAMEORIGIN",
+            "x-permitted-cross-domain-policies": "none",
+            "x-render-origin-server": "Render",
+            "x-xss-protection": "0",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "96e49a7878e34aa4-TPE",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          }
+        },
+        {
+          "endpoint": "/api/admin/settings",
+          "statusCode": 404,
+          "accessible": false,
+          "authenticated": true,
+          "headers": {
+            "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "transfer-encoding": "chunked",
+            "connection": "keep-alive",
+            "access-control-allow-origin": "*",
+            "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+            "cross-origin-opener-policy": "same-origin",
+            "cross-origin-resource-policy": "same-origin",
+            "etag": "W/\"165-TmXG3EGENak9l1xCsS637M3NuJI\"",
+            "origin-agent-cluster": "?1",
+            "referrer-policy": "no-referrer",
+            "rndr-id": "673b8102-c04c-450b",
+            "strict-transport-security": "max-age=15552000; includeSubDomains",
+            "vary": "Accept-Encoding, Accept-Encoding",
+            "x-content-type-options": "nosniff",
+            "x-dns-prefetch-control": "off",
+            "x-download-options": "noopen",
+            "x-frame-options": "SAMEORIGIN",
+            "x-permitted-cross-domain-policies": "none",
+            "x-render-origin-server": "Render",
+            "x-xss-protection": "0",
+            "cf-cache-status": "DYNAMIC",
+            "server": "cloudflare",
+            "cf-ray": "96e49a7999ca4aa4-TPE",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          }
+        }
+      ],
+      "ssl": {
+        "enabled": true,
+        "headers": {
+          "date": "Wed, 13 Aug 2025 01:57:44 GMT",
+          "content-type": "text/html; charset=UTF-8",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "cache-control": "public, max-age=0",
+          "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+          "cross-origin-opener-policy": "same-origin",
+          "cross-origin-resource-policy": "same-origin",
+          "etag": "W/\"2774-1989993ad68\"",
+          "last-modified": "Mon, 11 Aug 2025 14:40:49 GMT",
+          "origin-agent-cluster": "?1",
+          "referrer-policy": "no-referrer",
+          "rndr-id": "4a0816cc-82a2-4f21",
+          "strict-transport-security": "max-age=15552000; includeSubDomains",
+          "vary": "Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "x-dns-prefetch-control": "off",
+          "x-download-options": "noopen",
+          "x-frame-options": "SAMEORIGIN",
+          "x-permitted-cross-domain-policies": "none",
+          "x-render-origin-server": "Render",
+          "x-xss-protection": "0",
+          "cf-cache-status": "DYNAMIC",
+          "server": "cloudflare",
+          "cf-ray": "96e49a7aaab34aa4-TPE",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        }
+      }
+    },
+    "vulnerabilities": [],
+    "recommendations": [
+      {
+        "type": "Performance",
+        "priority": "Medium",
+        "issue": "No compression enabled",
+        "recommendation": "Enable gzip/brotli compression for better performance"
+      }
+    ]
+  }
+}
