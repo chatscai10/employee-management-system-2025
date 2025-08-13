@@ -1,0 +1,184 @@
+{
+  "timestamp": "2025-08-13T05:17:07.425Z",
+  "overallStatus": "NEEDS_ATTENTION",
+  "testResults": [
+    {
+      "testName": "基礎連接性驗證",
+      "status": "PASSED",
+      "responseStatus": 200,
+      "loadTime": 1755062230234,
+      "url": "https://web-production-6eb6.up.railway.app",
+      "timestamp": "2025-08-13T05:17:10.234Z",
+      "pageTitle": "",
+      "hasContent": true,
+      "contentLength": 259
+    },
+    {
+      "testName": "角色驗證 - 系統管理員",
+      "role": "系統管理員",
+      "status": "FAILED",
+      "loginSuccess": false,
+      "pageAccessibility": {},
+      "functionalityTests": {},
+      "dataOperations": {},
+      "screenshots": [],
+      "timestamp": "2025-08-13T05:17:10.831Z",
+      "error": "登入表單不存在"
+    },
+    {
+      "testName": "角色驗證 - 店長",
+      "role": "店長",
+      "status": "FAILED",
+      "loginSuccess": false,
+      "pageAccessibility": {},
+      "functionalityTests": {},
+      "dataOperations": {},
+      "screenshots": [],
+      "timestamp": "2025-08-13T05:17:12.881Z",
+      "error": "登入表單不存在"
+    },
+    {
+      "testName": "角色驗證 - 一般員工",
+      "role": "一般員工",
+      "status": "FAILED",
+      "loginSuccess": false,
+      "pageAccessibility": {},
+      "functionalityTests": {},
+      "dataOperations": {},
+      "screenshots": [],
+      "timestamp": "2025-08-13T05:17:15.317Z",
+      "error": "登入表單不存在"
+    },
+    {
+      "testName": "角色驗證 - 實習生",
+      "role": "實習生",
+      "status": "FAILED",
+      "loginSuccess": false,
+      "pageAccessibility": {},
+      "functionalityTests": {},
+      "dataOperations": {},
+      "screenshots": [],
+      "timestamp": "2025-08-13T05:17:17.308Z",
+      "error": "登入表單不存在"
+    },
+    {
+      "testName": "深度功能驗證",
+      "status": "COMPLETED",
+      "results": {
+        "formValidation": {
+          "hasValidation": false,
+          "error": "登入表單不存在"
+        },
+        "ajaxCalls": {
+          "ajaxCallsDetected": true,
+          "totalRequests": 1,
+          "requests": [
+            {
+              "url": "https://web-production-6eb6.up.railway.app/",
+              "status": 200,
+              "method": "GET"
+            }
+          ]
+        },
+        "navigationFlow": {
+          "navigationLinksFound": false,
+          "totalLinks": 0,
+          "sampleLinks": []
+        },
+        "errorHandling": {
+          "has404Handling": true,
+          "responseStatus": 404
+        }
+      },
+      "timestamp": "2025-08-13T05:17:29.615Z"
+    }
+  ],
+  "performanceMetrics": {
+    "totalLoadTime": 994,
+    "domContentLoaded": 0.09999999962747097,
+    "loadComplete": 0,
+    "firstPaint": 480,
+    "firstContentfulPaint": 480,
+    "timestamp": "2025-08-13T05:17:32.474Z"
+  },
+  "consoleAnalysis": {
+    "console_1755062229358": {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-13T05:17:09.358Z"
+    },
+    "系統管理員_1755062231553": {
+      "role": "系統管理員",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-13T05:17:11.553Z"
+    },
+    "店長_1755062233998": {
+      "role": "店長",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-13T05:17:13.998Z"
+    },
+    "一般員工_1755062235959": {
+      "role": "一般員工",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-13T05:17:15.959Z"
+    },
+    "實習生_1755062237825": {
+      "role": "實習生",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "timestamp": "2025-08-13T05:17:17.825Z"
+    }
+  },
+  "errorLog": [],
+  "securityIssues": {
+    "httpsUsage": true,
+    "csrfProtection": {
+      "hasCSRFProtection": false
+    },
+    "sqlInjectionPrevention": {
+      "preventsSQLInjection": false,
+      "error": "無法找到登入表單"
+    },
+    "xssProtection": {
+      "preventsXSS": true
+    }
+  },
+  "mobileCompatibility": {
+    "iPhone 12": {
+      "device": "iPhone 12",
+      "resolution": "390x844",
+      "screenshot": "responsive-iPhone-12-1755062239869.png",
+      "mobileMenuExists": false,
+      "horizontalScroll": false,
+      "timestamp": "2025-08-13T05:17:19.993Z"
+    },
+    "Samsung Galaxy S21": {
+      "device": "Samsung Galaxy S21",
+      "resolution": "384x854",
+      "screenshot": "responsive-Samsung-Galaxy S21-1755062242041.png",
+      "mobileMenuExists": false,
+      "horizontalScroll": false,
+      "timestamp": "2025-08-13T05:17:22.168Z"
+    },
+    "iPad": {
+      "device": "iPad",
+      "resolution": "768x1024",
+      "screenshot": "responsive-iPad-1755062243594.png",
+      "mobileMenuExists": false,
+      "horizontalScroll": false,
+      "timestamp": "2025-08-13T05:17:23.717Z"
+    },
+    "Desktop": {
+      "device": "Desktop",
+      "resolution": "1920x1080",
+      "screenshot": "responsive-Desktop-1755062245135.png",
+      "mobileMenuExists": false,
+      "horizontalScroll": false,
+      "timestamp": "2025-08-13T05:17:25.277Z"
+    }
+  },
+  "successRate": "33%"
+}
