@@ -178,7 +178,11 @@ app.get('/health', (req, res) => {
         status: 'OK', 
         message: '🚨 Railway強制修復版本運行中',
         timestamp: new Date().toISOString(),
-        version: 'FORCE_FIX_1.0'
+        version: 'FORCE_FIX_1.0',
+        commitVerification: '483e9be7-FINAL-FIX',
+        repositoryVerification: 'employee-management-system-2025',
+        deploymentId: 'RAILWAY_FORCE_FIX_2025_08_13_FINAL_VERSION',
+        uniqueIdentifier: Date.now()
     });
 });
 

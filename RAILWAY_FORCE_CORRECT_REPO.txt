@@ -1,0 +1,18 @@
+🚨 RAILWAY REPOSITORY VERIFICATION 🚨
+
+THIS FILE CONFIRMS THAT RAILWAY IS USING THE CORRECT REPOSITORY:
+https://github.com/chatscai10/employee-management-system-2025.git
+
+EXPECTED COMMIT: 483e9be7 or newer
+CURRENT TIME: 2025-08-13 14:42:00 UTC
+
+IF RAILWAY IS USING THE WRONG REPOSITORY, IT WILL NOT HAVE THIS FILE!
+
+VERIFICATION STEPS:
+1. Check Railway Settings > GitHub Connection
+2. Ensure repository is: chatscai10/employee-management-system-2025
+3. Ensure branch is: main
+4. Manual redeploy if necessary
+
+UNIQUE IDENTIFIER FOR THIS DEPLOYMENT:
+RAILWAY_FORCE_FIX_2025_08_13_FINAL_VERSION_CHECK
