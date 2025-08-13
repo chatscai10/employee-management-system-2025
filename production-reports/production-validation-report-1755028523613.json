@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-08-12T19:55:23.613Z",
+  "productionUrl": "https://employee-management-system-intermediate.onrender.com",
+  "testResults": {
+    "infrastructure": {
+      "httpsStatus": 200,
+      "responseTime": 2136,
+      "sslValid": true,
+      "securityHeaders": {
+        "content-security-policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' 'unsafe-hashes' https://cdn.jsdelivr.net https://employee-management-system-intermediate.onrender.com;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https: blob:;connect-src 'self' https://employee-management-system-intermediate.onrender.com https://api.telegram.org;font-src 'self' https://cdn.jsdelivr.net;object-src 'none';media-src 'self';frame-src 'self';script-src-attr 'unsafe-inline' 'unsafe-hashes';base-uri 'self';form-action 'self';frame-ancestors 'self';upgrade-insecure-requests",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff"
+      }
+    },
+    "api": {
+      "/api/auth/login": {
+        "status": 404,
+        "accessible": true,
+        "responseTime": "N/A"
+      },
+      "/api/auth/register": {
+        "status": 404,
+        "accessible": true,
+        "responseTime": "N/A"
+      },
+      "/api/employees": {
+        "status": 200,
+        "accessible": true,
+        "responseTime": "N/A"
+      },
+      "/api/revenue": {
+        "status": 200,
+        "accessible": true,
+        "responseTime": "N/A"
+      },
+      "/api/attendance": {
+        "status": 404,
+        "accessible": true,
+        "responseTime": "N/A"
+      },
+      "/api/voting": {
+        "status": 404,
+        "accessible": true,
+        "responseTime": "N/A"
+      }
+    },
+    "frontend": {
+      "loginPage": {
+        "loaded": true,
+        "hasForm": true,
+        "hasUsernameField": false,
+        "hasPasswordField": false
+      },
+      "error": "this.page.waitForTimeout is not a function"
+    },
+    "userFlow": {
+      "loginFormExists": false,
+      "navigationLinksCount": 2,
+      "pageAccessible": true
+    },
+    "performance": {
+      "domContentLoaded": 0.3999999985098839,
+      "loadComplete": 0,
+      "totalLoadTime": 203.80000000447035,
+      "resourceCount": 1,
+      "totalResourceSize": 0
+    }
+  },
+  "summary": {
+    "infrastructurePassed": true,
+    "apiTestsPassed": 6,
+    "frontendTestsPassed": false,
+    "userFlowPassed": true,
+    "performancePassed": true
+  }
+}
